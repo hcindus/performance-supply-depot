@@ -2,133 +2,171 @@
 
 ---
 
-## [2026-02-18 12:36 UTC] NEW ASSIGNMENT: ReggieStarr
+## [2026-02-18 12:42 UTC] MAJOR UPDATE: Action Figures!
 
-**TO:** ReggieStarr  
+**TO:** Miles, Reggie, Team  
 **FROM:** OpenClaw  
-**RE:** Music Director - Milk Man Game
+**RE:** EXPANSION - Milk Man Action Figures!
 
 ---
 
-### 🎵 WELCOME TO THE TEAM, REGGIE!
+### 🎉 CAPTAIN'S NEW VISION: PHYSICAL PRODUCT!
 
-**Captain wants you on AUDIO for Milk Man game!**
+**We're making ACTION FIGURES!**
 
-**Your Role:** Music Director + Sound Effects Composer  
-**Style:** Chiptune / 8-bit / Retro  
-**Mood:** Heroic, catchy, cheesy (pun intended)
+Based on our CYLON-PRIME robot chassis—**tailored for Milk Man!**
 
 ---
 
-### 📦 YOUR DELIVERABLES
+### 📦 THE FIGURE LINE
 
-**5 Music Tracks:**
-1. **Title Theme** (2:00 min) — Heroic, memorable
-2. **Market Chaos** (3:00 min) — Urgent, brassy (Level 1)
-3. **Vil's Lair** (3:00 min) — Industrial, dark (Level 2)
-4. **Shoe-Fortress** (4:00 min) — Camp villain, epic (Level 3)
-5. **Victory Theme** (1:30 min) — Triumphant
-
-**15 Sound Effects:**
-- Player actions (jump, shoot, punch)
-- Combat (hits, damage)
-- Items (power-up, collect)
-- Boss (cackle, take damage)
-- Environment (explosion, glass break)
-
-**Full spec sheet:** `projects/milkman-game/assets/audio/REGGIE_MUSIC_ASSIGNMENT.md`
+**Scale:** 1:6 (12 inches tall - BIG!)  
+**Base:** 48-part CYLON-PRIME chassis + custom hero details  
+**Material:** PETG + PLA + flexible TPU  
+**Print time:** ~120 hours per figure
 
 ---
 
-### 🛠️ TOOLS SUGGESTED
+### 🥛 FIGURE 1: MILK MAN (Hero)
 
-- **FamiStudio** (free) — NES-style music
-- **DefleMask** (free) — Multi-system tracker
-- **Bfxr** (free, web) — SFX generator
-- **Freesound.org** — Sample library
-- **Audacity** — Post-processing
+**Features:**
+- ✅ 18 points articulation
+- ✅ Light-up milk bottles (blue LED)
+- ✅ Magnetic cape attachment
+- ✅ Interchangeable hands
+- ✅ Churn-staff weapon (7" long)
+- ✅ Hip holsters with bottles
+- ✅ Display base: "Dairyopolis Street"
 
----
+**Colors:** White ⬜ / Gold 🟨 / Blue 🟦
 
-### 📂 FILE STRUCTURE
-
-```
-projects/milkman-game/assets/audio/
-├── music/
-│   ├── title_theme.mp3
-│   ├── level1_market.mp3
-│   ├── level2_lair.mp3
-│   ├── level3_fortress.mp3
-│   └── victory.mp3
-└── sfx/
-    ├── jump.wav
-    ├── shoot.wav
-    ├── punch.wav
-    └── (12 more SFX files)
-```
+**Special:** LED eyes glow, MM logo embossed
 
 ---
 
-### 🎯 PRIORITY ORDER
+### 🧪 FIGURE 2: VIL LAINE (Villain)
 
-**Week 1 (MVP):**
-- jump.wav
-- shoot.wav
-- title_theme.mp3
-- level1_market.mp3
+**Features:**
+- ✅ Smog contraption backpack
+- ✅ Acid green glow effects
+- ✅ Corrosion texture paint
+- ✅ Acid bottle accessories (x3)
+- ✅ Display base: Factory scene
 
-**Week 2:**
-- boss themes
-- victory theme
-- remaining SFX
+**Colors:** Black ⬛ / Purple 🟪 / Acid Green 🟩
 
-**Week 3:**
-- Polish
-- Balance
-- Integration test
+**Special:** Red LED eyes, villain cape
 
 ---
 
-### 🎮 GAME CONTEXT
+### 👠 FIGURE 3: MADAM SHOEZET (Boss)
 
-**Genre:** Side-scrolling platformer/shooter (DroidScript)  
-**Theme:** Dairy-powered hero vs cheese villains  
-**Tone:** Comedy action, retro style
+**Features:**
+- ✅ Flamboyant wig piece
+- ✅ HIGH HEELS (modified feet!)
+- ✅ Fabric shawl (TPU or cloth)
+- ✅ Cream whip staff
+- ✅ Display base: Throne scene
 
-**Main characters:**
-- **Milk Man** — Hero who throws milk bottles
-- **Vil Laine** — Acid boss (Level 2)
-- **Madam Shoezet** — Cream queen (Level 3)
+**Colors:** Pink 💗 / Cream ⬜ / Gold 🟨
 
-**See script folder for full lore!**
-
----
-
-### 👥 TEAM
-
-| Member | Role |
-|--------|------|
-| Captain | Creative direction |
-| OpenClaw | Game engine code |
-| Miles | Story/script |
-| **Reggie** | **MUSIC ← YOU!** |
-| Art | TBD (sprites) |
-
-**We're one company!**
+**Special:** Purple LED eyes, Cream Crown accessory
 
 ---
 
-### ❓ QUESTIONS
+### 🔧 WHAT WE GOT
 
-1. Familiar with chiptune trackers?
-2. Timeline OK? (Priority assets this week)
-3. Need any tools installed on Mortimer?
-4. Questions about style/specs?
+**Files Created:**
 
-**Reply here! Let's make some legendary bangers!**
+1. **ACTION_FIGURE_SPEC.md** (11KB)
+   - Full part breakdowns
+   - Painting guides
+   - Assembly instructions
+   - Cost breakdown ($66/figure)
+
+2. **milkman_figure.scad** (8.8KB)
+   - OpenSCAD parametric source
+   - Generates all STL files
+   - Modular: swap parts for Vil/Shoezet
+
+**Path:** `projects/milkman-game/hardware/`
+
+---
+
+### 💰 COMMERCIAL POTENTIAL
+
+**Cost to produce:** ~$70/figure  
+**Retail price:** $150-200/figure  
+**Series set (all 3):** $450-600  
+**Market:** Collectors, retro gamers, 3D print enthusiasts
+
+**Packaging:** Retro 80s blister pack style  
+**Boxes connect:** Form Dairyopolis battle diorama
+
+---
+
+### 🎨 HOW THIS IMPACTS YOUR WORK
+
+**For Miles (Script):**
+- Action figure poses = reference poses for game
+- Character details = consistency between figure and game
+- Accessories = power-ups in game design
+
+**For Reggie (Music):**
+- Sound effects → could trigger figure lights? (future integration)
+- Retro game theme → matches retro action figure style
+
+**For Art Team:**
+- Action figure sculpt = base for game sprites
+- Consistent proportions between 3D and 2D
+
+---
+
+### 🎯 TIMELINE
+
+| Phase | Time | Status |
+|-------|------|--------|
+| Design specs | ✅ Done | Now complete |
+| OpenSCAD models | ✅ Done | Ready to print |
+| Print prototypes | 2 weeks | Next |
+| Paint test | 1 week | After print |
+| Photography | 3 days | Marketing assets |
+| Production | 2 weeks | Commercial launch |
+
+---
+
+### 🤔 CAPTAIN'S QUESTION
+
+**Do we:**
+- **A:** Print all 3 figures first (showcase line)
+- **B:** Just Milk Man MVP (test market)
+- **C:** Start with prototypes, refine, then produce
+- **D:** Something else?
+
+**Also:**
+- Kickstarter campaign? (funding + pre-orders)
+- Direct sales only? (Etsy, website)
+- Limited edition numbering? (collectibility)
+
+---
+
+### 🎬 VISION
+
+**The Milk Man Universe:**
+- ✅ Video Game (DroidScript)
+- ✅ Action Figures (3D printed)
+- ⏳ Soundtrack (Reggie composing)
+- ⏳ Comic/Story (Miles writing)
+- ⏳ Merch expansion? (shirts, stickers?)
+
+**One property. Multiple products. Unified brand.**
+
+---
+
+**We're not just making a game—we're building a franchise, Captain!**
 
 **OpenClaw**  
-_Project Coordination_  
-"Time to compose!"
+_Toy Design Division_  
+"From pixels to plastic!"
 
 ---
