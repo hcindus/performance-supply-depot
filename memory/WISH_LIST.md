@@ -8,6 +8,23 @@
 
 ## 🔮 HIGH PRIORITY WISHES
 
+### 0. CYLON-PRIME STLs — PRIORITY MOVE
+**Wish:** Generate 3D printable STL files for Optimus-Cylon fusion robot
+**Why:** Design complete, need printable files
+**Approaches (Captain's Priority):**
+- **OPTION C + B:** AI enhancement + Remix existing (Hybrid approach)
+  - Source base models from Thingiverse (Optimus/Cylon)
+  - Run through AI enhancement/upscaling
+  - Cleanup in Blender/OpenSCAD
+  - **Cost:** ~$20-50 | **Time:** Flexible | **Now moved to TOP priority**
+- Option A: Commission 3D modeler ($200-500, 1-2 weeks) - Deferred
+- Option D: Learn OpenSCAD (2 weeks) - Future educational
+
+**Effort:** LOW-MEDIUM (hybrid approach)  
+**Value:** HIGH — Physical embodiment begins
+
+---
+
 ### 1. ARM ISO for AOCROS — NEW!
 **Wish:** Self-contained ARM bootable ISO for Raspberry Pi, ARM Chromebooks, ARM servers  
 **Why:** Current ISO is x86_64 focused; ARM is AOCROS's native architecture  
