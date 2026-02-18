@@ -101,6 +101,7 @@ cp iso/files/home/tappy/tappy_core.py $OUTPUT_DIR/squashfs-root/home/tappy/
 cp services/memory/src/memoryService.js $OUTPUT_DIR/squashfs-root/home/aocros/services/
 cp services/memory/src/memoryClient.js $OUTPUT_DIR/squashfs-root/home/aocros/services/
 cp services/memory/src/law_enforcer.py $OUTPUT_DIR/squashfs-root/home/aocros/services/
+cp services/clone_factory.py $OUTPUT_DIR/squashfs-root/home/aocros/services/
 
 # Copy install script
 cp iso/install.sh $OUTPUT_DIR/squashfs-root/home/aocros/
@@ -239,8 +240,46 @@ echo "  tappy-status"
 echo "  ps aux | grep -E '(mylzeron|tappy)'"
 echo ""
 /bin/sh
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-shell <> 'AOCROS_SHELL'
+#!/bin/sh
+echo "AOCROS v$VERSION"
+echo "Entities: Mylzeron, Tappy"
+echo ""
+echo "Commands:"
+echo "  mylzeron-status"
+echo "  tappy-status"
+echo "  mylzeron-clone [chassis]"
+echo "  tappy-clone"
+echo "  aocros-clones"
+echo "  aocros-install"
+echo "  ps aux | grep -E '(mylzeron|tappy)'"
+echo ""
+/bin/sh
 AOCROS_SHELL
 chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-shell
+
+# Create clone management commands
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/mylzeron-clone <> 'MYLZERO_CLONE'
+#!/bin/sh
+# Spawn a new Mylzeron clone
+CHASSIS="${1:-simulation}"
+python3 /home/aocros/services/clone_factory.py spawn --type mylzeron --chassis "$CHASSIS"
+MYLZERO_CLONE
+chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/mylzeron-clone
+
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/tappy-clone <> 'TAPPY_CLONE'
+#!/bin/sh
+# Spawn a new Tappy clone
+python3 /home/aocros/services/clone_factory.py spawn --type tappy
+TAPPY_CLONE
+chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/tappy-clone
+
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-clones <> 'AOCROS_CLONES'
+#!/bin/sh
+# List all active clones
+python3 /home/aocros/services/clone_factory.py list
+AOCROS_CLONES
+chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-clones
 
 echo "Done"
 
