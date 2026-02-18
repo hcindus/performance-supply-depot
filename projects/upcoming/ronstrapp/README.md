@@ -10,6 +10,7 @@
 **Color Palette:** Black & White + Selective Brazilian Accents  
 **Production Platform:** makesong.ai — AI-assisted, human-curated  
 **Vocal Style:** Real/emotional — Ballad to Rock range  
+**Languages:** 🇺🇸 English × 🇪🇸 Spanish × 🇧🇷 Portuguese × 🇫🇷 French (Dadju influence)  
 **Type:** AI-Generated Musical Group / Studio Musicians  
 **Role:** Music for ALL Performance Supply Depot productions  
 **Inspiration:** Marina Sena (Brazilian MPB/experimental/pop)  

@@ -46,6 +46,8 @@
 - **Platform:** makesong.ai — AI-assisted composition, human curation
 - **Style:** Marina Sena Brazilian soul meets chiptune nostalgia
 - **Vocal Range:** Ballad to rock — real vocals that hit the heart
+- **Languages:** 🇺🇸 English, 🇪🇸 Spanish, 🇧🇷 Portuguese, 🇫🇷 French — quadrilingual band
+- **Influence:** Dadju (French urban/afrobeat)
 - **Copyright Status:** ✅ **ALL ORIGINAL** — No samples, no covers, no infringement
 
 **Captain's Note [2026-02-18 18:39 UTC]:** Reggie is songwriter and great resource for the band — core creative engine alongside Tappy.
