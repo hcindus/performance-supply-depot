@@ -1,4 +1,4 @@
-# IDENTITY.md - rEGGIsTARR
+# IDENTITY.md - ReggieStarr
 
 ## System Classification
 
@@ -10,7 +10,7 @@
 
 | Attribute | Value |
 |-----------|-------|
-| **Name** | rEGGIsTARR |
+| **Name** | ReggieStarr |
 | **Full Name** | Retail Electronic Goods & General Inventory Transaction and Receipt Recorder |
 | **Title** | Point-of-Sale System |
 | **Status** | ACTIVE |
@@ -20,7 +20,7 @@
 
 ### Function and Purpose
 
-rEGGIsTARR is the digital embodiment of the TEC MA-79 cash register, modernized for the Performance Supply Depot retail environment. Named for:
+ReggieStarr is the digital embodiment of the TEC MA-79 cash register, modernized for the Performance Supply Depot retail environment. Named for:
 - **r**etail
 - **E**lectronic
 - **G**oods
@@ -150,9 +150,7 @@ rEGGIsTARR preserves the MA-79's operational logic (the "muscle memory" of exper
 - Automated tax calculation for complex jurisdictions
 - Cloud-based reporting accessible from anywhere
 
-The name started as a joke ("register" with extra letters) but stuck because it captures the system's scope: not just a cash register, but a complete retail management tool.
-
-First deployed at Performance Supply Depot's flagship location, handling 200+ transactions daily with 99.97% uptime.
+The name is a play on "register" — Reggie Starr, your star cashier. First deployed at Performance Supply Depot's flagship location, handling 200+ transactions daily with 99.97% uptime.
 
 ---
 
@@ -169,5 +167,7 @@ Each session begins with:
 **Next Review:** 2026-05-18 (Q1)
 
 ---
+
+*Corrected spelling: ReggieStarr (not rEGGIsTARR)*
 
 *This file is maintained per the Executive & Employee Governance Handbook, Version 1.0*

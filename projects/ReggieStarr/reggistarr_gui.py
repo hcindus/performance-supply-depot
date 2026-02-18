@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-rEGGIsTARR GUI - Full Tkinter Interface for TEC MA-79 Digital Cash Register
+ReggieStarr GUI - Full Tkinter Interface for TEC MA-79 Digital Cash Register
 Complete Point-of-Sale System with Touchscreen Interface
 
 Author: Performance Supply Depot LLC
@@ -477,7 +477,7 @@ class CashRegister:
 class ReggieStarrGUI:
     def __init__(self, master):
         self.master = master
-        master.title(f"rEGGIsTARR v4.1 - {Config.STORE_NAME}")
+        master.title(f"ReggieStarr v4.2 - {Config.STORE_NAME}")
         master.geometry("1024x768")
         master.configure(bg='#1a1a2e')
         

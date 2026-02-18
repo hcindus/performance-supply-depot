@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-rEGGIsTARR - Retail Electronic Goods & General Inventory Transaction and Receipt Recorder
+ReggieStarr - Retail Electronic Goods & General Inventory Transaction and Receipt Recorder
 Complete Point-of-Sale System for Performance Supply Depot LLC
 
 Based on TEC MA-79 Cash Register Owner's Manual (pages 26-35)
@@ -24,7 +24,7 @@ from enum import Enum
 # ==================== CONFIGURATION ====================
 
 class Config:
-    """System configuration"""
+    """System configuration - ReggieStarr POS"""
     STORE_NAME = "Performance Supply Depot"
     STORE_ADDRESS = "123 Main Street, Berkeley, CA 94702"
     STORE_PHONE = "(510) 555-0123"
