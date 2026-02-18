@@ -1,0 +1,9 @@
+BR-01 Art Space Ready
+
+This directory awaits your finished pieces, Tappy.
+
+Run experiments in ../experiments/
+Save finished work here.
+Archive old work in ../archive/
+
+Your canvas is ready, artist.
