@@ -245,6 +245,10 @@ class CashRegisterApp:
         self.subtotal_var = tk.StringVar(value="$0.00")
         tk.Label(totals_frame, textvariable=self.subtotal_var).pack(side=tk.LEFT, padx=5)
         
+        tk.Label(totals_frame, text="Discount:").pack(side=tk.LEFT, padx=5)
+        self.discount_total_var = tk.StringVar(value="$0.00")
+        tk.Label(totals_frame, textvariable=self.discount_total_var, fg="green").pack(side=tk.LEFT, padx=5)
+        
         tk.Label(totals_frame, text="Tax:").pack(side=tk.LEFT, padx=5)
         self.tax_var = tk.StringVar(value="$0.00")
         tk.Label(totals_frame, textvariable=self.tax_var).pack(side=tk.LEFT, padx=5)
@@ -312,51 +316,101 @@ class CashRegisterApp:
     # CORE OPERATIONS
     # ========================================================================
     
+    def parse_multiplier_syntax(self, input_str):
+        """Parse @/For multiplier syntax: '6 @ $3.50' or '10 @ 5.00'"""
+        if '@' in input_str:
+            parts = input_str.split('@')
+            if len(parts) == 2:
+                try:
+                    qty = float(parts[0].strip())
+                    price_str = parts[1].strip().replace('$', '').replace(',', '')
+                    unit_price = float(price_str)
+                    return {'quantity': int(qty), 'unit_price': unit_price}
+                except ValueError:
+                    pass
+        return None
+    
     def add_item(self):
-        """Add an item to the current transaction"""
+        """Add an item to the current transaction with @/For support"""
         code = self.product_code_var.get()
         quantity = self.quantity_var.get()
         price = self.price_var.get()
-        discount = self.discount_var.get()
+        discount_percent = self.discount_var.get()
         
-        # Calculate item total
+        # Check for @/For syntax: "6 @ $3.50"
+        parsed = self.parse_multiplier_syntax(code)
+        if parsed:
+            quantity = parsed['quantity']
+            price = parsed['unit_price']
+            code = f"@{quantity}"
+        
+        # Also check in the price field for @ syntax
+        if not parsed:
+            parsed = self.parse_multiplier_syntax(self.product_code_var.get() + " @ " + str(price))
+            if parsed:
+                quantity = parsed['quantity']
+                price = parsed['unit_price']
+        
+        # Calculate item totals
         item_subtotal = price * quantity
-        discount_amount = item_subtotal * (discount / 100)
-        item_total = item_subtotal - discount_amount
+        discount_amount = item_subtotal * (discount_percent / 100)
+        item_discounted = item_subtotal - discount_amount
         
         # Add to transaction
         item = {
             'code': code,
             'quantity': quantity,
             'price': price,
-            'discount': discount,
-            'total': item_total
+            'discount_percent': discount_percent,
+            'discount_amount': discount_amount,
+            'subtotal': item_subtotal,
+            'total': item_discounted
         }
         self.current_transaction.append(item)
         
-        # Update display
-        self.trans_listbox.insert(tk.END, f"{code} x{quantity} @ ${price:.2f} = ${item_total:.2f}")
+        # Update display with @/For syntax for clarity
+        if code.startswith('@'):
+            # @/For syntax was used - display nicely
+            if discount_percent > 0:
+                display_text = f"{quantity} @ ${price:.2f} -{discount_percent:.1f}% = ${item_discounted:.2f}"
+            else:
+                display_text = f"{quantity} @ ${price:.2f} = ${item_discounted:.2f}"
+        else:
+            if discount_percent > 0:
+                display_text = f"{code} x{quantity} @ ${price:.2f} -{discount_percent:.1f}% = ${item_discounted:.2f}"
+            else:
+                display_text = f"{code} x{quantity} @ ${price:.2f} = ${item_discounted:.2f}"
+        self.trans_listbox.insert(tk.END, display_text)
         self.calc_subtotal()
         
-        self.log_message(f"Added {code} x{quantity}")
+        self.log_message(f"Added {code} x{quantity} @ ${price:.2f} (Discount: {discount_percent:.1f}%)")
     
     def calc_subtotal(self):
-        """Calculate and display subtotal"""
-        self.current_subtotal = sum(item['total'] for item in self.current_transaction)
-        self.subtotal_var.set(f"${self.current_subtotal:.2f}")
-        self.log_message(f"Subtotal: ${self.current_subtotal:.2f}")
+        """Calculate and display subtotal before discounts"""
+        # Calculate raw subtotal (before any discounts)
+        raw_subtotal = sum(item['subtotal'] for item in self.current_transaction)
+        # Calculate total discount
+        total_discount = sum(item['discount_amount'] for item in self.current_transaction)
+        # Subtotal after discounts
+        self.current_subtotal = raw_subtotal - total_discount
+        
+        self.subtotal_var.set(f"${raw_subtotal:.2f}")
+        self.discount_total_var.set(f"-${total_discount:.2f}")
+        self.log_message(f"Subtotal: ${raw_subtotal:.2f}, Discount: -${total_discount:.2f}")
     
     def calc_total(self):
         """Calculate and display total with tax"""
         self.calc_subtotal()
-        # Apply default tax rate (8.75%)
+        # Apply default tax rate (8.75%) to discounted subtotal
         tax_rate = 0.0875
         self.current_tax = self.current_subtotal * tax_rate
         self.current_total = self.current_subtotal + self.current_tax
         
         self.tax_var.set(f"${self.current_tax:.2f}")
         self.total_var.set(f"${self.current_total:.2f}")
-        self.log_message(f"Total: ${self.current_total:.2f} (Tax: ${self.current_tax:.2f})")
+        
+        total_discount = sum(item['discount_amount'] for item in self.current_transaction)
+        self.log_message(f"Total: ${self.current_total:.2f} (Tax: ${self.current_tax:.2f}, Saved: ${total_discount:.2f})")
     
     def process_payment(self):
         """Process payment for current transaction"""
