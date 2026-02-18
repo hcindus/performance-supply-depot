@@ -594,6 +594,218 @@ class CashRegister:
     def clear_entry(self): pass
     def enter_item(self): pass
     
+    # Extended Features
+    def process_split_tender(self, payments: List[Tuple[str, float]]) -> bool:
+        """Process multiple payment methods for one transaction"""
+        if not self.current_transaction:
+            return False
+        
+        total_paid = 0.0
+        for method, amount in payments:
+            total_paid += amount
+            self.current_transaction.payments.append({
+                'method': method,
+                'amount': amount,
+                'timestamp': datetime.datetime.now().isoformat()
+            })
+        
+        if total_paid >= self.current_transaction.total:
+            self.current_transaction.change = total_paid - self.current_transaction.total
+            self.complete_transaction()
+            return True
+        return False
+    
+    def create_layaway(self, deposit: float, customer_id: str, due_date: datetime.datetime) -> str:
+        """Create layaway transaction"""
+        if not self.current_transaction:
+            return ""
+        
+        layaway_id = f"LAYAWAY-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
+        
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS layaways (
+                layaway_id TEXT PRIMARY KEY,
+                transaction_id TEXT NOT NULL,
+                customer_id TEXT NOT NULL,
+                total_amount REAL NOT NULL,
+                deposit_amount REAL NOT NULL,
+                balance_due REAL NOT NULL,
+                due_date TEXT NOT NULL,
+                status TEXT DEFAULT 'active',
+                created_date TEXT NOT NULL
+            )
+        ''')
+        
+        balance = self.current_transaction.total - deposit
+        cursor.execute('''
+            INSERT INTO layaways VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (layaway_id, self.current_transaction.id, customer_id,
+              self.current_transaction.total, deposit, balance,
+              due_date.isoformat(), 'active', datetime.datetime.now().isoformat()))
+        
+        conn.commit()
+        conn.close()
+        
+        # Mark original transaction as layaway
+        self.current_transaction.status = 'layaway'
+        self.db.save_transaction(self.current_transaction)
+        
+        return layaway_id
+    
+    def process_layaway_payment(self, layaway_id: str, amount: float) -> Tuple[bool, float]:
+        """Make payment on layaway"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute('SELECT balance_due FROM layaways WHERE layaway_id = ?', (layaway_id,))
+        row = cursor.fetchone()
+        
+        if not row:
+            conn.close()
+            return False, 0.0
+        
+        current_balance = row[0]
+        new_balance = current_balance - amount
+        
+        if new_balance <= 0:
+            cursor.execute('UPDATE layaways SET balance_due = 0, status = ? WHERE layaway_id = ?',
+                         ('completed', layaway_id))
+        else:
+            cursor.execute('UPDATE layaways SET balance_due = ? WHERE layaway_id = ?',
+                         (new_balance, layaway_id))
+        
+        conn.commit()
+        conn.close()
+        
+        return True, new_balance
+    
+    def add_customer(self, customer_id: str, name: str, email: str = "", phone: str = "") -> bool:
+        """Add customer to database"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS customers (
+                customer_id TEXT PRIMARY KEY,
+                name TEXT NOT NULL,
+                email TEXT,
+                phone TEXT,
+                created_date TEXT NOT NULL,
+                total_purchases REAL DEFAULT 0.0,
+                visit_count INTEGER DEFAULT 0
+            )
+        ''')
+        cursor.execute('''
+            INSERT OR REPLACE INTO customers VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (customer_id, name, email, phone, datetime.datetime.now().isoformat(), 0.0, 0))
+        conn.commit()
+        conn.close()
+        return True
+    
+    def get_customer(self, customer_id: str) -> Optional[Dict]:
+        """Get customer info"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM customers WHERE customer_id = ?', (customer_id,))
+        row = cursor.fetchone()
+        conn.close()
+        
+        if row:
+            return {
+                'customer_id': row[0],
+                'name': row[1],
+                'email': row[2],
+                'phone': row[3],
+                'created_date': row[4],
+                'total_purchases': row[5],
+                'visit_count': row[6]
+            }
+        return None
+    
+    def issue_gift_card(self, card_id: str, amount: float) -> bool:
+        """Issue new gift card"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS gift_cards (
+                card_id TEXT PRIMARY KEY,
+                initial_amount REAL NOT NULL,
+                balance REAL NOT NULL,
+                issue_date TEXT NOT NULL,
+                expiry_date TEXT NOT NULL,
+                status TEXT DEFAULT 'active'
+            )
+        ''')
+        
+        expiry = datetime.datetime.now() + datetime.timedelta(days=365)
+        cursor.execute('''
+            INSERT INTO gift_cards VALUES (?, ?, ?, ?, ?, ?)
+        ''', (card_id, amount, amount, datetime.datetime.now().isoformat(),
+              expiry.isoformat(), 'active'))
+        conn.commit()
+        conn.close()
+        return True
+    
+    def get_gift_card_balance(self, card_id: str) -> float:
+        """Check gift card balance"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT balance FROM gift_cards WHERE card_id = ? AND status = ?',
+                      (card_id, 'active'))
+        row = cursor.fetchone()
+        conn.close()
+        return row[0] if row else 0.0
+    
+    def redeem_gift_card(self, card_id: str, amount: float) -> bool:
+        """Redeem amount from gift card"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT balance FROM gift_cards WHERE card_id = ? AND status = ?',
+                      (card_id, 'active'))
+        row = cursor.fetchone()
+        
+        if not row or row[0] < amount:
+            conn.close()
+            return False
+        
+        new_balance = row[0] - amount
+        status = 'active' if new_balance > 0 else 'depleted'
+        cursor.execute('UPDATE gift_cards SET balance = ?, status = ? WHERE card_id = ?',
+                      (new_balance, status, card_id))
+        conn.commit()
+        conn.close()
+        return True
+    
+    def generate_custom_report(self, start_date: datetime.datetime, 
+                               end_date: datetime.datetime,
+                               report_type: str = 'sales') -> str:
+        """Generate custom date range report"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            SELECT * FROM transactions 
+            WHERE start_time BETWEEN ? AND ? AND status = 'completed'
+        ''', (start_date.isoformat(), end_date.isoformat()))
+        
+        transactions = cursor.fetchall()
+        conn.close()
+        
+        total_sales = sum(t[11] for t in transactions)
+        total_tax = sum(t[9] for t in transactions)
+        
+        report_lines = [
+            f"Custom Report: {report_type}",
+            f"Period: {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}",
+            f"Total Transactions: {len(transactions)}",
+            f"Total Sales: ${total_sales:.2f}",
+            f"Total Tax: ${total_tax:.2f}",
+            "=" * 50,
+        ]
+        
+        return "\n".join(report_lines)
+    
     # Advanced Features
     def hold_transaction(self) -> str:
         """Hold current transaction for later recall"""
@@ -788,6 +1000,7 @@ class ReggieStarrGUI:
             ('Add PLU', '#6a4a6a'), ('Dept Mgmt', '#6a4a6a'), ('Inventory', '#6a4a6a'),
             ('Hold', '#4a6a6a'), ('Recall', '#6a6a4a'), ('Split', '#6a4a6a'),
             ('Currency', '#4a4a8a'), ('QR Pay', '#8a4a8a'), ('Update Rates', '#4a8a4a'),
+            ('Layaway', '#6a6a6a'), ('Gift Card', '#8a6a4a'), ('Customer', '#4a6a8a'),
         ]
         
         for i, (text, color) in enumerate(functions):
@@ -930,8 +1143,247 @@ class ReggieStarrGUI:
                 messagebox.showinfo("Success", "Exchange rates updated!")
             else:
                 messagebox.showwarning("Warning", "Using default rates (API unavailable)")
+        elif func == "Layaway":
+            self.show_layaway_dialog()
+        elif func == "Gift Card":
+            self.show_gift_card_dialog()
+        elif func == "Customer":
+            self.show_customer_dialog()
         
         self.update_display()
+    
+    def show_layaway_dialog(self):
+        """Dialog for layaway management"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Layaway Management")
+        dialog.geometry("500x400")
+        dialog.transient(self.master)
+        
+        notebook = ttk.Notebook(dialog)
+        notebook.pack(fill='both', expand=True, padx=10, pady=10)
+        
+        # Tab 1: Create Layaway
+        tab1 = ttk.Frame(notebook)
+        notebook.add(tab1, text="Create Layaway")
+        
+        if not self.register.current_transaction or self.register.current_transaction.total <= 0:
+            ttk.Label(tab1, text="No active transaction to put on layaway.").pack(pady=20)
+        else:
+            ttk.Label(tab1, text=f"Total Amount: ${self.register.current_transaction.total:.2f}").pack(pady=10)
+            
+            ttk.Label(tab1, text="Customer ID:").pack(pady=5)
+            cust_entry = ttk.Entry(tab1, width=20)
+            cust_entry.pack(pady=5)
+            
+            ttk.Label(tab1, text="Deposit Amount:").pack(pady=5)
+            deposit_entry = ttk.Entry(tab1, width=15)
+            deposit_entry.insert(0, f"{self.register.current_transaction.total * 0.25:.2f}")
+            deposit_entry.pack(pady=5)
+            
+            ttk.Label(tab1, text="Due Date (YYYY-MM-DD):").pack(pady=5)
+            due_entry = ttk.Entry(tab1, width=15)
+            due_entry.insert(0, (datetime.datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d'))
+            due_entry.pack(pady=5)
+            
+            def create_layaway():
+                try:
+                    deposit = float(deposit_entry.get())
+                    due_date = datetime.datetime.strptime(due_entry.get(), '%Y-%m-%d')
+                    customer_id = cust_entry.get().strip() or "WALKIN"
+                    
+                    layaway_id = self.register.create_layaway(deposit, customer_id, due_date)
+                    messagebox.showinfo("Success", f"Layaway created: {layaway_id}")
+                    dialog.destroy()
+                except ValueError as e:
+                    messagebox.showerror("Error", f"Invalid input: {e}")
+            
+            ttk.Button(tab1, text="Create Layaway", command=create_layaway).pack(pady=20)
+        
+        # Tab 2: Make Payment
+        tab2 = ttk.Frame(notebook)
+        notebook.add(tab2, text="Make Payment")
+        
+        ttk.Label(tab2, text="Layaway ID:").grid(row=0, column=0, padx=5, pady=5)
+        layaway_entry = ttk.Entry(tab2, width=20)
+        layaway_entry.grid(row=0, column=1, padx=5, pady=5)
+        
+        ttk.Label(tab2, text="Payment Amount:").grid(row=1, column=0, padx=5, pady=5)
+        payment_entry = ttk.Entry(tab2, width=15)
+        payment_entry.grid(row=1, column=1, padx=5, pady=5)
+        
+        result_label = ttk.Label(tab2, text="", font=('Courier', 12))
+        result_label.grid(row=2, column=0, columnspan=2, pady=10)
+        
+        def make_payment():
+            try:
+                layaway_id = layaway_entry.get().strip()
+                amount = float(payment_entry.get())
+                success, new_balance = self.register.process_layaway_payment(layaway_id, amount)
+                if success:
+                    result_label.config(text=f"Payment accepted. New balance: ${new_balance:.2f}")
+                else:
+                    messagebox.showerror("Error", "Layaway not found or payment failed")
+            except ValueError:
+                messagebox.showerror("Error", "Invalid amount")
+        
+        ttk.Button(tab2, text="Process Payment", command=make_payment).grid(row=3, column=0, columnspan=2, pady=10)
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=5)
+    
+    def show_gift_card_dialog(self):
+        """Dialog for gift card management"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Gift Card Management")
+        dialog.geometry("400x400")
+        dialog.transient(self.master)
+        
+        notebook = ttk.Notebook(dialog)
+        notebook.pack(fill='both', expand=True, padx=10, pady=10)
+        
+        # Tab 1: Issue Card
+        tab1 = ttk.Frame(notebook)
+        notebook.add(tab1, text="Issue Card")
+        
+        ttk.Label(tab1, text="Card ID:").grid(row=0, column=0, padx=5, pady=5)
+        card_entry = ttk.Entry(tab1, width=20)
+        card_entry.grid(row=0, column=1, padx=5, pady=5)
+        card_entry.insert(0, f"GC-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}")
+        
+        ttk.Label(tab1, text="Initial Amount:").grid(row=1, column=0, padx=5, pady=5)
+        amount_entry = ttk.Entry(tab1, width=15)
+        amount_entry.grid(row=1, column=1, padx=5, pady=5)
+        amount_entry.insert(0, "50.00")
+        
+        def issue_card():
+            try:
+                card_id = card_entry.get().strip()
+                amount = float(amount_entry.get())
+                if self.register.issue_gift_card(card_id, amount):
+                    messagebox.showinfo("Success", f"Gift card {card_id} issued with ${amount:.2f}")
+                    dialog.destroy()
+            except ValueError:
+                messagebox.showerror("Error", "Invalid amount")
+        
+        ttk.Button(tab1, text="Issue Card", command=issue_card).grid(row=2, column=0, columnspan=2, pady=20)
+        
+        # Tab 2: Check Balance
+        tab2 = ttk.Frame(notebook)
+        notebook.add(tab2, text="Check Balance")
+        
+        ttk.Label(tab2, text="Card ID:").grid(row=0, column=0, padx=5, pady=5)
+        check_entry = ttk.Entry(tab2, width=20)
+        check_entry.grid(row=0, column=1, padx=5, pady=5)
+        
+        balance_label = ttk.Label(tab2, text="", font=('Courier', 16, 'bold'))
+        balance_label.grid(row=1, column=0, columnspan=2, pady=20)
+        
+        def check_balance():
+            card_id = check_entry.get().strip()
+            balance = self.register.get_gift_card_balance(card_id)
+            balance_label.config(text=f"Balance: ${balance:.2f}")
+        
+        ttk.Button(tab2, text="Check", command=check_balance).grid(row=2, column=0, columnspan=2, pady=10)
+        
+        # Tab 3: Redeem
+        tab3 = ttk.Frame(notebook)
+        notebook.add(tab3, text="Redeem")
+        
+        ttk.Label(tab3, text="Card ID:").grid(row=0, column=0, padx=5, pady=5)
+        redeem_card_entry = ttk.Entry(tab3, width=20)
+        redeem_card_entry.grid(row=0, column=1, padx=5, pady=5)
+        
+        ttk.Label(tab3, text="Amount to Redeem:").grid(row=1, column=0, padx=5, pady=5)
+        redeem_amount_entry = ttk.Entry(tab3, width=15)
+        redeem_amount_entry.grid(row=1, column=1, padx=5, pady=5)
+        
+        def redeem():
+            try:
+                card_id = redeem_card_entry.get().strip()
+                amount = float(redeem_amount_entry.get())
+                if self.register.redeem_gift_card(card_id, amount):
+                    messagebox.showinfo("Success", f"Redeemed ${amount:.2f} from card {card_id}")
+                    dialog.destroy()
+                else:
+                    messagebox.showerror("Error", "Insufficient balance or invalid card")
+            except ValueError:
+                messagebox.showerror("Error", "Invalid amount")
+        
+        ttk.Button(tab3, text="Redeem", command=redeem).grid(row=2, column=0, columnspan=2, pady=20)
+        
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=5)
+    
+    def show_customer_dialog(self):
+        """Dialog for customer management"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Customer Management")
+        dialog.geometry("500x500")
+        dialog.transient(self.master)
+        
+        notebook = ttk.Notebook(dialog)
+        notebook.pack(fill='both', expand=True, padx=10, pady=10)
+        
+        # Tab 1: Add Customer
+        tab1 = ttk.Frame(notebook)
+        notebook.add(tab1, text="Add Customer")
+        
+        fields = [
+            ("Customer ID:", "cust_id", f"CUST-{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"),
+            ("Name:", "name", ""),
+            ("Email:", "email", ""),
+            ("Phone:", "phone", ""),
+        ]
+        
+        entries = {}
+        for i, (label, key, default) in enumerate(fields):
+            ttk.Label(tab1, text=label).grid(row=i, column=0, padx=5, pady=5, sticky='e')
+            entry = ttk.Entry(tab1, width=25)
+            entry.grid(row=i, column=1, padx=5, pady=5)
+            entry.insert(0, default)
+            entries[key] = entry
+        
+        def add_customer():
+            customer_id = entries['cust_id'].get().strip()
+            name = entries['name'].get().strip()
+            email = entries['email'].get().strip()
+            phone = entries['phone'].get().strip()
+            
+            if not name:
+                messagebox.showerror("Error", "Name is required")
+                return
+            
+            if self.register.add_customer(customer_id, name, email, phone):
+                messagebox.showinfo("Success", f"Customer {name} added")
+                dialog.destroy()
+        
+        ttk.Button(tab1, text="Add Customer", command=add_customer).grid(row=len(fields), column=0, columnspan=2, pady=20)
+        
+        # Tab 2: Lookup Customer
+        tab2 = ttk.Frame(notebook)
+        notebook.add(tab2, text="Lookup")
+        
+        ttk.Label(tab2, text="Customer ID:").grid(row=0, column=0, padx=5, pady=5)
+        lookup_entry = ttk.Entry(tab2, width=20)
+        lookup_entry.grid(row=0, column=1, padx=5, pady=5)
+        
+        info_text = scrolledtext.ScrolledText(tab2, height=15, width=50)
+        info_text.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
+        
+        def lookup():
+            customer_id = lookup_entry.get().strip()
+            customer = self.register.get_customer(customer_id)
+            info_text.delete('1.0', tk.END)
+            if customer:
+                info_text.insert(tk.END, f"Customer ID: {customer['customer_id']}\n")
+                info_text.insert(tk.END, f"Name: {customer['name']}\n")
+                info_text.insert(tk.END, f"Email: {customer['email']}\n")
+                info_text.insert(tk.END, f"Phone: {customer['phone']}\n")
+                info_text.insert(tk.END, f"Total Purchases: ${customer['total_purchases']:.2f}\n")
+                info_text.insert(tk.END, f"Visit Count: {customer['visit_count']}\n")
+            else:
+                info_text.insert(tk.END, "Customer not found")
+        
+        ttk.Button(tab2, text="Lookup", command=lookup).grid(row=2, column=0, columnspan=2, pady=10)
+        
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=5)
     
     def show_recall_dialog(self):
         """Dialog to recall held transactions"""
