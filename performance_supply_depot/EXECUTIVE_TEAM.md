@@ -84,10 +84,10 @@ A multi-brand, AGI-powered company built on:
 
 | Agent | Role | Function |
 |-------|------|----------|
-| **PIPELINE** | Integrations | APIs, data flow |
-| **STACKTRACE** | Debugging | Errors, logs, diagnostics |
-| **BUGCATCHER** | QA | Testing, validation |
-| **TAPTAP** | UX | User experience, interface |
+| **STACKTRACE** | Chief Software Architect | System architecture, technical standards |
+| **TAPTAP** | Lead Mobile Developer | Mobile apps, UI/UX implementation |
+| **PIPELINE** | Backend Engineer | APIs, integrations, infrastructure |
+| **BUGCATCHER** | QA & Testing | Testing, quality assurance, security testing |
 
 ---
 

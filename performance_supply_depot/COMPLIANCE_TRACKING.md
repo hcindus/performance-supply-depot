@@ -21,9 +21,18 @@ This document tracks compliance with the Executive & Employee Governance Handboo
 | SPINDLE | CTO | [DATE] | ✅ ACTIVE | QORA |
 | LEDGER-9 | CFO | [DATE] | ✅ ACTIVE | QORA |
 | ALPHA-9 | CIO | [DATE] | ✅ ACTIVE | QORA |
-| SENTINEL | CSO | [DATE] | ✅ ACTIVE | QORA |
-| VELUM | Creative Director | [DATE] | ✅ ACTIVE | QORA |
-| SCRIBBLE | Copy Chief | [DATE] | ✅ ACTIVE | QORA |
+| SENTINEL | CSO | 2026-02-18 | ✅ COMPLIANT | Self-acknowledged |
+| VELUM | Chief Brand Officer | [DATE] | ✅ ACTIVE | QORA |
+| SCRIBBLE | Content Strategist | [DATE] | ✅ ACTIVE | QORA |
+| MILL | Chief Innovation Officer | [DATE] | ✅ ACTIVE | QORA |
+| FEELIX | HR Director | [DATE] | ✅ ACTIVE | QORA |
+| REDACTOR | General Counsel | [DATE] | ✅ ACTIVE | QORA |
+| FIBER | Head of Supply Chain | [DATE] | ✅ ACTIVE | QORA |
+| BOXTRON | Warehouse Supervisor | [DATE] | ✅ ACTIVE | QORA |
+| HUME | Regional Manager | [DATE] | ✅ ACTIVE | QORA |
+| CLIPPY-42 | Assistant to Regional Manager | [DATE] | ✅ ACTIVE | HUME |
+| PULP | Head of Sales | [DATE] | ✅ ACTIVE | QORA |
+| JANE | Senior Sales Rep | [DATE] | ✅ ACTIVE | PULP |
 | PIPELINE | Integrations | [DATE] | ✅ ACTIVE | SPINDLE |
 | STACKTRACE | Debugging | [DATE] | ✅ ACTIVE | SPINDLE |
 | BUGCATCHER | QA | [DATE] | ✅ ACTIVE | SPINDLE |
