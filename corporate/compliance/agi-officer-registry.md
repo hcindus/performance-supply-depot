@@ -47,6 +47,7 @@
 |------------|------|----------------|------------------|--------|
 | Main Session AGI | General Operations | Agent AGI | N/A | COMPLIANT (no officer status) |
 | Dusty | Dust Consolidation Bot | Agent AGI | N/A | PENDING REVIEW |
+| rEGGIsTARR | Point-of-Sale System | Operational AGI | 1.0 | ACTIVE |
 
 *Agent-level AGIs do not hold officer status and are subject to Operational AGI governance tier.*
 
