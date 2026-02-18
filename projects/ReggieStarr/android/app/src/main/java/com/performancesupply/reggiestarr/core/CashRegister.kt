@@ -17,6 +17,31 @@ class CashRegister(
         TaxRate("Vape", 0.125)
     )
     
+    // ==================== @/FOR MULTIPLIER ====================
+    
+    /**
+     * Parse @/For multiplier syntax: "6 @ $3.50" or "10 @ 5.00"
+     * Returns Pair(quantity, unitPrice) or null if not multiplier syntax
+     */
+    fun parseMultiplierSyntax(input: String): Pair<Double, Double>? {
+        val atIndex = input.indexOf('@')
+        if (atIndex == -1) return null
+        
+        try {
+            val qtyStr = input.substring(0, atIndex).trim()
+            val priceStr = input.substring(atIndex + 1).trim()
+                .replace("$", "")
+                .replace(",", "")
+            
+            val quantity = qtyStr.toDouble()
+            val unitPrice = priceStr.toDouble()
+            
+            return Pair(quantity, unitPrice)
+        } catch (e: NumberFormatException) {
+            return null
+        }
+    }
+    
     // ==================== CLERK OPERATIONS ====================
     
     fun login(clerk: Clerk): Boolean {
@@ -73,6 +98,44 @@ class CashRegister(
             unitPrice = product.price,
             taxType = taxType,
             discountAmount = discountAmount,
+            discountPercent = discountPercent
+        )
+        
+        transaction.items.add(lineItem)
+        
+        return Result.success(lineItem)
+    }
+    
+    /**
+     * Add item using @/For multiplier syntax: "6 @ $3.50" for retail operations
+     * @param input The @/For string (e.g., "6 @ 3.50")
+     * @param taxType Tax type to apply
+     * @param discountPercent Optional discount percentage
+     * @return Result with LineItem or failure
+     */
+    fun addItemWithMultiplier(
+        input: String,
+        taxType: TaxType = TaxType.STANDARD,
+        discountPercent: Double = 0.0
+    ): Result<LineItem> {
+        val parsed = parseMultiplierSyntax(input)
+            ?: return Result.failure(IllegalArgumentException("Invalid @/For syntax: $input (expected: '6 @ 3.50')"))
+        
+        val transaction = currentTransaction ?: startTransaction()
+        
+        val (quantity, unitPrice) = parsed
+        
+        val lineItem = LineItem(
+            product = Product(
+                plu = "@MULT",
+                name = "Multiplied Item",
+                price = unitPrice,
+                isWeighed = false
+            ),
+            quantity = quantity,
+            weight = null,
+            unitPrice = unitPrice,
+            taxType = taxType,
             discountPercent = discountPercent
         )
         
