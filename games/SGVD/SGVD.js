@@ -869,6 +869,251 @@ function drawShip(ship, type, color) {
     }
 }
 
+// ==================== FIRST PERSON VIEW ====================
+
+function drawFirstPersonView() {
+    canvas.Clear();
+    canvas.SetPaintColor(colors.game.background);
+    canvas.DrawRectangle(0, 0, 1, 1);
+    
+    // Calculate camera position (behind and above player)
+    var cameraZ = player.z - Math.sin(player.pitch) * 50 + 20;
+    var cameraX = player.x - Math.cos(player.angle) * Math.cos(player.pitch) * 50;
+    var cameraY = player.y - Math.sin(player.angle) * Math.cos(player.pitch) * 50;
+    
+    // Draw stars with perspective
+    stars.forEach(s => {
+        var proj = project3DToScreen(s.x, s.z, s.y, cameraX, cameraZ);
+        if (proj && proj.depth < 500) {
+            canvas.SetPaintColor(colors.game.star);
+            canvas.SetAlpha(s.alpha);
+            canvas.DrawCircle(proj.x / SW, proj.y / SH, s.size / SW);
+        }
+    });
+    canvas.SetAlpha(1);
+    
+    // Draw solar systems
+    [solarSystem1, solarSystem2].forEach(system => {
+        system.forEach(body => {
+            var proj = project3DToScreen(body.x, body.z, body.y, cameraX, cameraZ);
+            if (proj && proj.depth < 1000) {
+                canvas.SetPaintColor(body.color);
+                var size = body.radius / proj.depth * 100;
+                canvas.DrawCircle(proj.x / SW, proj.y / SH, Math.max(size / SW, 0.005));
+                if (body.rings) {
+                    canvas.SetPaintColor(body.rings.color);
+                    canvas.DrawCircle(proj.x / SW, proj.y / SH, body.rings.radius / proj.depth * 100 / SW);
+                }
+                if (body.moons) {
+                    body.moons.forEach(moon => {
+                        var moonProj = project3DToScreen(moon.x, moon.z, moon.y, cameraX, cameraZ);
+                        if (moonProj) {
+                            canvas.SetPaintColor(moon.color);
+                            canvas.DrawCircle(moonProj.x / SW, moonProj.y / SH, moon.radius / moonProj.depth * 100 / SW);
+                        }
+                    });
+                }
+            }
+        });
+    });
+    
+    // Draw enemies
+    enemies.forEach(e => {
+        if (e.hits < e.maxHits) {
+            var model = shipModels[e.type];
+            var rotated = rotateY(model.vertices, e.angle);
+            rotated = rotateX(rotated, e.pitch);
+            var projected = rotated.map(v => project3DToScreen(e.x + v[0], e.z + v[1], e.y + v[2], cameraX, cameraZ));
+            canvas.SetPaintColor(factions[e.faction]);
+            for (var i = 0; i < model.edges.length; i++) {
+                var [start, end] = model.edges[i];
+                if (projected[start] && projected[end] && projected[start].depth < 500) {
+                    canvas.DrawLine(projected[start].x / SW, projected[start].y / SH, projected[end].x / SW, projected[end].y / SH);
+                }
+            }
+        }
+    });
+    
+    // Draw debris
+    debris.forEach(d => {
+        var model = debrisModel;
+        var scaledVertices = model.vertices.map(v => [v[0] * (d.size / 3), v[1] * (d.size / 3), v[2] * (d.size / 3)]);
+        var rotated = rotateX(scaledVertices, d.angleX);
+        rotated = rotateY(rotated, d.angleY);
+        rotated = rotateZ(rotated, d.angleZ);
+        var projected = rotated.map(v => project3DToScreen(d.x + v[0], d.z + v[1], d.y + v[2], cameraX, cameraZ));
+        canvas.SetPaintColor(colors.game.debris);
+        for (var i = 0; i < model.edges.length; i++) {
+            var [start, end] = model.edges[i];
+            if (projected[start] && projected[end] && projected[start].depth < 500) {
+                canvas.DrawLine(projected[start].x / SW, projected[start].y / SH, projected[end].x / SW, projected[end].y / SH);
+            }
+        }
+    });
+    
+    // Draw projectiles
+    projectiles.forEach(p => {
+        var proj = project3DToScreen(p.x, p.z, p.y, cameraX, cameraZ);
+        if (proj && proj.depth < 500) {
+            canvas.SetPaintColor(weapons[p.weapon].color);
+            canvas.SetTextSize(20);
+            canvas.DrawText(weapons[p.weapon].symbol, proj.x / SW, proj.y / SH);
+        }
+    });
+    
+    // Draw artifacts
+    artifacts.forEach(a => {
+        var proj = project3DToScreen(a.x, a.z, a.y, cameraX, cameraZ);
+        if (proj && proj.depth < 500) {
+            canvas.SetPaintColor(weapons[a.weapon].color);
+            var symbol = Math.sin(Date.now() / 500) > 0 ? "." : "•";
+            canvas.SetTextSize(20);
+            canvas.DrawText(symbol, proj.x / SW, proj.y / SH, "center");
+        }
+    });
+    
+    // Draw crosshair
+    canvas.SetPaintColor("#FF0000");
+    canvas.SetLineWidth(2);
+    canvas.DrawLine(0.5 - 0.02, 0.5, 0.5 + 0.02, 0.5);
+    canvas.DrawLine(0.5, 0.5 - 0.02, 0.5, 0.5 + 0.02);
+    
+    drawHUD();
+    canvas.Update();
+}
+
+// ==================== THIRD PERSON VIEW ====================
+
+function drawThirdPersonView() {
+    canvas.Clear();
+    canvas.SetPaintColor(colors.game.background);
+    canvas.DrawRectangle(0, 0, 1, 1);
+    
+    // Camera position: behind and above player
+    var cameraZ = player.z - Math.sin(player.pitch) * 80 + 30;
+    var cameraX = player.x - Math.cos(player.angle) * Math.cos(player.pitch) * 80;
+    var cameraY = player.y - Math.sin(player.angle) * Math.cos(player.pitch) * 80;
+    
+    // Draw stars
+    stars.forEach(s => {
+        var proj = project3DToScreen(s.x, s.z, s.y, cameraX, cameraZ);
+        if (proj) {
+            canvas.SetPaintColor(colors.game.star);
+            canvas.SetAlpha(s.alpha);
+            canvas.DrawCircle(proj.x / SW, proj.y / SH, s.size / SW);
+        }
+    });
+    canvas.SetAlpha(1);
+    
+    // Draw solar systems
+    [solarSystem1, solarSystem2].forEach(system => {
+        system.forEach(body => {
+            var proj = project3DToScreen(body.x, body.z, body.y, cameraX, cameraZ);
+            if (proj) {
+                canvas.SetPaintColor(body.color);
+                var size = body.radius / proj.depth * 100;
+                canvas.DrawCircle(proj.x / SW, proj.y / SH, Math.max(size / SW, 0.005));
+                if (body.rings) {
+                    canvas.SetPaintColor(body.rings.color);
+                    canvas.DrawCircle(proj.x / SW, proj.y / SH, body.rings.radius / proj.depth * 100 / SW);
+                }
+                if (body.moons) {
+                    body.moons.forEach(moon => {
+                        var moonProj = project3DToScreen(moon.x, moon.z, moon.y, cameraX, cameraZ);
+                        if (moonProj) {
+                            canvas.SetPaintColor(moon.color);
+                            canvas.DrawCircle(moonProj.x / SW, moonProj.y / SH, moon.radius / moonProj.depth * 100 / SW);
+                        }
+                    });
+                }
+            }
+        });
+    });
+    
+    // Draw player ship (visible in third person)
+    if (player.hits < MAX_HITS) {
+        var model = shipModels[player.type];
+        var rotated = rotateY(model.vertices, player.angle);
+        rotated = rotateX(rotated, player.pitch);
+        var projected = rotated.map(v => project3DToScreen(player.x + v[0], player.z + v[1], player.y + v[2], cameraX, cameraZ));
+        canvas.SetPaintColor(colors.game.player);
+        for (var i = 0; i < model.edges.length; i++) {
+            var [start, end] = model.edges[i];
+            if (projected[start] && projected[end]) {
+                canvas.DrawLine(projected[start].x / SW, projected[start].y / SH, projected[end].x / SW, projected[end].y / SH);
+            }
+        }
+        // Draw thrust trail
+        if (player.thrusting) {
+            canvas.SetPaintColor(colors.game.trail);
+            var rear = projected[8] || projected[0];
+            var trailX = rear.x - Math.cos(player.angle) * 20;
+            var trailY = rear.y - Math.sin(player.angle) * 20;
+            canvas.DrawCircle(trailX / SW, trailY / SH, 5 / SW);
+        }
+    }
+    
+    // Draw enemies
+    enemies.forEach(e => {
+        if (e.hits < e.maxHits) {
+            var model = shipModels[e.type];
+            var rotated = rotateY(model.vertices, e.angle);
+            rotated = rotateX(rotated, e.pitch);
+            var projected = rotated.map(v => project3DToScreen(e.x + v[0], e.z + v[1], e.y + v[2], cameraX, cameraZ));
+            canvas.SetPaintColor(factions[e.faction]);
+            for (var i = 0; i < model.edges.length; i++) {
+                var [start, end] = model.edges[i];
+                if (projected[start] && projected[end]) {
+                    canvas.DrawLine(projected[start].x / SW, projected[start].y / SH, projected[end].x / SW, projected[end].y / SH);
+                }
+            }
+        }
+    });
+    
+    // Draw debris
+    debris.forEach(d => {
+        var model = debrisModel;
+        var scaledVertices = model.vertices.map(v => [v[0] * (d.size / 3), v[1] * (d.size / 3), v[2] * (d.size / 3)]);
+        var rotated = rotateX(scaledVertices, d.angleX);
+        rotated = rotateY(rotated, d.angleY);
+        rotated = rotateZ(rotated, d.angleZ);
+        var projected = rotated.map(v => project3DToScreen(d.x + v[0], d.z + v[1], d.y + v[2], cameraX, cameraZ));
+        canvas.SetPaintColor(colors.game.debris);
+        for (var i = 0; i < model.edges.length; i++) {
+            var [start, end] = model.edges[i];
+            if (projected[start] && projected[end]) {
+                canvas.DrawLine(projected[start].x / SW, projected[start].y / SH, projected[end].x / SW, projected[end].y / SH);
+            }
+        }
+    });
+    
+    // Draw projectiles
+    projectiles.forEach(p => {
+        var proj = project3DToScreen(p.x, p.z, p.y, cameraX, cameraZ);
+        if (proj) {
+            canvas.SetPaintColor(weapons[p.weapon].color);
+            canvas.SetTextSize(20);
+            canvas.DrawText(weapons[p.weapon].symbol, proj.x / SW, proj.y / SH);
+        }
+    });
+    
+    // Draw artifacts
+    artifacts.forEach(a => {
+        var proj = project3DToScreen(a.x, a.z, a.y, cameraX, cameraZ);
+        if (proj) {
+            canvas.SetPaintColor(weapons[a.weapon].color);
+            var symbol = Math.sin(Date.now() / 500) > 0 ? "." : "•";
+            canvas.SetTextSize(20);
+            canvas.DrawText(symbol, proj.x / SW, proj.y / SH, "center");
+        }
+    });
+    
+    drawHUD();
+    canvas.Update();
+}
+
+// ==================== TOP DOWN VIEW ====================
+
 function drawTopDownView() {
     canvas.Clear();
     canvas.SetPaintColor(colors.game.background);
@@ -994,7 +1239,11 @@ function gameLoop() {
         lastOODATime = Date.now();
     }
     
-    drawTopDownView();
+    // Render based on view mode
+    if (viewMode === "firstPerson") drawFirstPersonView();
+    else if (viewMode === "thirdPerson") drawThirdPersonView();
+    else drawTopDownView();
+    
     setTimeout(gameLoop, 16);
 }
 
