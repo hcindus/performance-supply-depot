@@ -124,11 +124,36 @@ ronstrapp/
 
 > "We're not just making songs. We're making happy little sounds that live together in a world. Every note has a home. Every beat has a friend."
 
-**Visual Identity:**
-- Warmth over cold precision
-- Nostalgia with modern polish
-- Brazilian color palette (greens, golds, ocean blues)
-- Studio as "creative sanctuary" aesthetic
+### Visual Identity — CAPTAIN'S VISION [2026-02-18 18:36 UTC]
+
+**Style Fusion: Golden Age Animation × Modern Anime/Photoreal**
+
+| Element | Direction |
+|---------|-----------|
+| **Base Era** | 1920s–1950s stylized cartoons |
+| **Color Foundation** | Black and white aesthetic |
+| **Modern Blend** | Anime styling + photoreal textures |
+| **Result** | Timeless nostalgia with contemporary edge |
+
+**Visual Language:**
+- Rubber-hose animation bones (Fleischer/Disney Golden Age)
+- Expressive, exaggerated proportions
+- Clean black/white contrast with selective modern color pops
+- Smooth anime-influenced facial expressions
+- Photoreal texturing on materials (wood, metal, fabric)
+- Brazilian warmth injected through subtle color accents
+
+**References:**
+- *Steamboat Willie* era Mickey Mouse
+- *Betty Boop* stylization
+- Cuphead (modern execution of 1930s aesthetic)
+- 1940s Warner Bros. squash-and-stretch
+- Modern anime cel-shading techniques
+
+**Studio as "Creative Sanctuary" Aesthetic:**
+- Vintage recording equipment rendered with photoreal detail
+- Black and white checkered floors, warm wood tones
+- Analog warmth meets digital precision
 
 **Musical Identity (Reggie):**
 - 8-bit/16-bit foundation

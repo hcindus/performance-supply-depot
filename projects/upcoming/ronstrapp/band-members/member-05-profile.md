@@ -41,10 +41,13 @@
 
 | Field | Value |
 |-------|-------|
-| **Style Category** | [ ] Realistic [ ] Stylized [ ] Anime [ ] Photoreal |
-| **Era Influence** | TBD (80s/90s/modern/future) |
-| **Signature Colors** | TBD |
-| **Fashion Notes** | TBD |
+| **Style Category** | ✅ 1920s-50s Cartoon + Modern Anime/Photoreal Fusion |
+| **Era Influence** | Golden Age Animation (1920s-1950s) + Anime + Photoreal textures |
+| **Base Palette** | Black and White with selective color accents |
+| **Animation Style** | Rubber-hose bones, expressive proportions, smooth anime faces |
+| **Texture Style** | Photoreal materials (wood, metal, fabric) on stylized forms |
+| **Signature Colors** | TBD (likely selective warm Brazilian tones) |
+| **Fashion Notes** | TBD (vintage aesthetics with modern flair) |
 
 ## Backstory
 

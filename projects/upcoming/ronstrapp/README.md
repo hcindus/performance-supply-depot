@@ -3,9 +3,11 @@
 
 ---
 
-**Status:** 📄 Concept Phase  
+**Status:** 📄 Concept Phase + 🎨 Visual Direction Established  
 **Created:** 2026-02-18 18:27 UTC  
 **Captain's Vision:** AI Band from mind → **HOUSE BAND**  
+**Visual Style:** 1920s–50s Golden Age Animation × Modern Anime/Photoreal  
+**Color Palette:** Black & White + Selective Brazilian Accents  
 **Type:** AI-Generated Musical Group / Studio Musicians  
 **Role:** Music for ALL Performance Supply Depot productions  
 **Inspiration:** Marina Sena (Brazilian MPB/experimental/pop)  
@@ -112,6 +114,38 @@ Marina Sena brings:
 - Accessible pop + Artistic depth
 - Chill vibes + Dance energy
 - Personal stories + Universal themes
+
+---
+
+## 🎨 Visual Identity
+
+### Captain's Vision: Golden Age Animation × Modern Fusion
+
+**[2026-02-18 18:36 UTC] Visual Direction Established:**
+
+| Element | Direction |
+|---------|-----------|
+| **Base Era** | 1920s–1950s stylized cartoons (Golden Age Animation) |
+| **Color Foundation** | Black and white aesthetic |
+| **Modern Blend** | Anime styling + photoreal textures |
+| **Animation Style** | Rubber-hose bones (Fleischer/Disney era), expressive proportions |
+| **Facial Style** | Smooth anime-influenced expressions |
+| **Materials** | Photoreal textures (wood, metal, fabric) on stylized forms |
+| **Color Strategy** | B&W base with selective warm Brazilian accents |
+| **Result** | Timeless nostalgia with contemporary edge |
+
+**Visual References:**
+- *Steamboat Willie* era Mickey Mouse / Fleischer Studios
+- *Betty Boop* stylization
+- Cuphead (modern 1930s aesthetic execution)
+- 1940s Warner Bros. squash-and-stretch
+- Modern anime cel-shading techniques
+
+**Studio Aesthetic:**
+- Vintage recording equipment with photoreal detail
+- Black and white checkered floors, warm wood tones
+- Analog warmth meets digital precision
+- The "creative sanctuary" as a timeless space
 
 ---
 
