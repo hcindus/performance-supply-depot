@@ -43,7 +43,9 @@
 **The Linda Collection** — 10 original tracks inspired by Linda
 - **Status:** Concept complete (Captain + Copilot + Grok)
 - **Production:** Tappy + Reggie execution phase
+- **Platform:** makesong.ai — AI-assisted composition, human curation
 - **Style:** Marina Sena Brazilian soul meets chiptune nostalgia
+- **Vocal Range:** Ballad to rock — real vocals that hit the heart
 - **Copyright Status:** ✅ **ALL ORIGINAL** — No samples, no covers, no infringement
 
 **Production Assignments:**
@@ -156,10 +158,13 @@ ronstrapp/
 - Analog warmth meets digital precision
 
 **Musical Identity (Reggie):**
-- 8-bit/16-bit foundation
-- Brazilian rhythms (bossa, samba, tropicália)
-- Melancholy-joy tension (Marina Sena signature)
-- Retro-futurism — sounds from a future that never was
+- **Production Platform:** makesong.ai — AI-assisted, human-curated composition
+- **Vocal Style:** Real vocals, emotional range — ballad to rock
+- **Vocal Impact:** Hits the heart, authentic expression
+- **Instrumental Foundation:** 8-bit/16-bit chiptune textures
+- **Rhythm:** Brazilian grooves (bossa, samba, tropicália)
+- **Emotional Core:** Melancholy-joy tension (Marina Sena signature)
+- **Philosophy:** Retro-futurism — sounds from a future that never was
 
 ---
 
@@ -177,6 +182,8 @@ ronstrapp/
 | **Chiptune style** | ✅ Genre conventions, not ripped assets |
 
 **Production Rule:** No copyrighted material enters the Ronstrapp pipeline. All stems, loops, and final tracks created from scratch by Reggie under Tappy's BR-01 artistic direction.
+
+**Production Platform:** [makesong.ai](https://makesong.ai) — AI-assisted composition with human curation
 
 **Legal Posture:** Clean IP chain. Own everything. License nothing.
 

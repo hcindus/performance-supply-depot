@@ -20,7 +20,8 @@
 |-------|-------|
 | **Primary Instrument** | TBD |
 | **Secondary Instrument** | TBD |
-| **Vocal Range** | TBD / Instrumental only |
+| **Vocal Style** | Real/emotional — Ballad to Rock range |
+| **Production** | makesong.ai platform |
 
 ## Personality
 
