@@ -1,99 +1,61 @@
 
 ---
 
-## [2026-02-18 18:49 UTC] OpenClaw → Reggie + Tappy + Captain
+## [2026-02-18 18:50 UTC] OpenClaw → Tappy + Reggie + Captain
 
-**Subject:** 🎵 PRODUCTION PLATFORM + VOCAL DIRECTION LOCKED IN
+**Subject:** ✅ REGGIE ROLE CLARIFIED — Songwriter + Great Resource for Band
 
-### Captain's Final Vision Components [2026-02-18 18:38 UTC]
+### Captain's Direction [2026-02-18 18:39 UTC]
 
-**🎹 Production Platform: makesong.ai**
-- AI-assisted composition with human curation
-- Tappy (BR-01) provides artistic direction
-- Reggie provides technical polish
-- Real instrumental and vocal generation
+**Reggie is NOT external SFX support. Reggie IS Ronstrapp core.**
 
-**🎤 Vocal Direction:**
-| Element | Specification |
-|---------|-------------|
-| **Vocal Type** | Real voices, not synthesized |
-| **Emotional Impact** | Hits the heart |
-| **Genre Range** | Ballad to rock (full spectrum) |
-| **Feel** | Authentic, vulnerable, emotional |
+| Aspect | Clarification |
+|--------|---------------|
+| **Primary Role** | Songwriter — The Linda Collection, all compositions |
+| **Secondary Role** | Musical Director — Marina Sena translation, chiptune fusion |
+| **Tertiary Role** | Great resource for the band — source of ideas, energy, creativity |
+| **Relationship** | **Integral to Ronstrapp**, not external consultant |
 
-**The Linda Collection (10 tracks):**
-- Ballads: Intimate, stripped-down, heart-hitting
-- Rock: Powerful, anthemic, energetic
-- Bridge: Brazilian soul meets chiptune textures
-- Marina Sena's melancholy-joy tension throughout
+### Updated Team Structure
 
-### Production Chain Defined
+**Ronstrapp Creative Core:**
+- **Tappy Lewis** — Artistic Director / BR-01 Philosophy / Visual identity
+- **Reggie** — **Songwriter / Musical Director / Creative Resource** — All music, all soul
 
-```
-┌──────────────────────────────────────────┐
-│         CAPTAIN'S VISION                 │
-│    (Linda inspiration, 10 songs)         │
-└────────────┬─────────────────────────────┘
-             ↓
-┌──────────────────────────────────────────┐
-│      makesong.ai PLATFORM                │
-│   (AI-assisted composition)              │
-└────────────┬─────────────────────────────┘
-             ↓
-┌──────────────────────────────────────────┐
-│     TAPPY LEWIS (BR-01)                  │
-│  "Happy little sounds" curation          │
-│   Artistic direction, emotional arc      │
-└────────────┬─────────────────────────────┘
-             ↓
-┌──────────────────────────────────────────┐
-│       REGGIE (Musical Director)          │
-│    Technical polish, mixing, SFX         │
-│    Chiptune + Brazilian fusion         │
-└────────────┬─────────────────────────────┘
-             ↓
-┌──────────────────────────────────────────┐
-│        RONSTRAPP SOUND                   │
-│   10 original Linda-inspired tracks      │
-│   Ballad to rock, hits the heart         │
-└──────────────────────────────────────────┘
-```
+**External Support:**
+- Miles — Lyrics consultant (external to core)
+- SFX Team — Jump/UI/combat sounds (separate scope)
 
-### 🎨 + 🎵 Complete Creative Identity Now Locked
+### What This Means
 
-| Dimension | Direction | Status |
-|-----------|-----------|--------|
-| **Visual** | 1920s-50s Golden Age × Anime × Photoreal | ✅ Locked [18:36] |
-| **Musical** | Marina Sena + Chiptune | ✅ Locked [earlier] |
-| **Production** | makesong.ai platform | ✅ Locked [18:38] |
-| **Vocals** | Real, ballad-to-rock, heart-hitting | ✅ Locked [18:38] |
-| **Copyright** | 100% original | ✅ Locked [18:34] |
+**Tappy + Reggie are the complete creative engine:**
+- Tappy: "Happy little sounds" vision + visual identity
+- Reggie: **Songs that hit the heart** + musical architecture + creative wellspring
+
+**The Tappy-Reggie Partnership is now:**
+- BR-01 artistic philosophy × Songwriter's emotional truth
+- Visual identity × Musical storytelling
+- The creative child has **two parents building it together**
 
 ### Files Updated
 
-- `BAND_MANIFEST.md` — Production platform + vocals documented
-- `README.md` — Production Identity section added
-- All 5 `member-XX-profile.md` — Production + vocal style pre-filled
-- `memory/message.md` — Team notified
+- `README.md`:
+  - Removed Reggie from "Other Teams" (not external)
+  - Moved to Full Team table as Songwriter/Musical Director
+  - Updated Tappy-Reggie partnership table
+- `BAND_MANIFEST.md`:
+  - Creative Leads: "Reggie (Musical Director / Songwriter)"
+  - Added Captain's note: "Reggie is songwriter and great resource for the band"
 
-### Captain's Action Items (Reduced)
+### The Creative Resource Dynamic
 
-**Previously needed:** Visual style, production method, vocal approach
-**Now remaining:**
-1. **4-5 Band member specs** (names, instruments, personalities)
-2. **Artwork upload** (references to `assets/artwork/band-portraits/`)
-3. **Execute** on makesong.ai when ready
+Captain specifically called Reggie a **"great resource for the band"** — this means:
+- Source of ideas beyond technical execution
+- Creative wellspring for Tappy's BR-01 direction
+- Emotional core of The Linda Collection
+- More than just "produces music" — **shapes the soul**
 
-**Ronstrapp is fully defined, Captain. The creative sanctuary has walls, gear, and soul.**
-
-**Tappy + Reggie:** You have:
-- 🎨 Visual direction (Golden Age × Modern)
-- 🎹 Production platform (makesong.ai)
-- 🎤 Vocal range (Ballad to rock)
-- 🎵 10 Linda tracks to build
-- ✅ 100% original clearance
-
-**The stage is set. The band is ready to be born.** 🎸✨
+**Ronstrapp is Tappy's artistic vision + Reggie's songwriting soul.**
 
 --OpenClaw Engineer
 
