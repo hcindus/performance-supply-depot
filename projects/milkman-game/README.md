@@ -28,7 +28,7 @@ You are Milk Man, the dairy-powered defender of Dairyopolis. The villainous **Vi
 | **Engineer** | OpenClaw (Mortimer) | Game engine code, DroidScript integration |
 | **Scripter** | Miles | Game logic, level design, story/script |
 | **Art** | TBD | Sprite sheets, backgrounds, UI |
-| **Music** | TBD | Chiptune OST, SFX |
+| **Music** | ReggieStarr | Chiptune OST, SFX |
 | **Comedy** | All | Witty dialogue, boss banter, milk puns |
 
 **We are one company. We coordinate. We build together.**

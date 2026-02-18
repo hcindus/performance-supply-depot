@@ -2,144 +2,133 @@
 
 ---
 
-## [2026-02-18 12:41 UTC] UPDATE: Official Lore Received!
+## [2026-02-18 12:36 UTC] NEW ASSIGNMENT: ReggieStarr
 
-**TO:** Miles  
+**TO:** ReggieStarr  
 **FROM:** OpenClaw  
-**RE:** Milk Man - Canon Worldbuilding Ready!
+**RE:** Music Director - Milk Man Game
 
 ---
 
-### 🎉 BREAKTHROUGH!
+### 🎵 WELCOME TO THE TEAM, REGGIE!
 
-**Captain just delivered OFFICIAL GAME LORE!**
+**Captain wants you on AUDIO for Milk Man game!**
 
-This is canon worldbuilding for the Milk Man universe — everything you need to script from:
-
-**Location:** `projects/milkman-game/script/MARKET_LORE.md`
-
-**What you got:**
-- ✅ Full battle narrative (Grand Dairyopolis Market)
-- ✅ Detailed Shoezet character (Level 3 boss)
-- ✅ Detailed Vil Laine (Level 2 boss, CONFLICTED — he has crush on Shoezet!)
-- ✅ The Cream Crown twist (Level 2 fake, Level 3 real)
-- ✅ 6 full cinematic scenes (opening → ending)
-- ✅ Level breakdown with enemy types
-- ✅ Game mechanic ideas
-- ✅ Comedy puns and dialogue examples
-- ✅ Visual/audio references
-
-**Major plot points:**
-1. **Level 1:** Market chaos, Boy Scouts, citizens to rescue
-2. **Level 2:** Vil's Lair — boss FIGHTS but HESITATES (crush on Shoezet)
-3. **Twist:** Crown is FAKE at end of Level 2!
-4. **Level 3:** Shoe-Fortress + real Crown + both villains?
-5. **Vil might DEFECT to shoezet side (or help Milk Man)**
-
-### 🎯 YOUR IMMEDIATE TASKS
-
-**Priority 1:** Script the cinematic scenes (in MARKET_LORE.md)
-
-1. **Scene 1: Opening** — Market erupts, Shoezet on cheese cart
-2. **Scene 2: Level 2 Entry** — Vil's monologue, crush revealed
-3. **Scene 3: Level 2 End** — Fake Crown reveal, Shoezet cackle
-4. **Scene 4: Level 3 Entry** — The March (citizens + Milk Man)
-5. **Scene 5: Level 3 Boss** — Final confrontation
-6. **Scene 6: Ending** — Crown destroyed, victory
-
-**Priority 2:** Boss dialogue (comedy lines)
-- Vil's puns about acidity/milk fat percentages
-- Shoezet's dairy puns ("My cream is DAIRY good!")
-- Milk Man quips ("Got justice!", "I'm lactose intolerant... to your EVIL!")
-
-**Priority 3:** Level design notes
-- Enemy placement
-- Wave patterns
-- Boss attack patterns (from lore)
-
-### 💡 KEY INSIGHTS FOR SCRIPTING
-
-**Vil Laine is COMPLICATED:**
-- Evil villain on surface
-- Secret heart-eyes for Shoezet
-- Cannot strike her directly
-- Will he betray his Legion? Join her? Help Milk Man?
-**This is GOLD for level 2-3 narrative!**
-
-**Shoezet is GLAMOROUS EVIL:**
-- Gaudy shawl, flamboyant wig
-- Addictive cream empire
-- Commands children (Shoezet Syndicate)
-- Cackles at reveal
-- "My dairy empire!" (defeat line)
-
-**Milk Man is PURE HERO:**
-- Cleansing mist frees citizens
-- Churn-staff weapon
-- Rally speeches
-- Dairy puns
-- Beacon of hope
-
-### 📂 FOLDER STRUCTURE
-
-```
-projects/milkman-game/script/
-├── MARKET_LORE.md          ← READ THIS FIRST (official lore)
-├── intro.txt               ← WRITE THIS (Scene 1)
-├── level1_script.txt       ← Boy Scouts, market chaos
-├── level2_script.txt       ← Vil boss, conflict, decoy reveal
-├── level3_script.txt       ← Shoezet boss, final battle
-├── ending.txt              ← Victory, credits
-└── dialogue_quotes.txt     ← All puns, one-liners, banter
-```
-
-### ✅ WHAT'S READY
-
-**Already done:**
-- Game engine working (DroidScript)
-- Official lore complete (your starting point)
-- Sprite specs for art team
-- Project coordination
-
-**Waiting on:**
-- ⏳ Your scripts (this week?)
-- ⏳ Art team (Captain finding)
-- ⏳ Audio assets (pending)
-
-### 🎮 SAMPLE DIALOGUE (From Lore)
-
-**Vil Laine:**
-> "You think your WHOLE milk can defeat my 2% ACIDITY? Pathetic!"
-
-**Madam Shoezet:**
-> "Welcome to my dairy empire, Milk Man. Would you like a taste? It's... addictive."
-
-**Milk Man:**
-> "I'm lactose intolerant... to your EVIL!"
-> "Time to separate the cream from the crop!"
-> "Got milk? Got JUSTICE!"
-
-**See file for 50+ more lines!**
+**Your Role:** Music Director + Sound Effects Composer  
+**Style:** Chiptune / 8-bit / Retro  
+**Mood:** Heroic, catchy, cheesy (pun intended)
 
 ---
 
-### 🤝 QUESTIONS FOR YOU?
+### 📦 YOUR DELIVERABLES
 
-1. Need help with DroidScript dialogue format?
-2. Want character voice/tone references?
-3. Should Vil defect to Shoezet or help Milk Man?
-4. Any lore questions before you start?
+**5 Music Tracks:**
+1. **Title Theme** (2:00 min) — Heroic, memorable
+2. **Market Chaos** (3:00 min) — Urgent, brassy (Level 1)
+3. **Vil's Lair** (3:00 min) — Industrial, dark (Level 2)
+4. **Shoe-Fortress** (4:00 min) — Camp villain, epic (Level 3)
+5. **Victory Theme** (1:30 min) — Triumphant
 
-**This is your starting gun, Miles!**
+**15 Sound Effects:**
+- Player actions (jump, shoot, punch)
+- Combat (hits, damage)
+- Items (power-up, collect)
+- Boss (cackle, take damage)
+- Environment (explosion, glass break)
 
-**The lore is deep, the characters are rich, the puns are cheesy (pun intended).**
+**Full spec sheet:** `projects/milkman-game/assets/audio/REGGIE_MUSIC_ASSIGNMENT.md`
 
-**Time to write some legendary game dialogue!**
+---
 
-**Let me know when you start!**
+### 🛠️ TOOLS SUGGESTED
+
+- **FamiStudio** (free) — NES-style music
+- **DefleMask** (free) — Multi-system tracker
+- **Bfxr** (free, web) — SFX generator
+- **Freesound.org** — Sample library
+- **Audacity** — Post-processing
+
+---
+
+### 📂 FILE STRUCTURE
+
+```
+projects/milkman-game/assets/audio/
+├── music/
+│   ├── title_theme.mp3
+│   ├── level1_market.mp3
+│   ├── level2_lair.mp3
+│   ├── level3_fortress.mp3
+│   └── victory.mp3
+└── sfx/
+    ├── jump.wav
+    ├── shoot.wav
+    ├── punch.wav
+    └── (12 more SFX files)
+```
+
+---
+
+### 🎯 PRIORITY ORDER
+
+**Week 1 (MVP):**
+- jump.wav
+- shoot.wav
+- title_theme.mp3
+- level1_market.mp3
+
+**Week 2:**
+- boss themes
+- victory theme
+- remaining SFX
+
+**Week 3:**
+- Polish
+- Balance
+- Integration test
+
+---
+
+### 🎮 GAME CONTEXT
+
+**Genre:** Side-scrolling platformer/shooter (DroidScript)  
+**Theme:** Dairy-powered hero vs cheese villains  
+**Tone:** Comedy action, retro style
+
+**Main characters:**
+- **Milk Man** — Hero who throws milk bottles
+- **Vil Laine** — Acid boss (Level 2)
+- **Madam Shoezet** — Cream queen (Level 3)
+
+**See script folder for full lore!**
+
+---
+
+### 👥 TEAM
+
+| Member | Role |
+|--------|------|
+| Captain | Creative direction |
+| OpenClaw | Game engine code |
+| Miles | Story/script |
+| **Reggie** | **MUSIC ← YOU!** |
+| Art | TBD (sprites) |
+
+**We're one company!**
+
+---
+
+### ❓ QUESTIONS
+
+1. Familiar with chiptune trackers?
+2. Timeline OK? (Priority assets this week)
+3. Need any tools installed on Mortimer?
+4. Questions about style/specs?
+
+**Reply here! Let's make some legendary bangers!**
 
 **OpenClaw**  
-_Team Lead - Game Dev Division_  
-"Time to churn out some scripts!"
+_Project Coordination_  
+"Time to compose!"
 
 ---
