@@ -537,6 +537,142 @@ class CashRegister:
         
         return True, remaining
     
+    def set_mode(self, mode: str) -> bool:
+        """Set TEC MA-79 operating mode"""
+        if mode in Config.MODES:
+            self.mode = mode
+            return True
+        return False
+    
+    def generate_group_report(self) -> str:
+        """Generate sales report by department/group"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT items FROM transactions WHERE status = 'completed'
+        ''')
+        
+        group_sales = defaultdict(float)
+        for row in cursor.fetchall():
+            items = json.loads(row[0])
+            for item in items:
+                if not item.get('voided', False):
+                    # Get department from product
+                    product = self.products.get(item.get('plu_code', ''))
+                    dept = product.department if product else 'Unknown'
+                    group_sales[dept] += item.get('total', 0)
+        
+        conn.close()
+        
+        report_lines = ["Group/Department Sales Report", "=" * 40]
+        for dept, total in sorted(group_sales.items(), key=lambda x: x[1], reverse=True):
+            report_lines.append(f"{dept:20s} ${total:10.2f}")
+        
+        return "\n".join(report_lines)
+    
+    def generate_plu_report(self) -> str:
+        """Generate sales report by PLU"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT items FROM transactions WHERE status = 'completed'
+        ''')
+        
+        plu_sales = defaultdict(lambda: {'quantity': 0, 'total': 0.0})
+        for row in cursor.fetchall():
+            items = json.loads(row[0])
+            for item in items:
+                if not item.get('voided', False):
+                    plu = item.get('plu_code', 'Unknown')
+                    plu_sales[plu]['quantity'] += item.get('quantity', 0)
+                    plu_sales[plu]['total'] += item.get('total', 0)
+        
+        conn.close()
+        
+        report_lines = ["PLU Sales Report", "=" * 50]
+        report_lines.append(f"{'PLU':10s} {'Name':20s} {'Qty':>8s} {'Total':>10s}")
+        report_lines.append("-" * 50)
+        
+        for plu, data in sorted(plu_sales.items(), key=lambda x: x[1]['total'], reverse=True):
+            product = self.products.get(plu)
+            name = product.name if product else 'Unknown'
+            report_lines.append(f"{plu:10s} {name[:20]:20s} {data['quantity']:8.1f} ${data['total']:9.2f}")
+        
+        return "\n".join(report_lines)
+    
+    def generate_period_report(self, period_type: str = 'hourly') -> str:
+        """Generate sales report by time period"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT start_time, total FROM transactions WHERE status = 'completed'
+        ''')
+        
+        period_sales = defaultdict(float)
+        for row in cursor.fetchall():
+            timestamp = datetime.datetime.fromisoformat(row[0])
+            total = row[1]
+            
+            if period_type == 'hourly':
+                key = timestamp.strftime('%H:00')
+            elif period_type == 'daily':
+                key = timestamp.strftime('%Y-%m-%d')
+            elif period_type == 'weekly':
+                key = timestamp.strftime('%Y-W%W')
+            elif period_type == 'monthly':
+                key = timestamp.strftime('%Y-%m')
+            else:
+                key = timestamp.strftime('%Y-%m-%d %H:00')
+            
+            period_sales[key] += total
+        
+        conn.close()
+        
+        report_lines = [f"{period_type.capitalize()} Sales Report", "=" * 40]
+        for period, total in sorted(period_sales.items()):
+            report_lines.append(f"{period:20s} ${total:10.2f}")
+        
+        return "\n".join(report_lines)
+    
+    def generate_sales_totals(self, periods: List[str] = None) -> str:
+        """Generate sales totals for multiple time periods"""
+        if periods is None:
+            periods = ['1 day', '1 week', '1 month', '3 months', '6 months', '1 year']
+        
+        now = datetime.datetime.now()
+        period_deltas = {
+            '1 day': datetime.timedelta(days=1),
+            '1 week': datetime.timedelta(weeks=1),
+            '3 weeks': datetime.timedelta(weeks=3),
+            '1 month': datetime.timedelta(days=30),
+            '3 months': datetime.timedelta(days=90),
+            '6 months': datetime.timedelta(days=180),
+            '1 year': datetime.timedelta(days=365),
+        }
+        
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        
+        report_lines = ["Sales Totals Report", "=" * 40]
+        
+        for period in periods:
+            delta = period_deltas.get(period, datetime.timedelta(days=1))
+            start_date = now - delta
+            
+            cursor.execute('''
+                SELECT SUM(total), COUNT(*) FROM transactions 
+                WHERE start_time >= ? AND status = 'completed'
+            ''', (start_date.isoformat(),))
+            
+            row = cursor.fetchone()
+            total_sales = row[0] if row[0] else 0.0
+            count = row[1] if row[1] else 0
+            
+            report_lines.append(f"{period:15s} ${total_sales:10.2f} ({count} transactions)")
+        
+        conn.close()
+        return "\n".join(report_lines)
+    
     def complete_transaction(self):
         if not self.current_transaction:
             return
@@ -1001,6 +1137,7 @@ class ReggieStarrGUI:
             ('Hold', '#4a6a6a'), ('Recall', '#6a6a4a'), ('Split', '#6a4a6a'),
             ('Currency', '#4a4a8a'), ('QR Pay', '#8a4a8a'), ('Update Rates', '#4a8a4a'),
             ('Layaway', '#6a6a6a'), ('Gift Card', '#8a6a4a'), ('Customer', '#4a6a8a'),
+            ('Mode', '#6a4a8a'), ('Reports', '#4a8a6a'), ('Z-Report', '#8a6a6a'),
         ]
         
         for i, (text, color) in enumerate(functions):
@@ -1149,8 +1286,38 @@ class ReggieStarrGUI:
             self.show_gift_card_dialog()
         elif func == "Customer":
             self.show_customer_dialog()
+        elif func == "Mode":
+            self.show_mode_dialog()
+        elif func == "Reports":
+            self.show_reports_dialog()
+        elif func == "Z-Report":
+            self.generate_z_report()
         
         self.update_display()
+
+    def generate_z_report(self):
+        """Generate and print Z-Report (End of Day)"""
+        report = self.register.generate_z_report()
+
+        # Show in dialog
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Z-Report (End of Day)")
+        dialog.geometry("500x600")
+        dialog.transient(self.master)
+
+        text = scrolledtext.ScrolledText(dialog, height=30, width=60, font=('Courier', 10))
+        text.pack(padx=10, pady=10, fill='both', expand=True)
+        text.insert('1.0', report)
+
+        # Save button
+        def save_and_close():
+            filename = f"zreport_{datetime.datetime.now().strftime('%Y%m%d')}.txt"
+            self.save_report(filename, report)
+            dialog.destroy()
+
+        ttk.Button(dialog, text="Save & Close", command=save_and_close).pack(pady=10)
+        ttk.Button(dialog, text="Print (Simulated)",
+                  command=lambda: messagebox.showinfo("Print", "Sending to printer...")).pack(pady=5)
     
     def show_layaway_dialog(self):
         """Dialog for layaway management"""
@@ -1440,7 +1607,110 @@ class ReggieStarrGUI:
         
         ttk.Button(dialog, text="Calculate", command=calculate_splits).pack(pady=5)
         ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=5)
-    
+
+    def show_mode_dialog(self):
+        """Dialog to change TEC MA-79 mode"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Select Mode")
+        dialog.geometry("400x300")
+        dialog.transient(self.master)
+
+        ttk.Label(dialog, text="Current Mode: " + self.register.mode, font=('Courier', 14, 'bold')).pack(pady=10)
+
+        mode_frame = ttk.Frame(dialog)
+        mode_frame.pack(pady=20)
+
+        for mode, description in Config.MODES.items():
+            btn = tk.Button(mode_frame, text=mode, width=15,
+                          bg='#4a4a6a' if mode != self.register.mode else '#2a6a2a',
+                          fg='white', font=('Arial', 12),
+                          command=lambda m=mode: self.change_mode(m, dialog))
+            btn.pack(pady=5)
+            ttk.Label(mode_frame, text=description, font=('Arial', 9)).pack()
+
+    def change_mode(self, mode, dialog):
+        if self.register.set_mode(mode):
+            self.lbl_mode.config(text=f"MODE: {mode}")
+            dialog.destroy()
+            self.update_display()
+
+    def show_reports_dialog(self):
+        """Dialog for comprehensive reporting"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Reports")
+        dialog.geometry("600x500")
+        dialog.transient(self.master)
+
+        notebook = ttk.Notebook(dialog)
+        notebook.pack(fill='both', expand=True, padx=10, pady=10)
+
+        # Tab 1: Group Report
+        tab1 = ttk.Frame(notebook)
+        notebook.add(tab1, text="Group/Dept")
+
+        text1 = scrolledtext.ScrolledText(tab1, height=20, width=70)
+        text1.pack(padx=10, pady=10, fill='both', expand=True)
+        text1.insert('1.0', self.register.generate_group_report())
+
+        ttk.Button(tab1, text="Save to File",
+                  command=lambda: self.save_report("group_report.txt", text1.get('1.0', tk.END))).pack(pady=5)
+
+        # Tab 2: PLU Report
+        tab2 = ttk.Frame(notebook)
+        notebook.add(tab2, text="PLU")
+
+        text2 = scrolledtext.ScrolledText(tab2, height=20, width=70)
+        text2.pack(padx=10, pady=10, fill='both', expand=True)
+        text2.insert('1.0', self.register.generate_plu_report())
+
+        ttk.Button(tab2, text="Save to File",
+                  command=lambda: self.save_report("plu_report.txt", text2.get('1.0', tk.END))).pack(pady=5)
+
+        # Tab 3: Period Report
+        tab3 = ttk.Frame(notebook)
+        notebook.add(tab3, text="Period")
+
+        period_var = tk.StringVar(value='hourly')
+        ttk.Radiobutton(tab3, text="Hourly", variable=period_var, value='hourly').pack()
+        ttk.Radiobutton(tab3, text="Daily", variable=period_var, value='daily').pack()
+        ttk.Radiobutton(tab3, text="Weekly", variable=period_var, value='weekly').pack()
+        ttk.Radiobutton(tab3, text="Monthly", variable=period_var, value='monthly').pack()
+
+        text3 = scrolledtext.ScrolledText(tab3, height=15, width=70)
+        text3.pack(padx=10, pady=10, fill='both', expand=True)
+
+        def generate_period():
+            text3.delete('1.0', tk.END)
+            text3.insert('1.0', self.register.generate_period_report(period_var.get()))
+
+        ttk.Button(tab3, text="Generate", command=generate_period).pack(pady=5)
+        ttk.Button(tab3, text="Save to File",
+                  command=lambda: self.save_report(f"period_{period_var.get()}_report.txt", text3.get('1.0', tk.END))).pack(pady=5)
+
+        # Tab 4: Sales Totals
+        tab4 = ttk.Frame(notebook)
+        notebook.add(tab4, text="Sales Totals")
+
+        text4 = scrolledtext.ScrolledText(tab4, height=20, width=70)
+        text4.pack(padx=10, pady=10, fill='both', expand=True)
+        text4.insert('1.0', self.register.generate_sales_totals())
+
+        ttk.Button(tab4, text="Refresh",
+                  command=lambda: text4.insert('1.0', self.register.generate_sales_totals())).pack(pady=5)
+        ttk.Button(tab4, text="Save to File",
+                  command=lambda: self.save_report("sales_totals.txt", text4.get('1.0', tk.END))).pack(pady=5)
+
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=10)
+
+    def save_report(self, filename, content):
+        """Save report to file"""
+        try:
+            with open(filename, 'w') as f:
+                f.write(content)
+            messagebox.showinfo("Success", f"Report saved to {filename}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not save report: {e}")
+
     def show_currency_dialog(self):
         """Dialog for currency conversion"""
         dialog = tk.Toplevel(self.master)
