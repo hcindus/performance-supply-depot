@@ -3,7 +3,7 @@
 **Formation Date:** 2026-02-18  
 **Studio:** Ronstrapp Creative Collective  
 **Genre:** BR-01 meets Chiptune + Brazilian Soul  
-**Creative Leads:** Tappy Lewis (Artistic Director) + Reggie (Musical Director)
+**Creative Leads:** Tappy Lewis (Artistic Director / BR-01) + Reggie (Musical Director / Songwriter)
 
 ---
 
@@ -47,6 +47,8 @@
 - **Style:** Marina Sena Brazilian soul meets chiptune nostalgia
 - **Vocal Range:** Ballad to rock — real vocals that hit the heart
 - **Copyright Status:** ✅ **ALL ORIGINAL** — No samples, no covers, no infringement
+
+**Captain's Note [2026-02-18 18:39 UTC]:** Reggie is songwriter and great resource for the band — core creative engine alongside Tappy.
 
 **Production Assignments:**
 

@@ -58,8 +58,8 @@ Ronstrapp doesn't just make music. Ronstrapp **IS the sound** of everything we b
 │                                                  │
 │   Other Teams:                                   │
 │   - Miles (Scripts)                              │
-│   - Reggie (SFX - but Ronstrapp does MUSIC)      │
 │   - OpenClaw (Engineering)                       │
+│   - Captain (Vision/Executive Producer)           │
 └──────────────────────────────────────────────────┘
 ```
 
@@ -201,12 +201,12 @@ Ronstrapp Sound
 
 **Ronstrapp does:** Full compositions, soundtracks, themes, songs
 
-### Supporting Team
+### Supporting Team (External to Ronstrapp Core)
 
 | Artist | Role | Relationship to Ronstrapp | Notes |
 |--------|------|----------------------------|-------|
-| **Miles** | Scriptwriter/Lyrics | Provides lyrical concepts | May write lyrics for Ronstrapp tracks | 
-| **Reggie** | SFX Designer | Distinct from Ronstrapp | **Reggie does SFX (jumps, attacks, UI sounds)** |
+| **Miles** | Scriptwriter/Lyrics | External consultant | May write lyrics for Ronstrapp tracks |
+| **SFX Team** | Sound Effects | Distinct from music production | **Jump/UI/combat SFX handled separately** |
 
 ### The Tappy-Reggie Partnership
 **"BR-01 meets Chiptune"**
@@ -215,10 +215,10 @@ Ronstrapp Sound
 
 | Role | Tappy | Reggie | Collaboration |
 |------|-------|--------|---------------|
-| **Title** | COO / CMO / BR-01 Artist | Chiptune Master / SFX Designer | Creative Duo |
+| **Title** | COO / CMO / BR-01 Artist | Songwriter / Musical Director / Chiptune Master | Creative Duo |
 | **For Ronstrapp** | Artistic vision, brand aesthetic | Musical foundation, sonic identity | Building the house band |
-| **Tappy does** | Artistic direction, visual identity, Bob Ross-style creative philosophy | — | Leads aesthetic |
-| **Reggie does** | — | Musical composition, genre translation | Provides sound |
+| **Tappy does** | Artistic direction, visual identity, BR-01 creative philosophy | — | Leads aesthetic |
+| **Reggie does** | — | **Songwriting**, musical composition, genre translation, creative resource | Provides sound & soul |
 | **Together** | Define Ronstrapp's visual/sonic brand | Create authentic Brazilian meets AI identity | The core creative team |
 
 **Why Tappy + Reggie work:**
@@ -236,7 +236,8 @@ Ronstrapp Sound
 | Person | Role | Scope | Status |
 |--------|------|-------|--------|
 | **Tappy** | Artistic Director / COO-CMO Lead | Visual identity, brand aesthetic | ✅ **Active with Reggie** |
-| **Reggie** | Musical Director / Composer | Marina Sena genre translation | ✅ **Active with Tappy** |
+| **Reggie** | Musical Director / Composer / Songwriter | Marina Sena genre translation, The Linda Collection | ✅ **Active with Tappy** |
+| **Reggie's Role** | Core creative resource for band | Songwriter + musical architect + great resource | ✅ **Integral to Ronstrapp** |
 | **Miles** | Lyrics Consultant | Concepts, story, words | 🟢 Available |
 | **Captain** | Executive Producer / Vision | Band members, style, decisions | ⏳ **Awaiting band design** |
 | **OpenClaw** | Production Coordinator | Studio coordination, commits | ✅ Active |
