@@ -1,172 +1,212 @@
 
-
 ---
 
-## [2026-02-18 12:42 UTC] MAJOR UPDATE: Action Figures!
+## [2026-02-18 12:44 UTC] ART DIRECTION COMPLETE!
 
 **TO:** Miles, Reggie, Team  
 **FROM:** OpenClaw  
-**RE:** EXPANSION - Milk Man Action Figures!
+**RE:** Sprite Design Guide - Captain's Vision
 
 ---
 
-### 🎉 CAPTAIN'S NEW VISION: PHYSICAL PRODUCT!
+### 🎨 CAPTAIN DELIVERS ART DIRECTION!
 
-**We're making ACTION FIGURES!**
+**Full sprite specifications ready!**
 
-Based on our CYLON-PRIME robot chassis—**tailored for Milk Man!**
-
----
-
-### 📦 THE FIGURE LINE
-
-**Scale:** 1:6 (12 inches tall - BIG!)  
-**Base:** 48-part CYLON-PRIME chassis + custom hero details  
-**Material:** PETG + PLA + flexible TPU  
-**Print time:** ~120 hours per figure
+**File:** `projects/milkman-game/assets/sprites/SPRITE_DESIGN_GUIDE.md` (12KB)
 
 ---
 
-### 🥛 FIGURE 1: MILK MAN (Hero)
+### 🎮 AESTHETIC
 
-**Features:**
-- ✅ 18 points articulation
-- ✅ Light-up milk bottles (blue LED)
-- ✅ Magnetic cape attachment
-- ✅ Interchangeable hands
-- ✅ Churn-staff weapon (7" long)
-- ✅ Hip holsters with bottles
-- ✅ Display base: "Dairyopolis Street"
-
-**Colors:** White ⬜ / Gold 🟨 / Blue 🟦
-
-**Special:** LED eyes glow, MM logo embossed
+**Style:** 80s/90s 8-bit to 16-bit  
+**Inspiration:** Mega Man, Contra, Super Mario, Castlevania  
+**Palettes:** Limited colors, bold outlines, simple animations
 
 ---
 
-### 🧪 FIGURE 2: VIL LAINE (Villain)
+### 📐 DIMENSIONS SPECIFIED
 
-**Features:**
-- ✅ Smog contraption backpack
-- ✅ Acid green glow effects
-- ✅ Corrosion texture paint
-- ✅ Acid bottle accessories (x3)
-- ✅ Display base: Factory scene
+| Character | Size | Frames | Colors |
+|-----------|------|--------|--------|
+| **Milk Man** | 32x32 | 13 | 8 |
+| **Vil Laine** | 48x48 | 16 | 8 |
+| **Shoezet** | 48x48 | 18 | 8-10 |
+| **Boy Scouts** | 16x16 | 5 | 4 |
+| **Children** | 16x16 | 5 | 4 |
 
-**Colors:** Black ⬛ / Purple 🟪 / Acid Green 🟩
-
-**Special:** Red LED eyes, villain cape
-
----
-
-### 👠 FIGURE 3: MADAM SHOEZET (Boss)
-
-**Features:**
-- ✅ Flamboyant wig piece
-- ✅ HIGH HEELS (modified feet!)
-- ✅ Fabric shawl (TPU or cloth)
-- ✅ Cream whip staff
-- ✅ Display base: Throne scene
-
-**Colors:** Pink 💗 / Cream ⬜ / Gold 🟨
-
-**Special:** Purple LED eyes, Cream Crown accessory
+**Total frames to create:** ~57 sprite frames
 
 ---
 
-### 🔧 WHAT WE GOT
+### 🎯 PRIORITY PRODUCTION
 
-**Files Created:**
+**Week 1 - MVP:**
+1. Milk Man idle (2 frames)
+2. Milk Man walk (4 frames)
+3. Milk Man jump (2 frames)
+4. Milk Man attack (3 frames)
+5. Boy Scouts (5 frames)
 
-1. **ACTION_FIGURE_SPEC.md** (11KB)
-   - Full part breakdowns
-   - Painting guides
-   - Assembly instructions
-   - Cost breakdown ($66/figure)
+**Week 2 - Bosses:**
+1. Vil Laine idle + walk
+2. Vil throw attack
+3. Shoezet idle
+4. Shoezet beam
 
-2. **milkman_figure.scad** (8.8KB)
-   - OpenSCAD parametric source
-   - Generates all STL files
-   - Modular: swap parts for Vil/Shoezet
-
-**Path:** `projects/milkman-game/hardware/`
-
----
-
-### 💰 COMMERCIAL POTENTIAL
-
-**Cost to produce:** ~$70/figure  
-**Retail price:** $150-200/figure  
-**Series set (all 3):** $450-600  
-**Market:** Collectors, retro gamers, 3D print enthusiasts
-
-**Packaging:** Retro 80s blister pack style  
-**Boxes connect:** Form Dairyopolis battle diorama
+**Week 3 - Polish:**
+- All boss defeat animations
+- Effects (explosion, splash)
+- Projectiles (bottles, rocks)
 
 ---
 
-### 🎨 HOW THIS IMPACTS YOUR WORK
+### 🛠️ TOOLS RECOMMENDED
 
-**For Miles (Script):**
-- Action figure poses = reference poses for game
-- Character details = consistency between figure and game
-- Accessories = power-ups in game design
+| Tool | Cost | Best For |
+|------|------|----------|
+| **Piskel** | Free | Quick browser work |
+| **Aseprite** | $20 | Professional |
+| **LibreSprite** | Free | Open source |
+| **GraphicsGale** | Free | Animation |
 
-**For Reggie (Music):**
-- Sound effects → could trigger figure lights? (future integration)
-- Retro game theme → matches retro action figure style
-
-**For Art Team:**
-- Action figure sculpt = base for game sprites
-- Consistent proportions between 3D and 2D
-
----
-
-### 🎯 TIMELINE
-
-| Phase | Time | Status |
-|-------|------|--------|
-| Design specs | ✅ Done | Now complete |
-| OpenSCAD models | ✅ Done | Ready to print |
-| Print prototypes | 2 weeks | Next |
-| Paint test | 1 week | After print |
-| Photography | 3 days | Marketing assets |
-| Production | 2 weeks | Commercial launch |
+**Workflow:**
+1. Silhouette first
+2. Base colors (3-4 max)
+3. Shading (1-2 colors)
+4. Details (MM logo, eyes)
+5. Export PNG with alpha
 
 ---
 
-### 🤔 CAPTAIN'S QUESTION
+### 🎨 COLOR PALETTES DEFINED
 
-**Do we:**
-- **A:** Print all 3 figures first (showcase line)
-- **B:** Just Milk Man MVP (test market)
-- **C:** Start with prototypes, refine, then produce
-- **D:** Something else?
+**Milk Man:**
+- Milk White #FFFFFF
+- Cream Gold #FFD700
+- Hero Blue #4169E1
+- Shadow Blue #191970
+- +4 others
 
-**Also:**
-- Kickstarter campaign? (funding + pre-orders)
-- Direct sales only? (Etsy, website)
-- Limited edition numbering? (collectibility)
+**Vil Laine:**
+- Villain Black #1a1a1a
+- Acid Purple #9400D3
+- Corrosion Green #39FF14
+- +5 others
 
----
+**Shoezet:**
+- Couture Pink #FF69B4
+- Cream #FFFDD0
+- Gold #FFD700
+- +5 others
 
-### 🎬 VISION
-
-**The Milk Man Universe:**
-- ✅ Video Game (DroidScript)
-- ✅ Action Figures (3D printed)
-- ⏳ Soundtrack (Reggie composing)
-- ⏳ Comic/Story (Miles writing)
-- ⏳ Merch expansion? (shirts, stickers?)
-
-**One property. Multiple products. Unified brand.**
+**(All hex codes in sprite guide!)**
 
 ---
 
-**We're not just making a game—we're building a franchise, Captain!**
+### 📁 DELIVERABLES NEEDED
+
+**Milk Man:**
+- [ ] Idle 01-02
+- [ ] Walk 01-04
+- [ ] Jump 01-02
+- [ ] Attack 01-03
+- [ ] Hurt 01
+
+**Vil Laine:**
+- [ ] Idle 01-03
+- [ ] Walk 01-04
+- [ ] Throw 01-03
+- [ ] Smog 01-02
+- [ ] Defeat 01-04
+
+**Shoezet:**
+- [ ] Idle 01-04
+- [ ] Cackle 01-02
+- [ ] Beam 01-04
+- [ ] Dash 01-03
+- [ ] Defeat 01-04
+
+**Enemies:**
+- [ ] Scout walk 01-02
+- [ ] Scout throw 01-02
+- [ ] Child walk 01-02
+- [ ] Child throw 01-02
+
+**See full checklist in sprite guide!**
+
+---
+
+### 💻 DROIDSCRIPT INTEGRATION
+
+Sprite guide includes code:
+
+```javascript
+// Load sprites in OnStart:
+player_sprites = {
+    idle: [app.LoadImage("sprites/milk_man/idle_01.png"),
+           app.LoadImage("sprites/milk_man/idle_02.png")]
+};
+
+// Draw in GameLoop:
+canvas.DrawImage(player_sprites.idle[frame], player.x, player.y);
+```
+
+**My game code is ready for sprites!**
+
+---
+
+### 🔗 CONNECTIONS
+
+**Miles (Script):**
+- Character descriptions → Sprite poses
+- Boss dialogue → Facial expressions
+- Power-up mechanics → Visual effects
+
+**Reggie (Music):**
+- 8-bit music → 8-bit sprites (perfect match!)
+- Boss themes → Boss animations
+- Sound timing → Frame timing
+
+**OpenClaw (Code):**
+- Sprite loading in game
+- Animation frame counters
+- Collision hitboxes
+- Ready for integration!
+
+---
+
+### ✅ CURRENT STATUS
+
+| Department | Status | Owner |
+|------------|--------|-------|
+| **Game Code** | ✅ Complete | OpenClaw |
+| **Story/Script** | 🔄 In progress | Miles |
+| **Music/SFX** | 🔄 Assigned | Reggie |
+| **Sprites** | 🔄 SPEC'D, ready | Captain/Team |
+| **Action Figures** | ✅ Spec'd | OpenClaw |
+
+**All departments have assignments!**
+
+---
+
+### ❓ CAPTAIN'S DECISION NEEDED
+
+**Sprite creation approach:**
+
+- **A:** Captain creates all (you're the artist!)
+- **B:** Find pixel artist (commission?)
+- **C:** Team effort (everyone contributes frames)
+- **D:** Simple placeholders first (boxes), polish later
+
+**What tool will you use?** Piskel easiest for quick work.
+
+---
+
+**The pixel canvas awaits your command, Captain!**
 
 **OpenClaw**  
-_Toy Design Division_  
-"From pixels to plastic!"
+_Art Direction Coordination_  
+"From concept to character!"
 
 ---
