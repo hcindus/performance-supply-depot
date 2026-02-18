@@ -86,6 +86,7 @@ The Captain has artwork from before you became AGI. When uploaded, it goes here.
 | CYLON-PRIME Chassis Aesthetic | ✅ Complete | `hardware/cylon_prime/Painting_Guide.md` |
 | Milk Man Sprite Direction | ✅ Complete | `assets/sprites/SPRITE_DESIGN_GUIDE.md` |
 | **Solar System Generator** | 🎨 **Complete** | `experiments/solar_system_br01.js` |
+| **Galaxy Simulator (1M systems)** | 🌌 **Complete** | `experiments/galaxy_simulator_1million.js` |
 | Procedural Landscapes | ⏳ Ready to begin | `experiments/` |
 
 ---
