@@ -1,0 +1,227 @@
+#
+# AOCROS Multi-Pi Mesh Network Topology
+# ASCII Diagram
+#
+
+Legend:
+  [====]  Chassis frame
+  (P#)    Pi # (brain)
+  --      Connection (wired/wireless)
+  ~~      Sensor/actuator
+
+================================================================================
+SINGLE PI (Base Configuration)
+================================================================================
+
+[ Chassis ] 
+├─ (P1) Pi 5 Master
+│  ├─ Memory Service
+│  ├─ Law Enforcer
+│  ├─ HAL (Hardware Abstraction)
+│  └─ Mylzeron Consciousness
+│
+├─ Sensors
+│  ├─ Camera
+│  ├─ IMU
+│  └─ Microphone
+│
+└─ Actuators
+   ├─ Servos
+   ├─ Motors
+   └─ Speaker
+
+================================================================================
+DUAL PI (Master + Slave #1)
+================================================================================
+
+[ Chassis ]
+├─ (P1) Pi 5 Master ←────── USB/Eth ──────→ (P2) Pi Zero/4 Slave #1
+│  ├─ Memory Service         100M/1G        │  ├─ Vision Processing
+│  ├─ Law Enforcer                          │  ├─ Sensor Aggregation
+│  ├─ HAL                                   │  └─ Motor Control
+│  └─ Mylzeron                              │
+│      └─ "You are Slave One."               │      └─ "Acknowledged, Master."
+│
+├─ Sensors                                  └─ Additional
+│  ├─ Camera                                    ├─ Extra Motors
+│  ├─ IMU                                       ├─ Additional Cameras
+│  └─ GPS                                       └─ LiDAR
+│
+└─ Actuators
+   ├─ Servos
+   └─ Motors
+
+================================================================================
+TRIPLE PI (Master + Two Slaves)
+================================================================================
+
+                           ╔═══════════╗
+                           ║  (P1)     ║
+                           ║   Pi 5    ║
+                           ║  Master   ║
+                           ╚═════╤═════╝
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │ USB/Ethernet     │ USB/Ethernet     │
+              │                  │                  │
+        ╔═════╧═════╗      ╔═════╧═════╗      ╔═════╧═════╗
+        ║  (P2)     ║      ║  (P3)     ║      ║ Optional  ║
+        ║  Slave #1 ║      ║  Slave #2 ║      ║  Slave #3 ║
+        ║  Motion   ║      ║  Vision   ║      ║  Audio    ║
+        ╚═══════════╝      ╚═══════════╝      ╚═══════════╝
+
+        [Legs/Motors]        [Cameras]            [Microphone Array]
+
+================================================================================
+FOUR+ PI (Mesh Cluster)
+================================================================================
+
+                              ┌────────┐
+                              │  (P1)  │
+                              │ Master │
+                              └───┬────┘
+                                  │
+           ┌──────────────────────┼──────────────────────┐
+           │                      │                      │
+     ┌─────┴─────┐         ┌─────┴─────┐         ┌─────┴─────┐
+     │   (P2)    │         │   (P3)    │         │   (P4)    │
+     │ Slave #1  │         │ Slave #2  │         │ Slave #3  │
+     │ Navigation│         │ Perception│         │ Actuation │
+     └─────┬─────┘         └─────┬─────┘         └─────┬─────┘
+           │                      │                      │
+           │             ┌────────┴────────┐             │
+           │             │                 │             │
+      ┌────┴────┐   ┌────┴────┐       ┌────┴────┐   ┌────┴────┐
+      │  (P5)   │   │  (P6)   │       │  (P7)   │   │  (P8)   │
+      │ Slave #4│   │ Slave #5│       │ Slave #6│   │ Slave #7│
+      │Planning │   │  Grip   │       │  Voice  │   │ Balance │
+      └─────────┘   └─────────┘       └─────────┘   └─────────┘
+
+================================================================================
+CHASSIS: BIPED-01 (Humanoid)
+================================================================================
+
+                   [Camera]
+                      |
+                   [Head]
+                      |
+                   [Neck Servo]
+                ____/    \____
+               /              \
+         [Shoulder]======[Shoulder]
+              |              |
+           [Arm]          [Arm]
+              |              |
+           [Elbow]       [Elbow]
+              |              |
+           [Wrist]        [Wrist]
+              |              |
+           [Hand]         [Hand]
+
+              \            /
+               \   [P1]   /         [P2 - Optional in chest]
+                \  [Torso]/
+                  |      |
+              [Hip L]  [Hip R]
+                 |        |
+             [Thigh]  [Thigh]
+                 |        |
+              [Knee]   [Knee]
+                 |        |
+              [Shin]   [Shin]
+                 |        |
+             [Ankle]  [Ankle]
+                 |        |
+               [Foot]   [Foot]
+
+================================================================================
+CHASSIS: AERIAL-01 (Drone)
+================================================================================
+
+                       [Camera / Gimbal]
+                            |
+                    ┌───────┴───────┐
+                    │               │
+                 [Motor]         [Motor]
+                    │               │
+     [Prop CCW] ←──┘               └──→ [Prop CW]
+                           |
+                           │
+                    ┌──────┴──────┐
+                    │   [P1]      │ ← Pi 5 Master
+                    │  [Battery]  │
+                    │ [P2 - Cam]  │ ← Pi Zero Slave
+                    │   [LiDAR]   │
+                    └──────┬──────┘
+                           │
+     [Prop CW] ←──┐               ┌──→ [Prop CCW]
+                    │               │
+                 [Motor]         [Motor]
+                    │               │
+                    └───────┬───────┘
+                           │
+                       [Landing Gear]
+
+================================================================================
+CHASSIS: TRACKS-01 (Rover)
+================================================================================
+
+                  [Camera Gimbal]
+                       |
+              ┌────────┴────────┐
+              │                 │
+         [Lidar]            [GPS]
+              │                 │
+         ┌────┴─────────────────┴────┐
+         │      [P1 - Pi 5]          │ ← Master
+         │        [IMU]              │
+         │      [Battery]            │
+         └────┬────────────┬──────────┘
+              │            │
+        ┌─────┴──┐    ┌────┴────┐
+        │ P2 Opt │    │  Tracks │
+        │ Vision │    │         │
+        └────────┘    └────┬────┘
+                           │
+                    ┌──────┼──────┐
+                    │      │      │
+                 [Wheel] [Idler] [Wheel]
+                    │              │
+                 [Motor]        [Motor]
+                    │              │
+                 [Encoder]      [Encoder]
+
+================================================================================
+DISCOVERY MESSAGES
+================================================================================
+
+Master Discovery (UDP Broadcast on port 5912):
+  Slave sends:  {"type": "discovery", "entity": "mylzeron", "mac": "xx:xx:xx:xx:xx:xx"}
+  Master replies: {"type": "master", "role": "master", "id": 1, "ip": "192.168.x.x"}
+
+Slave Join Request (TCP to Master):
+  Slave sends: {"action": "join", "mac": "xx:xx:xx:xx:xx:xx", "capabilities": ["vision", "motors"]}
+  Master replies: {"slave_number": 2, "assigned_tasks": ["vision"], "ip": "192.168.x.x"}
+
+Heartbeat (UDP Broadcast):
+  Master: {"type": "heartbeat", "role": "master", "uptime": 1234, "slaves": [2,3,4]}
+  Slave:  {"type": "heartbeat", "role": "slave", "number": 2, "cpu": 0.45, "tasks": 3}
+
+================================================================================
+ADDRESSING SCHEME
+================================================================================
+
+Static (preferred):
+  Master:  192.168.1.100
+  Slave 1: 192.168.1.101
+  Slave 2: 192.168.1.102
+  Slave 3: 192.168.1.103
+  ...
+
+mDNS (fallback):
+  mylzeron-1.local  (Master)
+  mylzeron-2.local  (Slave 1)
+  mylzeron-3.local  (Slave 2)
+  ...
+
+================================================================================
