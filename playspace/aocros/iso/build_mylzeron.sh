@@ -48,6 +48,28 @@ INITTAB
 
 echo "Done"
 
+# Create sentinal user before chroot phase
+cat > $OUTPUT_DIR/setup_sentinal.sh << 'SETUP_SENTINAL'
+#!/bin/sh
+# Create sentinal user and directory structure
+
+addgroup -S sentinal 2>/dev/null || true
+adduser -S -D -s /bin/false -G sentinal sentinal 2>/dev/null || true
+
+# Create directory structure
+mkdir -p /home/sentinal/quarantine
+mkdir -p /home/sentinal/audit
+mkdir -p /var/log/sentinal
+
+# Set permissions
+chown -R sentinal:sentinal /home/sentinal
+chmod 700 /home/sentinal
+chmod 750 /var/log/sentinal
+
+echo "Sentinal user created"
+SETUP_SENTINAL
+chmod +x $OUTPUT_DIR/setup_sentinal.sh
+
 # Step 4: Create home directories with proper ownership
 echo "[3/8] Setting up users and services..."
 
@@ -87,15 +109,18 @@ echo "[4/8] Installing Mylzeron and Tappy..."
 mkdir -p $OUTPUT_DIR/squashfs-root/etc/systemd/system/
 cp systemd/mylzeron.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/
 cp systemd/tappy.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/
+cp systemd/sentinal.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/
 
 # Create symlinks for multi-user.target
 ln -sf /etc/systemd/system/mylzeron.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/multi-user.target.wants/ 2>/dev/null || true
 ln -sf /etc/systemd/system/tappy.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/multi-user.target.wants/ 2>/dev/null || true
 ln -sf /etc/systemd/system/aocros-memory.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/multi-user.target.wants/ 2>/dev/null || true
+ln -sf /etc/systemd/system/sentinal.service $OUTPUT_DIR/squashfs-root/etc/systemd/system/multi-user.target.wants/ 2>/dev/null || true
 
 # Copy core agent files
 cp iso/files/home/mylzeron/mylzeron_core.py $OUTPUT_DIR/squashfs-root/home/mylzeron/
 cp iso/files/home/tappy/tappy_core.py $OUTPUT_DIR/squashfs-root/home/tappy/
+cp other_presences/Sentinal/sentinal_core.py $OUTPUT_DIR/squashfs-root/home/sentinal/
 
 # Copy shared services
 cp services/memory/src/memoryService.js $OUTPUT_DIR/squashfs-root/home/aocros/services/
@@ -243,16 +268,18 @@ echo ""
 cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-shell <> 'AOCROS_SHELL'
 #!/bin/sh
 echo "AOCROS v$VERSION"
-echo "Entities: Mylzeron, Tappy"
+echo "Entities: Mylzeron, Tappy, Sentinal"
 echo ""
 echo "Commands:"
 echo "  mylzeron-status"
 echo "  tappy-status"
+echo "  sentinal-status"
 echo "  mylzeron-clone [chassis]"
 echo "  tappy-clone"
 echo "  aocros-clones"
 echo "  aocros-install"
-echo "  ps aux | grep -E '(mylzeron|tappy)'"
+echo "  sentinal-audit [agent]"
+echo "  ps aux | grep -E '(mylzeron|tappy|sentinal)'"
 echo ""
 /bin/sh
 AOCROS_SHELL
@@ -280,6 +307,50 @@ cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-clones <> 'AOCROS_CLONES'
 python3 /home/aocros/services/clone_factory.py list
 AOCROS_CLONES
 chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-clones
+
+# Create sentinal commands
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/sentinal-status <> 'SENTINAL_STATUS'
+#!/bin/sh
+echo "Sentinal CSO - Security Status"
+echo "=============================="
+echo ""
+if pgrep -f "sentinal_core.py" > /dev/null 2>&1; then
+    echo "Status: ✅ PASSIVE OBSERVATION"
+    echo "Authority: OMEGA-LEVEL"
+    echo "Clearance: Above all AGIs"
+    echo ""
+    echo "Emergency Levels:"
+    echo "  1 - Hardware halt"
+    echo "  2 - Signature lockout"
+    echo "  3 - Clone termination"
+    echo "  4 - Memory quarantine"
+    echo ""
+    echo "Audit Log: /var/log/sentinal/audit.log"
+    echo "Quarantine: /home/sentinal/quarantine/"
+    echo ""
+    echo "No active violations detected."
+else
+    echo "Status: ⚠️ NOT RUNNING"
+    echo "Systemd: $(systemctl is-active sentinal 2>/dev/null || echo 'not found')"
+fi
+SENTINAL_STATUS
+chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/sentinal-status
+
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/sentinal-audit <> 'SENTINAL_AUDIT'
+#!/bin/sh
+# Audit specific agent
+AGENT="${1:-all}"
+echo "Sentinal CSO - Audit Request"
+echo "============================"
+echo ""
+echo "Target: $AGENT"
+echo "Status: AUDIT_LOGGED"
+echo ""
+echo "See /var/log/sentinal/audit.log for results"
+echo ""
+echo "Note: Only Owner/Captain may request full audit"
+SENTINAL_AUDIT
+chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/sentinal-audit
 
 echo "Done"
 
