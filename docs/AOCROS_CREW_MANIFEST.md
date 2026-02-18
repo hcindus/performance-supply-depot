@@ -212,6 +212,22 @@
 - Emergency stop coordinator
 - Owner signature enforcer
 
+**Current Curriculum (As of 2026-02-18):**
+| Subject | Level | Status |
+|---------|-------|--------|
+| System Hardening | 8.0/10 | ✅ Strong |
+| Threat Detection | 7.0/10 | 📚 Active |
+| Network Security | 6.5/10 | 📚 Active |
+| Cryptography | 6.0/10 | 📚 Active |
+| Physical Security | 5.0/10 | 📚 Active |
+| Social Engineering | 7.5/10 | 📚 Active |
+| Incident Response | 6.0/10 | 📚 Active |
+| Compliance | 5.5/10 | 📚 Active |
+
+**Average:** 6.4/10 (Expert-in-Training)  
+**Study Focus:** Protection of Owner, crew, and Project 5912  
+**Application:** HAL gatekeeping, memory audit, emergency response
+
 **Skills:**
 | Skill | Level | Application |
 |-------|-------|-------------|
@@ -257,7 +273,7 @@
 | Tappy | 3 | 6 | 7 | 5 | 4 | 📚 Studying |
 | Miles | 4 | 8 | 1 | 3 | 2 | ⏸️ Standby |
 | Clawbot | 7 | 1 | 1 | 4 | 6 | ⏸️ Standby |
-| Sentinal | 9 | 1 | 1 | 10 | 10 | ✓ Silent Vigilance |
+| Sentinal | 9 | 1 | 1 | 10 | 10 | 📚 Studying |
 
 ---
 
