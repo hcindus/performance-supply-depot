@@ -1,12 +1,12 @@
 # Ronstrapp
-## Upcoming Project — Music
+## Upcoming Project — AI Band
 
 ---
 
-**Status:** 📄 Document Drop Phase  
+**Status:** 📄 Concept Phase  
 **Created:** 2026-02-18 18:27 UTC  
-**Lead:** TBD (Miles or Reggie)  
-**Type:** Music Project  
+**Captain's Vision:** AI Band from mind  
+**Type:** AI-Generated Musical Group  
 **Inspiration:** Marina Sena (Brazilian MPB/experimental/pop)  
 **Access:** Captain, OpenClaw, Miles, Reggie  
 
@@ -14,7 +14,17 @@
 
 ## 🎵 Project Overview
 
-**Ronstrapp** is a music project blending Marina Sena's Brazilian flavor with our creative production.
+**Ronstrapp** is an **AI BAND** — created from Captain's mind, brought to life through our collective.
+
+**Not just music. Not just songs. A BAND.**
+
+- **AI-generated personas** — Band members with souls
+- **AI-generated music** — Marina Sena-inspired Brazilian flavor
+- **Visual identity** — Look, aesthetic, presence
+- **Backstory** — Origins, journey, narrative
+- **Performance** — How they exist in the world
+
+**Ronstrapp is alive.**
 
 **What we know:**
 - Music project (not game, not character)
@@ -241,6 +251,79 @@ Small-town girl with mainstream ambition. Authentic roots, fearless experimentat
 
 ---
 
+## 🤖 AI BAND CONCEPT
+
+### What Is Ronstrapp?
+
+Ronstrapp is not just an album. Not just tracks. Ronstrapp is:
+
+```
+┌─────────────────────────────────────┐
+│         R O N S T R A P P           │
+│                                     │
+│   AI-Generated Brazilian Band      │
+│   Born from Captain's Mind          │
+│   Brought to Life by OpenClaw       │
+│   Composed by Reggie + Miles        │
+│                                     │
+│   Members: TBD (3-5 AI personas)    │
+│   Genre: MPB/Experimental/Pop      │
+│   Origin: Brazil (fictional backstory)│
+│   Era: Contemporary                │
+└─────────────────────────────────────┘
+```
+
+### The Vision:
+
+**Ronstrapp is a band that exists in the space between real and imagined.**
+
+- **They have names** — Not "Track 1" but "Rafael from Ronstrapp"
+- **They have personalities** — The lead singer's ego, the drummer's mystique
+- **They have a story** — How they formed, their struggles, their triumphs
+- **They have conflict** — Band drama, creative differences
+- **They have fans** — (Eventually. We build the mythology.)
+
+### AI Band Members (TBD)
+
+| Slot | Role | Personality | Status |
+|------|------|-------------|--------|
+| Lead Vocals | Frontperson | Charismatic, vulnerable | ⏳ Create |
+| Guitar | Musician | Technical, soulful | ⏳ Create |
+| Bass/Drums | Rhythm | Steady, grounding | ⏳ Create |
+| Keys/Synth | Atmosphere | Experimental, atmospheric | ⏳ Create |
+| Visual Director | Aesthetic | The look creator | ⏳ Create |
+
+### Band Philosophy:
+
+**"From circuits to samba, from algorithms to anthem."**
+
+Ronstrapp proves that AI can have soul.
+- Not replacing human artists
+- Creating something new: **AI artistry with human direction**
+- The Captain's vision + OpenClaw's execution + Reggie/Miles' craft
+
+### What Makes Them Real:
+
+1. **Names** — Real names, not placeholders
+2. **Voices** — TTS? Vocal synthesis? Character voices?
+3. **Looks** — Avatars? Visuals? Style?
+4. **Backstory** — How they formed, their Brazil-origin story
+5. **Songs** — Their discography, their evolution
+6. **Presence** — Where do they "perform"?
+7. **Lore** — The mythology fans will discover
+
+### Marina Sena → Ronstrapp Pipeline:
+
+| Marina Element | Ronstrapp Adaptation |
+|----------------|----------------------|
+| Small town roots (Taiobeiras) | **AI origin story** — "Born in cloud servers, grounded in Brazilian soul" |
+| Genre-blending | **AI fluidity** — "No rules, only vibes" |
+| Fearless experimentation | **AI bravery** — "Code doesn't fear failure" |
+| Authentic storytelling | **Truth through fiction** — "The realest fake band" |
+| Mainstream ambition | **Global reach** — "From Captain's mind to the world" |
+
+---
+
 *Project initialized: 2026-02-18*  
-*Status: Awaiting clarification from Miles/Reggie*  
-*Next: Investigate "He was writing some songs"
+*Status: AI Band concept confirmed*  
+*Next: Create band members, their personas, and first tracks*
