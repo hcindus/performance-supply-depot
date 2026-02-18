@@ -228,6 +228,25 @@ app.get('/status', (req, res) => {
 });
 
 /**
+ * GET /health (alias for /status)
+ * Standard health check endpoint
+ */
+app.get('/health', (req, res) => {
+  const status = {
+    status: 'healthy',
+    service: 'openclaw-mock',
+    port: PORT,
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+    total_interactions: interactionLogs.length
+  };
+  
+  logInteraction('HEALTH_CHECK', status);
+  
+  res.json(status);
+});
+
+/**
  * GET /logs
  * View interaction logs (for debugging)
  */

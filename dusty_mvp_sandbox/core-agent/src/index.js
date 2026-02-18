@@ -22,6 +22,17 @@ app.get("/status", (req, res) => {
   });
 });
 
+// GET /health - Health check endpoint (standard format)
+app.get("/health", (req, res) => {
+  res.json({
+    status: "healthy",
+    service: "dusty-core-agent",
+    port: PORT,
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Mount task routes
 app.use("/tasks", tasksRouter);
 
