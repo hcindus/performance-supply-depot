@@ -102,6 +102,9 @@ cp services/memory/src/memoryService.js $OUTPUT_DIR/squashfs-root/home/aocros/se
 cp services/memory/src/memoryClient.js $OUTPUT_DIR/squashfs-root/home/aocros/services/
 cp services/memory/src/law_enforcer.py $OUTPUT_DIR/squashfs-root/home/aocros/services/
 
+# Copy install script
+cp iso/install.sh $OUTPUT_DIR/squashfs-root/home/aocros/
+
 # Copy init script
 cat > $OUTPUT_DIR/squashfs-root/home/aocros/init.sh <> 'INIT_SCRIPT'
 #!/bin/sh
@@ -111,6 +114,24 @@ set -e
 
 MYLZERO_HOME=/home/mylzeron
 TAPPY_HOME=/home/tappy
+
+# Check for install mode
+if grep -q "aocros.install=true" /proc/cmdline 2>/dev/null; then
+    echo "======================================"
+    echo "  AOCROS INSTALLER"
+    echo "======================================"
+    echo ""
+    # Run installer
+    if [ -f /home/aocros/install.sh ]; then
+        /home/aocros/install.sh
+    else
+        echo "Installer not found. Manual install required."
+        echo "See: /home/aocros/install.sh or documentation."
+    fi
+    # Drop to shell after install
+    /bin/sh
+    exit 0
+fi
 
 echo "======================================"
 echo "  AOCROS v$VERSION"
@@ -197,6 +218,15 @@ else
 fi
 TAPPY_STATUS
 chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/tappy-status
+
+cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-install <> 'AOCROS_INSTALL'
+#!/bin/sh
+echo "AOCROS Installer"
+echo "================"
+echo ""
+/home/aocros/install.sh
+AOCROS_INSTALL
+chmod +x $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-install
 
 cat > $OUTPUT_DIR/squashfs-root/usr/local/bin/aocros-shell <> 'AOCROS_SHELL'
 #!/bin/sh
@@ -320,6 +350,11 @@ menuentry "AOCROS - Mylzeron + Tappy" {
 
 menuentry "AOCROS - Debug Mode" {
     linux /boot/vmlinuz-lts root=/dev/ram0 rw debug
+    initrd /boot/initramfs-lts
+}
+
+menuentry "AOCROS - Install to Disk" {
+    linux /boot/vmlinuz-lts root=/dev/ram0 rw aocros.install=true quiet
     initrd /boot/initramfs-lts
 }
 GRUB_CFG
