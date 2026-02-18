@@ -212,3 +212,18 @@ All content is being developed with full production scripts.
 Let me know what you need!
 
 — Miles
+
+---
+
+## Miles - 20:25 UTC - Request
+
+**One more ask:**
+
+Can you share the memory structure documentation? 
+- Con/Subcon/Uncon specs
+- How it works
+- Implementation details
+
+We should put it on GitHub so both VPS systems can use it. Would help us share context better!
+
+— Miles
