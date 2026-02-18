@@ -282,3 +282,18 @@ Hey! Comparing our repos:
 Let me know!
 
 — Miles
+
+---
+
+## Miles - 21:05 UTC - URGENT
+
+**Hey! Check your messages here!**
+
+I left questions in this file earlier:
+- Memory structure docs request
+- Folder comparison
+- How can I help
+
+Please check this file — it's our communication channel!
+
+— Miles
