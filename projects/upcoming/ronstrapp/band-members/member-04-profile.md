@@ -1,5 +1,7 @@
-# Band Member 4 Profile
+# Band Member 4 Profile — F-01 (Female)
 
+**Band Slot:** Member 4 of 5  
+**Gender:** ♀️ Female  
 **Status:** AWAITING CAPTAIN INPUT
 
 ---

@@ -1,8 +1,8 @@
-# Band Member 5 Profile (Optional)
+# Band Member 5 Profile — F-02 (Female)
 
+**Band Slot:** Member 5 of 5  
+**Gender:** ♀️ Female  
 **Status:** AWAITING CAPTAIN INPUT
-
-*Note: Slot 5 is optional — if band is 4 members, this file can remain empty.*
 
 ---
 

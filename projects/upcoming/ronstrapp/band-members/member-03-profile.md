@@ -1,5 +1,7 @@
-# Band Member 3 Profile
+# Band Member 3 Profile — M-03 (Male)
 
+**Band Slot:** Member 3 of 5  
+**Gender:** ♂️ Male  
 **Status:** AWAITING CAPTAIN INPUT
 
 ---

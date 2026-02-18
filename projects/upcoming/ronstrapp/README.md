@@ -3,14 +3,17 @@
 
 ---
 
-**Status:** 🎨 Visual Lock + 🎵 Production Platform Selected  
+**Status:** 🎨 Visual Lock + 🎵 Production Platform Selected + 🎸 Band Composition Defined  
 **Created:** 2026-02-18 18:27 UTC  
 **Captain's Vision:** AI Band from mind → **HOUSE BAND**  
-**Visual Style:** 1920s–50s Golden Age Animation × Modern Anime/Photoreal  
+**Band Composition:** 5 Members (3 Guys / 2 Girls)  
+**Visual Style:** 1920s–50s Golden Age Animation × Modern Anime/Photoreal × **Retro-Futuristic Quantum**  
+**Aesthetic:** Quantum across dimensions  
 **Color Palette:** Black & White + Selective Brazilian Accents  
 **Production Platform:** makesong.ai — AI-assisted, human-curated  
 **Vocal Style:** Real/emotional — Ballad to Rock range  
 **Languages:** 🇺🇸 English × 🇪🇸 Spanish × 🇧🇷 Portuguese × 🇫🇷 French (Dadju influence)  
+**Catalog Size:** 125 Songs (target)  
 **Type:** AI-Generated Musical Group / Studio Musicians  
 **Role:** Music for ALL Performance Supply Depot productions  
 **Inspiration:** Marina Sena (Brazilian MPB/experimental/pop)  

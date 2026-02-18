@@ -1,5 +1,7 @@
-# Band Member 2 Profile
+# Band Member 2 Profile — M-02 (Male)
 
+**Band Slot:** Member 2 of 5
+**Gender:** ♂️ Male
 **Status:** AWAITING CAPTAIN INPUT
 
 ---
