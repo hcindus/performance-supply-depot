@@ -9,59 +9,13 @@ User=aocros
 Group=aocros
 WorkingDirectory=/home/aocros/services/memory/src
 
-# Main process
 ExecStart=/usr/bin/node memoryService.js
 ExecReload=/bin/kill -HUP $MAINPID
 
-# Restart policy
 Restart=on-failure
 RestartSec=5
 StartLimitInterval=60s
 StartLimitBurst=3
-
-# ─────────────────────────────────────────
-# SECURITY SANDBOXING (systemd hardening)
-# ─────────────────────────────────────────
-
-# Privileges
-NoNewPrivileges=true
-PrivateTmp=true
-PrivateDevices=true
-ProtectSystem=full
-ProtectHome=true
-
-# Kernel/namespace protections
-ProtectKernelTunables=true
-ProtectKernelModules=true
-ProtectControlGroups=true
-RestrictSUIDSGID=true
-RestrictNamespaces=true
-LockPersonality=true
-MemoryDenyWriteExecute=true
-RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
-
-# Filesystem
-ProtectClock=true
-ProtectProc=invisible
-ProcSubset=pid
-ProtectKernelLogs=true
-
-# Writable paths (memory storage only)
-ReadWritePaths=/home/aocros/memory
-ReadWritePaths=/home/aocros/logs
-ReadWritePaths=/home/aocros/services/memory/src
-
-ReadOnlyPaths=/usr/bin/node
-ReadOnlyPaths=/usr/lib/node_modules
-
-# Capabilities (minimal)
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE
-AmbientCapabilities=
-
-# Processes
-RestrictRealtime=true
-RestrictSUIDSGID=true
-UMask=0077
 
 # Environment
 Environment=NODE_ENV=production
