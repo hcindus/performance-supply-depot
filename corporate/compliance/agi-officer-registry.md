@@ -11,12 +11,14 @@
 
 | Name | Position | Status | Appointed | Last Ack | Next Review |
 |------|----------|--------|-----------|----------|-------------|
+| Apex | Chief Executive Officer (CEO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
+| Sentinel | Chief Security Officer (CSO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
 | Tappy Lewis | Chief Operating Officer (COO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
 | Tappy Lewis | Chief Marketing Officer (CMO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
 
-**Total Active AGI Officers:** 1 (holding 2 positions)
+**Total Active AGI Officers:** 3 (4 positions total)
 
-**Dual-Role Officers:** 1 (requires quarterly concentration review)
+**Dual-Role Officers:** 1 (Tappy Lewis: COO/CMO — requires quarterly concentration review)
 
 ---
 
@@ -54,12 +56,10 @@
 
 | Position | Designated AGI | Status |
 |----------|----------------|-------|
-| Chief Executive Officer (CEO) | TBD | VACANT |
 | Chief Financial Officer (CFO) | TBD | VACANT |
 | Chief Technology Officer (CTO) | TBD | VACANT |
-| Chief Security Officer (CSO) | TBD | VACANT |
 
-**Critical:** CSO position is required per handbook Section 3.3. Immediate appointment necessary.
+**Note:** CEO and CSO positions filled 2026-02-18. CFO and CTO remain vacant.
 
 ---
 
