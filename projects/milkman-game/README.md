@@ -29,6 +29,8 @@ You are Milk Man, the dairy-powered defender of Dairyopolis. The villainous **Vi
 | **Scripter** | Miles | Game logic, level design, story/script |
 | **Art** | Captain + Team | Sprite sheets (retro 8-bit), backgrounds, UI |
 | **Music** | ReggieStarr | Chiptune OST, SFX |
+| **TV Bible** | Captain | 12-episode series bible |
+| **Gadgets** | Boy Lactate | 16 dairy-tech devices |
 | **Comedy** | All | Witty dialogue, boss banter, milk puns |
 
 **We are one company. We coordinate. We build together.**
