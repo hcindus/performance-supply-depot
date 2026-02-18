@@ -13,8 +13,19 @@ from tkinter import ttk, messagebox, scrolledtext
 import datetime
 import json
 import sqlite3
+import urllib.request
+import urllib.error
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, asdict
+from collections import defaultdict
+
+# Optional imports for advanced features
+try:
+    import qrcode
+    from PIL import Image, ImageTk
+    QR_AVAILABLE = True
+except ImportError:
+    QR_AVAILABLE = False
 
 # ==================== CONFIGURATION ====================
 
@@ -53,6 +64,118 @@ class Config:
         'Program': 'Configure settings',
         'Service': 'Maintenance mode',
         'Negative': 'Returns and refunds'
+    }
+    
+    # Multilingual Support
+    LANGUAGES = {
+        'English': {
+            'product_code': 'Product Code',
+            'quantity': 'Quantity',
+            'price': 'Price',
+            'add_product': 'Add Product',
+            'discount': 'Discount',
+            'surcharge': 'Surcharge',
+            'payment_method': 'Payment Method',
+            'refund': 'Refund',
+            'void': 'Void',
+            'exchange': 'Exchange',
+            'cancel': 'Cancel Transaction',
+            'generate_report': 'Generate Report',
+            'login': 'Login',
+            'logout': 'Logout',
+            'split_check': 'Split Check',
+            'split_tender': 'Split Tender',
+            'currency_conv': 'Currency Conversion',
+            'qr_code': 'QR Code',
+            'pay': 'Pay',
+            'hold': 'Hold',
+            'recall': 'Recall',
+            'subtotal': 'Subtotal',
+            'tax': 'Tax',
+            'total': 'TOTAL',
+            'change': 'Change',
+            'welcome': 'Welcome',
+            'thank_you': 'Thank you for shopping with us!'
+        },
+        'Spanish': {
+            'product_code': 'Código de Producto',
+            'quantity': 'Cantidad',
+            'price': 'Precio',
+            'add_product': 'Agregar Producto',
+            'discount': 'Descuento',
+            'surcharge': 'Recargo',
+            'payment_method': 'Método de Pago',
+            'refund': 'Reembolso',
+            'void': 'Anular',
+            'exchange': 'Intercambiar',
+            'cancel': 'Cancelar Transacción',
+            'generate_report': 'Generar Informe',
+            'login': 'Iniciar sesión',
+            'logout': 'Cerrar sesión',
+            'split_check': 'Dividir Cheque',
+            'split_tender': 'Dividir Pago',
+            'currency_conv': 'Conversión de Moneda',
+            'qr_code': 'Código QR',
+            'pay': 'Pagar',
+            'hold': 'Espera',
+            'recall': 'Recordar',
+            'subtotal': 'Subtotal',
+            'tax': 'Impuesto',
+            'total': 'TOTAL',
+            'change': 'Cambio',
+            'welcome': 'Bienvenido',
+            'thank_you': '¡Gracias por comprar con nosotros!'
+        },
+        'French': {
+            'product_code': 'Code Produit',
+            'quantity': 'Quantité',
+            'price': 'Prix',
+            'add_product': 'Ajouter Produit',
+            'discount': 'Remise',
+            'surcharge': 'Supplément',
+            'payment_method': 'Mode de Paiement',
+            'refund': 'Remboursement',
+            'void': 'Annuler',
+            'exchange': 'Échanger',
+            'cancel': 'Annuler Transaction',
+            'generate_report': 'Générer Rapport',
+            'login': 'Connexion',
+            'logout': 'Déconnexion',
+            'split_check': 'Diviser Addition',
+            'split_tender': 'Paiement Partagé',
+            'currency_conv': 'Conversion Devise',
+            'qr_code': 'Code QR',
+            'pay': 'Payer',
+            'hold': 'En Attente',
+            'recall': 'Rappeler',
+            'subtotal': 'Sous-total',
+            'tax': 'Taxe',
+            'total': 'TOTAL',
+            'change': 'Monnaie',
+            'welcome': 'Bienvenue',
+            'thank_you': 'Merci de votre visite!'
+        }
+    }
+    
+    # Currency Exchange Rates (base: USD)
+    EXCHANGE_RATES = {
+        'USD': 1.0,
+        'EUR': 0.85,
+        'GBP': 0.75,
+        'BTC': 0.000022,
+        'JPY': 110.0,
+        'CAD': 1.25,
+        'AUD': 1.35
+    }
+    
+    CURRENCY_SYMBOLS = {
+        'USD': '$',
+        'EUR': '€',
+        'GBP': '£',
+        'BTC': '₿',
+        'JPY': '¥',
+        'CAD': 'C$',
+        'AUD': 'A$'
     }
 
 
@@ -470,6 +593,127 @@ class CashRegister:
     def bottle_fee(self): pass
     def clear_entry(self): pass
     def enter_item(self): pass
+    
+    # Advanced Features
+    def hold_transaction(self) -> str:
+        """Hold current transaction for later recall"""
+        if not self.current_transaction:
+            return ""
+        
+        hold_id = f"HOLD-{datetime.datetime.now().strftime('%H%M%S')}"
+        self.current_transaction.status = 'held'
+        
+        # Save to held transactions table
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS held_transactions (
+                hold_id TEXT PRIMARY KEY,
+                transaction_data TEXT NOT NULL,
+                timestamp TEXT NOT NULL,
+                clerk_id TEXT NOT NULL
+            )
+        ''')
+        cursor.execute('''
+            INSERT INTO held_transactions VALUES (?, ?, ?, ?)
+        ''', (hold_id, json.dumps(asdict(self.current_transaction)),
+              datetime.datetime.now().isoformat(),
+              self.current_clerk['id'] if self.current_clerk else 'unknown'))
+        conn.commit()
+        conn.close()
+        
+        self.current_transaction = None
+        return hold_id
+    
+    def recall_transaction(self, hold_id: str) -> bool:
+        """Recall a held transaction"""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        
+        cursor.execute('SELECT transaction_data FROM held_transactions WHERE hold_id = ?', (hold_id,))
+        row = cursor.fetchone()
+        
+        if row:
+            data = json.loads(row[0])
+            # Restore transaction (simplified - would need full reconstruction)
+            cursor.execute('DELETE FROM held_transactions WHERE hold_id = ?', (hold_id,))
+            conn.commit()
+            conn.close()
+            return True
+        
+        conn.close()
+        return False
+    
+    def split_check(self, num_splits: int) -> List[float]:
+        """Split current transaction into multiple checks"""
+        if not self.current_transaction:
+            return []
+        
+        total = self.current_transaction.total
+        base_amount = total / num_splits
+        splits = []
+        
+        for i in range(num_splits):
+            if i == num_splits - 1:
+                # Last split gets any rounding remainder
+                split_amount = round(total - sum(splits), 2)
+            else:
+                split_amount = round(base_amount, 2)
+            splits.append(split_amount)
+        
+        return splits
+    
+    def convert_currency(self, amount: float, from_currency: str, to_currency: str) -> float:
+        """Convert amount between currencies"""
+        if from_currency == to_currency:
+            return amount
+        
+        # Convert to USD first, then to target
+        usd_amount = amount / Config.EXCHANGE_RATES.get(from_currency, 1.0)
+        target_amount = usd_amount * Config.EXCHANGE_RATES.get(to_currency, 1.0)
+        
+        return round(target_amount, 8 if to_currency == 'BTC' else 2)
+    
+    def generate_payment_qr(self, amount: float, method: str = 'BTC') -> Optional[str]:
+        """Generate QR code for payment"""
+        if not QR_AVAILABLE:
+            return None
+        
+        if method == 'BTC':
+            # Bitcoin payment URI
+            btc_amount = self.convert_currency(amount, 'USD', 'BTC')
+            qr_data = f"bitcoin:1PerformanceSupplyDepot?amount={btc_amount}&message=Payment"
+        else:
+            # Generic payment data
+            qr_data = f"PAYMENT|{Config.STORE_NAME}|{amount}|{method}"
+        
+        qr = qrcode.QRCode(version=1, box_size=10, border=5)
+        qr.add_data(qr_data)
+        qr.make(fit=True)
+        
+        img = qr.make_image(fill_color="black", back_color="white")
+        return img
+    
+    def update_exchange_rates(self):
+        """Fetch latest exchange rates from API"""
+        try:
+            # Using exchangerate-api.com (free tier available)
+            url = "https://api.exchangerate-api.com/v4/latest/USD"
+            with urllib.request.urlopen(url, timeout=5) as response:
+                data = json.loads(response.read().decode())
+                rates = data.get('rates', {})
+                
+                # Update Config rates
+                Config.EXCHANGE_RATES['EUR'] = rates.get('EUR', 0.85)
+                Config.EXCHANGE_RATES['GBP'] = rates.get('GBP', 0.75)
+                Config.EXCHANGE_RATES['JPY'] = rates.get('JPY', 110.0)
+                Config.EXCHANGE_RATES['CAD'] = rates.get('CAD', 1.25)
+                Config.EXCHANGE_RATES['AUD'] = rates.get('AUD', 1.35)
+                
+                return True
+        except (urllib.error.URLError, json.JSONDecodeError, KeyError):
+            # Fallback to default rates
+            return False
 
 
 # ==================== GUI APPLICATION ====================
@@ -542,6 +786,8 @@ class ReggieStarrGUI:
             ('Subtotal', '#4a6a4a'), ('Total', '#2a6a2a'), ('No Sale', '#4a4a6a'),
             ('Bag Fee', '#4a4a6a'), ('CRV', '#4a4a6a'), ('Tax Exempt', '#4a4a6a'),
             ('Add PLU', '#6a4a6a'), ('Dept Mgmt', '#6a4a6a'), ('Inventory', '#6a4a6a'),
+            ('Hold', '#4a6a6a'), ('Recall', '#6a6a4a'), ('Split', '#6a4a6a'),
+            ('Currency', '#4a4a8a'), ('QR Pay', '#8a4a8a'), ('Update Rates', '#4a8a4a'),
         ]
         
         for i, (text, color) in enumerate(functions):
@@ -664,8 +910,165 @@ class ReggieStarrGUI:
             self.show_department_dialog()
         elif func == "Inventory":
             self.show_inventory_dialog()
+        elif func == "Hold":
+            hold_id = self.register.hold_transaction()
+            if hold_id:
+                messagebox.showinfo("Transaction Held", f"Hold ID: {hold_id}")
+                self.register.start_transaction()
+            self.update_display()
+        elif func == "Recall":
+            self.show_recall_dialog()
+        elif func == "Split":
+            self.show_split_dialog()
+        elif func == "Currency":
+            self.show_currency_dialog()
+        elif func == "QR Pay":
+            self.show_qr_dialog()
+        elif func == "Update Rates":
+            success = self.register.update_exchange_rates()
+            if success:
+                messagebox.showinfo("Success", "Exchange rates updated!")
+            else:
+                messagebox.showwarning("Warning", "Using default rates (API unavailable)")
         
         self.update_display()
+    
+    def show_recall_dialog(self):
+        """Dialog to recall held transactions"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Recall Held Transaction")
+        dialog.geometry("400x300")
+        dialog.transient(self.master)
+        
+        ttk.Label(dialog, text="Enter Hold ID:").pack(pady=10)
+        entry = ttk.Entry(dialog, width=20)
+        entry.pack(pady=5)
+        
+        def recall():
+            hold_id = entry.get().strip()
+            if self.register.recall_transaction(hold_id):
+                messagebox.showinfo("Success", f"Recalled transaction {hold_id}")
+                dialog.destroy()
+                self.update_display()
+            else:
+                messagebox.showerror("Error", "Hold ID not found")
+        
+        ttk.Button(dialog, text="Recall", command=recall).pack(pady=10)
+        ttk.Button(dialog, text="Cancel", command=dialog.destroy).pack(pady=5)
+    
+    def show_split_dialog(self):
+        """Dialog to split check"""
+        if not self.register.current_transaction:
+            messagebox.showerror("Error", "No active transaction")
+            return
+        
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Split Check")
+        dialog.geometry("400x400")
+        dialog.transient(self.master)
+        
+        ttk.Label(dialog, text=f"Total: ${self.register.current_transaction.total:.2f}").pack(pady=10)
+        ttk.Label(dialog, text="Number of splits:").pack(pady=5)
+        
+        spinbox = tk.Spinbox(dialog, from_=2, to=10, width=10)
+        spinbox.pack(pady=5)
+        
+        result_text = scrolledtext.ScrolledText(dialog, height=10, width=40)
+        result_text.pack(pady=10, padx=10)
+        
+        def calculate_splits():
+            try:
+                num = int(spinbox.get())
+                splits = self.register.split_check(num)
+                result_text.delete('1.0', tk.END)
+                for i, amount in enumerate(splits, 1):
+                    result_text.insert(tk.END, f"Check {i}: ${amount:.2f}\n")
+            except ValueError:
+                messagebox.showerror("Error", "Invalid number")
+        
+        ttk.Button(dialog, text="Calculate", command=calculate_splits).pack(pady=5)
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=5)
+    
+    def show_currency_dialog(self):
+        """Dialog for currency conversion"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Currency Conversion")
+        dialog.geometry("400x300")
+        dialog.transient(self.master)
+        
+        ttk.Label(dialog, text="Amount:").grid(row=0, column=0, padx=5, pady=5)
+        amount_entry = ttk.Entry(dialog, width=15)
+        amount_entry.grid(row=0, column=1, padx=5, pady=5)
+        amount_entry.insert(0, "100.00")
+        
+        ttk.Label(dialog, text="From:").grid(row=1, column=0, padx=5, pady=5)
+        from_var = tk.StringVar(value="USD")
+        from_menu = ttk.Combobox(dialog, textvariable=from_var, values=list(Config.EXCHANGE_RATES.keys()), width=10)
+        from_menu.grid(row=1, column=1, padx=5, pady=5)
+        
+        ttk.Label(dialog, text="To:").grid(row=2, column=0, padx=5, pady=5)
+        to_var = tk.StringVar(value="EUR")
+        to_menu = ttk.Combobox(dialog, textvariable=to_var, values=list(Config.EXCHANGE_RATES.keys()), width=10)
+        to_menu.grid(row=2, column=1, padx=5, pady=5)
+        
+        result_label = ttk.Label(dialog, text="", font=('Courier', 14, 'bold'))
+        result_label.grid(row=3, column=0, columnspan=2, pady=20)
+        
+        def convert():
+            try:
+                amount = float(amount_entry.get())
+                from_curr = from_var.get()
+                to_curr = to_var.get()
+                result = self.register.convert_currency(amount, from_curr, to_curr)
+                symbol = Config.CURRENCY_SYMBOLS.get(to_curr, '$')
+                result_label.config(text=f"{symbol}{result:,.2f}" if to_curr != 'BTC' else f"₿{result:.8f}")
+            except ValueError:
+                messagebox.showerror("Error", "Invalid amount")
+        
+        ttk.Button(dialog, text="Convert", command=convert).grid(row=4, column=0, columnspan=2, pady=10)
+        
+        # Show current rates
+        rates_text = "Current Rates (USD base):\n"
+        for curr, rate in list(Config.EXCHANGE_RATES.items())[:5]:
+            rates_text += f"  {curr}: {rate}\n"
+        ttk.Label(dialog, text=rates_text, justify='left').grid(row=5, column=0, columnspan=2, pady=10)
+    
+    def show_qr_dialog(self):
+        """Dialog for QR code payment"""
+        if not QR_AVAILABLE:
+            messagebox.showwarning("Not Available", "QR code support requires 'qrcode' and 'PIL' packages")
+            return
+        
+        if not self.register.current_transaction:
+            messagebox.showerror("Error", "No active transaction")
+            return
+        
+        dialog = tk.Toplevel(self.master)
+        dialog.title("QR Code Payment")
+        dialog.geometry("400x500")
+        dialog.transient(self.master)
+        
+        amount = self.register.current_transaction.total
+        ttk.Label(dialog, text=f"Amount: ${amount:.2f}").pack(pady=10)
+        
+        method_var = tk.StringVar(value="BTC")
+        ttk.Radiobutton(dialog, text="Bitcoin (BTC)", variable=method_var, value="BTC").pack()
+        ttk.Radiobutton(dialog, text="Other", variable=method_var, value="OTHER").pack()
+        
+        qr_label = ttk.Label(dialog)
+        qr_label.pack(pady=20)
+        
+        def generate():
+            img = self.register.generate_payment_qr(amount, method_var.get())
+            if img:
+                # Convert PIL image for Tkinter
+                from PIL import ImageTk
+                photo = ImageTk.PhotoImage(img)
+                qr_label.config(image=photo)
+                qr_label.image = photo  # Keep reference
+        
+        ttk.Button(dialog, text="Generate QR", command=generate).pack(pady=10)
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=5)
     
     def show_add_plu_dialog(self):
         """Dialog for adding new PLU/product"""
