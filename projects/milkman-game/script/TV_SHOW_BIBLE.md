@@ -30,6 +30,11 @@
 **Catchphrase:**
 > *"Time to deliver justice, straight from the dairy!"*
 
+**Public Service Jingle:**
+> 🎵 *"Don't be a Larry and slack on your Dairy — Milk Man and Boy Lactate are always merry!"* 🎵
+> 
+> *- Dairyopolis Public Health Campaign, 1950s*
+
 ---
 
 ### Boy Lactate (Sidekick)
