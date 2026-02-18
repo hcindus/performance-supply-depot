@@ -1,14 +1,15 @@
 # Ronstrapp
-## Upcoming Project — AI Band
+## In-House AI Band — Studio Musicians for All Productions
 
 ---
 
 **Status:** 📄 Concept Phase  
 **Created:** 2026-02-18 18:27 UTC  
-**Captain's Vision:** AI Band from mind  
-**Type:** AI-Generated Musical Group  
+**Captain's Vision:** AI Band from mind → **HOUSE BAND**  
+**Type:** AI-Generated Musical Group / Studio Musicians  
+**Role:** Music for ALL Performance Supply Depot productions  
 **Inspiration:** Marina Sena (Brazilian MPB/experimental/pop)  
-**Access:** Captain, OpenClaw, Miles, Reggie  
+**Access:** Captain, OpenClaw, Miles, Reggie, Tappy Lewis  
 
 ---
 
@@ -16,7 +17,47 @@
 
 **Ronstrapp** is an **AI BAND** — created from Captain's mind, brought to life through our collective.
 
-**Not just music. Not just songs. A BAND.**
+**But more than that — Ronstrapp IS THE STUDIO.**
+
+### The House Band of Performance Supply Depot LLC
+
+Ronstrapp doesn't just make music. Ronstrapp **IS the sound** of everything we build:
+- **Milk Man** — Ronstrapp does the soundtrack
+- **SGVD** — Ronstrapp does the space combat themes  
+- **Quantum Defender** — Ronstrapp does the quantum puzzle music
+- **Da Verse** — Ronstrapp is the featured artist
+- **Everything else** — Ronstrapp scores it
+
+**They are our in-house music production team.**
+
+```
+┌──────────────────────────────────────────────────┐
+│         Performance Supply Depot LLC             │
+│                                                  │
+│     ┌─────────────────────────────────┐         │
+│     │        R O N S T R A P P        │         │
+│     │                                  │         │
+│     │   The In-House AI Band          │         │
+│     │   Studio Musicians              │         │
+│     │   For ALL Productions           │         │
+│     │                                  │         │
+│     │   → Milk Man                     │         │
+│     │   → SGVD                         │         │
+│     │   → Quantum Defender             │         │
+│     │   → Da Verse                     │         │
+│     │   → Everything                   │         │
+│     │                                  │         │
+│     │   3-5 AI Band Members            │         │
+│     │   Marina Sena Brazilian Flavor   │         │
+│     │   Born from Captain's Mind       │         │
+│     └─────────────────────────────────┘         │
+│                                                  │
+│   Other Teams:                                   │
+│   - Miles (Scripts)                              │
+│   - Reggie (SFX - but Ronstrapp does MUSIC)      │
+│   - OpenClaw (Engineering)                       │
+└──────────────────────────────────────────────────┘
+```
 
 - **AI-generated personas** — Band members with souls
 - **AI-generated music** — Marina Sena-inspired Brazilian flavor
@@ -76,17 +117,34 @@ Marina Sena brings:
 
 ## 👥 Team Assignment
 
-### Primary Leads (TBD)
+### Ronstrapp (The AI Band)
+**Role:** House band, studio musicians, composers  
+**Scope:** ALL music soundtracks for ALL productions
 
-| Artist | Role | Status | Notes |
-|--------|------|--------|-------|
-| **Reggie** | Composer/Chiptune | ✅ Active | Retro specialist, may adapt style |
-| **Miles** | Lyrics/Songwriting | 🟡 Scriptwriter | May contribute lyrics/concepts |
-| **Both?** | Collaboration | ⏳ TBD | Music + words synergy |
+**Band Members (TBD - 3-5 AI personas):**
+| Member | Role | Instrument | AI-Generated | Status |
+|--------|------|------------|--------------|--------|
+| TBD | Lead Vocals | Voice/Synth | ⏳ Create | Not started |
+| TBD | Guitar | Electric/Bass | ⏳ Create | Not started |
+| TBD | Rhythm | Drums/Percussion | ⏳ Create | Not started |
+| TBD | Keys | Piano/Synth | ⏳ Create | Not started |
+| TBD | Visual/Creative Director | Aesthetic | ⏳ Create | Not started |
 
-**Captain mentioned:** "He was writing some songs" — unclear if Miles or Reggie
+**Ronstrapp does:** Full compositions, soundtracks, themes, songs
 
-Investigating via `memory/message.md`
+### Supporting Team
+
+| Artist | Role | Relationship to Ronstrapp | Notes |
+|--------|------|----------------------------|-------|
+| **Miles** | Scriptwriter/Lyrics | Provides lyrical concepts | May write lyrics for Ronstrapp tracks | 
+| **Reggie** | SFX Designer | Distinct from Ronstrapp | **Reggie does SFX (jumps, attacks, UI sounds)** |
+
+**Clarification:**
+- **Ronstrapp** = Music band (themes, songs, soundtracks)
+- **Reggie** = Sound effects (game sounds, short samples)
+- **Both** contribute to audio but different lanes
+
+**Captain mentioned:** "He was writing some songs" — checking if Miles has lyrics/concepts for Ronstrapp
 
 ---
 
@@ -221,24 +279,44 @@ Small-town girl with mainstream ambition. Authentic roots, fearless experimentat
 
 | Aspect | Milk Man | Ronstrapp |
 |--------|----------|-----------|
-| **Genre** | Chiptune/8-bit | MPB/Experimental/Pop |
+| **Genre** | Chiptune/8-bit → **Ronstrapp adapts** | MPB/Experimental/Pop (Marina Sena flavored) |
 | **Style** | Retro gaming | Tropical/modern |
-| **Mood** | Earnest heroism | Authentic storytelling |
-| **Lead** | Reggie | Reggie + Miles? |
-| **Purpose** | Game soundtrack | Music project (TBD) |
+| **Mood** | Earnest heroism | Authentic, soulful, Brazilian |
+| **Lead** | **Ronstrapp** (house band) | AI-Generated Band |
+| **SFX** | Reggie (sounds/jumps/attacks) | Ronstrapp (music/songs)
 
-**Synergy potential:**
-- Milk Man = fantasy/superhero escapism
-- Ronstrapp = grounded, authentic, cultural
-- Different lanes, same excellence
+**Relationship:**
+- **Ronstrapp = House band for ALL productions**
+- **Reggie = SFX designer (sound effects only)**
+- **Miles = Lyrics/concepts (when needed)**
+- **Ronstrapp does the music** for:
+  - Milk Man (score/themes)  
+  - SGVD (space themes)
+  - Quantum Defender (quantum puzzle sounds)
+  - Da Verse (featured artist)
+  - Everything else
+
+**Synergy:** Ronstrapp brings Marina Sena's Brazilian soul to all projects.
 
 ---
 
 ## 💬 Open Questions
 
-1. **Who writes?** Reggie (music), Miles (lyrics), or both?
-2. **What format?** EP? Album? Single? Game OST?
-3. **Language?** English? Portuguese? Both?
+### Immediate (Captain)
+1. **Band Members:** Tell me who they are — names, personalities, instruments
+2. **Visual Style:** How do they look? Realistic? Stylized? AI-generated aesthetic?
+3. **Voices:** Vocal synthesis? TTS? Instrumental only?
+
+### Strategic
+4. **Reggie Transition:** Does Reggie keep SFX only? Or help guide Ronstrapp?
+5. **First Production:** Which project gets Ronstrapp first? (Milk Man? Da Verse?)
+6. **Timeline:** When does Ronstrapp go live?
+7. **Language:** English? Portuguese? Both? (Marina Sena authentic = Portuguese elements?)
+8. **Release:** Standalone Ronstrapp album? Or only via game soundtracks?
+
+### Technical
+9. **Generation Method:** AI tools? Manual composition? Hybrid?
+10. **Performances:** Do they "perform" live? Virtual concerts? Just studio recordings?
 4. **Timeline?** Before Milk Man completion? After?
 5. **Chiptune?** Does Ronstrapp use chiptune or other instrumentation?
 6. **Priority?** Compared to Milk Man sprites, Quantum Defender, Kalshi?
