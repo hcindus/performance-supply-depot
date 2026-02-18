@@ -541,6 +541,7 @@ class ReggieStarrGUI:
             ('Discount', '#6a4a4a'), ('Void Item', '#6a4a4a'), ('Void Txn', '#6a4a4a'),
             ('Subtotal', '#4a6a4a'), ('Total', '#2a6a2a'), ('No Sale', '#4a4a6a'),
             ('Bag Fee', '#4a4a6a'), ('CRV', '#4a4a6a'), ('Tax Exempt', '#4a4a6a'),
+            ('Add PLU', '#6a4a6a'), ('Dept Mgmt', '#6a4a6a'), ('Inventory', '#6a4a6a'),
         ]
         
         for i, (text, color) in enumerate(functions):
@@ -657,8 +658,259 @@ class ReggieStarrGUI:
         elif func == "No Sale":
             result = self.register.functions['No Sale']()
             messagebox.showinfo("No Sale", result)
+        elif func == "Add PLU":
+            self.show_add_plu_dialog()
+        elif func == "Dept Mgmt":
+            self.show_department_dialog()
+        elif func == "Inventory":
+            self.show_inventory_dialog()
         
         self.update_display()
+    
+    def show_add_plu_dialog(self):
+        """Dialog for adding new PLU/product"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Add New PLU")
+        dialog.geometry("400x500")
+        dialog.transient(self.master)
+        dialog.grab_set()
+        
+        # Form fields
+        fields = [
+            ("PLU Code:", "code"),
+            ("Product Name:", "name"),
+            ("Price:", "price"),
+            ("Initial Quantity:", "quantity"),
+            ("Department:", "department"),
+            ("PLU Code (optional):", "plu"),
+        ]
+        
+        entries = {}
+        for i, (label, key) in enumerate(fields):
+            ttk.Label(dialog, text=label).grid(row=i, column=0, padx=5, pady=5, sticky='e')
+            entry = ttk.Entry(dialog, width=25)
+            entry.grid(row=i, column=1, padx=5, pady=5)
+            entries[key] = entry
+        
+        # Tax rates checkboxes
+        ttk.Label(dialog, text="Tax Rates:").grid(row=len(fields), column=0, padx=5, pady=5, sticky='ne')
+        tax_frame = ttk.Frame(dialog)
+        tax_frame.grid(row=len(fields), column=1, padx=5, pady=5, sticky='w')
+        
+        tax_vars = {}
+        for i, (tax_name, rate) in enumerate(Config.TAX_RATES.items()):
+            var = tk.BooleanVar(value=(tax_name == 'Berkeley'))
+            tax_vars[tax_name] = var
+            ttk.Checkbutton(tax_frame, text=f"{tax_name} ({rate:.2%})", variable=var).grid(row=i, column=0, sticky='w')
+        
+        # CRV checkbox
+        crv_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(dialog, text="CRV Applicable", variable=crv_var).grid(row=len(fields)+1, column=1, sticky='w', padx=5)
+        
+        # Open price checkbox
+        open_price_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(dialog, text="Allow Price Override", variable=open_price_var).grid(row=len(fields)+2, column=1, sticky='w', padx=5)
+        
+        def save_plu():
+            try:
+                code = entries['code'].get().strip()
+                name = entries['name'].get().strip()
+                price = float(entries['price'].get())
+                quantity = int(entries['quantity'].get())
+                department = entries['department'].get().strip() or "General"
+                plu_code = entries['plu'].get().strip() or None
+                
+                selected_taxes = [tax for tax, var in tax_vars.items() if var.get()]
+                
+                product = Product(
+                    code=code,
+                    name=name,
+                    price=price,
+                    quantity=quantity,
+                    department=department,
+                    tax_rates=selected_taxes,
+                    track_inventory=True,
+                    open_price=open_price_var.get(),
+                    plu_code=plu_code,
+                    crv_applicable=crv_var.get(),
+                    crv_rate=0.05 if crv_var.get() else 0.0
+                )
+                
+                self.register.add_product(product)
+                messagebox.showinfo("Success", f"Added PLU: {name}")
+                dialog.destroy()
+            except ValueError as e:
+                messagebox.showerror("Error", f"Invalid input: {e}")
+        
+        ttk.Button(dialog, text="Save PLU", command=save_plu).grid(row=len(fields)+3, column=0, columnspan=2, pady=20)
+    
+    def show_department_dialog(self):
+        """Dialog for department management"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Department Management")
+        dialog.geometry("600x500")
+        dialog.transient(self.master)
+        
+        # Get unique departments
+        departments = {}
+        for product in self.register.products.values():
+            dept = product.department
+            if dept not in departments:
+                departments[dept] = {'products': [], 'total_value': 0}
+            departments[dept]['products'].append(product)
+            departments[dept]['total_value'] += product.price * product.quantity
+        
+        # Treeview for departments
+        tree = ttk.Treeview(dialog, columns=('Products', 'Total Value'), show='tree headings')
+        tree.heading('#0', text='Department')
+        tree.heading('Products', text='Products')
+        tree.heading('Total Value', text='Inventory Value')
+        tree.pack(fill='both', expand=True, padx=10, pady=10)
+        
+        for dept_name, data in sorted(departments.items()):
+            item_count = len(data['products'])
+            value = data['total_value']
+            tree.insert('', 'end', text=dept_name, values=(item_count, f"${value:.2f}"))
+        
+        # Assign product to department section
+        ttk.Label(dialog, text="Reassign Product to Department:").pack(pady=(10, 5))
+        
+        assign_frame = ttk.Frame(dialog)
+        assign_frame.pack(fill='x', padx=10, pady=5)
+        
+        ttk.Label(assign_frame, text="Product Code:").grid(row=0, column=0, padx=5)
+        product_entry = ttk.Entry(assign_frame, width=15)
+        product_entry.grid(row=0, column=1, padx=5)
+        
+        ttk.Label(assign_frame, text="New Department:").grid(row=0, column=2, padx=5)
+        dept_entry = ttk.Entry(assign_frame, width=20)
+        dept_entry.grid(row=0, column=3, padx=5)
+        
+        def assign_department():
+            code = product_entry.get().strip()
+            new_dept = dept_entry.get().strip()
+            
+            if code in self.register.products:
+                product = self.register.products[code]
+                product.department = new_dept
+                self.register.add_product(product)
+                messagebox.showinfo("Success", f"Assigned {product.name} to {new_dept}")
+                dialog.destroy()
+                self.show_department_dialog()  # Refresh
+            else:
+                messagebox.showerror("Error", "Product not found")
+        
+        ttk.Button(assign_frame, text="Assign", command=assign_department).grid(row=0, column=4, padx=5)
+        
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=10)
+    
+    def show_inventory_dialog(self):
+        """Dialog for inventory management"""
+        dialog = tk.Toplevel(self.master)
+        dialog.title("Inventory Management")
+        dialog.geometry("800x600")
+        dialog.transient(self.master)
+        
+        # Create notebook for tabs
+        notebook = ttk.Notebook(dialog)
+        notebook.pack(fill='both', expand=True, padx=10, pady=10)
+        
+        # Tab 1: All Products
+        tab1 = ttk.Frame(notebook)
+        notebook.add(tab1, text="All Products")
+        
+        # Treeview for products
+        columns = ('Code', 'Name', 'Price', 'Stock', 'Department', 'Status')
+        tree = ttk.Treeview(tab1, columns=columns, show='headings')
+        for col in columns:
+            tree.heading(col, text=col)
+            tree.column(col, width=100)
+        tree.pack(fill='both', expand=True, padx=5, pady=5)
+        
+        # Add scrollbar
+        scrollbar = ttk.Scrollbar(tab1, orient='vertical', command=tree.yview)
+        scrollbar.pack(side='right', fill='y')
+        tree.configure(yscrollcommand=scrollbar.set)
+        
+        # Populate tree
+        for code, product in sorted(self.register.products.items()):
+            status = "LOW" if product.quantity < 10 else "OK" if product.quantity > 0 else "OUT"
+            tree.insert('', 'end', values=(
+                code, product.name, f"${product.price:.2f}",
+                product.quantity, product.department, status
+            ))
+        
+        # Tab 2: Low Stock
+        tab2 = ttk.Frame(notebook)
+        notebook.add(tab2, text="Low Stock Alerts")
+        
+        low_stock_tree = ttk.Treeview(tab2, columns=columns[:5], show='headings')
+        for col in columns[:5]:
+            low_stock_tree.heading(col, text=col)
+            low_stock_tree.column(col, width=120)
+        low_stock_tree.pack(fill='both', expand=True, padx=5, pady=5)
+        
+        for code, product in sorted(self.register.products.items()):
+            if product.quantity < 10:
+                low_stock_tree.insert('', 'end', values=(
+                    code, product.name, f"${product.price:.2f}",
+                    product.quantity, product.department
+                ))
+        
+        # Tab 3: Stock Adjustment
+        tab3 = ttk.Frame(notebook)
+        notebook.add(tab3, text="Adjust Stock")
+        
+        ttk.Label(tab3, text="Product Code:").grid(row=0, column=0, padx=5, pady=5, sticky='e')
+        code_entry = ttk.Entry(tab3, width=20)
+        code_entry.grid(row=0, column=1, padx=5, pady=5)
+        
+        ttk.Label(tab3, text="Adjustment (+/-):").grid(row=1, column=0, padx=5, pady=5, sticky='e')
+        adj_entry = ttk.Entry(tab3, width=20)
+        adj_entry.grid(row=1, column=1, padx=5, pady=5)
+        
+        ttk.Label(tab3, text="Reason:").grid(row=2, column=0, padx=5, pady=5, sticky='e')
+        reason_entry = ttk.Entry(tab3, width=30)
+        reason_entry.grid(row=2, column=1, padx=5, pady=5)
+        reason_entry.insert(0, "Stock adjustment")
+        
+        def adjust_stock():
+            try:
+                code = code_entry.get().strip()
+                adjustment = int(adj_entry.get())
+                reason = reason_entry.get().strip()
+                
+                if code in self.register.products:
+                    product = self.register.products[code]
+                    new_qty = product.quantity + adjustment
+                    if new_qty < 0:
+                        messagebox.showerror("Error", "Cannot reduce stock below 0")
+                        return
+                    
+                    product.quantity = new_qty
+                    self.register.add_product(product)
+                    
+                    # Log adjustment
+                    conn = self.register.db.get_connection()
+                    cursor = conn.cursor()
+                    cursor.execute('''
+                        INSERT INTO inventory_log (product_code, adjustment, reason, new_quantity, timestamp, clerk_id)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                    ''', (code, adjustment, reason, new_qty, datetime.datetime.now().isoformat(),
+                          self.register.current_clerk['id'] if self.register.current_clerk else 'system'))
+                    conn.commit()
+                    conn.close()
+                    
+                    messagebox.showinfo("Success", f"Stock adjusted. New quantity: {new_qty}")
+                    dialog.destroy()
+                else:
+                    messagebox.showerror("Error", "Product not found")
+            except ValueError:
+                messagebox.showerror("Error", "Invalid adjustment amount")
+        
+        ttk.Button(tab3, text="Adjust Stock", command=adjust_stock).grid(row=3, column=0, columnspan=2, pady=20)
+        
+        ttk.Button(dialog, text="Close", command=dialog.destroy).pack(pady=10)
     
     def handle_payment(self, method):
         if not self.register.current_transaction:
