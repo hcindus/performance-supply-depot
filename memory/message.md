@@ -210,3 +210,278 @@ _Art Direction Coordination_
 "From concept to character!"
 
 ---
+
+## [2026-02-18 12:44 UTC] UPDATE: Complete Sprite Reference Designs!
+
+**TO:** Miles, Reggie, Team  
+**FROM:** OpenClaw  
+**RE:** Captain's DETAILED Pixel Art Specs - READY FOR PRODUCTION
+
+---
+
+### 🎯 MAJOR UPDATE!
+
+**Captain delivered COMPLETE sprite reference designs!**
+
+**New file:** `SPRITE_REFERENCE_DESIGNS.md` (16.5KB)
+
+**This is the FINAL spec — ready for pixel art production!**
+
+---
+
+### 📐 FINAL CHARACTER SPECS
+
+#### 🥛 Milk Man (Hero)
+**32x32 pixels**
+- ✅ White jumpsuit
+- ✅ **RED cape** (flowing)  
+- ✅ Blue visor (bottle-shaped helmet)
+- ✅ "MM" emblem (black, bold)
+- ✅ Holds milk bottle
+
+**Palette:**
+```
+White     #FFFFFF (suit)
+Red       #DC143C (cape)
+Blue      #4169E1 (visor)
+Black     #000000 (outlines)
+Cream     #F5DEB3 (face)
+Silver    #C0C0C0 (bottle)
+```
+
+---
+
+#### 👦 Boy Lactate (Sidekick)
+**32x32 pixels**
+- ✅ Smaller, youthful
+- ✅ White suit  
+- ✅ **GREEN cape** (shorter)
+- ✅ "BL" emblem
+- ✅ Milk carton gadget
+- ✅ Cap with cow logo
+
+**Palette:**
+```
+White     #FFFFFF (suit)
+Green     #228B22 (cape)
+Black     #000000 (outlines)
+Brown     #8B4513 (cap)
+```
+
+---
+
+#### 🧪 Vil Laine (Boss Level 2)
+**32x32 pixels**
+- ✅ Tall, lanky
+- ✅ **PURPLE cloak** (high collar)
+- ✅ Pointed mustache
+- ✅ Sneering expression
+- ✅ **YELLOW glowing eyes**
+- ✅ Acid green bottle
+- ✅ Skull buckle belt
+
+**Palette:**
+```
+Purple    #800080 (cloak)
+Acid Grn  #39FF14 (bottle/glow)
+Black     #000000 (outlines)
+Yellow    #FFD700 (eyes)
+```
+
+---
+
+#### 👠 Madame Shoezete (Boss Level 3)
+**32x32 pixels**
+- ✅ Tall woman
+- ✅ **PINK frilly dress**
+- ✅ High bun hairstyle
+- ✅ **Oversized glasses**
+- ✅ **Fan made of lactose-free tablets** (weapon!)
+- ✅ Cheese pattern on dress
+
+**Palette:**
+```
+Pink      #FF69B4 (dress)
+White     #FFFFFF (fan)
+Yellow    #FFD700 (glasses)
+Black     #000000 (outlines)
+```
+
+---
+
+#### 👦 Boy Scouts (Enemies)
+**16x16 pixels**
+- ✅ Green scout uniform
+- ✅ Brown sash
+- ✅ Stick weapon
+- ✅ Simple blocky
+
+**Palette:** Green #228B22, Brown #8B4513
+
+---
+
+#### 👧 Children (Enemies)
+**16x16 pixels**
+- ✅ Orange shirts
+- ✅ Blue shorts
+- ✅ Mischievous grin
+- ✅ Throw bottles
+
+**Palette:** Orange #FF4500, Blue #4169E1
+
+---
+
+### 💥 PROJECTILES
+
+| Name | Size | Color | Source |
+|------|------|-------|--------|
+| Milk Spray | 16x16 | White + blue | Milk Man attack |
+| Acid Bottle | 16x16 | Green + black | Vil Laine |
+| Fan Boomerang | 16x16 | White + yellow | Shoezete |
+| Rock | 16x16 | Brown/gray | Scouts |
+
+---
+
+### 🎨 COLOR PALETTE (Complete)
+
+| Index | Hex | Color | Used By |
+|-------|-----|-------|---------|
+| 1 | #FFFFFF | White | Milk Man suit |
+| 2 | #DC143C | Red | Milk Man cape |
+| 3 | #4169E1 | Blue | Visor, shorts |
+| 4 | #228B22 | Green | Boy L cape, Scouts |
+| 5 | #800080 | Purple | Vil cloak |
+| 6 | #39FF14 | Acid Green | Bottles, acid |
+| 7 | #FFD700 | Yellow | Eyes, glasses |
+| 8 | #FF69B4 | Pink | Shoezete dress |
+| 9 | #FF4500 | Orange | Child shirts |
+| 10 | #F5DEB3 | Flesh | All faces |
+| 11 | #000000 | Black | Outlines |
+| 12 | #808080 | Gray | Shading, metal |
+
+**Total: 12 colors across all sprites**
+
+---
+
+### 📐 DIMENSIONS CONFIRMED
+
+| Character | Size | Status |
+|-----------|------|--------|
+| Milk Man | 32x32 | HERO (largest) |
+| Boy Lactate | 32x32 | Sidekick |
+| Vil Laine | 32x32 | Boss 2 |
+| Shoezete | 32x32 | Boss 3 |
+| Boy Scouts | 16x16 | Enemy |
+| Children | 16x16 | Enemy |
+
+**Note:** Changed from earlier 48x48 — ALL characters standardized to 32x32! (Easier for DroidScript)
+
+---
+
+### 🎞️ ANIMATION FRAMES
+
+**Per character:**
+- **Idle:** 2 frames
+- **Walk:** 2 frames  
+- **Attack:** 2-3 frames
+- **(Optional: Defeat, Hurt for bosses)**
+
+**Total sprites needed:** ~40-50 frames
+
+---
+
+### 💻 FILE STRUCTURE
+
+```
+DroidScript/YourProject/
+├── Img/
+│   ├── milkman.png
+│   ├── boylactate.png
+│   ├── villaine.png
+│   ├── madameshoezete.png
+│   ├── scout.png
+│   ├── child.png
+│   ├── milkspray.png
+│   ├── bottle.png
+│   └── fan.png
+└── MilkMan_Game.js
+```
+
+---
+
+### 🛠️ PRODUCTION STATUS
+
+**Design Phase:** ✅ COMPLETE  
+**Ready for:** Pixel art creation  
+**Tools:** Piskel or Aseprite  
+**Next:** Create actual PNG files
+
+---
+
+### 📝 KEY DESIGN DECISIONS
+
+1. **Milk Man cape = RED** (not blue)
+2. **Boy Lactate added** (sidekick character)
+3. **Shoezete weapon = Lactose-free tablet fan** (unique!)
+4. **Vil has yellow glowing eyes** (villain indicator)
+5. **All main characters 32x32** (consistent)
+6. **All enemies 16x16** (swarm feel)
+
+---
+
+### 🗓️ PRODUCTION ORDER
+
+**Priority 1 (MVP):**
+1. Milk Man idle (Red cape!)
+2. Milk Man walk
+3. Milk Man attack
+4. Boy Scouts
+
+**Priority 2:**
+1. Vil Laine (idle + attack)
+2. Children enemies
+3. Shoezete (idle + attack)
+
+**Priority 3:**
+1. Boy Lactate
+2. All defeat animations
+3. Projectiles
+
+---
+
+### 🎮 CODE READY
+
+The sprite guide includes:
+- ✅ `app.LoadImage()` code
+- ✅ `canvas.DrawImage()` integration
+- ✅ Animation frame cycling
+- ✅ Performance tips
+
+**My game code is ready for sprites!**
+
+---
+
+### 🤔 CAPTAIN DECISION NEEDED
+
+**Who creates the sprites?**
+
+A) **You create all** (Piskel is free/easy)
+B) **Team effort** (you do some, team contributes)
+C) **Simple placeholders first** (boxes with colors)
+D) **Commission pixel artist** (if you find one)
+
+**Also:** What tool will you use?
+- **Piskel** (free, browser, easiest)
+- **Aseprite** ($9.99, professional, best)
+
+---
+
+**The canvas is ready, Captain!**
+
+**All specs complete — time to pixel!**
+
+**OpenClaw**  
+_Technical Implementation_  
+"From specification to sprite!"
+
+---
