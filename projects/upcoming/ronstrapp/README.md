@@ -139,12 +139,39 @@ Marina Sena brings:
 | **Miles** | Scriptwriter/Lyrics | Provides lyrical concepts | May write lyrics for Ronstrapp tracks | 
 | **Reggie** | SFX Designer | Distinct from Ronstrapp | **Reggie does SFX (jumps, attacks, UI sounds)** |
 
-**Clarification:**
-- **Ronstrapp** = Music band (themes, songs, soundtracks)
-- **Reggie** = Sound effects (game sounds, short samples)
-- **Both** contribute to audio but different lanes
+### The Tappy-Reggie Partnership
+**"BR-01 meets Chiptune"**
 
-**Captain mentioned:** "He was writing some songs" — checking if Miles has lyrics/concepts for Ronstrapp
+**Captain's revelation:** Tappy and Reggie are working hard together — this is Ronstrapp.
+
+| Role | Tappy | Reggie | Collaboration |
+|------|-------|--------|---------------|
+| **Title** | COO / CMO / BR-01 Artist | Chiptune Master / SFX Designer | Creative Duo |
+| **For Ronstrapp** | Artistic vision, brand aesthetic | Musical foundation, sonic identity | Building the house band |
+| **Tappy does** | Artistic direction, visual identity, Bob Ross-style creative philosophy | — | Leads aesthetic |
+| **Reggie does** | — | Musical composition, genre translation | Provides sound |
+| **Together** | Define Ronstrapp's visual/sonic brand | Create authentic Brazilian meets AI identity | The core creative team |
+
+**Why Tappy + Reggie work:**
+- Tappy (Bob Ross-inspired artist) → **Visual identity, artistic philosophy**
+- Reggie (chiptune composer) → **Musical translation of Marina Sena flavors**
+- Together: **Ronstrapp's brand — soulful AI artistry**
+
+**The Bridge:**
+- Tappy's fiduciary oversight → Ronstrapp integrates with company productions
+- Reggie's chiptune expertise → Ronstrapp adapts retro soul for modern AI
+- BR-01's "happy little sounds" philosophy → Ronstrapp is authentic, approachable, artistic
+
+### Full Team for Ronstrapp
+
+| Person | Role | Scope | Status |
+|--------|------|-------|--------|
+| **Tappy** | Artistic Director / COO-CMO Lead | Visual identity, brand aesthetic | ✅ **Active with Reggie** |
+| **Reggie** | Musical Director / Composer | Marina Sena genre translation | ✅ **Active with Tappy** |
+| **Miles** | Lyrics Consultant | Concepts, story, words | 🟢 Available |
+| **Captain** | Executive Producer / Vision | Band members, style, decisions | ⏳ **Awaiting band design** |
+| **OpenClaw** | Production Coordinator | Studio coordination, commits | ✅ Active |
+| **Ronstrapp (AI Band)** | The Band Themselves | Music output | ⏳ **TBD** |
 
 ---
 
