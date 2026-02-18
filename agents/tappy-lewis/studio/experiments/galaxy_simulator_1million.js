@@ -104,7 +104,7 @@ class Galaxy {
         // Number of planets (0-12, weighted toward smaller systems)
         const planetCount = Math.floor(rng.weightedRandom(0, 12, 0.6));
         
-        // Generate planets
+        // Generate planets with moons
         for (let i = 0; i < planetCount; i++) {
             const distance = rng.range(80, 800); // pixels from star
             const planet = {
@@ -116,8 +116,24 @@ class Galaxy {
                 color: this.getPlanetColor(rng.rangeInt(0, 7)),
                 hasRings: rng.next() < 0.15, // 15% have rings
                 moonCount: rng.weightedRandom(0, 5, 0.7),
-                angle: rng.range(0, Math.PI * 2)
+                angle: rng.range(0, Math.PI * 2),
+                moons: [] // Initialize moons array
             };
+            
+            // Generate moons for each planet
+            for (let m = 0; m < planet.moonCount; m++) {
+                const moon = {
+                    id: m,
+                    radius: rng.range(2, 5),
+                    distance: rng.range(30, 50), // Distance from planet
+                    color: dualityPalette["Urban Gray"],
+                    angle: rng.range(0, Math.PI * 2),
+                    period: rng.range(5, 20), // Days to orbit planet
+                    planetId: i
+                };
+                planet.moons.push(moon);
+            }
+            
             system.planets.push(planet);
         }
         
@@ -131,6 +147,22 @@ class Galaxy {
         if (rng.next() < 0.3) {
             system.hasAsteroidBelt = true;
             system.beltPosition = rng.range(400, 600);
+            system.beltWidth = rng.range(50, 100);
+            system.asteroids = [];
+            
+            // Generate individual asteroids (100-500 per belt)
+            const asteroidCount = rng.rangeInt(100, 500);
+            for (let a = 0; a < asteroidCount; a++) {
+                const asteroid = {
+                    angle: rng.range(0, Math.PI * 2),
+                    distance: rng.range(system.beltPosition - system.beltWidth/2, 
+                                      system.beltPosition + system.beltWidth/2),
+                    size: rng.range(1, 4),
+                    color: dualityPalette["Urban Gray"],
+                    brightness: rng.range(0.4, 0.9)
+                };
+                system.asteroids.push(asteroid);
+            }
         }
         
         system.seed = seed;
@@ -339,14 +371,14 @@ class Galaxy {
                 }
                 this.renderStarWithGlow(canvas, screenX, screenY, star);
                 
-                // Render all planets
+                // Render all planets (with moons)
                 for (const planet of system.planets) {
                     this.renderPlanet(canvas, screenX, screenY, planet, false);
                 }
                 
-                // Render asteroid belt
+                // Render asteroid belt with individual asteroids
                 if (system.hasAsteroidBelt) {
-                    this.renderAsteroidBelt(canvas, screenX, screenY, system.beltPosition);
+                    this.renderAsteroidBelt(canvas, screenX, screenY, system);
                 }
                 break;
         }
@@ -384,7 +416,53 @@ class Galaxy {
                 canvas.DrawEllipse(px, py, planet.radius * 2, planet.radius * 0.5,
                     dualityPalette["Sacred Gold"], 0.3);
             }
+            
+            // Moons (if not simple mode)
+            if (planet.moons && planet.moons.length > 0) {
+                for (const moon of planet.moons) {
+                    this.renderMoon(canvas, px, py, moon);
+                }
+            }
         }
+    }
+    
+    // Render moon
+    renderMoon(canvas, planetX, planetY, moon) {
+        const mx = planetX + Math.cos(moon.angle) * moon.distance * 0.3;
+        const my = planetY + Math.sin(moon.angle) * moon.distance * 0.15;
+        
+        // Shadow
+        canvas.DrawCircle(mx + 1, my + 1, moon.size, 
+            bobRossPalette["Midnight Black"], 0.4);
+        
+        // Moon body
+        canvas.DrawCircle(mx, my, moon.size, moon.color);
+        
+        // Highlight
+        canvas.DrawCircle(mx - moon.size * 0.2, my - moon.size * 0.2,
+            moon.size * 0.4, bobRossPalette["Titanium White"], 0.3);
+    }
+    
+    // Render asteroid belt with individual asteroids
+    renderAsteroidBelt(canvas, x, y, system) {
+        if (!system.asteroids || system.asteroids.length === 0) return;
+        
+        // Render individual asteroids
+        for (const asteroid of system.asteroids) {
+            // Only render every 5th asteroid for performance
+            // (still shows 20-100 asteroids per belt)
+            if (Math.random() > 0.2) continue;
+            
+            const ax = x + Math.cos(asteroid.angle) * asteroid.distance * 0.5;
+            const ay = y + Math.sin(asteroid.angle) * asteroid.distance * 0.25;
+            
+            canvas.DrawCircle(ax, ay, asteroid.size, 
+                asteroid.color, asteroid.brightness);
+        }
+        
+        // Draw faint belt boundary ellipse
+        canvas.DrawEllipse(x, y, system.beltPosition * 0.5, system.beltPosition * 0.25,
+            dualityPalette["Urban Gray"] + "20"); // Very faint
     }
     
     // Render nebula cloud
@@ -395,17 +473,6 @@ class Galaxy {
             const offsetX = (Math.random() - 0.5) * 200;
             const offsetY = (Math.random() - 0.5) * 100;
             canvas.DrawCircle(x + offsetX, y + offsetY, radius, color + alpha);
-        }
-    }
-    
-    // Render asteroid belt
-    renderAsteroidBelt(canvas, x, y, distance) {
-        for (let angle = 0; angle < Math.PI * 2; angle += 0.05) {
-            const ax = x + Math.cos(angle) * distance * 0.5;
-            const ay = y + Math.sin(angle) * distance * 0.25;
-            if (Math.random() < 0.3) {
-                canvas.DrawCircle(ax, ay, 2, dualityPalette["Urban Gray"]);
-            }
         }
     }
 }
@@ -422,6 +489,8 @@ class SolarSystem {
         this.nebulaColor = null;
         this.hasAsteroidBelt = false;
         this.beltPosition = 0;
+        this.beltWidth = 0;
+        this.asteroids = [];
         this.seed = 0;
     }
 }
