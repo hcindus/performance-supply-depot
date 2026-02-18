@@ -6,15 +6,20 @@
 
 ## 🎨 Artwork Uploads
 
-### Band Member Portraits
+### Band Member Portraits & Avatars
 ```
 assets/artwork/band-portraits/
-├── member-01/          ← Member 1 refs, sketches, finals
-├── member-02/          ← Member 2 refs, sketches, finals
-├── member-03/          ← Member 3 refs, sketches, finals
-├── member-04/          ← Member 4 refs, sketches, finals
-└── member-05/          ← Member 5 refs (optional slot)
+├── member-01/          ← Member 1 refs, sketches, finals + avatar candidates
+├── member-02/          ← Member 2 refs, sketches, finals + avatar candidates
+├── member-03/          ← Member 3 refs, sketches, finals + avatar candidates
+├── member-04/          ← Member 4 refs, sketches, finals + avatar candidates
+└── member-05/          ← Member 5 refs, sketches, finals + avatar candidates
 ```
+
+**Avatar Upload Process:**
+1. Captain uploads multiple avatar options for each member
+2. Tappy + team review and select final avatar
+3. Selected avatar becomes official profile image
 
 ### Album & Promotional
 ```

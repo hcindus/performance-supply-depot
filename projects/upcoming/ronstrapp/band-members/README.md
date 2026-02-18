@@ -47,6 +47,8 @@ For each member, fill out their profile:
 
 **Upload artwork references to:** `assets/artwork/band-portraits/member-{01-05}/`
 
+**Upload avatar candidates to:** Same folders — Tappy + team will select final avatars from your uploads. Multiple options per member welcome.
+
 ---
 
 **Files:**
