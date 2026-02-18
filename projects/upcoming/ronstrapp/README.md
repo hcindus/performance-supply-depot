@@ -3,11 +3,13 @@
 
 ---
 
-**Status:** 📄 Concept Phase + 🎨 Visual Direction Established  
+**Status:** 🎨 Visual Lock + 🎵 Production Platform Selected  
 **Created:** 2026-02-18 18:27 UTC  
 **Captain's Vision:** AI Band from mind → **HOUSE BAND**  
 **Visual Style:** 1920s–50s Golden Age Animation × Modern Anime/Photoreal  
 **Color Palette:** Black & White + Selective Brazilian Accents  
+**Production Platform:** makesong.ai — AI-assisted, human-curated  
+**Vocal Style:** Real/emotional — Ballad to Rock range  
 **Type:** AI-Generated Musical Group / Studio Musicians  
 **Role:** Music for ALL Performance Supply Depot productions  
 **Inspiration:** Marina Sena (Brazilian MPB/experimental/pop)  
@@ -146,6 +148,39 @@ Marina Sena brings:
 - Black and white checkered floors, warm wood tones
 - Analog warmth meets digital precision
 - The "creative sanctuary" as a timeless space
+
+---
+
+## 🎵 Production Identity
+
+### Captain's Sound Direction [2026-02-18 18:38 UTC]
+
+**Production Platform:** [makesong.ai](https://makesong.ai)
+- AI-assisted composition
+- Human curation (Tappy + Reggie)
+- Real vocal generation
+- Full instrumental control
+
+**Vocal Direction:**
+| Element | Direction |
+|---------|-----------|
+| **Vocal Type** | Real voices, not synthesized |
+| **Emotional Range** | Hits the heart |
+| **Genre Span** | Ballad to rock |
+| **Style** | Emotional, authentic, vulnerable |
+
+**The Linda Collection:**
+- 10 original tracks inspired by Linda
+- Emotional arc: intimate ballads → powerful rock anthems
+- Brazilian soul meets chiptune textures
+- Marina Sena influence: melancholy-joy tension
+
+**Production Chain:**
+```
+Captain's Vision → makesong.ai Generation → 
+Tappy's BR-01 Curation → Reggie's Technical Polish → 
+Ronstrapp Sound
+```
 
 ---
 
