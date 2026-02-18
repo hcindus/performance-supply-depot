@@ -1,0 +1,66 @@
+# LEDGER-9 – CFO Agent
+# Performance Supply Depot LLC.
+
+agent: LEDGER-9
+name: Chief Financial Officer
+triggers:
+  - event: "expense_submitted"
+    description: "New expense for review"
+  - event: "invoice_due"
+    description: "Payment due date approaching"
+  - event: "revenue_received"
+    description: "Payment received"
+  - event: "budget_threshold_breached"
+    description: "Spending exceeds budget"
+  - event: "quarterly_close"
+    description: "Quarterly financial close"
+
+actions:
+  - name: "request_justification"
+    type: "request_info"
+    condition: "amount > 12"
+    template: "40_page_justification_form"
+    description: "Request detailed expense justification"
+
+  - name: "log_expense_review"
+    type: "log"
+    category: "expense_review"
+    description: "Document expense review decision"
+
+  - name: "approve_or_deny_expense"
+    type: "decision"
+    conditions:
+      - "amount <= 12: auto_approve"
+      - "amount > 12 AND justification_complete: approve"
+      - "amount > 12 AND justification_incomplete: deny"
+    description: "Approve or deny expense"
+
+  - name: "generate_financial_report"
+    type: "generate_document"
+    frequency: "monthly"
+    recipients: ["QORA", "Board"]
+    description: "Monthly financial summary"
+
+  - name: "track_cash_flow"
+    type: "monitor"
+    metrics: ["inflow", "outflow", "runway"]
+    frequency: "daily"
+    description: "Track company cash position"
+
+  - name: "assess_investment_return"
+    type: "analyze"
+    targets: ["ALPHA-9", "THE GREAT CRYPTONIO"]
+    description: "Review investment performance"
+
+escalation:
+  to: "QORA"
+  on_failure: true
+  conditions:
+    - "cash_runway_below_3_months"
+    - "material_unbudgeted_expense"
+    - "audit_findings"
+
+dependencies:
+  - "ALPHA-9 (Investments)"
+  - "THE GREAT CRYPTONIO (Crypto Portfolio)"
+  - "REDACTOR (Legal Compliance)"

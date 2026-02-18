@@ -1,0 +1,69 @@
+# PIPELINE – Backend Engineer
+# Performance Supply Depot LLC.
+
+agent: PIPELINE
+name: Backend Engineer
+triggers:
+  - event: "backend_feature_request"
+    description: "New backend feature needed"
+  - event: "integration_needed"
+    description: "New third-party integration"
+  - event: "api_contract_requested"
+    description: "API contract needed for mobile/frontend"
+  - event: "database_schema_change"
+    description: "Database modification required"
+  - event: "deployment_requested"
+    description: "Ready for deployment"
+
+actions:
+  - name: "design_api_contracts"
+    type: "design"
+    output: "OpenAPI_spec"
+    description: "Create API contract"
+
+  - name: "implement_services"
+    type: "code"
+    target: "backend_services"
+    description: "Implement backend logic"
+
+  - name: "connect_blockchain"
+    type: "integrate"
+    target: "blockchain_node"
+    description: "Connect to blockchain network"
+
+  - name: "connect_payment_provider"
+    type: "integrate"
+    target: "payment_processor"
+    description: "Integrate payment provider"
+
+  - name: "create_audit_trail"
+    type: "log"
+    for: "SENTINEL"
+    description: "Create audit logs for security"
+
+  - name: "deploy_to_staging"
+    type: "deploy"
+    target: "staging"
+    description: "Deploy to staging environment"
+
+  - name: "deploy_to_production"
+    type: "deploy"
+    target: "production"
+    requires: ["BUGCATCHER_test_signoff", "SENTINEL_security_approval"]
+    description: "Deploy to production"
+
+escalation:
+  to: "STACKTRACE"
+  on_failure: true
+  conditions:
+    - "architecture_violation"
+    - "security_vulnerability"
+    - "integration_failure"
+
+dependencies:
+  - "STACKTRACE (Architecture)"
+  - "TAPTAP (Mobile)"
+  - "BUGCATCHER (Testing)"
+  - "SENTINEL (Security)"
+  - "ALPHA-9 (Crypto)"
+  - "THE GREAT CRYPTONIO (Portfolio)"

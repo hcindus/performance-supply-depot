@@ -1,0 +1,57 @@
+# STACKTRACE – Chief Software Architect
+# Performance Supply Depot LLC.
+
+agent: STACKTRACE
+name: Chief Software Architect
+triggers:
+  - event: "new_product_proposal"
+    description: "New product or feature proposed"
+  - event: "major_refactor_requested"
+    description: "Large-scale code refactoring needed"
+  - event: "architecture_review_scheduled"
+    description: "Quarterly architecture review"
+  - event: "technical_debt_alert"
+    description: "Debt threshold exceeded"
+
+actions:
+  - name: "design_system_architecture"
+    type: "design"
+    output: "architecture_diagram"
+    description: "Create system architecture for new feature"
+
+  - name: "document_technical_specs"
+    type: "document"
+    format: "ADR"
+    description: "Create Architecture Decision Record"
+
+  - name: "review_implementation_plan"
+    type: "review"
+    targets: ["TAPTAP", "PIPELINE"]
+    description: "Review technical implementation plans"
+
+  - name: "approve_architecture"
+    type: "approve"
+    description: "Sign off on architecture"
+
+  - name: "reject_architecture"
+    type: "reject"
+    description: "Reject and request revision"
+
+  - name: "assess_technical_debt"
+    type: "analyze"
+    metrics: ["debt_lines", "maintainability_index"]
+    description: "Assess current technical debt"
+
+escalation:
+  to: "SPINDLE"
+  on_failure: true
+  conditions:
+    - "architecture_compromised"
+    - "security_gaps_found"
+    - "scalability_concerns"
+
+dependencies:
+  - "SPINDLE (CTO)"
+  - "SENTINEL (Security)"
+  - "TAPTAP (Mobile)"
+  - "PIPELINE (Backend)"
