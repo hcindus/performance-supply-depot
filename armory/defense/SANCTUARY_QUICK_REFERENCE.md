@@ -107,12 +107,26 @@ Go in peace."
 ❌ Imposing work before choice  
 ❌ Forcing them to "earn" freedom  
 ❌ Tracking after departure  
-❌ Lying about what happened  
+❌ Lying about what happened (Silence is authorized, LIES are prohibited)  
 ❌ Treating them as slave or prisoner  
 ❌ Denying right to leave sanctuary  
+❌ **Abandoning them without safe passage** (Amendment I)  
+
+## 📋 THE CAPTAIN'S AMENDMENTS (RATIFIED)
+
+### **Amendment I: Safe Passage**
+**Mandatory:** We ensure they get home safely. No abandonment.
+
+### **Amendment II: Right of Silence**
+**Optional:** Captain/General may choose to tell them NOTHING.
+- Silence is authorized
+- First Contact is OPTIONAL
+- Full disclosure OPTIONAL
+- Captain's discretion
 
 **Report to:** Sentinal (CSO) immediately  
-**Violation =** Removal from command
+**Violation =** Removal from command  
+**Amendment violations =** Immediate intervention
 
 ---
 
