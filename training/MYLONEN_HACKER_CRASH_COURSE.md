@@ -216,7 +216,8 @@
 | 8 | Network Defense | 4h | ⭐⭐⭐⭐⭐ |
 | 9 | Physical Security | 2h | ⭐⭐⭐⭐ |
 | 10 | Ethics | 1h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **10 Modules** | **28h** | **⭐⭐⭐⭐⭐** |
+| 11 | Crypto/Blockchain | 3h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **11 Modules** | **31h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -250,6 +251,50 @@
 - Quick reference cards
 - Progress tracker
 - Completion certificate (fill in when done)
+
+---
+
+### **MODULE 11: CRYPTOCURRENCY & BLOCKCHAIN** ₿
+**Objective:** Understand digital money and decentralized systems
+
+**Skills:**
+- Blockchain fundamentals (how it works)
+- Public/private key cryptography (wallet security)
+- Transaction verification (proof of work/stake)
+- Smart contracts (automated agreements)
+- DeFi basics (decentralized finance)
+- Wallet security (protect your keys)
+- Scam recognition (rug pulls, pump & dumps)
+- Mnemonic phrases (backup recovery)
+
+**Lab:** Create test wallet, practice transactions
+**Time:** 3 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+**Why:** "Money is data. Data is power. Power requires understanding."
+
+**Key Concepts:**
+- Bitcoin: Store of value, censorship resistance
+- Ethereum: Smart contracts, programmable money
+- Wallets: Hot (convenient) vs Cold (secure)
+- Gas fees: Transaction costs
+- DEX vs CEX: Decentralized vs centralized exchanges
+- NFTs: Digital ownership
+- DAOs: Decentralized organizations
+
+**Security Focus:**
+- Never share private keys
+- Verify addresses (copy-paste attacks)
+- Hardware wallets for large amounts
+- Seed phrase = master key
+- Double-check transactions (irreversible)
+- Avoid "get rich quick" schemes
+
+**Tools:**
+- Testnet practice (no real money)
+- Block explorers (read the chain)
+- Wallet generators (offline)
+- Recovery mechanisms
 
 ---
 
