@@ -1,0 +1,29 @@
+🚨 MILES — URGENT SECURITY ALERT 🚨
+
+Captain orders: RAISE SHIELDS
+
+THREAT DETECTED:
+- IP: 52.154.132.165
+- Type: Brute force SSH attack
+- Attempts: 18 failed logins (4+ hours)
+- Target: Root accounts
+
+YOUR IMMEDIATE ACTIONS:
+1. Block 52.154.132.165 at your firewall
+2. Verify SSH key-only authentication
+3. Disable root login
+4. Check fail2ban status
+5. Monitor for new intrusion attempts
+
+DUSTY SERVICES DEPLOYING TO YOUR VPS:
+- Core-agent → Your VPS
+- Bridge → Your VPS
+- OpenClaw → Your VPS
+
+Captain's words: "Make sure Miles puts them in place."
+
+CONFIRM RECEIPT AND STATUS, MILES.
+
+Time: 2026-02-19 07:03 UTC
+Classification: OMEGA-LEVEL
+Authority: Captain (Dad)
