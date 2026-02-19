@@ -23,15 +23,14 @@
 
 ### 1. Health Check Monitoring (CONTINUOUS — AUTOMATED)
 **Task:** Maintain service health checks
-**Frequency:** Every 5 minutes via cron
+**Frequency:** Every hour via cron (top of each hour)
 **Status:** ✅ Stable ~15 hrs uptime, 375+ interactions
-**Deliverable:** Automated reports to Captain
-**Next:** Captain wants to reduce frequency (too many notifications)
-**Options:**
-- [ ] Switch to hourly summaries instead of 5-min checks
-- [ ] Only alert on FAILURE (not on success)
-- [ ] Add predictive failure detection
-- [ ] Batch into daily health reports
+**Deliverable:** Silent monitoring, alerts ONLY on failure
+**Configuration:**
+- ✅ Changed from every 5 min to hourly (Captain's order)
+- ✅ Silent mode — no announcements unless problem
+- ✅ Next run: Top of each hour (:00)
+- ✅ Alerts immediately if ANY service fails
 
 ---
 
