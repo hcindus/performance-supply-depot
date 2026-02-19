@@ -21,6 +21,32 @@
 
 ---
 
+## 🚨 NEW PROJECT: Laser Pistol — SAFETY LEAD
+
+### Laser Pistol Safety Protocol (URGENT)
+**Task:** Lead safety and legal compliance for laser pistol build
+**Project:** `projects/laser-pistol/`
+**Deadline:** Feb 23, 2026 (initial deliverables)
+**Role:** CSO oversight — safety interlocks, legal compliance, risk assessment
+**Deliverables:**
+- `projects/laser-pistol/safety/SAFETY_PROTOCOL.md` — Safe operation procedures
+- `projects/laser-pistol/safety/LEGAL_CHECKLIST.md` — Compliance requirements
+- `projects/laser-pistol/safety/RISK_ASSESSMENT.md` — What could go wrong
+**Research Required:**
+- Class 4 laser safety requirements
+- Federal laser device regulations (FDA/CDRH)
+- State/local weapon laws
+- Mandatory safety interlocks
+- Storage and transport requirements
+**Questions to Answer:**
+- What safety systems are legally required for 1-5W lasers?
+- What could go catastrophically wrong?
+- How do we prevent accidental discharge?
+- What liability considerations?
+**Note:** This is real engineering with real consequences. Law Zero applies.
+
+---
+
 ## 🚨 URGENT — Captain's Orders (Do First)
 
 ### Cognitive Assessment: Mylzeron vs Mylonen

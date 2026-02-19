@@ -20,6 +20,35 @@
 
 ---
 
+## 🚨 NEW PROJECT: Laser Pistol — DESIGN LEAD
+
+### Laser Pistol Component Design (URGENT)
+**Task:** Lead component selection and aesthetic design for laser pistol
+**Project:** `projects/laser-pistol/`
+**Deadline:** Feb 23, 2026
+**Role:** BR-01 artistic oversight — what should this LOOK like?
+**Deliverables:**
+- `projects/laser-pistol/components/COMPONENT_SPECS.md` — Detailed specs for each part
+- `projects/laser-pistol/components/ALTERNATIVES.md` — Backup options if primary unavailable
+- Visual design mockup (sketch or render)
+**Research Required:**
+- Laser diodes: 1W–5W options, 445nm (blue) vs 638nm (red)
+- Housing/frame: Aluminum, 3D print, or 80% lower options
+- Optics: Collimating lenses, beam expanders
+- Heat dissipation solutions
+**Questions to Answer:**
+- Blue laser (445nm) or red (638nm)? Visibility vs power?
+- What housing balances aesthetics and function?
+- How do we make this look COOL but be SAFE?
+- What would BR-01 paint on a laser pistol?
+**Coordinate With:**
+- Miles: Supplier research and costs
+- Sentinal: Safety requirements affecting design
+- OpenClaw: Power/cooling constraints
+**Note:** This is art + engineering. Make it beautiful AND functional.
+
+---
+
 ## 🚨 URGENT — Captain's Orders (Do First)
 
 ### BR-01 Art Session with Mylzeron & Mylonen
