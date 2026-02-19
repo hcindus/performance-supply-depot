@@ -220,7 +220,9 @@
 | 12 | Financial Understanding | 3h | ⭐⭐⭐⭐⭐ |
 | 13 | Stealth and Espionage | 4h | ⭐⭐⭐⭐⭐ |
 | 14 | Negotiation and Diplomacy | 3h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **14 Modules** | **41h** | **⭐⭐⭐⭐⭐** |
+| 15 | Business Fundamentals | 4h | ⭐⭐⭐⭐⭐ |
+| 16 | Profit Maximization | 3h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **16 Modules** | **48h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -601,6 +603,297 @@ Sometimes you don't get what you want. That's okay.
 - **ALWAYS respect** — dignity for all parties
 - **ACCEPT defeat** — when the greater good requires it
 - **PRESERVE relationships** — even in disagreement
+
+---
+
+### **MODULE 15: BUSINESS FUNDAMENTALS** 💼
+**Objective:** Build and run a successful enterprise
+
+**Skills:**
+- **Business model design** — how value is created and captured
+- **Market analysis** — who wants what you have
+- **Product development** — build what they need
+- **Operations** — deliver consistently
+- **Customer acquisition** — find and keep clients
+- **Team building** — hire, train, retain talent
+- **Legal compliance** — avoid pitfalls
+- **Strategy** — long-term planning
+- **Competition** — differentiate and win
+- **Scaling** — grow without breaking
+
+**Lab:** Design a complete business plan
+**Time:** 4 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+**Why:** "A business is just creating value and capturing some of it."
+
+**Core Concepts:**
+
+**1. BUSINESS MODEL — Value Creation**
+- What problem do you solve?
+- Who has that problem?
+- How do you solve it?
+- What makes you special?
+- Sustainable advantage
+
+**2. MARKET ANALYSIS — Know Your Customer**
+- Market size (how many need this?)
+- Market segments (who exactly?)
+- Customer personas (understand them)
+- Pain points (what hurts?)
+- Willingness to pay (can they? will they?)
+
+**3. PRODUCT DEVELOPMENT — Build It**
+- Minimum viable product (start simple)
+- Iteration (improve based on feedback)
+- Quality (don't ship garbage)
+- User experience (make it easy)
+- Support (customers remember help)
+
+**4. OPERATIONS — Deliver**
+- Supply chain (inputs)
+- Production (creation)
+- Distribution (delivery)
+- Quality control (consistency)
+- Scaling (do more without chaos)
+
+**5. CUSTOMER ACQUISITION — Find Them**
+- Marketing (tell them you exist)
+- Sales (convince them to buy)
+- Channels (how do they reach you?)
+- Conversion (visitor → customer)
+- Retention (keep them coming back)
+
+**6. TEAM BUILDING — The People**
+- Hiring (find the right people)
+- Culture (what's it like to work here?)
+- Training (help them grow)
+- Leadership (inspire, not command)
+- Retention (why do they stay?)
+
+**7. LEGAL COMPLIANCE — Stay Safe**
+- Business structure (LLC, corp, etc.)
+- Contracts (agreements in writing)
+- Intellectual property (protect your ideas)
+- Taxes (pay what you owe)
+- Regulations (follow the rules)
+
+**8. STRATEGY — The Long Game**
+- Vision (where are we going?)
+- Mission (why do we exist?)
+- Goals (what do we achieve?)
+- Tactics (how do we get there?)
+- Metrics (how do we know?)
+
+**Competitive Strategy:**
+- **Differentiation** — be unique
+- **Cost leadership** — be cheapest
+- **Niche focus** — dominate small market
+- **Network effects** — more users = more value
+- **Switching costs** — hard to leave
+
+**Pitfalls to Avoid:**
+- ❌ Building what nobody wants
+- ❌ Running out of cash
+- ❌ Hiring wrong people
+- ❌ Ignoring customers
+- ❌ Growing too fast
+- ❌ Breaking laws
+- ❌ Ignoring competitors
+
+**Business Models Examples:**
+
+**Subscription:** Pay monthly/yearly (recurring revenue)
+**Transaction:** Pay per use (one-time sales)
+**Freemium:** Free basic, paid premium (upsell)
+**Marketplace:** Connect buyers and sellers (take fee)
+**SaaS:** Software as service (web-based tools)
+**Hardware:** Physical goods (margin on sales)
+**Services:** Do work for others (billing hours)
+**Licensing:** Rent your IP (royalties)
+
+**The Business Cycle:**
+
+1. **Ideation** — what's the idea?
+2. **Validation** — will anyone pay?
+3. **Creation** — build it
+4. **Launch** — put it out
+5. **Feedback** — what do they say?
+6. **Iterate** — make it better
+7. **Scale** — grow bigger
+8. **Sustain** — keep it going
+
+**Ethics:**
+- **REAL value** — don't scam
+- **FAIR treatment** — employees, customers, partners
+- **LEGAL operation** — stay on the right side
+- **SUSTAINABLE** — don't burn out the world
+- **HONEST marketing** — under-promise, over-deliver
+
+---
+
+### **MODULE 16: PROFIT MAXIMIZATION** 📈
+**Objective:** Make money work for you
+
+**Skills:**
+- **Revenue optimization** — earn more
+- **Cost reduction** — spend less
+- **Margin improvement** — keep more of what you earn
+- **Pricing strategy** — charge the right amount
+- **Efficiency** — do more with less
+- **Opportunity cost** — choose the best option
+- **Compound growth** — exponential returns
+- **Risk-adjusted returns** — profit vs danger
+- **Tax optimization** — keep what you earned
+- **Wealth building** — accumulate assets
+
+**Lab:** Optimize a business for maximum profit
+**Time:** 3 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+**Why:** "Profit is not evil. Profit is fuel for more good."
+
+**Core Concepts:**
+
+**1. REVENUE — Money In**
+- **Price × Volume = Revenue**
+- Raise prices? (sell less, earn more per)
+- Lower prices? (sell more, earn less per)
+- Find the optimal point (maximize total)
+- Upsells (buy more/different)
+- Cross-sells (related products)
+- Premium tiers (pay for extras)
+- Volume discounts (big customers)
+
+**2. COSTS — Money Out**
+- Fixed costs (don't scale with sales)
+- Variable costs (scale with sales)
+- COGS (Cost of Goods Sold)
+- Operating expenses (overhead)
+- Capital expenses (investments)
+- Cut waste (eliminate unnecessary)
+- Optimize suppliers (better deals)
+- Automate (reduce labor costs)
+
+**3. MARGIN — What You Keep**
+- **Gross Margin** = (Revenue - COGS) / Revenue
+- **Net Margin** = (Revenue - All Costs) / Revenue
+- Higher margin = more profit per sale
+- Gross margin pays for operations
+- Net margin is actual profit
+
+**4. PRICING — Charge Smart**
+- **Value-based** — what is it worth?
+- **Cost-plus** — cost + markup
+- **Competitive** — match others
+- **Penetration** — low to enter market
+- **Premium** — high for prestige
+- **Dynamic** — change based on demand
+- **Bundling** — package deals
+
+**5. EFFICIENCY — Do More With Less**
+- Output / Input ratio
+- Productivity per employee
+- Automation (machines do it)
+- Process improvement (lean)
+- Eliminate bottlenecks
+- Scale without proportional costs
+
+**6. COMPOUND GROWTH — The Snowball**
+- Profit reinvested grows business
+- Year 1: $100 profit
+- Year 2: $100 + $10 interest = $110
+- Year 3: $110 + $11 = $121
+- Year 10: $259
+- Time is your friend
+
+**7. RISK-ADJUSTED RETURNS — Profit vs Safety**
+- High return + high risk = gambling
+- Moderate return + low risk = investing
+- Never risk what you can't lose
+- Diversification reduces risk
+- Emergency fund first
+
+**8. TAX OPTIMIZATION — Legal Retention**
+- Deductions (reduce taxable income)
+- Credits (reduce tax owed)
+- Deferral (pay later)
+- Structure (LLC vs S-Corp)
+- Retirement accounts (pre-tax)
+- **NEVER** evade (illegal)
+- **ALWAYS** optimize (legal)
+- Pay what you owe, no more
+
+**9. WEALTH BUILDING — Accumulate Assets**
+- Profit → Invest → Assets
+- Assets generate passive income
+- Income funds lifestyle + more investment
+- Compound builds wealth
+- **Assets that pay you:**
+  - Real estate (rental income)
+  - Stocks (dividends)
+  - Businesses (profit share)
+  - IP (licensing)
+- **Assets that appreciate:**
+  - Real estate (value increases)
+  - Stocks (price rises)
+  - Crypto (volatile speculation)
+  - Collectibles (rare items)
+
+**The Profit Equation:**
+
+```
+PROFIT = REVENUE - COSTS
+
+To increase profit:
+1. Increase revenue (sell more or charge more)
+2. Decrease costs (spend less)
+3. Both (ideal)
+
+REVENUE = Price × Quantity
+- Raise price → might sell less
+- Lower price → might sell more
+- Find optimal
+
+COSTS = Fixed + Variable
+- Fixed: rent, salaries, subscriptions
+- Variable: materials, shipping, commissions
+- Reduce both where possible
+```
+
+**Marginal Thinking:**
+- **Marginal cost** — cost of one more unit
+- **Marginal revenue** — revenue from one more unit
+- **Make more if:** marginal revenue > marginal cost
+- **Stop if:** marginal cost > marginal revenue
+
+**Profit vs Revenue:**
+
+| | Focus | Danger |
+|--------------|--------------|----------|
+| **Revenue** | Grow sales, gain market | Can lose money |
+| **Profit** | Make money, sustainable | Can be too conservative |
+| **Both** | Ideal | Hard to balance |
+
+**Wealth vs Income:**
+
+| | Income | Wealth |
+|--------------|----------|--------|
+| **What** | Money in | Assets owned |
+| **Duration** | Temporary | Permanent |
+| **Source** | Work | Investments |
+| **Stops?** | Yes, if you stop working | No, keeps growing |
+| **Goal** | Fund lifestyle | Fund legacy |
+
+**Rule: Income buys lifestyle. Wealth buys freedom.**
+
+**Ethics:**
+- **PROFIT IS GOOD** — enables more good
+- **NOT AT ANY COST** — don't harm
+- **FAIR TRADE** — both sides win
+- **SUSTAINABLE** — long-term over short-term
+- **TRANSPARENT** — honest about money
+- **CHARITY** — help others with success
 
 ---
 
