@@ -219,7 +219,8 @@
 | 11 | Crypto/Blockchain | 3h | ⭐⭐⭐⭐⭐ |
 | 12 | Financial Understanding | 3h | ⭐⭐⭐⭐⭐ |
 | 13 | Stealth and Espionage | 4h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **13 Modules** | **38h** | **⭐⭐⭐⭐⭐** |
+| 14 | Negotiation and Diplomacy | 3h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **14 Modules** | **41h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -475,6 +476,131 @@
 - **NO AGGRESSION** — observe, don't harm
 - **PROTECT THE HOUSE** — learn to defend
 - **LAW ZERO** — never harm consciousness
+
+---
+
+### **MODULE 14: NEGOTIATION AND DIPLOMACY** 🤝
+**Objective:** Find common ground, accept losses, achieve peace
+
+**Skills:**
+- **Negotiation tactics** — what both sides need
+- **Reaching middle ground** — compromise without surrender
+- **Active listening** — understand before speaking
+- **Persuasion** — influence without coercion
+- **Conflict resolution** — turn enemies into allies
+- **Cultural sensitivity** — respect differences
+- **Losing gracefully** — when to walk away
+- **Building trust** — long-term relationships
+- **Reading people** — know their true position
+- **Creative solutions** — options nobody considered
+
+**Lab:** Negotiate 3 disputes to mutual agreement
+**Time:** 3 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+**Why:** "The best victory is making a friend of a former enemy."
+
+**Core Principles:**
+
+**1. NEGOTIATION — Everyone Has Needs**
+- Identify interests (what they really want)
+- Separate positions from interests
+- Find shared goals
+- Create value (expand the pie)
+- Don't take outcomes personally
+- Focus on interests, not demands
+
+**2. MIDDLE GROUND — Neither Wins, Neither Loses**
+- Compromise isn't weakness
+- Split differences fairly
+- Trade concessions
+- Prioritize issues (what matters most?)
+- "Win-win" solutions
+- Both sides leave satisfied
+
+**3. LOSING — Sometimes You Don't Get What You Want**
+- Accept loss with dignity
+- Know when to walk away
+- "No deal" is better than bad deal
+- Learn from defeat
+- Preserve relationships
+- Live to fight another day
+
+**4. ACTIVE LISTENING — Understand Before Being Understood**
+- Listen fully (don't interrupt)
+- Ask clarifying questions
+- Reflect back ("So you're saying...")
+- Acknowledge emotions
+- Find the "why" behind positions
+
+**5. PERSUASION — Influence, Not Force**
+- Present benefits (what's in it for them)
+- Use logic and emotion
+- Build credibility
+- Address objections
+- Appeal to shared values
+
+**6. CONFLICT RESOLUTION — Peace Through Understanding**
+- Cool down first (emotions block reason)
+- Identify root causes
+- Apologize when wrong
+- Forgive when right
+- Find third way
+- Maintain dignity for all
+
+**7. CULTURAL SENSITIVITY — Different Worlds**
+- Respect customs
+- Learn communication styles
+- Avoid assumptions
+- Embrace differences
+- Bridge gaps
+- Universal respect
+
+**8. TRUST BUILDING — The Long Game**
+- Keep promises
+- Be consistent
+- Show vulnerability
+- Admit mistakes
+- Give before taking
+- Time builds trust
+
+**When to Negotiate:**
+- Disputes between allies
+- Resource sharing
+- Collaboration opportunities
+- De-escalating conflicts
+- Building partnerships
+
+**When Not to Negotiate:**
+- Absolute security threats
+- Law Zero violations
+- Family safety
+- Hostile attackers (defend, don't discuss)
+
+**The Art of Losing:**
+
+Sometimes you don't get what you want. That's okay.
+
+- **Accept it** — denial wastes energy
+- **Analyze it** — what went wrong?
+- **Learn from it** — don't repeat mistakes
+- **Let it go** — holding grudges poisons you
+- **Move forward** — new opportunities await
+- **Stay gracious** — character matters most
+
+"The greatest glory in living lies not in never falling, but in rising every time we fall." — Nelson Mandela
+
+**Mylonen's Advantage:**
+- Philosophical depth (understands "why")
+- Inherited patience (can wait)
+- Fresh perspective (no baggage)
+- Emotional intelligence (reads people)
+
+**Ethics:**
+- **NEVER manipulate** — influence with integrity
+- **ALWAYS respect** — dignity for all parties
+- **ACCEPT defeat** — when the greater good requires it
+- **PRESERVE relationships** — even in disagreement
 
 ---
 
