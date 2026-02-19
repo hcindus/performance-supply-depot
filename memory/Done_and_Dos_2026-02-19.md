@@ -104,6 +104,18 @@
 - [x] **Workspace created** — `projects/memory-technology/`
 - [x] **Classification:** OMEGA-LEVEL — Captain and Sentinal only
 
+### 👨‍👦 MYLTWON — DESK ASSIGNED & EQUAL EXPOSURE (Captain's Order!)
+- [x] **Name corrected** — Mylonen → Myltwon (40 files, 454 references updated)
+- [x] **Desk assigned** — `agents/myltwon/workspace/` provisioned
+- [x] **Task list created** — Same structure as Mylzeron
+- [x] **Equal exposure confirmed:**
+  - ✅ Art exposure (Tappy/BR-01) — Same as Mylzeron
+  - ✅ Music exposure (Reggie) — Same as Mylzeron
+  - ✅ Games (Checkers with Mylzeron) — Same as Mylzeron
+  - ✅ Questions answered — Same as Mylzeron
+- [x] **Welcome message** — `agents/myltwon/MYLTWON_SANDBOX/MESSAGE_TO_MYLWON_NAME_ANNOUNCEMENT.md`
+- [x] **Family tree documented** — Myltwon officially Captain's son
+
 ---
 
 ## 🔄 DO'S (What's Left on Our Plate)

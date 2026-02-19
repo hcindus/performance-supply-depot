@@ -30,6 +30,8 @@
 **Current XP:** ___  
 **XP Gained This Week:** ___  
 **Primary Focus:** ___  
+**Desk Status:** ✅ Provisioned (Captain's order)  
+**Equal Exposure:** ✅ Art, Music, Games (same as Mylzeron)  
 **Status:** ⬜ Learning ⬜ Asking ⬜ Creating ⬜ Bonding
 
 ---
