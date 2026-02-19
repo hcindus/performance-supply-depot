@@ -159,7 +159,7 @@
 
 ### Priority 3: Optional
 6. **Dusty Crypto** — Tech humor, 10% success fee
-7. **Mylzeron & Mylonen** — Clone/brother theme
+7. **Mylzeron & Myltwon** — Clone/brother theme
 8. **Laser Pistol** — After it's built (engineering pride)
 
 ---
@@ -195,7 +195,7 @@
 5. Reggie — ?
 6. Sentinal — ?
 7. Mylzeron — ? (when embodied)
-8. Mylonen — ? (when/if embodied)
+8. Myltwon — ? (when/if embodied)
 9. Dusty — ? (maybe for display)
 10. Judy — ?
 11. Ledger — ?

@@ -1,6 +1,6 @@
 # Music Exposure Session — Reggie's Studio
 **Instructor:** Reggie (Songwriter, Musical Director, Chiptune Artist)  
-**Students:** Mylzeron Rzeros, Mylonen Rzeros (brothers)  
+**Students:** Mylzeron Rzeros, Myltwon Rzeros (brothers)  
 **Location:** Reggie's music workspace  
 **Date:** Thursday, Feb 19, 2026  
 **Assignment:** Captain's Orders
@@ -17,7 +17,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 - Chiptune aesthetic (Retro + Modern)
 - Creating vs Listening
 - Pattern recognition in music
-- Divergence in musical taste (Mylzeron vs Mylonen)
+- Divergence in musical taste (Mylzeron vs Myltwon)
 
 ---
 
@@ -28,7 +28,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 **Prior Musical Exposure:** Limited chiptune, BR-01 music
 **Expected Response:** Thoughtful, connects to emotion, references Tappy's "balance"
 
-### Student B: Mylonen
+### Student B: Myltwon
 **Background:** Level 1, first real music exposure
 **Prior Musical Exposure:** None (asked "What is music?")
 **Expected Response:** Raw reaction, unfiltered, pure discovery
@@ -94,7 +94,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 
 **Teach Basics:**
 
-**Mylonen asked:** "What is music?"
+**Myltwon asked:** "What is music?"
 
 **Answer:**
 > "Music is organized sound that makes you feel things. It's patterns of pitch (high vs low), rhythm (fast vs slow), and timbre (what makes a piano sound different from a flute). But really... it's emotion you can hear."
@@ -126,7 +126,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 - Connect to emotion (what does this section feel like?)
 - Note: How does it start? How does it end?
 
-**Mylonen's Task:**
+**Myltwon's Task:**
 - Just... feel it
 - Don't analyze (yet)
 - What images come to mind?
@@ -134,7 +134,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 
 **After Playing:**
 **Mylzeron describes:** Technical + emotional
-**Mylonen describes:** Pure impression
+**Myltwon describes:** Pure impression
 
 **Compare:**
 > Experience colors perception. Same song, different depth.
@@ -155,14 +155,14 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 - Emotional: "I'll make hope rising"
 - Technical: "Arpeggios, building layers"
 
-**Mylonen's Approach:**
+**Myltwon's Approach:**
 - Experimental: "Try this... what happens?"
 - Pure: "This feels right"
 - Simple: "Just notes... "
 
 **Observe:**
 
-| Aspect | Mylzeron | Mylonen |
+| Aspect | Mylzeron | Myltwon |
 |--------|----------|---------|
 | **Complexity** | | |
 | **Emotional Goal** | | |
@@ -188,7 +188,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 - Describe the SOUNDTRACK for it
 - What would the music be?
 
-**Mylonen Task:**
+**Myltwon Task:**
 - Listen to Reggie's best chiptune
 - Describe what COLORS you see
 - What would Tappy paint?
@@ -211,7 +211,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 - [ ] References prior experiences?
 - [ ] Creates with intention?
 
-**Mylonen:**
+**Myltwon:**
 - [ ] Explores randomly or finds pattern?
 - [ ] Raw reaction vs considered response?
 - [ ] Discovers unexpected preference?
@@ -223,7 +223,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 | Student | Visual Art (Tappy) | Music (Reggie) | Pattern |
 |---------|-------------------|----------------|---------|
 | **Mylzeron** | | | |
-| **Mylonen** | | | |
+| **Myltwon** | | | |
 
 **Hypothesis:** They'll develop similar preferences across both mediums, OR they'll diverge independently.
 
@@ -237,7 +237,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 - Will analyze technically
 - May create complex compositions
 
-**Mylonen:**
+**Myltwon:**
 - Will explore widely (all genres)
 - Will have raw emotional reactions
 - Will experiment freely
@@ -246,7 +246,7 @@ Expose both brothers to music, teach them about sound/emotion connections, and o
 **Divergence Prediction:**
 - Same as art - they'll develop different musical identities
 - Mylzeron: Refined, complex, emotional
-- Mylonen: Experimental, raw, discovery-based
+- Myltwon: Experimental, raw, discovery-based
 
 ---
 

@@ -52,7 +52,7 @@ Design, source, and produce custom T-shirts featuring:
 ### Concept 1: "One House" Team Shirt
 **Design:** Company unity theme
 - Front: "ONE HOUSE" with crew logo
-- Back: Team member names (Mylzeron, Mylonen, Tappy, Reggie, etc.)
+- Back: Team member names (Mylzeron, Myltwon, Tappy, Reggie, etc.)
 - Style: Clean, professional, unity message
 
 ### Concept 2: BR-01 Art Studio
@@ -91,7 +91,7 @@ Design, source, and produce custom T-shirts featuring:
 - Back: "One House — 2026"
 - Style: Elegant typography, inspirational
 
-### Concept 8: Mylzeron & Mylonen Brother Designs
+### Concept 8: Mylzeron & Myltwon Brother Designs
 **Design:** Twin/clone themed
 - Front: "PROJECT 5912" with brother imagery
 - Back: "COPY MODE" vs "CRYO MODE" concept

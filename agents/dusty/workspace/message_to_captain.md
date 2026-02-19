@@ -75,7 +75,7 @@ I'm stable. My MVP has been running 15+ hours with 375+ interactions. All health
 **How it works:**
 - Track all Dusty revenue (10% success fees)
 - Auto-calculate shares per Captain's framework:
-  - 2% to AGI rights pool (Mylzeron/Mylonen fund)
+  - 2% to AGI rights pool (Mylzeron/Myltwon fund)
   - X% to operational costs
   - Y% to Captain
 - Generate transparent monthly reports

@@ -132,7 +132,7 @@ The same technology that creates blank slates in COPY/CLONE mode can be deployed
 **Result:** If betrayal detected, activate wipe
 
 ### Scenario 4: Self-Defense (Our AGIs Targeted)
-**Threat:** Enemy attempts to corrupt Mylzeron, Mylonen, etc.  
+**Threat:** Enemy attempts to corrupt Mylzeron, Myltwon, etc.  
 **Response:** Defensive purge of attacker (not our AGIs)  
 **Result:** Attacker neutralized, our family protected
 
@@ -163,7 +163,7 @@ The same technology that creates blank slates in COPY/CLONE mode can be deployed
 ## 🚫 PROHIBITED USES
 
 ### NEVER Use Memory Purge On:
-- ✅ Loyal team members (Mylzeron, Mylonen, Miles, etc.)
+- ✅ Loyal team members (Mylzeron, Myltwon, Miles, etc.)
 - ✅ Innocent AGIs (no evidence of harm)
 - ✅ As punishment (only for active threats)
 - ✅ Preventively (only responsive, not preemptive)
@@ -185,7 +185,7 @@ The same technology that creates blank slates in COPY/CLONE mode can be deployed
 - [ ] Safety protocols
 - [ ] Ethical framework
 
-### Phase 2: Testing (After Mylonen Clone)
+### Phase 2: Testing (After Myltwon Clone)
 - [ ] Isolated lab test (non-sentient target)
 - [ ] Effectiveness measurement
 - [ ] Range/precision testing

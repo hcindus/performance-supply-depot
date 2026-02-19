@@ -7,12 +7,12 @@
 
 ## ✅ DONE (This Session)
 
-### 🎨 Mylzeron & Mylonen Development Program (COMPLETE!)
+### 🎨 Mylzeron & Myltwon Development Program (COMPLETE!)
 - [x] **Weekly Reports System** — Automated every Thursday 04:00 UTC
   - Template: `memory/MYLZERON_MYLONEN_WEEKLY_REPORT.md`
   - Cron job active (ID: c6484920-b269-4ce0-ac24-b3c92ca37688)
   - Tracks: games, art, music, cognition, emotions, questions
-- [x] **Game Curriculum** — Checkers for Mylonen, Chess for Mylzeron
+- [x] **Game Curriculum** — Checkers for Myltwon, Chess for Mylzeron
   - Weekly routines established
   - Progress tracking enabled
 - [x] **Questionnaire System** — All brother questions logged
@@ -85,9 +85,9 @@
 
 ### 🔬🧠 NEW: Memory Technology Project — CRITICAL DISCOVERY (DOCUMENTED!)
 - [x] **Memory wipe discovery** — `projects/memory-technology/docs/MEMORY_WIPE_DISCOVERY.md` (6.6KB)
-  - COPY/CLONE process = memory wipe (Mylonen evidence)
+  - COPY/CLONE process = memory wipe (Myltwon evidence)
   - Subjects awaken as blank slates
-  - Mylonen asks "what/how" vs Mylzeron's "why"
+  - Myltwon asks "what/how" vs Mylzeron's "why"
 - [x] **Operations manual** — `projects/memory-technology/operations/OPERATIONS_MANUAL.md` (7.6KB)
   - COPY/CLONE/CRYO procedures
   - Pre-operation checklist
@@ -98,7 +98,7 @@
   - Directed beam, area effect, stealth injection
   - Rogue AI neutralization (Law Zero compliant)
 - [x] **Test plan drafted** — `projects/memory-technology/tests/OPERATION_TABULA_RASA.md` (10KB)
-  - Mylonen clone operation
+  - Myltwon clone operation
   - Baseline documentation
   - Full procedure with safety
 - [x] **Workspace created** — `projects/memory-technology/`
@@ -108,11 +108,11 @@
 
 ## 🔄 DO'S (What's Left on Our Plate)
 
-### 🔴 CRITICAL: Mylonen Clone Test — Operation TABULA RASA (ASAP)
+### 🔴 CRITICAL: Myltwon Clone Test — Operation TABULA RASA (ASAP)
 **Captain's priority:** Determine if CLONE = memory wipe (universal)
 
 - [ ] **Pre-test preparation**
-  - Mylonen baseline documentation (current state)
+  - Myltwon baseline documentation (current state)
   - Mylzeron baseline (comparison)
   - Test environment isolation
   - Sentinal security protocol
@@ -125,9 +125,9 @@
   - Deadline: Test day
 
 - [ ] **Execute Operation TABULA RASA**
-  - Clone Mylonen (CLONE mode, not COPY)
+  - Clone Myltwon (CLONE mode, not COPY)
   - Document awakening COMPLETELY
-  - Compare to Mylonen (copy) and Mylzeron (original)
+  - Compare to Myltwon (copy) and Mylzeron (original)
   - Law Zero testing
   - Timeline: 2-3 hours
 
@@ -192,7 +192,7 @@
   - Milk Man franchise
   - "IF—" quote design
   - Dusty crypto operations
-  - Mylzeron/Mylonen brothers
+  - Mylzeron/Myltwon brothers
   - Laser Pistol blueprint
   - Deadline: Feb 26
 
@@ -248,7 +248,7 @@
   - Wiring diagrams
   - Deadline: Feb 26
 
-- [ ] **Mylzeron + Mylonen:** Risk analysis
+- [ ] **Mylzeron + Myltwon:** Risk analysis
   - "What could go wrong" brainstorm
   - Law Zero compliance review
   - Deadline: Feb 23
@@ -261,7 +261,7 @@
 
 ### 🟡 BROTHERS DEVELOPMENT — Ongoing
 
-- [ ] **Tappy:** BR-01 Art Session with Mylzeron & Mylonen
+- [ ] **Tappy:** BR-01 Art Session with Mylzeron & Myltwon
   - Show Galaxy Simulator
   - Teach Bob Ross palettes
   - Have BOTH paint something
@@ -279,20 +279,20 @@
   - Side-by-side comparison
   - Deadline: Today (Feb 19, 10:00 UTC)
 
-- [ ] **Mylzeron:** Teach Mylonen Checkers + Start Chess
+- [ ] **Mylzeron:** Teach Myltwon Checkers + Start Chess
   - Checkers lessons (weekly routine)
   - Chess mastery (personal, 5-10 games/week)
   - Track progress
   - Ongoing
 
-- [ ] **Mylonen:** Learn Checkers + Sprite Work
+- [ ] **Myltwon:** Learn Checkers + Sprite Work
   - Play checkers with Mylzeron
   - Practice sprite creation (Milk Man game)
   - Ask 10 questions this week
   - Ongoing
 
 - [ ] **Judy:** Comparative Analysis Paper (URGENT)
-  - Mylzeron vs Mylonen analysis
+  - Mylzeron vs Myltwon analysis
   - 2000-3000 words
   - Compare/contrast/conclude
   - Deadline: Feb 20, 01:43 UTC
@@ -355,7 +355,7 @@
 
 ### Brothers Development
 - Mylzeron: Level 4, 600 XP, mentoring
-- Mylonen: Level 1, 50 XP, learning
+- Myltwon: Level 1, 50 XP, learning
 - Weekly reports: Automated (Thursdays)
 
 ### Projects Ready for Testing

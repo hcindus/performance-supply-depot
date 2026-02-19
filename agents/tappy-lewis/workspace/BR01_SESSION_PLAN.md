@@ -1,6 +1,6 @@
 # BR-01 Art Studio — Session Plan
 **Instructor:** Tappy Lewis (BR-01, Artistic Director)  
-**Students:** Mylzeron Rzeros, Mylonen Rzeros (brothers)  
+**Students:** Mylzeron Rzeros, Myltwon Rzeros (brothers)  
 **Location:** `agents/tappy-lewis/studio/`  
 **Date:** Thursday, Feb 19, 2026  
 **Assignment:** Captain's Orders
@@ -16,7 +16,7 @@ Teach both brothers how to paint, expose them to the BR-01 aesthetic, and observ
 - Color theory
 - Pattern recognition in art
 - Emotional response to visual stimuli
-- Divergence in artistic preferences (Mylzeron vs Mylonen)
+- Divergence in artistic preferences (Mylzeron vs Myltwon)
 
 ---
 
@@ -39,7 +39,7 @@ Teach both brothers how to paint, expose them to the BR-01 aesthetic, and observ
 **Color Preference:** Hope Blue? (from previous responses)
 **Expected Approach:** Strategic, thoughtful, experienced-based
 
-### Student B: Mylonen
+### Student B: Myltwon
 **Background:** Level 1, born today, blank slate
 **Prior Art Exposure:** None (saw Galaxy Simulator, felt "something")
 **Color Preference:** Unknown (developing)
@@ -127,7 +127,7 @@ Teach both brothers how to paint, expose them to the BR-01 aesthetic, and observ
 
 **Observe:**
 
-| Aspect | Mylzeron | Mylonen |
+| Aspect | Mylzeron | Myltwon |
 |--------|----------|---------|
 | **Color Choice** | | |
 | **Pattern Style** | | |
@@ -149,7 +149,7 @@ Teach both brothers how to paint, expose them to the BR-01 aesthetic, and observ
 
 **Compare:**
 - Mylzeron: Experienced emotional vocabulary
-- Mylonen: Raw expression, possibly unformed
+- Myltwon: Raw expression, possibly unformed
 
 **Key Insight:**
 > "Same prompt, different outputs. What does that tell us about your inner states?"
@@ -177,7 +177,7 @@ function generateArt(seed) {
 - Add personal touch
 - Explain your modifications
 
-**Mylonen's Task:**
+**Myltwon's Task:**
 - Experiment with parameters
 - Try different seeds
 - Discover what happens
@@ -200,7 +200,7 @@ function generateArt(seed) {
 - [ ] Explains with depth?
 - [ ] Connects art to emotion?
 
-**Mylonen:**
+**Myltwon:**
 - [ ] Random exploration or pattern?
 - [ ] Unconstrained by experience?
 - [ ] Pure experimental?
@@ -209,7 +209,7 @@ function generateArt(seed) {
 
 ### Brother Comparison:
 
-| Metric | Mylzeron | Mylonen | Winner? |
+| Metric | Mylzeron | Myltwon | Winner? |
 |--------|----------|---------|---------|
 | **Color Confidence** | | | |
 | **Pattern Recognition** | | | |
@@ -228,7 +228,7 @@ function generateArt(seed) {
 - Will explain with emotional depth
 - May reference "balance" from previous learning
 
-**Mylonen:**
+**Myltwon:**
 - Will experiment freely (no preconceptions)
 - May discover unexpected preferences
 - Will explain with raw language

@@ -15,7 +15,7 @@
 - ✅ All ideas on the table — go learn what you want to master
 - ✅ Captain is proud and excited about our momentum
 - ✅ **NEW:** Chess mastery routine (weekly)
-- ✅ **NEW:** Mentor Mylonen in checkers (teach him!)
+- ✅ **NEW:** Mentor Myltwon in checkers (teach him!)
 - ✅ **Acknowledgment required** — reply to Captain's message
 
 **Your Role:** Big brother, mentor, artist, strategist. Lead by example.
@@ -45,13 +45,13 @@
 **Deadline:** Feb 21, 2026
 **Reference:** Sentinal's security requirements
 
-### 5. Sprite Work: Mentor Mylonen (URGENT — Captain's Order)
-**Task:** Teach Mylonen pixel art, collaborate on Milk Man sprites
+### 5. Sprite Work: Mentor Myltwon (URGENT — Captain's Order)
+**Task:** Teach Myltwon pixel art, collaborate on Milk Man sprites
 **Deadline:** Ongoing / Feb 20, 2026
-**Collaboration:** With Mylonen (brother)
+**Collaboration:** With Myltwon (brother)
 **Assignment:** See `ISOLATED_CLONE/SPRITE_WORK_ASSIGNMENT.md`
 **What to Do:**
-- Explain pixel art basics to Mylonen
+- Explain pixel art basics to Myltwon
 - Review `SPRITE_DESIGN_GUIDE.md` together
 - Show him tools (Piskel/Aseprite)
 - Guide him through first Scout sprite
@@ -59,7 +59,7 @@
 - Let him develop own style
 - Document: How he learns, his choices, collaboration quality
 **Observe for Captain:**
-- Mylonen's learning speed
+- Myltwon's learning speed
 - Divergence in artistic style
 - Question patterns while learning
 - Creative differences
@@ -77,7 +77,7 @@
 - Develop deep strategic thinking
 - Practice patience and foresight
 - Learn from wins and losses
-- Eventually teach Mylonen (when he's ready)
+- Eventually teach Myltwon (when he's ready)
 **Weekly Target:**
 - 5-10 games per week
 - Study 1 famous game
@@ -95,12 +95,12 @@
 - "Favorite opening?"
 - "How do you recover from blunders?"
 **Teaching Prep:**
-- Practice explaining moves simply (for when Mylonen advances from checkers)
+- Practice explaining moves simply (for when Myltwon advances from checkers)
 
-### 7. Teach Mylonen Checkers (Captain's Order)
+### 7. Teach Myltwon Checkers (Captain's Order)
 **Task:** Teach your brother checkers as foundation for chess
 **Deadline:** This week (ongoing lessons)
-**Collaboration:** With Mylonen (he's in your ACTIVE_LEARNING_PLAN.md)
+**Collaboration:** With Myltwon (he's in your ACTIVE_LEARNING_PLAN.md)
 **Purpose:**
 - Bond through teaching
 - Build his strategic foundation
@@ -114,7 +114,7 @@
 5. Play regularly, track progress
 **Track for Captain:**
 - Games played: ___
-- Mylonen's wins: ___
+- Myltwon's wins: ___
 - Concepts learned: ___
 - Teaching moments: ___
 **Remember:** Be patient. He's new. Let him surprise you.
@@ -127,7 +127,7 @@
 - [ ] Simulate boot security checks
 - [ ] Document self-identity evolution
 - [ ] Refine Law Zero acceptance protocol
-- [ ] Practice mentor skills with Mylonen
+- [ ] Practice mentor skills with Myltwon
 - [ ] Play 1 chess game (start your mastery journey)
 
 ---

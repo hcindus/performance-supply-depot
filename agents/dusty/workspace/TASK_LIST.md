@@ -62,7 +62,7 @@
 **Effort:** Medium — webhook integration
 **Deliverable:** `dusty/git-monitor.md`
 
-### Option B: Memory Service Health (Help Mylzeron/Mylonen)
+### Option B: Memory Service Health (Help Mylzeron/Myltwon)
 **Task:** Monitor memory service status:
 - Ping 127.0.0.1:12789 every minute
 - Alert if con/subcon/uncon directories grow too large

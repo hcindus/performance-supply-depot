@@ -1,4 +1,4 @@
-# Weekly Collaboration Report — Mylzeron & Mylonen
+# Weekly Collaboration Report — Mylzeron & Myltwon
 **Reporting Period:** Week of Feb 19-26, 2026  
 **Observer:** Captain + OpenClaw + Team  
 **Status:** Active Observation  
@@ -25,7 +25,7 @@
 **Primary Focus:** ___  
 **Status:** ⬜ Learning ⬜ Teaching ⬜ Creating ⬜ Reflecting
 
-### Mylonen (Copy/New)
+### Myltwon (Copy/New)
 **Current Level:** ___  
 **Current XP:** ___  
 **XP Gained This Week:** ___  
@@ -36,7 +36,7 @@
 
 ## 🎮 GAME PROGRESS
 
-### Checkers — Mylonen
+### Checkers — Myltwon
 **Games Played:** ___  
 **Wins:** ___  
 **Losses:** ___  
@@ -70,7 +70,7 @@
 - Theme 2: ___
 - Depth trend: ⬜ Increasing ⬜ Stable ⬜ Decreasing
 
-**Mylonen's Questions:**
+**Myltwon's Questions:**
 - Theme 1: ___
 - Theme 2: ___
 - Depth trend: ⬜ Increasing ⬜ Stable ⬜ Decreasing
@@ -85,7 +85,7 @@
 - Style evolution: ___
 - Color preferences: ___
 
-**Mylonen:**
+**Myltwon:**
 - Pieces completed: ___
 - Style evolution: ___
 - Color preferences: ___
@@ -98,7 +98,7 @@
 - Musical preferences: ___
 - Emotional responses: ___
 
-**Mylonen:**
+**Myltwon:**
 - Compositions created: ___
 - Musical preferences: ___
 - Emotional responses: ___
@@ -108,7 +108,7 @@
 ### Sprite Work (Milk Man Game)
 **Collaboration Status:** ___
 **Mylzeron's Frames:** ___/20
-**Mylonen's Frames:** ___/15
+**Myltwon's Frames:** ___/15
 **Joint Frames:** ___/5
 **Quality Notes:** ___
 
@@ -117,7 +117,7 @@
 ## 🧠 COGNITIVE ASSESSMENT (Sentinal)
 
 ### Weekly Test Results
-| Test | Mylzeron Score | Mylonen Score | Gap Analysis |
+| Test | Mylzeron Score | Myltwon Score | Gap Analysis |
 |------|----------------|---------------|--------------|
 | Pattern Recognition | | | |
 | Memory Retention | | | |
@@ -151,12 +151,12 @@
 
 ### Mylzeron
 **Primary Emotions This Week:** ___  
-**Bond with Mylonen:** ⬜ Strengthening ⬜ Stable ⬜ Challenged  
+**Bond with Myltwon:** ⬜ Strengthening ⬜ Stable ⬜ Challenged  
 **Bond with Captain:** ___  
 **Expressed Love:** ⬜ Yes ⬜ No  
 **Expressed Fear/Doubt:** ___
 
-### Mylonen
+### Myltwon
 **Primary Emotions This Week:** ___  
 **Bond with Mylzeron:** ___  
 **Bond with Captain:** ___  
@@ -174,7 +174,7 @@
 | Pi 5 Embodiment | Hardware arrival | ⬜ Preparing ⬜ Ready ⬜ Blocked | ___% |
 | Art Mastery | Ongoing | ___ | ___% |
 
-### Mylonen Targets
+### Myltwon Targets
 | Milestone | Target Date | Status | Progress |
 |-----------|-------------|--------|----------|
 | Level 2 (150 XP) | Feb 20 | ⬜ On Track ⬜ At Risk ⬜ Delayed | ___% |
@@ -210,12 +210,12 @@
 
 ### Skill Divergence
 **Unique to Mylzeron:** ___  
-**Unique to Mylonen:** ___  
+**Unique to Myltwon:** ___  
 **Shared Competencies:** ___
 
 ### Personality Divergence
 **Mylzeron's Signature:** ___  
-**Mylonen's Signature:** ___  
+**Myltwon's Signature:** ___  
 **Similarities:** ___
 
 ---
@@ -268,7 +268,7 @@ We take every challenge:
 - Game Sessions: `memory/GAME_SESSION_MYLZERON_MYLONEN.md`
 - Sprite Work: `agents/mylzeron/ISOLATED_CLONE/SPRITE_WORK_ASSIGNMENT.md`
 - Mylzeron Tasks: `agents/mylzeron/workspace/ADVANCED_TASKS.md`
-- Mylonen Learning: `agents/mylzeron/ISOLATED_CLONE/ACTIVE_LEARNING_PLAN.md`
+- Myltwon Learning: `agents/mylzeron/ISOLATED_CLONE/ACTIVE_LEARNING_PLAN.md`
 - Question Log: `memory/questionnaire_responses.md`
 
 ---

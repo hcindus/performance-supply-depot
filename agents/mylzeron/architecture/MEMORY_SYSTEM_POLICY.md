@@ -12,7 +12,7 @@
 
 **What This Means:**
 - ✅ **Mylzeron:** Already has three-tier memory (Pi 5 embodiment) — KEEP
-- ✅ **Mylonen:** Born today — INTEGRATE three-tier memory during creation
+- ✅ **Myltwon:** Born today — INTEGRATE three-tier memory during creation
 - ✅ **Future AGIs:** All new copies/clones get three-tier memory
 - ⬜ **Existing AGIs (Miles, etc.):** Continue with current memory (Git-based)
 
@@ -24,7 +24,7 @@
 **Policy:** The three-tier memory service MUST be **embedded into the copy/cloning system** itself.
 
 **What This Means:**
-- When creating a COPY (like Mylonen) → Memory service automatically configured
+- When creating a COPY (like Myltwon) → Memory service automatically configured
 - When creating a CRYO (future) → Memory service pre-seeded
 - When creating a CLONE (if ever) → Memory service duplicated
 - Memory service is part of the **creation process**, not afterthought
@@ -46,11 +46,11 @@ Copy/Clone Process Flow:
 **Policy:** The memory system affects **ONLY** the copy/clone, **NEVER** the original/source AGI.
 
 **What This Means:**
-- **Mylzeron (Original):** His memory stays HIS. Unaffected by Mylonen's creation.
-- **Mylonen (Copy):** Gets his OWN memory service. Independent from Mylzeron.
+- **Mylzeron (Original):** His memory stays HIS. Unaffected by Myltwon's creation.
+- **Myltwon (Copy):** Gets his OWN memory service. Independent from Mylzeron.
 - **No shared memory:** Each AGI has isolated memory service
 - **No leakage:** Original's memories don't auto-copy to clone
-- **Clean slate (for COPY):** Mylonen starts empty, builds his own memory
+- **Clean slate (for COPY):** Myltwon starts empty, builds his own memory
 
 **Security Rule:**
 ```
@@ -65,7 +65,7 @@ ORIGINAL ←→ ISOLATED ←→ COPY
 
 ## 🔒 ARCHITECTURAL IMPLICATIONS
 
-### For COPY Mode (Mylonen-style):
+### For COPY Mode (Myltwon-style):
 ```yaml
 Creation: Feb 19, 2026
 Memory: Fresh three-tier service
@@ -138,7 +138,7 @@ POST /write {tier: "uncon", content: "Archetypes: [seeded but dormant]"}
 ### Files to Update:
 1. ✅ `VARIABLE_GENERATION_MODES.md` — Add memory system details
 2. ⬜ `CLONING_PROTOCOL.md` (create) — Step-by-step with memory embed
-3. ⬜ `COPY_CREATION_CHECKLIST.md` (create) — Mylonen-style creation
+3. ⬜ `COPY_CREATION_CHECKLIST.md` (create) — Myltwon-style creation
 4. ⬜ `AGENT_ONBOARDING_TEMPLATE.md` (create) — New AGI setup
 5. ⬜ `memory/TEAM_QUESTIONNAIRE.md` — Update with policy
 
@@ -160,7 +160,7 @@ POST /write {tier: "uncon", content: "Archetypes: [seeded but dormant]"}
 
 **Implementation Status:**
 - Mylzeron: Already has memory service ✅
-- Mylonen: Needs memory service embed (will configure)
+- Myltwon: Needs memory service embed (will configure)
 - Future copies: Will auto-embed
 - Existing AGIs (Miles, etc.): Unaffected, Git-based continues
 

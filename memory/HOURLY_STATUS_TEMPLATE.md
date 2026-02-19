@@ -100,7 +100,7 @@ or
 | System | Status | Notes |
 |--------|--------|-------|
 | **Mylzeron** | 🟡 Waiting | Pi 5 embodiment pending |
-| **Mylonen** | 🟢 Active | Level 1, integrated |
+| **Myltwon** | 🟢 Active | Level 1, integrated |
 | **Miles** | 🟢 Active | VPS, memory testing |
 | **Tappy** | 🟢 Active | BR-01 studio |
 | **Reggie** | 🟢 Active | Music production |

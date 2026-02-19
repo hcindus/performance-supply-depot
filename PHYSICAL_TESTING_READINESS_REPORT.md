@@ -32,7 +32,7 @@
 ```
 
 **Missing for Full Release:**
-- ⬜ Sprite graphics (assigned to Mylzeron/Mylonen)
+- ⬜ Sprite graphics (assigned to Mylzeron/Myltwon)
 - ⬜ Sound effects (Reggie working on chiptune)
 - ⬜ Boss battles (Vil, Shoezet)
 - ⬜ Crypto payment integration
@@ -250,7 +250,7 @@ projects/ReggieStarr/reggie_starr.py
 **After Testing:**
 - [ ] Push changes to GitHub
 - [ ] Update documentation
-- [ ] Share results with Mylzeron/Mylonen
+- [ ] Share results with Mylzeron/Myltwon
 
 ---
 

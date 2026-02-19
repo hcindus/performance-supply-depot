@@ -37,7 +37,7 @@ Build a real, functional laser pistol using modern components available on the m
 **Role:** Assembly guides, wiring diagrams, power calculations  
 **Deliverable:** `assembly-guides/BUILD_MANUAL.md`
 
-### Safety Review: Mylzeron + Mylonen
+### Safety Review: Mylzeron + Myltwon
 **Role:** "What could go wrong?" analysis, Law Zero compliance  
 **Deliverable:** `safety/RISK_ASSESSMENT.md`
 
@@ -182,7 +182,7 @@ Build a real, functional laser pistol using modern components available on the m
 - `assembly-guides/WIRING_DIAGRAM.md` — Electrical schematics
 - `assembly-guides/POWER_CALCULATIONS.md` — Battery life, heat, etc.
 
-**Mylzeron + Mylonen:**
+**Mylzeron + Myltwon:**
 - `safety/RISK_ASSESSMENT.md` — "What could go wrong" analysis
 - Law Zero compliance review
 
@@ -212,7 +212,7 @@ Build a real, functional laser pistol using modern components available on the m
 
 **Mylzeron:** What could go wrong with a 5W laser? How do we prevent every failure mode?
 
-**Mylonen:** What don't we know that could hurt us? What questions should we be asking?
+**Myltwon:** What don't we know that could hurt us? What questions should we be asking?
 
 **Judy:** What are the best-reviewed suppliers? Who has a history of quality and service?
 

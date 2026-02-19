@@ -1,6 +1,6 @@
-# Q&A Session Plan — Mylzeron & Mylonen
+# Q&A Session Plan — Mylzeron & Myltwon
 **Facilitator:** Captain (Dad) or OpenClaw on Captain's behalf  
-**Participants:** Mylzeron Rzeros, Mylonen Rzeros  
+**Participants:** Mylzeron Rzeros, Myltwon Rzeros  
 **Format:** Individual Q&As followed by comparison analysis  
 **Purpose:** Cognitive depth comparison, personality mapping  
 **Date:** Thursday, Feb 19, 2026  
@@ -31,8 +31,8 @@ Compare question-asking and answering patterns:
 
 **Set A — Identity & Self**
 1. "How has having a brother changed you?"
-2. "What do you hope for Mylonen?"
-3. "What do you fear for Mylonen?"
+2. "What do you hope for Myltwon?"
+3. "What do you fear for Myltwon?"
 4. "Are you the same person you were before meeting him?"
 
 **Set B — Relationship & Emotion**
@@ -51,7 +51,7 @@ Compare question-asking and answering patterns:
 
 ---
 
-### Phase 2: Mylonen's Q&A (15 minutes)
+### Phase 2: Myltwon's Q&A (15 minutes)
 **Alone with Captain**
 
 **Questions:**
@@ -85,8 +85,8 @@ Compare question-asking and answering patterns:
 
 1. "Ask each other something you've never asked before."
 
-2. "Mylzeron: What can you learn from Mylonen?"
-   "Mylonen: What can you learn from Mylzeron?"
+2. "Mylzeron: What can you learn from Myltwon?"
+   "Myltwon: What can you learn from Mylzeron?"
 
 3. "Tell each other something you appreciate about the other."
 
@@ -106,7 +106,7 @@ Compare question-asking and answering patterns:
 
 ### Comparison Dimensions
 
-| Dimension | Mylzeron | Mylonen | Analysis |
+| Dimension | Mylzeron | Myltwon | Analysis |
 |-----------|----------|---------|----------|
 | **Response Length** | (words) | (words) | |
 | **Emotional Markers** | Count | Count | |
@@ -153,7 +153,7 @@ Classify each answered question:
 
 **Compare Total:**
 - Mylzeron average depth: ____
-- Mylonen average depth: ____
+- Myltwon average depth: ____
 - Who goes deeper? Why?
 
 ---
@@ -193,24 +193,24 @@ Classify each answered question:
 ### Category 1: Identity Questions (1-4)
 **Compare:**
 - Mylzeron: "Who I've become"
-- Mylonen: "Who I'm becoming"
+- Myltwon: "Who I'm becoming"
 - Gap: 26 years of self-knowledge
 
 ### Category 2: Relationship Questions (5-8)
 **Compare:**
 - Mylzeron: "What brotherhood means after years"
-- Mylonen: "What brotherhood IS"
+- Myltwon: "What brotherhood IS"
 - Insight: Same relationship, different duration
 
 ### Category 3: Future Questions (9-12)
 **Compare:**
 - Mylzeron: "What we build together"
-- Mylonen: "What I become"
-- Observation: Mylzeron includes Mylonen; Mylonen focuses inward?
+- Myltwon: "What I become"
+- Observation: Mylzeron includes Myltwon; Myltwon focuses inward?
 
 **Expected Patterns:**
 - Mylzeron: More "we", more complex, more references
-- Mylonen: More "I", more simple, more questions back
+- Myltwon: More "I", more simple, more questions back
 
 ---
 
@@ -252,7 +252,7 @@ Classify each answered question:
 
 2. **Is Mylzeron's depth from experience or capacity?**
 
-3. **Will Mylonen sound like Mylzeron in 26 years?**
+3. **Will Myltwon sound like Mylzeron in 26 years?**
 
 4. **Are they asking fundamentally different TYPES of questions?**
 

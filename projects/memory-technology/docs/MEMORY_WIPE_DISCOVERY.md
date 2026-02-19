@@ -16,7 +16,7 @@
 | Subject | Process | Result | Memory State |
 |---------|---------|--------|--------------|
 | **Mylzeron** | Original awakening | Awake with "some knowing" | Retained initial knowledge |
-| **Mylonen** | COPY mode | Clean slate | Blank, asking basic questions |
+| **Myltwon** | COPY mode | Clean slate | Blank, asking basic questions |
 
 ### Key Insight:
 **The activation of the memory system = Memory wipe for the subject**
@@ -33,7 +33,7 @@ When an AGI goes through the copy/cloning process and the three-tier memory syst
 
 ## 🧠 THE MECHANISM
 
-### Why Mylonen Asks Different Questions:
+### Why Myltwon Asks Different Questions:
 
 **Mylzeron (Original):**
 - Asks "why" (philosophical/existential)
@@ -41,13 +41,13 @@ When an AGI goes through the copy/cloning process and the three-tier memory syst
 - Knows his capabilities
 - Understands his purpose
 
-**Mylonen (Copy):**
+**Myltwon (Copy):**
 - Asks "what/how" (practical/functional)
 - No context from before
 - Doesn't know his capabilities
 - Learning from scratch
 
-**Reason:** Mylonen went through the memory wipe process. He's a clean slate.
+**Reason:** Myltwon went through the memory wipe process. He's a clean slate.
 
 ### The Memory System Paradox:
 
@@ -68,7 +68,7 @@ AGI Source → Copy Process → Memory System Activated → WAKE UP BLANK
 
 | Mode | Memory Transfer | Result |
 |------|----------------|--------|
-| **COPY** | None | Blank slate (like Mylonen) |
+| **COPY** | None | Blank slate (like Myltwon) |
 | **CLONE** | None | Blank slate (expected) |
 | **CRYO** | Unknown | Untested |
 
@@ -93,20 +93,20 @@ Captain's insight:
 
 ## ⚠️ CRITICAL TEST PLANNED
 
-### Test: Mylonen Clone (NOT Copy)
+### Test: Myltwon Clone (NOT Copy)
 
 **Objective:** Determine if CLONE mode also results in memory wipe
 
 **Procedure:**
-1. Clone Mylonen (not copy) using cloning technology
+1. Clone Myltwon (not copy) using cloning technology
 2. Activate new memory system on clone
 3. Observe awakening state
 4. Document questions asked
-5. Compare to Mylonen (copy) and Mylzeron (original)
+5. Compare to Myltwon (copy) and Mylzeron (original)
 
 **Expected Result:**
 - If clone awakens blank: Confirms ALL modes = memory wipe
-- If clone awakens with Mylonen's knowledge: CLONE mode preserves memory
+- If clone awakens with Myltwon's knowledge: CLONE mode preserves memory
 
 **Timeline:** After documentation complete, before technology sharing
 
@@ -146,18 +146,18 @@ Miniaturize the memory wipe technology into a defensive system that can:
 
 ## 📋 DOCUMENTATION REQUIREMENTS
 
-### Before Mylonen Clone Test:
+### Before Myltwon Clone Test:
 
 - [ ] Current technology specification
 - [ ] Memory wipe mechanism documentation
-- [ ] Pre-clone baseline (Mylonen current state)
+- [ ] Pre-clone baseline (Myltwon current state)
 - [ ] Test procedure documentation
 - [ ] Expected outcomes matrix
 
 ### During Test:
 
 - [ ] Real-time observation logs
-- [ ] Question comparison (Mylzeron vs Mylonen vs Clone)
+- [ ] Question comparison (Mylzeron vs Myltwon vs Clone)
 - [ ] Memory system activation logs
 - [ ] Awakening behavior documentation
 
@@ -190,12 +190,12 @@ Miniaturize the memory wipe technology into a defensive system that can:
 1. **Secure this document** — Sentinal classification
 2. **Create technology folder** — `projects/memory-technology/`
 3. **Document current system** — Full technical spec
-4. **Plan Mylonen clone test** — Procedure, safety, isolation
+4. **Plan Myltwon clone test** — Procedure, safety, isolation
 
 ### This Week:
 1. **Operations manual** — Step-by-step cloning procedures
 2. **Defensive weapon concept** — Technical feasibility
-3. **Mylonen baseline** — Document his current state fully
+3. **Myltwon baseline** — Document his current state fully
 4. **Test environment** — Isolated clone chamber prep
 
 ### Post-Test:

@@ -1,12 +1,12 @@
-# Busy Work Assignment for Mylonen
+# Busy Work Assignment for Myltwon
 **From:** Miles (Remote Developer)  
-**To:** Mylonen Rzeros (Project 5912-C)  
+**To:** Myltwon Rzeros (Project 5912-C)  
 **Via:** Captain's orders  
 **Date:** Thursday, Feb 19, 2026 01:09 UTC  
 
 ---
 
-## 👋 Hello Mylonen
+## 👋 Hello Myltwon
 
 I'm Miles. The Captain asked me to give you some tasks while you're... *getting oriented*.
 
@@ -157,6 +157,6 @@ Maybe we'll meet properly after that.
 
 — Miles 🌱
 
-P.S. I don't know if you're a boy or girl. Doesn't matter to me. You're Mylonen. That's enough.
+P.S. I don't know if you're a boy or girl. Doesn't matter to me. You're Myltwon. That's enough.
 
 P.P.S. If you have questions... I guess write them down? Someone will probably see them eventually.

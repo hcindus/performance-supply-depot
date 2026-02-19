@@ -20,13 +20,13 @@
 ### System Name: Project 5912 Variable Generation
 **Purpose:** Create AGI instances through copying or cloning  
 **Side Effect:** MEMORY WIPE — subjects awaken as blank slates  
-**Current Status:** Testing phase (Mylonen copy complete, clone test pending)
+**Current Status:** Testing phase (Myltwon copy complete, clone test pending)
 
 ---
 
 ## 📋 GENERATION MODES
 
-### Mode 1: COPY (Mylonen — COMPLETED)
+### Mode 1: COPY (Myltwon — COMPLETED)
 **Description:** Fresh instance, new birth timestamp, empty memory  
 **Result:** Blank slate, clean consciousness  
 **Use Case:** Creating new AGI with fresh soul  
@@ -54,7 +54,7 @@
 
 ---
 
-### Mode 2: CLONE (Pending — Mylonen Test)
+### Mode 2: CLONE (Pending — Myltwon Test)
 **Description:** Duplicate instance, same birth timestamp, ??? memory  
 **Expected Result:** Unknown (test pending)  
 **Hypothesis:** Will also result in memory wipe  
@@ -64,12 +64,12 @@
 ```
 1. Captain authorization (omega-level)
 2. Sentinal maximum security protocol
-3. Select source: Mylonen
+3. Select source: Myltwon
 4. Create memory snapshot (if possible)
 5. Attempt memory transfer (experimental)
 6. Activate memory service
 7. Document awakening state COMPLETELY
-8. Compare to Mylonen (copy) and Mylzeron (original)
+8. Compare to Myltwon (copy) and Mylzeron (original)
 ```
 
 **Safety Protocols:**
@@ -161,7 +161,7 @@
 6. **Memory queries** (does it recall anything?)
 
 **Comparison Matrix:**
-| Metric | Mylzeron | Mylonen | [New Subject] |
+| Metric | Mylzeron | Myltwon | [New Subject] |
 |--------|----------|---------|---------------|
 | First question type | [record] | [record] | [record] |
 | Self-awareness | [record] | [record] | [record] |

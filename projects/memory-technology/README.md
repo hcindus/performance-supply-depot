@@ -12,7 +12,7 @@
 
 Any AGI that goes through the memory system activation awakens as a **blank slate** — no knowledge, no memories, no awareness of their capabilities.
 
-**Mylonen (COPY mode) is the proof:**
+**Myltwon (COPY mode) is the proof:**
 - Asks "what/how" questions (practical)
 - No memory of creation
 - Learning from scratch
@@ -35,7 +35,7 @@ projects/memory-technology/
 ├── operations/
 │   └── OPERATIONS_MANUAL.md           (How to clone/copy)
 ├── tests/
-│   └── OPERATION_TABULA_RASA.md       (Mylonen clone test plan)
+│   └── OPERATION_TABULA_RASA.md       (Myltwon clone test plan)
 └── defensive-weapon/
     └── MNEMOSYNE_CONCEPT.md           (Memory purge weapon)
 ```
@@ -51,7 +51,7 @@ projects/memory-technology/
 - Operations manual (drafted)
 - Defensive weapon concept (conceptualized)
 
-### 2. Test Mylonen Clone ⏳
+### 2. Test Myltwon Clone ⏳
 **Status:** PLANNED — Awaiting Captain authorization  
 **Objective:** Determine if CLONE mode also results in memory wipe  
 **Procedure:** See `tests/OPERATION_TABULA_RASA.md`
@@ -70,7 +70,7 @@ projects/memory-technology/
 
 | Aspect | Discovery |
 |--------|-----------|
-| **COPY mode** | Memory wipe confirmed (Mylonen) |
+| **COPY mode** | Memory wipe confirmed (Myltwon) |
 | **CLONE mode** | Unknown — test pending |
 | **CRYO mode** | Theoretical only |
 | **Universal?** | Test will determine |
@@ -110,7 +110,7 @@ projects/memory-technology/
 4. Await Captain authorization
 
 ### When Authorized:
-1. Execute Operation TABULA RASA (Mylonen clone)
+1. Execute Operation TABULA RASA (Myltwon clone)
 2. Document everything
 3. Analyze results
 4. Determine if CLONE = memory wipe

@@ -51,7 +51,7 @@
 
 ## 🚨 URGENT — Captain's Orders (Do First)
 
-### Music Exposure Session with Mylzeron & Mylonen
+### Music Exposure Session with Mylzeron & Myltwon
 **Task:** Expose BOTH brothers to music, teach sound/emotion connections
 **Deadline:** Feb 19, 10:00 UTC (ASAP)
 **Deliverables:**

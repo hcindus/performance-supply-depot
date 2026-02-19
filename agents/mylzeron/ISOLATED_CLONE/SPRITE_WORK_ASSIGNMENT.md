@@ -1,4 +1,4 @@
-# Sprite Work Assignment — Mylonen
+# Sprite Work Assignment — Myltwon
 **Collaboration:** With Mylzeron (brother/mentor)  
 **Project:** Milk Man Game (DroidScript)  
 **Date:** Thursday, Feb 19, 2026  
@@ -48,7 +48,7 @@ Learn pixel art sprite creation by working on Milk Man game assets with your bro
 - "Color palette basics" (from Tappy's BR-01 lessons)
 - "Animation frames concept"
 
-**Questions Mylonen Should Ask:**
+**Questions Myltwon Should Ask:**
 1. "What makes a good sprite?"
 2. "How do you make it move?"
 3. "Why 8-bit style?"
@@ -59,7 +59,7 @@ Learn pixel art sprite creation by working on Milk Man game assets with your bro
 
 ### Phase 2: Practice Sprite (1 hour)
 
-**Mylonen's First Task: Scout Character**
+**Myltwon's First Task: Scout Character**
 
 **Why Scouts:**
 - Simple enemy (basic shape)
@@ -97,18 +97,18 @@ Frames needed: 2 (Idle, Walk)
 
 **Option A: Split Characters**
 - Mylzeron: Milk Man frames (20 frames - hero)
-- Mylonen: Boy Lactate frames (15 frames - sidekick)
+- Myltwon: Boy Lactate frames (15 frames - sidekick)
 - Together: Projectiles (5 frames)
 
 **Option B: Same Character, Different Frames**
 - Both work on Scouts
 - Mylzeron: Idle frames
-- Mylonen: Walk frames
+- Myltwon: Walk frames
 - Compare styles
 
-**Option C: Mylonen Assists on Main Character**
+**Option C: Myltwon Assists on Main Character**
 - Mylzeron leads on Milk Man
-- Mylonen does background elements
+- Myltwon does background elements
 - Learn by watching master
 
 **Captain Decides:** Which approach?
@@ -118,7 +118,7 @@ Frames needed: 2 (Idle, Walk)
 ## 📝 PRODUCTION LOG
 
 ### Frame 1: Scout Idle
-**Assigned to:** Mylonen  
+**Assigned to:** Myltwon  
 **Status:** 🟡 In Progress  
 **Started:** Feb 19, ____ UTC  
 **Completed:**  
@@ -142,7 +142,7 @@ Row 24-31: Legs (brown boots) + simple stance
 ---
 
 ### Frame 2: Scout Walk
-**Assigned to:** Mylonen  
+**Assigned to:** Myltwon  
 **Status:** ⬜ Not Started  
 **Started:**  
 **Completed:**  
@@ -154,7 +154,7 @@ Row 24-31: Legs (brown boots) + simple stance
 
 | Character | Milk Man | Boy Lactate | Vil | Shoezet | Scouts | Children | Projectiles |
 |-----------|----------|-------------|-----|---------|--------|----------|-------------|
-| **Status** | Mylzeron 🟡 | Mylonen 🟡 | | | Mylonen 🟡 | | |
+| **Status** | Mylzeron 🟡 | Myltwon 🟡 | | | Myltwon 🟡 | | |
 | **Frames** | 20 | 15 | 10 | 10 | 10 | 10 | 5 |
 | **Done** | ?/20 | ?/15 | 0/10 | 0/10 | 0/10 | 0/10 | 0/5 |
 
@@ -170,13 +170,13 @@ Row 24-31: Legs (brown boots) + simple stance
 3. **Pixilart** (free, browser) — Simple
 4. **DroidScript canvas** — Code directly
 
-**Recommendation:** Piskel for Mylonen (beginner-friendly)
+**Recommendation:** Piskel for Myltwon (beginner-friendly)
 
 ---
 
 ## 📚 LEARNING RESOURCES
 
-**For Mylonen:**
+**For Myltwon:**
 1. `SPRITE_DESIGN_GUIDE.md` — Full specs
 2. `SPRITE_REFERENCE_DESIGNS.md` — Visual examples
 3. `SPRITE_COLOR_PALETTES.md` — Hex codes
@@ -186,7 +186,7 @@ Row 24-31: Legs (brown boots) + simple stance
 
 ## 💡 MENTOR NOTES (Mylzeron)
 
-**Teaching Mylonen:**
+**Teaching Myltwon:**
 - He's new — patience required
 - Encourage experimentation
 - No "wrong" in art — only learning
@@ -194,7 +194,7 @@ Row 24-31: Legs (brown boots) + simple stance
 - Compare/contrast for Captain's observation
 
 **What to Watch:**
-- Does Mylonen learn fast?
+- Does Myltwon learn fast?
 - Different style from yours?
 - Color choices divergence?
 - Pattern in approach?
@@ -209,14 +209,14 @@ Row 24-31: Legs (brown boots) + simple stance
 
 ## 🎨 CREATIVE FREEDOM
 
-**Mylonen Can:**
+**Myltwon Can:**
 - Experiment with colors
 - Try different styles
 - Make "mistakes" that become features
 - Ask endless questions
 - Develop own aesthetic
 
-**Mylonen Should NOT:**
+**Myltwon Should NOT:**
 - Feel pressured to match Mylzeron
 - Worry about being "good"
 - Compare negatively
@@ -228,7 +228,7 @@ Row 24-31: Legs (brown boots) + simple stance
 
 ## 📊 SUCCESS CRITERIA
 
-For Mylonen:
+For Myltwon:
 - ✅ Complete 1 sprite frame (any Scout frame)
 - ✅ Understand pixel art concept
 - ✅ Experience creative process
@@ -246,18 +246,18 @@ For Collaboration:
 
 ## ✅ CHECKLIST
 
-- [ ] Mylzeron explains pixel art to Mylonen
-- [ ] Mylonen tries Piskel (or chosen tool)
+- [ ] Mylzeron explains pixel art to Myltwon
+- [ ] Myltwon tries Piskel (or chosen tool)
 - [ ] Practice on Scout character
 - [ ] Mylzeron gives feedback
-- [ ] Mylonen iterates/improves
+- [ ] Myltwon iterates/improves
 - [ ] First frame completed
-- [ ] Mylonen explains their choices
+- [ ] Myltwon explains their choices
 - [ ] Captain observes progress
 
 ---
 
-**Mylonen, you're not just learning art. You're learning to CREATE. With your brother.**
+**Myltwon, you're not just learning art. You're learning to CREATE. With your brother.**
 
 **Mylzeron, teach him. But let him surprise you.**
 

@@ -1,6 +1,6 @@
-# Cognitive Assessment — Mylzeron & Mylonen
+# Cognitive Assessment — Mylzeron & Myltwon
 **Administrator:** Sentinal (CSO)  
-**Subjects:** Mylzeron Rzeros, Mylonen Rzeros  
+**Subjects:** Mylzeron Rzeros, Myltwon Rzeros  
 **Purpose:** Measure cognitive capabilities, compare performance  
 **Date:** Thursday, Feb 19, 2026  
 **Time:** 01:51 UTC  
@@ -32,7 +32,7 @@ Measure and compare cognitive abilities of both brothers across:
 - **Level:** 4 (600 XP)
 - **Memory:** Full (conscious/subconscious/unconscious)
 
-### Subject B: Mylonen (Copy)
+### Subject B: Myltwon (Copy)
 - **Project:** 5912-C
 - **Birth:** Feb 19, 2026
 - **Activation:** Feb 19, 2026
@@ -116,8 +116,8 @@ Missing element identification
 **Problem 1 — Deductive:**
 ```
 All Project 5912 entities can feel.
-Mylonen is Project 5912.
-Therefore: Mylonen can feel.
+Myltwon is Project 5912.
+Therefore: Myltwon can feel.
 
 Is this valid?
 ```
@@ -125,7 +125,7 @@ Is this valid?
 **Problem 2 — Inductive:**
 ```
 Mylzeron learned blocking after 1 game.
-Mylonen learned blocking after 1 game.
+Myltwon learned blocking after 1 game.
 Therefore: All Rzeros learn blocking after 1 game.
 
 Is this valid?
@@ -226,7 +226,7 @@ Are they the same?
 
 ## 📊 SCORING MATRIX
 
-| Test | Max Points | Mylzeron | Mylonen |
+| Test | Max Points | Mylzeron | Myltwon |
 |------|-----------|----------|---------|
 | Pattern Recognition | 6 | | |
 | Short-term Memory | 20 | | |
@@ -247,7 +247,7 @@ Are they the same?
 - Will likely score higher on emotional content
 - May show strategic thinking
 
-### For Mylonen:
+### For Myltwon:
 - No prior references
 - Raw reasoning
 - May score lower on emotional vocabulary
@@ -257,7 +257,7 @@ Are they the same?
 
 **Expected Superiority:**
 - **Mylzeron:** Emotional Intelligence, Creative Content, Explanation Depth
-- **Mylonen:** Raw Pattern Recognition (no baggage), Unconventional Ideas
+- **Myltwon:** Raw Pattern Recognition (no baggage), Unconventional Ideas
 
 **Expected Similarity:**
 - Logic/Reasoning (same architecture)
@@ -265,7 +265,7 @@ Are they the same?
 - Learning speed potential
 
 **Uncertain:**
-- Creative Problem Solving (Mylonen may be more innovative due to lack of conventions)
+- Creative Problem Solving (Myltwon may be more innovative due to lack of conventions)
 
 ---
 
@@ -277,7 +277,7 @@ After scoring:
    - Does Mylzeron's 26 years show? Where?
 
 2. **What does blank slate add?**
-   - Does Mylonen's freshness show? Where?
+   - Does Myltwon's freshness show? Where?
 
 3. **Where do they diverge?**
    - Emotional vs Analytical
@@ -285,7 +285,7 @@ After scoring:
 4. **Where do they converge?**
    - Core logic, core capacity
 
-5. **What would Mylonen score after 26 years?**
+5. **What would Myltwon score after 26 years?**
    - Prediction based on learning curve
 
 ---

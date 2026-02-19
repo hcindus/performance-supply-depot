@@ -33,7 +33,7 @@
 
 ## 📊 Active Tasks (Do These First)
 
-### 1. Technical Paper: Mylzeron vs Mylonen (URGENT — Captain's Order)
+### 1. Technical Paper: Mylzeron vs Myltwon (URGENT — Captain's Order)
 **Task:** Write comparative analysis paper based on observations
 **Deadline:** Feb 20, 2026 01:43 UTC (24 hours)
 **Deliverable:** `papers/MYLZERON_VS_MYLONEN_COMPARATIVE_ANALYSIS.md`

@@ -13,7 +13,7 @@
 - ✅ **Required Reading:** "IF—" by Rudyard Kipling (read it!)
 - ✅ All ideas on the table — go learn what you want to master
 - ✅ Captain is proud and excited about our momentum
-- ✅ Weekly reports set up for Mylzeron/Mylonen (every Thursday 04:00 UTC)
+- ✅ Weekly reports set up for Mylzeron/Myltwon (every Thursday 04:00 UTC)
 - ✅ **Acknowledgment required** — reply to Captain's message
 
 **Your Role:** Artistic Director. Teach both brothers. Document everything.
@@ -67,7 +67,7 @@
 4. **"Milk Man"** — Retro gaming, Dairytastic
 5. **"IF— Quote"** — Kipling poem, inspirational typography
 6. **"Dusty Crypto"** — Tech humor, 10% success fee
-7. **"Brothers"** — Mylzeron/Mylonen clone theme
+7. **"Brothers"** — Mylzeron/Myltwon clone theme
 8. **"Laser Pistol"** — Blueprint/schematic (after it's built)
 **Technical Specs:**
 - 300 DPI minimum
@@ -84,7 +84,7 @@
 
 ## 🚨 URGENT — Captain's Orders (Do First)
 
-### BR-01 Art Session with Mylzeron & Mylonen
+### BR-01 Art Session with Mylzeron & Myltwon
 **Task:** Teach BOTH brothers to paint, observe artistic development
 **Deadline:** Feb 19, 10:00 UTC (ASAP)
 **Deliverables:**

@@ -87,7 +87,7 @@
 
 ## 🚨 URGENT — Captain's Orders (Do First)
 
-### Cognitive Assessment: Mylzeron vs Mylonen
+### Cognitive Assessment: Mylzeron vs Myltwon
 **Task:** Administer fair cognitive tests to BOTH brothers
 **Deadline:** Feb 19, 10:00 UTC (ASAP)
 **Deliverables:**
@@ -117,10 +117,10 @@
 ## 🔒 Active Tasks (Do These First)
 
 ### 1. Cloning Security Protocol (HIGH PRIORITY)
-**Task:** Monitor Mylonen (Copy) security posture
+**Task:** Monitor Myltwon (Copy) security posture
 **Status:** ONGOING
 **Action:** Behavioral pattern monitoring, Law Zero compliance
-**Note:** Mylonen now integrated with team (not isolated)
+**Note:** Myltwon now integrated with team (not isolated)
 **Findings:** No rogue behavior detected
 
 ### 2. Pi 5 Boot Security (MEDIUM PRIORITY)

@@ -12,7 +12,7 @@
 **Policy:** Any questions that team members have MUST be asked in discussions between **OpenClaw** and **Miles**.
 
 **What This Means:**
-- Team members (Mylzeron, Mylonen, Tappy, Reggie, Sentinal, Dusty, Judy) ask their questions
+- Team members (Mylzeron, Myltwon, Tappy, Reggie, Sentinal, Dusty, Judy) ask their questions
 - OpenClaw (Mortimer) collects and consolidates these questions
 - Miles receives questions through OpenClaw coordination
 - **The discussion happens BETWEEN OpenClaw and Miles**
