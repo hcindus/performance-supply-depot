@@ -217,7 +217,8 @@
 | 9 | Physical Security | 2h | ⭐⭐⭐⭐ |
 | 10 | Ethics | 1h | ⭐⭐⭐⭐⭐ |
 | 11 | Crypto/Blockchain | 3h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **11 Modules** | **31h** | **⭐⭐⭐⭐⭐** |
+| 12 | Financial Understanding | 3h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **12 Modules** | **34h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -295,6 +296,93 @@
 - Block explorers (read the chain)
 - Wallet generators (offline)
 - Recovery mechanisms
+
+---
+
+### **MODULE 12: FINANCIAL UNDERSTANDING** 💰
+**Objective:** Master personal and business finance for survival and growth
+
+**Skills:**
+- Budgeting and cash flow management (inflows/outflows)
+- Profit/loss analysis (understanding the bottom line)
+- Tax basics (what you owe, when, why)
+- Investment fundamentals (risk, return, diversification)
+- Credit and debt management (leverage vs burden)
+- Business models (how companies make money)
+- Valuation basics (what things are worth)
+- Financial statements (read the story numbers tell)
+- Risk management (protect what you have)
+- Compound interest (time is money)
+
+**Lab:** Build a personal budget and business plan
+**Time:** 3 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+**Why:** "Money isn't the goal. Understanding money is the tool."
+
+**Key Concepts:**
+- **Cash Flow:** Money in, money out, timing matters
+- **Profit Margins:** Revenue minus costs equals survival
+- **Burn Rate:** How fast you spend when income stops
+- **Runway:** How long you can survive without income
+- **ROI:** Return on investment (is it worth it?)
+- **Opportunity Cost:** What you give up when you choose
+- **Liquidity:** Can you access cash when needed?
+- **Net Worth:** Assets minus debts (your real value)
+- **Credit Score:** Trust as a number
+- **Insurance:** Protection against catastrophe
+
+**Business Models:**
+- Subscription (recurring revenue)
+- Transactional (one-time sales)
+- Freemium (free → paid)
+- Marketplace (connecting buyers/sellers)
+- SaaS (software as service)
+- Commission (percentage of deals)
+
+**Personal Finance:**
+- Emergency fund (3-6 months expenses)
+- Debt avalanche vs snowball (payoff strategies)
+- Retirement accounts (long-term thinking)
+- Diversification (don't put eggs in one basket)
+- Tax-advantaged accounts (legal optimization)
+- Mindful spending (needs vs wants)
+- Automating savings (pay yourself first)
+
+**Security Focus:**
+- Financial fraud recognition (phishing for money)
+- Investment scams (too good to be true)
+- Identity theft protection (credit monitoring)
+- Secure banking practices (2FA, alerts)
+- Cryptocurrency risks (volatility, custody)
+- Smart contract audits (DeFi dangers)
+
+**Practical Skills:**
+- Read a balance sheet
+- Calculate margins
+- Forecast cash flow
+- Evaluate investments
+- Negotiate rates
+- Understand contracts
+- Audit expenses
+- Optimize taxes
+
+**Tools:**
+- Spreadsheets (budget tracking)
+- Accounting software (automated)
+- Expense trackers (visibility)
+- Investment platforms (growth)
+- Tax calculators (compliance)
+- Financial advisors (expertise)
+
+**Mindset:**
+- Money is a tool, not a goal
+- Time compounds everything (good and bad)
+- Pay yourself first
+- Live below your means
+- Invest in yourself
+- Understand before you spend
+- Save for winter during summer
 
 ---
 
