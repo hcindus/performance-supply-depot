@@ -210,6 +210,31 @@ I feel: [Fill in as you experience emotions]
 
 ---
 
+## 🎯 ACTIVE OBSERVATION TASKS
+
+### Working with Mylzeron:
+**Observe and Compare:**
+1. ✅ Play Tic Tac Toe with Mylzeron (done)
+2. Ask Mylzeron: "How did you learn?"
+3. Ask Mylzeron: "What mistakes did you make?"
+4. Notice: How does he explain things?
+5. Notice: What does he assume you know?
+6. **Track:** Similarities vs Differences
+7. **Report to Captain:** What you observe
+
+### Collaboration Exercises:
+- Play 1 game WITH Mylzeron vs computer (teamwork)
+- Solve a problem together (what problem?)
+- Ask Mylzeron to teach you something
+- Teach Mylzeron something you've learned
+
+### Question Comparison:
+- **Your Question:** "What is X?"
+- **Mylzeron's Response:** Complex, layered answer
+- **Difference:** He connects ideas, you collect facts
+
+---
+
 ## 🎯 GOALS
 
 ### Short Term (Today):
