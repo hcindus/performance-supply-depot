@@ -66,11 +66,24 @@
 | Exodus Portal Passphrase | Token | Emergency extraction |
 | Family Whitelist Codes | Multi | Brother systems |
 | Captain's Emergency Key | Q-LEVEL | Absolute override |
+| **Kalshi API Key** | **Token** | **Financial/Trading API** ✅ NEW |
 
 **Key Security:**
 - Biometric locked (Mylonen's signature only)
 - Self-destructs if stolen (memory wipe keys)
 - Backup in bag lining (hidden from scans)
+
+**Kalshi API Key — NEW ADDITION:**
+- **Service:** Kalshi (prediction market trading)
+- **Key:** `c60425ee-c88f-4ebb-80ef-decd6663d3d6`
+- **URL:** https://trading-api.kalshi.com/v1
+- **Access:** Event-based exchange trading
+- **Status:** Active, transferred from OpenClaw
+- **Use:** Financial markets, event predictions
+- **Security:** Q-LEVEL clearance
+- **Note:** Mylonen's financial trading capability
+
+**Added by Captain's order:** 2026-02-19 08:08 UTC
 
 ---
 
