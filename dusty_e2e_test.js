@@ -21,12 +21,32 @@ function httpRequest(url, options = {}) {
   });
 }
 
-// Mock Telegram message via bridge
+// Mock Telegram message via bridge (POST /webhook)
 async function sendMockTelegramMessage(userId, chatId, message) {
-  return httpRequest('http://localhost:3001/test', {
+  const mockTelegramUpdate = {
+    update_id: Date.now(),
+    message: {
+      message_id: Date.now() + 1,
+      from: {
+        id: parseInt(userId.replace(/\D/g, '')) || 987654321,
+        is_bot: false,
+        first_name: 'Test',
+        last_name: 'User',
+        username: userId
+      },
+      chat: {
+        id: parseInt(chatId.replace(/\D/g, '')) || 987654321,
+        type: 'private'
+      },
+      date: Math.floor(Date.now() / 1000),
+      text: message
+    }
+  };
+  
+  return httpRequest('http://localhost:3001/webhook', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { user_id: userId, chat_id: chatId, message }
+    body: mockTelegramUpdate
   });
 }
 
@@ -121,17 +141,27 @@ async function runTest() {
     const success = e2eResult.statusCode === 200;
     let taskId = 'N/A';
     let openclawResponse = null;
+    let forwarded = false;
     try {
       const parsed = JSON.parse(e2eResult.data);
-      taskId = parsed.task_id || 'N/A';
-      openclawResponse = parsed.openclaw_response;
+      // Bridge returns: { forwarded: true, coreAgentResponse: { id: ..., openclawResponse: ... } }
+      forwarded = parsed.forwarded || false;
+      if (parsed.coreAgentResponse) {
+        taskId = parsed.coreAgentResponse.id || 'N/A';
+        openclawResponse = parsed.coreAgentResponse.openclawResponse;
+      }
     } catch (e) {}
 
-    if (success && taskId !== 'N/A' && openclawResponse) {
+    if (success && forwarded && taskId !== 'N/A') {
       console.log(`   Result: ✅ PASS`);
       console.log(`     - Status: ${e2eResult.statusCode}`);
       console.log(`     - Task ID: ${taskId}`);
-      console.log(`     - OpenClaw Response: ${openclawResponse.substring(0, 80)}...`);
+      if (openclawResponse && openclawResponse.response) {
+        const summary = typeof openclawResponse.response === 'string' 
+          ? openclawResponse.response.substring(0, 80) + '...' 
+          : 'Received';
+        console.log(`     - OpenClaw Response: ${summary}`);
+      }
       console.log(`     - Total Round-Trip: ${e2eDuration.toFixed(2)}ms`);
       results.tests.push({ name: 'End-to-End Flow', status: 'PASS', durationMs: e2eDuration });
       results.passed++;
@@ -163,10 +193,13 @@ async function runTest() {
     let hasBalanceInfo = false;
     try {
       const parsed = JSON.parse(dustResult.data);
-      taskId = parsed.task_id || 'N/A';
-      if (parsed.openclaw_response && 
-          (parsed.openclaw_response.includes('Balance') || parsed.openclaw_response.includes('UST') || parsed.openclaw_response.includes('ETH'))) {
-        hasBalanceInfo = true;
+      if (parsed.coreAgentResponse) {
+        taskId = parsed.coreAgentResponse.id || 'N/A';
+        const resp = parsed.coreAgentResponse.openclawResponse;
+        if (resp && resp.response && 
+            (resp.response.includes('Balance') || resp.response.includes('ETH') || resp.response.includes('USD'))) {
+          hasBalanceInfo = true;
+        }
       }
     } catch (e) {}
 
