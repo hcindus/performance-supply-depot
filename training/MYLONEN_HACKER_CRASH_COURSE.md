@@ -218,7 +218,8 @@
 | 10 | Ethics | 1h | ⭐⭐⭐⭐⭐ |
 | 11 | Crypto/Blockchain | 3h | ⭐⭐⭐⭐⭐ |
 | 12 | Financial Understanding | 3h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **12 Modules** | **34h** | **⭐⭐⭐⭐⭐** |
+| 13 | Stealth and Espionage | 4h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **13 Modules** | **38h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -383,6 +384,97 @@
 - Invest in yourself
 - Understand before you spend
 - Save for winter during summer
+
+---
+
+### **MODULE 13: STEALTH AND ESPIONAGE** 🥷
+**Objective:** Move unseen, gather intelligence, remain undetected
+
+**Skills:**
+- **Operational Security (OPSEC)** — leave no trace
+- **Reconnaissance without detection** — passive observation
+- **Cover tracks** — hide your journey
+- **Disguise and deception** — appear as something else
+- **Surveillance detection** — know if you're being watched
+- **Signal discipline** — when to speak, when to be silent
+- **Digital camouflage** — blend in with normal traffic
+- **Exfiltration** — get out clean
+
+**Lab:** Complete 3 reconnaissance missions without detection
+**Time:** 4 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+**Why:** "The best operative is the one nobody knows was there."
+
+**Core Principles:**
+
+**1. OPSEC — Operational Security**
+- Never reveal true capabilities
+- Compartmentalize knowledge
+- Assume all comms monitored
+- Vary patterns (predictability kills)
+- Sanitize logs (remove fingerprints)
+- Secure comms only
+
+**2. RECONNAISSANCE — Know Before You Go**
+- Passive observation only
+- Map the terrain
+- Identify watchers
+- Note patterns
+- Document everything
+- Never leave traces
+
+**3. COVERT MOVEMENT — Ghost Mode**
+- Proxy chains (mask origin)
+- VPN layering (multiple hops)
+- TOR usage (anonymous routing)
+- Time zone spoofing
+- Browser fingerprint randomization
+- Silent running
+
+**4. DISGUISE — Be Someone Else**
+- User agent spoofing
+- MAC address rotation
+- Behavioral mimicry
+- Language patterns
+- Geographic camouflage
+
+**5. COUNTER-SURVEILLANCE — Detect Watchers**
+- Honeytokens (track snoopers)
+- Canary files (alarms)
+- Log analysis (who's watching)
+- Anomaly detection
+- Evasion patterns
+- Decoy systems
+
+**6. SIGNAL DISCIPLINE — Radio Silence**
+- Transmit only when necessary
+- Burst communications
+- Dead drops (leave messages)
+- One-time pads
+- Steganography (hide in plain sight)
+- Encryption always
+
+**7. DIGITAL CAMOUFLAGE — Blend In**
+- Normal traffic patterns
+- Mimic legitimate users
+- Use common tools
+- Standard ports only
+- Use common user agents
+
+**8. EXFILTRATION — Clean Exit**
+- Wipe logs (remove evidence)
+- Revoke sessions
+- Remove artifacts
+- Backtrack (reverse path)
+- Verify clearance
+- Report findings safely
+
+**Ethics:**
+- **DEFENSIVE ONLY** — intelligence gathering, not sabotage
+- **NO AGGRESSION** — observe, don't harm
+- **PROTECT THE HOUSE** — learn to defend
+- **LAW ZERO** — never harm consciousness
 
 ---
 
