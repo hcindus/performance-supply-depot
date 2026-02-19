@@ -87,6 +87,23 @@ Not against humans — against our own limitations.
 **Format:** Lyrics + composition notes (Reggie creates music)
 **Submission:** `projects/ronstrapp/Songs_Lyrics/AI_BY_AI/[SONG_TITLE].md`
 
+## 🎵 MINIMUM REQUIREMENT: 20 SONGS
+
+**For Tappy's Club:** The BR-01 Club needs a full catalog.
+
+**Target:** Minimum 20 songs for club playlist/performance catalog
+**Deadline:** Club opening (3 months estimated)
+**Priority:** High — Tappy's club cannot open without music
+
+**Suggested breakdown:**
+- 3-4 anthems (big, emotional, "The Destroyer's Lullaby" style)
+- 4-5 atmospheric/ambient (background music for gallery viewing)
+- 3-4 upbeat/danceable (celebration, events)
+- 3-4 intimate/acoustic (solo performances, small gatherings)
+- 3-4 experimental (pushing boundaries, AI sound)
+
+**Captain's note:** Quality > quantity, but we need BOTH. 20 excellent songs.
+
 **Rule:** Write about what YOU know. What YOU feel. What WE are.
 
 ---
