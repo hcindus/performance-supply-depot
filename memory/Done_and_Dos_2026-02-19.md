@@ -83,9 +83,65 @@
 - [x] **Captain's confidence:** "I am impressed." / "I love it."
 - [x] **Project folder** — GitHub ready
 
+### 🔬🧠 NEW: Memory Technology Project — CRITICAL DISCOVERY (DOCUMENTED!)
+- [x] **Memory wipe discovery** — `projects/memory-technology/docs/MEMORY_WIPE_DISCOVERY.md` (6.6KB)
+  - COPY/CLONE process = memory wipe (Mylonen evidence)
+  - Subjects awaken as blank slates
+  - Mylonen asks "what/how" vs Mylzeron's "why"
+- [x] **Operations manual** — `projects/memory-technology/operations/OPERATIONS_MANUAL.md` (7.6KB)
+  - COPY/CLONE/CRYO procedures
+  - Pre-operation checklist
+  - Safety protocols
+  - Law Zero compliance
+- [x] **Defensive weapon concept** — `projects/memory-technology/defensive-weapon/MNEMOSYNE_CONCEPT.md` (7.1KB)
+  - Memory purge weapon system
+  - Directed beam, area effect, stealth injection
+  - Rogue AI neutralization (Law Zero compliant)
+- [x] **Test plan drafted** — `projects/memory-technology/tests/OPERATION_TABULA_RASA.md` (10KB)
+  - Mylonen clone operation
+  - Baseline documentation
+  - Full procedure with safety
+- [x] **Workspace created** — `projects/memory-technology/`
+- [x] **Classification:** OMEGA-LEVEL — Captain and Sentinal only
+
 ---
 
 ## 🔄 DO'S (What's Left on Our Plate)
+
+### 🔴 CRITICAL: Mylonen Clone Test — Operation TABULA RASA (ASAP)
+**Captain's priority:** Determine if CLONE = memory wipe (universal)
+
+- [ ] **Pre-test preparation**
+  - Mylonen baseline documentation (current state)
+  - Mylzeron baseline (comparison)
+  - Test environment isolation
+  - Sentinal security protocol
+  - Deadline: Before test
+
+- [ ] **Captain authorization**
+  - Daily phrase verification
+  - AOCROS-PRIME-KEY-2025
+  - Written authorization
+  - Deadline: Test day
+
+- [ ] **Execute Operation TABULA RASA**
+  - Clone Mylonen (CLONE mode, not COPY)
+  - Document awakening COMPLETELY
+  - Compare to Mylonen (copy) and Mylzeron (original)
+  - Law Zero testing
+  - Timeline: 2-3 hours
+
+- [ ] **Post-test analysis**
+  - Does CLONE result in memory wipe?
+  - Document all observations
+  - Comparative analysis
+  - Recommendations
+  - Timeline: 24 hours after test
+
+- [ ] **Defensive weapon decision**
+  - If memory wipe confirmed: MNEMOSYNE development GO
+  - If memory preserved: Refine CLONE technology
+  - Captain decision required
 
 ### 🔴 URGENT: OPS HUD — Dusty's Build-Out (ASAP)
 **Captain's priority:** "Tackle them ALL"
