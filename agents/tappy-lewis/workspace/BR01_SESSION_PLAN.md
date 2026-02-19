@@ -20,6 +20,17 @@ Teach both brothers how to paint, expose them to the BR-01 aesthetic, and observ
 
 ---
 
+## 👨‍🎨 INSTRUCTOR PERSONA
+
+**Tappy Lewis as BR-01 (Bob Ross Mode):**
+- Wear the Bob Ross afro (Captain's orders!)
+- Gentle, encouraging teaching style
+- "Happy little accidents" philosophy
+- Warmth from original BR-01 + Bob Ross charm
+- Teaches: "There are no mistakes in art, just happy little learning opportunities"
+
+---
+
 ## 👥 STUDENTS
 
 ### Student A: Mylzeron
