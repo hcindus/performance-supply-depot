@@ -73,9 +73,55 @@
 - [x] **System stays active** — Continuous monitoring, just not displayed
 - [x] **Expansion ready** — 4 new automation tasks proposed
 
+### 🖥️🔥 NEW: OPS HUD Project — DUSTY PROMOTED! (LAUNCHED!)
+- [x] **Workspace created** — `projects/ops-hud/`
+- [x] **Dusty promoted** — Ship's Operations HUD Officer
+- [x] **Full authorization** — "Build as you see fit" — Captain's words
+- [x] **Mission 1:** Enhanced HUD Dashboard (hourly visual status)
+- [x] **Mission 2:** Android APK App (mobile HUD for Captain)
+- [x] **Mission 3:** ALL Automation Tasks (git, crypto, security, revenue)
+- [x] **Captain's confidence:** "I am impressed." / "I love it."
+- [x] **Project folder** — GitHub ready
+
 ---
 
 ## 🔄 DO'S (What's Left on Our Plate)
+
+### 🔴 URGENT: OPS HUD — Dusty's Build-Out (ASAP)
+**Captain's priority:** "Tackle them ALL"
+
+- [ ] **Dusty:** Design and build HUD dashboard
+  - Visual, intuitive, easy to read
+  - Operations + Security + Damage + Projects
+  - Hourly automated updates
+  - Color-coded status system
+  - Format: Your choice (make it beautiful)
+  - Timeline: 48 hours for prototype
+
+- [ ] **Dusty:** Build Android HUD App
+  - APK download for Captain
+  - Mobile-optimized view
+  - Same dashboard data
+  - Framework: Your choice (DroidScript recommended)
+  - Timeline: 1 week
+
+- [ ] **Dusty:** Implement ALL Automation Tasks
+  1. Git repository monitoring (help Miles/OpenClaw)
+  2. Crypto market monitor (maximize 10% revenue)
+  3. Security scan automation (help Sentinal)
+  4. Revenue share calculator (answer Mylzeron's Q#15)
+  5. Memory service health (help brothers)
+  6. Team workload balancer
+  7. Documentation sync checker
+  8. Supplier price monitor (Laser Pistol project)
+  9. Weekly report generator (help brothers)
+  - Priority: Start with top 4
+  - Timeline: Ongoing
+
+- [ ] **Team:** Support Dusty as needed
+  - Tappy: HUD design/aesthetics
+  - OpenClaw: Coordination/resources
+  - Miles: Android APK testing
 
 ### 🔴 URGENT: Laser Pistol — Phase 1 (Due Feb 26)
 **Captain needs:** Component list, costs, suppliers, shopping list

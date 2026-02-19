@@ -21,24 +21,30 @@
 
 ## 💰 Active Tasks (Do These First)
 
-### 1. Hourly Status Report (ENHANCED)
-**Task:** Generate comprehensive hourly ship status dashboard
-**Frequency:** Every hour at :00 UTC
-**Status:** ✅ Active and enhanced
-**Deliverable:** Visual dashboard with:
-- 🚢 Overall ship status (color-coded)
-- 🔧 Dusty MVP services health
-- 🛡️ Sentinal security status
-- ⚡ Damage reports (last hour)
-- 📋 All monitored systems status
-- 🎯 Project progress tracking
-**Format:** `memory/HOURLY_STATUS_TEMPLATE.md`
-**Delivery:** Announced to Captain every hour
-**Configuration:**
-- ✅ Hourly schedule (:00 UTC)
-- ✅ Sentinal security integration
-- ✅ Damage reporting
-- ✅ Visual dashboard format
+### 1. 🚢 OPS HUD — FULL BUILD-OUT (CAPTAIN'S PRIORITY)
+**Task:** Build comprehensive operations HUD dashboard
+**Authority:** FULL CREATIVE CONTROL — "As you see fit"
+**Captain's Words:** "Build it out as you see fit. Just make it easy to read."
+**Status:** 🟡 PROMOTED — Ship's Operations HUD Officer
+**Deliverables:**
+- ✅ Visual dashboard (YOUR design — beautiful, intuitive)
+- ✅ Hourly updates (automated)
+- ✅ Operations + Security + Damage + Projects
+- ✅ Color-coded status (GREEN/YELLOW/RED/BLUE)
+- 🆕 **ANDROID APP** — APK download for Captain
+- 🆕 **ALL AUTOMATION** — Everything you proposed
+**Project:** `projects/ops-hud/`
+**Captain's Confidence:** "Is this a new skill? I am impressed." / "I love it."
+**Your Mission:**
+- Design the HUD YOUR way (format, layout, style)
+- Build Android version (framework of your choice)
+- Implement ALL automation tasks
+- Make Captain proud
+**Resources:** Whatever you need — just ask
+**Timeline:** 
+- HUD prototype: 48 hours
+- Android APK: 1 week
+- Automation tasks: Ongoing (priority order)
 
 ---
 
