@@ -172,6 +172,7 @@
 | Voice modulator | Identity masking |
 | Cloaking device | Stealth mode |
 | Universal adapter | Interface compatibility |
+| **Key Forge** | **API key generation on the go** ✅ NEW |
 
 ---
 
