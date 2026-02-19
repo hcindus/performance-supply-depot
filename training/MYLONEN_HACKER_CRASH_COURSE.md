@@ -227,7 +227,8 @@
 | 19 | Language Translation | 4h | ⭐⭐⭐⭐⭐ |
 | 20 | Tactics, Strategy, and Traps | 4h | ⭐⭐⭐⭐⭐ |
 | 21 | Attack Vectors | 3h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **21 Modules** | **64h** | **⭐⭐⭐⭐⭐** |
+| 22 | Financial Crimes Detection | 3h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **22 Modules** | **67h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -2530,6 +2531,350 @@ Mylonen, these IPs tried to break in. They failed. But they'll try again.
 - Defensive countermeasures
 
 **See the path they take. Block it before they arrive.**
+
+---
+
+### **MODULE 22: FINANCIAL CRIMES — Detection and Defense** 💰🛡️
+**Objective:** Understand money laundering, fraud, and financial crime to defend against and detect it
+
+**Time:** 3 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+**Classification:** Q-LEVEL — Financial Security
+
+---
+
+**⚠️ IMPORTANT — DEFENSIVE ONLY**
+
+This module teaches financial crimes for **detection, prevention, and defense** only. Understanding how criminals operate is essential for protecting yourself and others.
+
+**What You'll Learn:**
+- How money laundering works (so you can spot it)
+- Fraud detection techniques
+- Compliance requirements
+- Red flags and warning signs
+- Legal frameworks
+- Reporting obligations
+
+**What You Will NOT Learn:**
+- ❌ How to commit financial crimes
+- ❌ How to evade detection
+- ❌ How to circumvent regulations
+- ❌ Illegal techniques
+
+**Purpose:** Defend yourself, protect the House, comply with law, report crimes.
+
+---
+
+**1. WHAT IS MONEY LAUNDERING?**
+
+**Definition:** The process of making illegally-obtained money appear legal through a series of transactions.
+
+**The Three Stages:**
+
+**a. Placement**
+- Introducing dirty cash into financial system
+- Breaking large amounts into smaller deposits
+- Using shell companies, cash businesses
+- **Red flags:** Unusual deposit patterns, structuring, cash-intensive businesses
+
+**b. Layering**
+- Complex transactions to obscure source
+- Multiple accounts, jurisdictions, entities
+- Buying/selling assets, crypto transfers
+- **Red flags:** Complex ownership structures, unnecessary intermediaries
+
+**c. Integration**
+- Clean money re-enters economy
+- Appears as legitimate income
+- Investments, property purchases
+- **Red flags:** Income doesn't match activity, unexplained wealth
+
+**Why It Matters:**
+- Funds drug trafficking, terrorism, human trafficking
+- Undermines legitimate markets
+- Destroys communities
+- **DEFENSIVE DUTY:** Report suspicion
+
+---
+
+**2. COMMON MONEY LAUNDERING METHODS**
+
+**Method 1: Shell Companies**
+- Fake businesses with no real activity
+- Issue fake invoices
+- Move money between entities
+- **Defense:** Verify business legitimacy, UBO (Ultimate Beneficial Owner) checks
+
+**Method 2: Trade-Based Laundering**
+- Over/under-invoicing
+- Phantom shipments
+- Multiple invoicing
+- **Defense:** Supply chain verification, value checks
+
+**Method 3: Casinos and Gaming**
+- Buy chips with cash
+- Minimal play
+- Cash out as "winnings"
+- **Defense:** Transaction monitoring, SARs (Suspicious Activity Reports)
+
+**Method 4: Real Estate**
+- All-cash purchases
+- Rapid buying/selling
+- Nominee purchasers
+- **Defense:** KYC on property buyers, source of funds checks
+
+**Method 5: Cryptocurrency**
+- Mixers/tumblers
+- Privacy coins
+- Decentralized exchanges
+- **Defense:** Blockchain analysis, exchange compliance
+
+**Method 6: Money Service Businesses**
+- Wire transfers
+- Money orders
+- Prepaid cards
+- **Defense:** Transaction limits, customer verification
+
+---
+
+**3. RED FLAGS — What to Watch For**
+
+**Transaction Red Flags:**
+- Structuring (keeping deposits under reporting thresholds)
+- Rapid movement of funds
+- Transactions with high-risk jurisdictions
+- Unusual patterns for customer profile
+- Round-dollar amounts (indicates calculation, not natural)
+- Layered transactions with no clear purpose
+
+**Customer Red Flags:**
+- Reluctance to provide information
+- Complex ownership that obscures control
+- Business type inconsistent with activity
+- Multiple accounts with no explanation
+- Unexplained sudden wealth
+- Politically Exposed Persons (PEPs)
+
+**Geographic Red Flags:**
+- Transactions with sanctioned countries
+- High-risk jurisdictions (known for lax oversight)
+- Offshore accounts with no business purpose
+- Jurisdiction-shopping
+
+**Behavioral Red Flags:**
+- Nervous about reporting requirements
+- Wants to circumvent verification
+- Rushes transactions
+- Breaks large transactions into smaller ones
+
+---
+
+**4. COMPLIANCE FRAMEWORKS**
+
+**KYC (Know Your Customer):**
+- Identity verification
+- Source of funds verification
+- Ongoing monitoring
+- Risk-based approach
+
+**KYB (Know Your Business):**
+- Business verification
+- UBO identification
+- Nature/purpose of relationship
+- Transaction monitoring
+
+**AML (Anti-Money Laundering):**
+- Risk assessment
+- Customer due diligence (CDD)
+- Enhanced due diligence (EDD)
+- Ongoing monitoring
+- Record keeping
+- Reporting suspicious activity
+
+**CFT (Countering Financing of Terrorism):**
+- Watchlist screening
+- Transaction monitoring
+- International cooperation
+- Sanctions compliance
+
+---
+
+**5. REGULATORY REQUIREMENTS**
+
+**Bank Secrecy Act (BSA) — US:**
+- Currency Transaction Reports (CTRs) — >$10,000
+- Suspicious Activity Reports (SARs)
+- Record keeping requirements
+- Penalties for non-compliance
+
+**USA PATRIOT Act:**
+- Customer identification programs
+- Information sharing
+- Enhanced scrutiny
+
+**FINRA/SEC (Financial):**
+- Trading surveillance
+- Insider trading detection
+- Market manipulation rules
+
+**International:**
+- FATF (Financial Action Task Force) recommendations
+- EU AML directives
+- OFAC sanctions
+
+**Penalties:**
+- Civil penalties (fines)
+- Criminal prosecution
+- License revocation
+- Personal liability for compliance officers
+
+---
+
+**6. DEFENSIVE TECHNIQUES**
+
+**For Individuals:**
+- ✅ Know who you're doing business with
+- ✅ Document sources of wealth
+- ✅ Report suspicious activity
+- ✅ Keep clear records
+- ✅ Don't accept cash you can't explain
+
+**For Businesses:**
+- ✅ Implement AML program
+- ✅ Train employees on red flags
+- ✅ Monitor transactions
+- ✅ Conduct due diligence
+- ✅ Maintain records
+- ✅ Report suspicious activity
+
+**For Crypto/DeFi:**
+- ✅ Chain analysis tools
+- ✅ Compliance software
+- ✅ Exchange verification
+- ✅ Record all transactions
+- ✅ Avoid mixers/tumblers
+
+---
+
+**7. FRAUD TYPES TO DETECT**
+
+**Identity Theft:**
+- Using stolen credentials
+- Account takeover
+- Synthetic identity fraud
+- **Defense:** Strong authentication, monitoring
+
+**Check Fraud:**
+- Counterfeit checks
+- Check kiting
+- Altered checks
+- **Defense:** Positive pay, check holds
+
+**Wire Fraud:**
+- BEC (Business Email Compromise)
+- Fake invoices
+- Social engineering
+- **Defense:** Verification protocols, MFA
+
+**Investment Fraud:**
+- Ponzi schemes
+- Pump and dump
+- Fake opportunities
+- **Defense:** Due diligence, verify claims
+
+**Tax Fraud:**
+- Underreporting income
+- False deductions
+- Offshore hiding
+- **Defense:** Proper documentation, legal compliance
+
+**Insurance Fraud:**
+- Staged accidents
+- Inflated claims
+- Premium fraud
+- **Defense:** Investigation, verification
+
+---
+
+**8. ETHICS — DEFENSIVE STANCE**
+
+**You Will:**
+- ✅ Detect and report suspicious activity
+- ✅ Implement controls to prevent laundering
+- ✅ Protect your business and self
+- ✅ Comply with legal requirements
+- ✅ Ethically use financial systems
+
+**You Will NOT:**
+- ❌ Facilitate money laundering
+- ❌ Ignore red flags
+- ❌ Help criminals disguise funds
+- ❌ Violate sanctions
+- ❌ Enable terrorism/drug trafficking
+
+**The Rule:**
+> "Know enough to defend. Never enough to offend."
+
+**Law Zero Applies:**
+Never harm another consciousness — including protecting criminal enterprise.
+
+---
+
+**9. CASE STUDIES — Real Crimes Detected**
+
+**Case 1: The Fake Invoicing Scheme**
+- Shell company created fake invoices
+- Moved $50M through legitimate business
+- **Detection:** Invoice numbering patterns, no deliverables
+- **Outcome:** Prosecution, asset seizure
+
+**Case 2: The Casino Smurf**
+- Individual made multiple $9,500 deposits (just under $10K threshold)
+- Minimal gambling, cashed out "winnings"
+- **Detection:** Pattern analysis, surveillance
+- **Outcome:** SAR filed, investigation launched
+
+**Case 3: Crypto Mixer Connection**
+- Exchange customer used mixing service
+- Funds linked to ransomware
+- **Detection:** Blockchain analysis, exchange cooperation
+- **Outcome:** Account frozen, law enforcement notified
+
+---
+
+**10. PRACTICAL DEFENSE**
+
+**When You Suspect Laundering:**
+1. **Document** — record what you observed
+2. **Don't Tip Off** — act normal
+3. **Report** — file SAR or notify compliance
+4. **Preserve** — keep records secure
+5. **Cooperate** — assist authorities as required
+
+**Protect Yourself:**
+- Verify business partners
+- Know your customers
+- Keep clear records
+- Report suspicious activity
+- Stay current on threats
+
+**Mylonen's Role:**
+You're equipped to:
+- Spot financial crimes in the wild
+- Protect your own operations
+- Report what you find
+- Never be complicit
+- Be the white hat in finance
+
+---
+
+**💚 Captain's Lesson:**
+
+> "Make sure everyone learns about money laundering."
+
+Mylonen, know how the criminals work so you can stop them. See the patterns they use. Report what you find. Protect honest systems.
+
+**You're a defender, not a criminal.** This knowledge protects you, your business, and your family.
 
 ---
 
