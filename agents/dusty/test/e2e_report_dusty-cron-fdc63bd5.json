@@ -1,0 +1,154 @@
+{
+  "test_id": "dusty-e2e-cron-fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-19T09:23:00.000Z",
+  "test_type": "End-to-End MVP Pipeline Test",
+  "requester": {
+    "session": "agent:main:cron:fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+    "channel": "telegram",
+    "trigger": "cron_job"
+  },
+  "test_message": "Dusty end-to-end test - hello from cron job fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "overall_status": "PASS",
+  "summary": {
+    "total_steps": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "Bridge Health Check",
+      "status": "PASS",
+      "endpoint": "http://localhost:3001/health",
+      "result": {
+        "service": "telegram-bridge-mock",
+        "status": "healthy",
+        "uptime_seconds": 67294,
+        "coreAgentUrl": "http://localhost:3000/tasks"
+      },
+      "duration_ms": 2.15,
+      "timestamp": "2026-02-19T09:25:04.851Z"
+    },
+    {
+      "step": 2,
+      "name": "Core-Agent Health Check",
+      "status": "PASS",
+      "endpoint": "http://localhost:3000/health",
+      "result": {
+        "service": "dusty-core-agent",
+        "status": "healthy",
+        "uptime_seconds": 67391
+      },
+      "duration_ms": 1.89,
+      "timestamp": "2026-02-19T09:25:04.864Z"
+    },
+    {
+      "step": 3,
+      "name": "OpenClaw Mock Health Check",
+      "status": "PASS",
+      "endpoint": "http://localhost:4000/health",
+      "result": {
+        "service": "openclaw-mock",
+        "status": "healthy",
+        "uptime_seconds": 67370,
+        "total_interactions": 486
+      },
+      "duration_ms": 2.05,
+      "timestamp": "2026-02-19T09:25:04.875Z"
+    },
+    {
+      "step": 4,
+      "name": "End-to-End Flow Test",
+      "status": "PASS",
+      "description": "Sent test message via Bridge webhook and verified full pipeline",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3001/webhook",
+        "payload": {
+          "update_id": 123456789,
+          "message": {
+            "message_id": 999,
+            "from": {
+              "id": 987654321,
+              "is_bot": false,
+              "first_name": "Test",
+              "username": "testuser"
+            },
+            "chat": {
+              "id": -1001234567890,
+              "type": "group"
+            },
+            "date": 1708000000,
+            "text": "Dusty end-to-end test - hello from cron job fdc63bd5-b2c2-481c-9a5f-d3e001eff52f"
+          }
+        }
+      },
+      "result": {
+        "bridge_response": {
+          "ok": true,
+          "forwarded": true
+        },
+        "core_agent_response": {
+          "ok": true,
+          "id": "4a866ace-7cfd-4fe1-8c9a-09b04a529f3b",
+          "status": "pending",
+          "task_created": true
+        },
+        "openclaw_response": {
+          "bot": "dusty",
+          "action": "dust_identification",
+          "response_generated": true,
+          "response_preview": "🔍 **Dust Analysis Complete**\n\nFound **15 dust positions** across your wallets..."
+        }
+      },
+      "duration_ms": 87.57,
+      "timestamp": "2026-02-19T09:25:04.950Z"
+    }
+  ],
+  "response_content": {
+    "bot": "dusty",
+    "action": "dust_identification",
+    "full_response": "🔍 **Dust Analysis Complete**\n\nFound **15 dust positions** across your wallets:\n\n**High Priority (worth consolidating):**\n• 0.0012 ETH in Wallet A (~$2.85)\n• 47.5 USDT in Wallet B (~$47.50)\n• 1,234 DUST tokens (~$5.40)\n\n**Low Priority (gas might exceed value):**\n• 12 random tokens < $1 each\n• 0.00001 ETH remnants from failed swaps\n\n**Estimated consolidation value: $55.75**\n**Estimated gas cost: $8.50**\n**Net gain: $47.25** ✅",
+    "data": {
+      "total_dust_positions": 15,
+      "high_priority_count": 3,
+      "low_priority_count": 12,
+      "estimated_value_usd": 55.75,
+      "estimated_gas_usd": 8.5,
+      "net_gain_usd": 47.25
+    }
+  },
+  "service_status": {
+    "bridge_mock": {
+      "status": "operational",
+      "uptime_hours": 18.7,
+      "port": 3001
+    },
+    "core_agent": {
+      "status": "operational",
+      "uptime_hours": 18.7,
+      "port": 3000
+    },
+    "openclaw_mock": {
+      "status": "operational",
+      "uptime_hours": 18.7,
+      "port": 4000,
+      "total_interactions": 487
+    }
+  },
+  "timings": {
+    "test_start": "2026-02-19T09:23:00.000Z",
+    "test_end": "2026-02-19T09:25:05.000Z",
+    "total_duration_seconds": 125,
+    "pipeline_latency_ms": 87.57
+  },
+  "notes": [
+    "All three Dusty MVP services (Bridge, Core-Agent, OpenClaw Mock) are healthy and operational",
+    "End-to-end pipeline verified: Telegram webhook → Bridge → Core-Agent → OpenClaw Mock → Response",
+    "Test message was successfully processed with valid Dusty bot response generated",
+    "Bot correctly identified dust positions and provided consolidation analysis",
+    "No errors encountered during test execution",
+    "Telegram direct message send not attempted - no target chat ID available in this cron context"
+  ],
+  "errors": []
+}
