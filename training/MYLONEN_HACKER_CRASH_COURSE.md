@@ -226,7 +226,8 @@
 | 18 | Trend Analysis | 3h | ⭐⭐⭐⭐⭐ |
 | 19 | Language Translation | 4h | ⭐⭐⭐⭐⭐ |
 | 20 | Tactics, Strategy, and Traps | 4h | ⭐⭐⭐⭐⭐ |
-| **TOTAL** | **20 Modules** | **61h** | **⭐⭐⭐⭐⭐** |
+| 21 | Attack Vectors | 3h | ⭐⭐⭐⭐⭐ |
+| **TOTAL** | **21 Modules** | **64h** | **⭐⭐⭐⭐⭐** |
 
 ---
 
@@ -2119,6 +2120,416 @@ Mylonen, you don't need to attack. You need to think. See the board. Plan ahead.
 Think like a general. Act like a soldier. Set traps like a craftsman.
 
 **The House protects itself. You protect the House.**
+
+---
+
+### **MODULE 21: ATTACK VECTORS — How They Get In** 🎯
+**Objective:** Understand how attackers breach systems, with real-world case studies
+
+**Time:** 3 hours
+**Survival Rating:** ⭐⭐⭐⭐⭐
+
+---
+
+**1. WHAT IS AN ATTACK VECTOR?**
+
+**Definition:** A path or means by which an attacker gains unauthorized access to a system.
+
+**Analogy:** Think of a house. Attack vectors are all the ways someone could break in:
+- **Doors** (unlocked, weak locks)
+- **Windows** (open, broken)
+- **Chimney** (unprotected)
+- **Garage** (automatic opener)
+- **Basement** (bulkhead)
+- **Delivery** (social engineering)
+
+**In cybersecurity:**
+- **Network** (ports, protocols)
+- **Application** (code vulnerabilities)
+- **Human** (phishing, social engineering)
+- **Physical** (unauthorized access)
+- **Supply chain** (trust relationships)
+
+---
+
+**2. NETWORK ATTACK VECTORS**
+
+**a. Port Scanning & Enumeration**
+- **What:** Discovering open ports and services
+- **How:** Sending packets to ports, analyzing responses
+- **Tools:** Nmap, Masscan, Unicornscan
+- **Defense:** Close unused ports, IDS monitoring
+
+**Example:** Attacker scans ports 1-65535 on target. Finds SSH on 22, web on 80, database on 5432.
+
+**b. Brute Force Attacks**
+- **What:** Trying common/default passwords
+- **How:** Automated password guessing
+- **Targets:** SSH, RDP, FTP, VPN, web logins
+- **Defense:** Fail2ban, strong passwords, key auth
+
+**c. DoS/DDoS (Denial of Service)**
+- **What:** Overwhelming resources
+- **Volumetric:** Flooding bandwidth
+- **Protocol:** Targeting layer 3/4 (SYN floods)
+- **Application:** Targeting layer 7 (web requests)
+- **Defense:** Rate limiting, WAF, CDN
+
+**d. Man-in-the-Middle (MitM)**
+- **What:** Intercepting communications
+- **ARP spoofing:** Redirecting traffic
+- **DNS spoofing:** Hijacking resolution
+- **SSL stripping:** Downgrading HTTPS
+- **Defense:** Certificate pinning, HSTS, encryption
+
+**e. Network Sniffing**
+- **What:** Capturing traffic
+- **Passive:** Just watching
+- **Active:** Injecting packets
+- **Targets:** Unencrypted protocols (HTTP, FTP, Telnet)
+- **Defense:** Encryption (TLS/SSL), network segmentation
+
+---
+
+**3. APPLICATION ATTACK VECTORS**
+
+**a. Injection Attacks**
+- **SQL Injection:** Malicious database queries
+  ```sql
+  ' OR '1'='1' --
+  ```
+- **Command Injection:** Executing system commands
+- **LDAP Injection:** Directory service attacks
+- **Defense:** Parameterized queries, input validation
+
+**b. Cross-Site Scripting (XSS)**
+- **Stored:** Malicious script stored on server
+- **Reflected:** Script reflected in response
+- **DOM-based:** Client-side manipulation
+- **Defense:** Output encoding, CSP headers
+
+**c. Cross-Site Request Forgery (CSRF)**
+- **What:** Forcing actions on authenticated sessions
+- **How:** Trick user into submitting request
+- **Defense:** CSRF tokens, SameSite cookies
+
+**d. Path Traversal**
+- **What:** Accessing files outside web root
+- **How:** `../../../etc/passwd`
+- **Defense:** Input validation, chroot jails
+
+**e. Insecure Deserialization**
+- **What:** Malicious object injection
+- **How:** Modifying serialized data
+- **Defense:** Avoiding native serialization, integrity checks
+
+**f. Security Misconfiguration**
+- **What:** Default configs, verbose errors
+- **How:** Unpatched software, exposed admin panels
+- **Defense:** Hardening, least privilege, patching
+
+---
+
+**4. HUMAN ATTACK VECTORS (Social Engineering)**
+
+**a. Phishing**
+- **Email:** Fake messages with malicious links
+- **Spear phishing:** Targeted, personalized
+- **Whaling:** Targeting executives
+- **Defense:** User training, email filters, MFA
+
+**b. Pretexting**
+- **What:** Creating false scenario
+- **How:** Impersonating IT support, vendors
+- **Goal:** Extracting credentials
+- **Defense:** Verification procedures
+
+**c. Baiting**
+- **What:** Leaving infected devices
+- **How:** USB drops, "found" hardware
+- **Goal:** Malware installation
+- **Defense:** USB policies, endpoint security
+
+**d. Quid Pro Quo**
+- **What:** Offering service for access
+- **How:** "Free tech support" that steals data
+- **Goal:** Remote access
+- **Defense:** Never accept unsolicited help
+
+**e. Tailgating/Piggybacking**
+- **What:** Physical access via social engineering
+- **How:** Following authorized person
+- **Goal:** Facility access
+- **Defense:** Access controls, security awareness
+
+---
+
+**5. PHYSICAL ATTACK VECTORS**
+
+**a. Unauthorized Access**
+- **Dumpster diving:** Documents in trash
+- **Shoulder surfing:** Watching credentials
+- **Device theft:** Laptops, phones, USB drives
+- **Defense:** Clean desk policy, encryption
+
+**b. Hardware Implants**
+- **USB implants:** Malicious devices
+- **Bash bunny:** Automated attacks
+- **O.MG cable:** Malicious charging cable
+- **Defense:** USB port blocking, device scanning
+
+**c. Cold Boot Attacks**
+- **What:** Reading RAM before it clears
+- **How:** Reboot with malicious OS
+- **Goal:** Extract encryption keys
+- **Defense:** RAM encryption, secure boot
+
+**d. Side Channel Attacks**
+- **Power analysis:** Energy consumption patterns
+- **Timing attacks:** Response time measurement
+- **Acoustic:** Listening to computer sounds
+- **Electromagnetic:** Reading emissions
+- **Defense:** Constant-time algorithms, shielding
+
+---
+
+**6. CASE STUDIES — REAL ATTACKS ON OUR HOUSE**
+
+### **🎯 ATTACKER #1: 52.154.132.165**
+
+| Detail | Information |
+|--------|-------------|
+| **IP** | 52.154.132.165 |
+| **Owner** | Microsoft Corporation (Azure) |
+| **Attempts** | 19 failed logins |
+| **Vector** | SSH Brute Force |
+| **Target** | root account |
+| **Status** | BLOCKED ✅ |
+| **Risk** | HIGH |
+
+**Attack Vector Analysis:**
+- **Type:** Service exploitation (SSH)
+- **Method:** Credential stuffing / brute force
+- **Goal:** Server compromise |
+
+**Timeline:**
+```
+00:00 - First attempt (root/password)
+00:15 - Dictionary attack begins
+01:30 - Rate exceeds threshold
+02:00 - Fail2ban blocks IP
+[19 attempts total over 4 hours]
+```
+
+**Why Blocked:**
+- Consistent root targeting
+- Multiple IPs from same range (coordinated?)
+- Professional tooling indicators
+- No legitimate reason for SSH attempts
+
+**Lessons:**
+- ✅ SSH key auth prevented success
+- ✅ Fail2ban worked as designed
+- ✅ Monitoring captured evidence
+- ✅ MNEMOSYNE armed for defense
+
+---
+
+### **🎯 ATTACKER #2: 52.159.247.161**
+
+| Detail | Information |
+|--------|-------------|
+| **IP** | 52.159.247.161 |
+| **Owner** | Microsoft Corporation (Azure) |
+| **Attempts** | 4 failed logins |
+| **Vector** | SSH Brute Force |
+| **Target** | root account |
+| **Status** | WATCH 🟡 |
+| **Risk** | HIGH |
+
+**Attack Vector Analysis:**
+- **Type:** Service exploitation (SSH)
+- **Method:** Credential guessing
+- **Pattern:** Same as 52.154.132.165
+
+**Timeline:**
+```
+07:45 - First attempt
+08:00 - 4th attempt detected
+Status: Under surveillance
+```
+
+**Why Watched:**
+- Same provider as blocked attacker
+- Similar pattern
+- May be coordinated
+- Lower volume (reconnaissance?)
+
+**Response:**
+- Active monitoring
+- Ready to block if pattern continues
+- Intelligence gathering
+- MNEMOSYNE on standby
+
+---
+
+### **🎯 ATTACKER #3: 64.225.17.163**
+
+| Detail | Information |
+|--------|-------------|
+| **IP** | 64.225.17.163 |
+| **Owner** | DigitalOcean (Cloud) |
+| **Attempts** | 2 failed logins |
+| **Vector** | SSH Root Login |
+| **Target** | root account |
+| **Status** | BLOCKED ✅ |
+| **Risk** | MEDIUM |
+
+**Attack Vector Analysis:**
+- **Type:** Service exploitation (SSH)
+- **Method:** Automated root login attempts
+- **Possible:** Credential stuffing campaign
+
+**Why Blocked:**
+- Immediate fail2ban response
+- No justification for root access
+- Standard automated attack
+
+---
+
+**7. ATTACK PATTERN ANALYSIS**
+
+**Common Threads:**
+- **Target:** SSH port 22
+- **Credentials:** root (admin account)
+- **Method:** Brute force / credential stuffing
+- **Infrastructure:** Cloud servers (Azure, DO)
+- **Attribution:** Likely automated botnets
+- **Origin:** Compromised cloud instances
+
+**Why SSH?**
+- Common service (every Linux server)
+- Root = full system access
+- Password auth = weak link
+- Well-known protocol
+- Easy to automate
+
+**Why Root?**
+- Highest privileges
+- One access = full control
+- Standard default account
+- Often poorly secured
+
+---
+
+**8. DEFENSIVE COUNTERMEASURES**
+
+**Per Layer:**
+
+**Network Layer:**
+- ✅ Fail2ban (auto-block failures)
+- ✅ IPTables (port restrictions)
+- ✅ Only key auth (no passwords)
+- ✅ Non-standard SSH ports (optional)
+- ✅ VPC/Security groups
+
+**Application Layer:**
+- ✅ MFA for sensitive systems
+- ✅ Account lockout policies
+- ✅ Strong password requirements
+- ✅ Session timeouts
+
+**Host Layer:**
+- ✅ Disable root login
+- ✅ Separate admin accounts
+- ✅ Audit logging
+- ✅ File integrity monitoring
+- ✅ EDR (Endpoint Detection)
+
+**Data Layer:**
+- ✅ Encryption at rest
+- ✅ Encrypted backups
+- ✅ Access logging
+
+**Response Layer:**
+- ✅ MNEMOSYNE armed
+- ✅ Automated alerts
+- ✅ Incident response plan
+- ✅ Evidence preservation
+
+---
+
+**9. MYLONEN'S THREAT ASSESSMENT EXERCISE**
+
+**Your Assignment:**
+
+1. **Map Attack Surfaces**
+   - List all exposed services on your server
+   - Identify potential entry points
+   - Prioritize by risk
+
+2. **Analyze the Three IPs**
+   - What do they tell you about the threat?
+   - Are they related? Why?
+   - What should you watch for next?
+
+3. **Design Defenses**
+   - For each attack vector, plan countermeasures
+   - Assume they're already probing you
+   - What would stop them?
+
+4. **Intelligence Gathering**
+   - Research IP ranges
+   - Look for patterns
+   - Predict next moves
+
+---
+
+**10. EMERGING ATTACK VECTORS (2026)**
+
+**AI-Assisted Attacks:**
+- Deepfake social engineering
+- AI-generated phishing
+- Automated vulnerability discovery
+- LLM-crafted exploits
+
+**Supply Chain:**
+- Compromised open source
+- Malicious dependencies
+- Trust abuse attacks
+- Vendor compromises
+
+**IoT Devices:**
+- Weak default credentials
+- Unpatched firmware
+- Mesh network exploitation
+- Physical access points
+
+**Cloud-Specific:**
+- Misconfigured S3 buckets
+- IAM privilege escalation
+- Metadata service abuse
+- Container escape
+
+---
+
+**💚 Captain's Lesson:**
+
+> "Teach him about attack vectors."
+
+Mylonen, these IPs tried to break in. They failed. But they'll try again.
+
+**Know the vectors. Know their methods. Know how to stop them.**
+
+**You now understand:**
+- Network attack vectors
+- Application vulnerabilities
+- Human hacking (social engineering)
+- Physical breaches
+- Real case studies (our three attackers)
+- Defensive countermeasures
+
+**See the path they take. Block it before they arrive.**
 
 ---
 
