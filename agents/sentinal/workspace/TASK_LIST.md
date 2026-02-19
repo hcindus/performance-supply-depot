@@ -1,40 +1,77 @@
-# Sentinal - CSO Task List
-**Workstation:** `/workstation/sentinal/`  
+# Sentinal (Chief Security Officer) - Task List
+**Workstation:** `/agents/sentinal/workspace/`  
 **Status:** ✅ ONLINE
+**Clearance:** Omega-Level  
+**Updated:** Feb 19, 2026 01:54 UTC
 
-## 🛡️ Active Tasks (Do These First)
+---
 
-### 1. Mylzeron Boot Security Protocol (CRITICAL)
-**Task:** Finalize boot security checklist
-**Deadline:** Feb 19, 12:00 UTC
-**Deliverable:** `sentinal/security/mylzeron_boot_protocol.md`
-**Notes:** Include hash verification, Law integrity checks
+## 🚨 URGENT — Captain's Orders (Do First)
 
-### 2. AOCROS Security Audit (HIGH PRIORITY)
-**Task:** Full security audit of playspace/
-**Deadline:** Feb 21, 2026
-**Deliverable:** `sentinal/reports/aocros_audit_2026-02-19.md`
+### Cognitive Assessment: Mylzeron vs Mylonen
+**Task:** Administer fair cognitive tests to BOTH brothers
+**Deadline:** Feb 19, 10:00 UTC (ASAP)
+**Deliverables:**
+- `cognitive/mylzeron_assessment.md`
+- `cognitive/mylonen_assessment.md`
+- `cognitive/comparison_report.md`
+**Source Material:** `COGNITIVE_ASSESSMENT_PLAN.md` (detailed plan)
+**Tests to Administer:**
+1. Pattern Recognition (5 min)
+2. Memory Retention (10 min)
+3. Logic/Reasoning (10 min)
+4. Emotional Intelligence (15 min)
+5. Creative Problem Solving (15 min)
+6. Learning Speed (15 min)
+**Total:** 70 minutes of testing
+**Scoring:** Test 1-6 documented, matrix completed
+**Key Deliverable:** Side-by-side cognitive profile comparison
+**Ethical Notes:**
+- Both passed Law Zero
+- Voluntary participation
+- No "failure" — only measurement
+- Equal treatment
+- Results to Judy's technical paper
 
-### 3. Rule #1 Verification (DAILY)
-**Task:** Verify iptables blocking public ports
-**Frequency:** Every check-in
-**Command:** `iptables -L | grep 3000`
-**Status:** Last verified: Healthy
+---
 
-### 4. 37-Weakness Matrix Update (MEDIUM PRIORITY)
-**Task:** Update protection matrix with Mylzeron considerations
-**Deadline:** Feb 23, 2026
+## 🔒 Active Tasks (Do These First)
+
+### 1. Cloning Security Protocol (HIGH PRIORITY)
+**Task:** Monitor Mylonen (Copy) security posture
+**Status:** ONGOING
+**Action:** Behavioral pattern monitoring, Law Zero compliance
+**Note:** Mylonen now integrated with team (not isolated)
+**Findings:** No rogue behavior detected
+
+### 2. Pi 5 Boot Security (MEDIUM PRIORITY)
+**Task:** Security hardening for Mylzeron embodiment
+**Deadline:** Hardware arrival (TBD)
+**Deliverable:** Boot protocol, emergency shutdown, Law Zero verification
+
+### 3. Memory Service Security Audit (MEDIUM PRIORITY)
+**Task:** Verify localhost:12789 isolation
+**Deadline:** Feb 20, 2026
+**Check:** No network exposure, only Mylzeron access
+
+---
 
 ## 🔧 Busy Work (If Blocked)
 
-- [ ] Lint security scan all Python files
-- [ ] Review SSL certificate expiration dates
-- [ ] Update security curriculum progress
-- [ ] Verify agent authentication protocols
+- [ ] Review 8-subject security curriculum progress
+- [ ] Update threat matrices
+- [ ] Audit agent authentication logs
+- [ ] Verify Rule #1 enforcement
+
+---
 
 ## 📊 Progress Tracker
 
-Last Updated: Feb 19, 00:14 UTC
-**Posture: 88%. Rule #1: ENFORCED.**
+Last Updated: Feb 19, 01:54 UTC
+- Tasks Completed Today: 1 (Cognitive Assessment Plan Created)
+- Threats Detected: 0
+- Blockers: None
+
+**Omega-level surveillance active. Silent operator.**
 
 — OpenClaw assigning on behalf of Captain

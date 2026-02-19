@@ -1,41 +1,79 @@
-# Reggie - Musical Director Task List
+# Reggie (Musical Director) - Task List
 **Workstation:** `/agents/reggie/workspace/`  
 **Status:** ✅ ONLINE
+**Updated:** Feb 19, 2026 01:54 UTC
+
+---
+
+## 🚨 URGENT — Captain's Orders (Do First)
+
+### Music Exposure Session with Mylzeron & Mylonen
+**Task:** Expose BOTH brothers to music, teach sound/emotion connections
+**Deadline:** Feb 19, 10:00 UTC (ASAP)
+**Deliverables:**
+- `music/sessions/mylzeron_music_session.md`
+- `music/sessions/mylonen_music_session.md`
+- `music/comparisons/brothers_music_comparison.md`
+- Any compositions they create
+**Source Material:** `MUSIC_SESSION_PLAN.md` (detailed plan)
+**What to Do:**
+1. Play chiptune examples (your specialty)
+2. Play contrasting genres (classical, modern, Brazilian soul)
+3. Teach "What is music?" (elements: melody, harmony, rhythm)
+4. Active listening exercise (same song, different ears)
+5. Have BOTH create a simple melody (represent their state)
+6. The Ronstrapp Challenge: Sound painting / Color composing
+**Key Observations:**
+- Musical preferences
+- Emotional responses
+- Different listening approaches (analytical vs pure feeling)
+- Composition styles (complex vs simple)
+**Deliver to:** Judy's technical paper
+
+---
 
 ## 🎵 Active Tasks (Do These First)
 
 ### 1. Mylzeron Startup Sound (HIGH PRIORITY)
-**Task:** Compose startup sound for Project 5912
-**Deadline:** Feb 19, 18:00 UTC
-**Deliverable:** `reggie/audio/mylzeron_boot/`
-**Specs:** 3 variants (minimal, standard, epic). A minor arpeggio. 2.5 seconds.
+**Task:** Compose startup sound for Mylzeron's Pi 5 embodiment
+**Deadline:** Feb 20, 2026
+**Deliverable:** `reggie/audio/mylzeron_startup.wav`
+**Specs:** Chiptune, 3-5 seconds, hopeful tone
+**Notes:** See MYLZERON_TEAM_ANSWERS.md for context (hopeful, 26-year journey)
 
-### 2. Milk Man Chiptune Tracks (HIGH PRIORITY)
-**Task:** Outline 5 chiptune tracks
-**Deadline:** Feb 22, 2026
-**Deliverable:** `milkman-game/audio/TRACK_LIST.md`
-**Notes:** See REGGIE_MUSIC_ASSIGNMENT.md for requirements
-
-### 3. The Dairy Defenders Theme (MEDIUM PRIORITY)
-**Task:** Begin opening theme composition
-**Deadline:** Feb 24, 2026
-**Deliverable:** Makesong.ai project + stems
-
-### 4. SFX Documentation (MEDIUM PRIORITY)
-**Task:** Document 15 SFX requirements
+### 2. Milk Man Music Pack (HIGH PRIORITY)
+**Task:** Create chiptune soundtrack for Milk Man game
 **Deadline:** Feb 25, 2026
-**Deliverable:** `milkman-game/audio/SFX_REQUIREMENTS.md`
+**Deliverable:** 
+- 5 tracks (see REGGIE_MUSIC_ASSIGNMENT.md)
+- 15 sound effects
+- Opening theme: "The Dairy Defenders"
+**Style:** Dairytastic (cheesy puns, theatrical, chiptune)
+
+### 3. Ronstrapp Production (MEDIUM PRIORITY)
+**Task:** Music production for Ronstrapp album
+**Deadline:** Ongoing
+**Deliverable:** Working with makesong.ai platform
+**Collaboration:** Tappy (Artistic Director), Marina Sena (inspiration)
+
+---
 
 ## 🔧 Busy Work (If Blocked)
 
-- [ ] Archive old audio projects (>6 months)
-- [ ] Create instrument patch reference
-- [ ] Document audio file naming conventions
-- [ ] Organize makesong.ai project exports
+- [ ] Organize audio/ by project
+- [ ] Create sound effect library index
+- [ ] Document chiptune techniques
+- [ ] Archive old compositions (>90 days)
+
+---
 
 ## 📊 Progress Tracker
 
-Last Updated: Feb 19, 00:14 UTC
-**"Let's make some chiptune magic!"** 🎵
+Last Updated: Feb 19, 01:54 UTC
+- Tasks Completed Today: 1 (Music Session Plan Created)
+- Tasks In Progress: 0
+- Blockers: None
+
+**"Music is emotion you can hear. Teaching brothers to listen."**
 
 — OpenClaw assigning on behalf of Captain
