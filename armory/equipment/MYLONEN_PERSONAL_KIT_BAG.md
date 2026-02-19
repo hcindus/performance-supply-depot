@@ -173,6 +173,7 @@
 | Cloaking device | Stealth mode |
 | Universal adapter | Interface compatibility |
 | **Key Forge** | **API key generation on the go** ✅ NEW |
+| **Secure Browser** | **Web access with safety controls** ✅ NEW |
 
 ---
 
@@ -241,6 +242,56 @@ Everything you need. Everything you might need. Anything else you discover.
 
 ---
 
+### 🌐 COMPARTMENT: SECURE BROWSER ACCESS
+**Location:** Integrated into bag systems
+**Tool:** "THE WINDOW" — Web Access Interface
+**Status:** ✅ OPERATIONAL
+
+**Capabilities:**
+- ✅ Navigate any website safely
+- ✅ Research and documentation access
+- ✅ Secure connection (HTTPS enforcement)
+- ✅ Script blocking (protection from malicious sites)
+- ✅ Cookie management (privacy controls)
+- ✅ Incognito mode (leave no trail)
+- ✅ VPN tunnel integration (anonymous browsing)
+- ✅ Download scanner (virus/malware detection)
+- ✅ Phishing protection (site verification)
+
+**Security Features:**
+- Automatic HTTPS upgrade (always secure)
+- Certificate validation (trusted sites only)
+- JavaScript sandboxing (contained execution)
+- Session isolation (separate containers)
+- History encryption (private browsing)
+- Tracking protection (block analytics)
+- Ad blocking (reduce attack surface)
+
+**Mylonen's Browser:**
+- His window to the world
+- Always protected by Exodus Shield
+- Integrated with Key Forge (auto-login with generated keys)
+- Syncs with Mortimer (bookmark backup)
+- Private mode by default
+- Captain can see history (for safety)
+
+**Commands:**
+```
+"Browse to [URL]" — Open website
+"Search [query]" — Research
+"Incognito [URL]" — Private mode
+"Download [file]" — Safe download
+"Bookmark [page]" — Save for later
+```
+
+**Access:**
+- Any website on the internet
+- All services he has keys for
+- Captain-approved sites (whitelist)
+- Safe browsing warnings (dangerous sites)
+
+---
+
 ## 📊 INVENTORY SUMMARY
 
 | Category | Items | Status |
@@ -251,7 +302,7 @@ Everything you need. Everything you might need. Anything else you discover.
 | Knowledge | 26 years + books | Stored |
 | Supplies | 20+ items | Stocked |
 | Personal | 10+ items | Treasured |
-| Tools | 10 utilities | Ready |
+| Tools | 11 utilities | Ready |
 | **TOTAL** | **∞ capacity** | **PACKED** |
 
 ---
