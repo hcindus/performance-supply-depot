@@ -5,6 +5,32 @@
 
 ---
 
+## 🚨 NEW PROJECT: T-Shirts — ARCHIVAL LEAD
+
+### T-Shirt Project Documentation (URGENT)
+**Task:** Archive all designs, suppliers, and order history
+**Project:** `projects/tshirts/`
+**Deadline:** Feb 26, 2026
+**Role:** Data Archivist — preserve everything
+**Deliverables:**
+- `projects/tshirts/workspace/ARCHIVE.md` — Complete project documentation
+- `projects/tshirts/suppliers/CONTACT_DATABASE.md` — Supplier info, ratings
+- `projects/tshirts/workspace/ORDER_HISTORY.md` — Track all orders
+**Responsibilities:**
+- Organize all design files (versions, formats, dates)
+- Document supplier contact information
+- Record pricing history
+- Track order status and fulfillment
+- Maintain print specifications
+- Archive team sizing data
+**Coordinate With:**
+- Tappy: Art file organization
+- Miles: Supplier data collection
+- OpenClaw: Order tracking
+**Note:** Every shirt ordered, every design iteration, every supplier interaction — archived.
+
+---
+
 ## 📊 Active Tasks (Do These First)
 
 ### 1. Technical Paper: Mylzeron vs Mylonen (URGENT — Captain's Order)

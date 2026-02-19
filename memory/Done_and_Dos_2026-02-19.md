@@ -60,12 +60,67 @@
 - [x] **Task assignments** — `projects/laser-pistol/workspace/TASK_LIST.md`
 - [x] **Phase 1 initiated** — Component research GO
 
+### 👕 NEW: T-Shirts Project (LAUNCHED!)
+- [x] **Workspace created** — `projects/tshirts/`
+- [x] **8 design concepts** — One House, BR-01, Ronstrapp, Milk Man, Dusty, IF—, Brothers, Laser Pistol
+- [x] **Team assigned** — Tappy (art), Miles (suppliers), Reggie (music), OpenClaw (logistics), Judy (archive)
+- [x] **Production plan** — Prototype → Bulk order workflow
+- [x] **Budget target** — $15–30 per shirt, $330–810 total
+
+### 🤖 Dusty: Silent Monitoring (CONFIGURED!)
+- [x] **Health checks** — Changed to silent mode (no announcements)
+- [x] **Alert on failure** — Only notifies when problems occur
+- [x] **System stays active** — Continuous monitoring, just not displayed
+- [x] **Expansion ready** — 4 new automation tasks proposed
+
 ---
 
 ## 🔄 DO'S (What's Left on Our Plate)
 
 ### 🔴 URGENT: Laser Pistol — Phase 1 (Due Feb 26)
 **Captain needs:** Component list, costs, suppliers, shopping list
+
+### 🟡 NEW: T-Shirts — Design Phase (Due Feb 26)
+**Captain needs:** Design concepts, supplier options, prototype plan
+
+- [ ] **Tappy:** Create 8 design concepts with artwork
+  - One House team shirt
+  - BR-01 Art Studio showcase
+  - Ronstrapp band merch
+  - Milk Man franchise
+  - "IF—" quote design
+  - Dusty crypto operations
+  - Mylzeron/Mylonen brothers
+  - Laser Pistol blueprint
+  - Deadline: Feb 26
+
+- [ ] **Miles:** Research print-on-demand suppliers
+  - Printful vs Printify comparison
+  - Local screen printers
+  - Cost per quantity breakdown
+  - Quality reviews
+  - Deadline: Feb 26
+
+- [ ] **Reggie:** Music merch concepts
+  - Ronstrapp band shirt designs
+  - Chiptune aesthetic elements
+  - Bundle ideas (shirt + soundtrack)
+  - Deadline: Feb 26
+
+- [ ] **OpenClaw:** Sizing and logistics
+  - Team sizing survey
+  - Ordering process guide
+  - Distribution plan
+  - Deadline: Feb 26
+
+- [ ] **Judy:** Archive and document
+  - Design file organization
+  - Supplier database
+  - Order history template
+  - Deadline: Feb 26
+
+**Phase 2:** Prototype top 3 designs (Week 3)
+**Phase 3:** Bulk order for team (Week 5)
 
 - [ ] **Sentinal:** Safety protocol + legal checklist
   - Class 4 laser requirements

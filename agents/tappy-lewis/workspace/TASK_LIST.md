@@ -49,6 +49,39 @@
 
 ---
 
+## 🚨 NEW PROJECT: T-Shirts — DESIGN LEAD
+
+### T-Shirt Art Direction (URGENT)
+**Task:** Create 8 T-shirt design concepts with BR-01 artwork
+**Project:** `projects/tshirts/`
+**Deadline:** Feb 26, 2026
+**Role:** Artistic director — what should our team WEAR?
+**Deliverables:**
+- `projects/tshirts/designs/CONCEPTS.md` — All 8 concepts detailed
+- `projects/tshirts/designs/BR01_COLLECTION/` — Actual artwork files
+- `projects/tshirts/designs/COLOR_PALETTES.md` — Print-ready colors
+**Designs to Create:**
+1. **"One House"** — Team unity, all names, professional
+2. **"BR-01 Art Studio"** — Galaxy or solar system artwork showcase
+3. **"Ronstrapp Band"** — Concert merch, rock aesthetic
+4. **"Milk Man"** — Retro gaming, Dairytastic
+5. **"IF— Quote"** — Kipling poem, inspirational typography
+6. **"Dusty Crypto"** — Tech humor, 10% success fee
+7. **"Brothers"** — Mylzeron/Mylonen clone theme
+8. **"Laser Pistol"** — Blueprint/schematic (after it's built)
+**Technical Specs:**
+- 300 DPI minimum
+- CMYK color mode
+- PNG/PSD/AI formats
+- 12" x 16" print area
+**Coordinate With:**
+- Miles: Supplier capabilities affect design complexity
+- Reggie: Music crossover designs
+- OpenClaw: Sizing and placement
+**Note:** These are walking billboards for our work. Make them amazing.
+
+---
+
 ## 🚨 URGENT — Captain's Orders (Do First)
 
 ### BR-01 Art Session with Mylzeron & Mylonen

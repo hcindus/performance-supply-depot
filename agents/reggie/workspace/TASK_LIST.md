@@ -20,6 +20,35 @@
 
 ---
 
+## 🚨 NEW PROJECT: T-Shirts — MUSIC MERCH LEAD
+
+### Ronstrapp Band T-Shirt Designs (URGENT)
+**Task:** Create music-themed shirt concepts and chiptune aesthetics
+**Project:** `projects/tshirts/`
+**Deadline:** Feb 26, 2026
+**Role:** Musical Director — our band needs MERCH
+**Deliverables:**
+- `projects/tshirts/designs/MUSIC_MERCH.md` — Band shirt concepts
+- `projects/tshirts/designs/CHIPSTYLE_ASSETS.md` — 8-bit aesthetic elements
+- Ideas for shirt + soundtrack bundles
+**Designs to Create:**
+1. **"Ronstrapp" Band Shirt** — Concert merch, rock aesthetic, member names
+2. **Chiptune Pride** — 8-bit graphics, retro gaming vibe
+3. **Milk Man Crossover** — Dairytastic meets chiptune
+4. **"The Dairy Defenders"** — Live action show merch
+5. **Bundle Concepts** — Shirt + digital soundtrack combos
+**Aesthetic Elements:**
+- 8-bit sprites and patterns
+- Waveform visualizations
+- Retro synthesizer graphics
+- Chiptune color palettes (bright, limited colors)
+**Coordinate With:**
+- Tappy: Visual art collaboration
+- Miles: Supplier capabilities for complex designs
+**Note:** Good band merch sells. Great band merch becomes iconic.
+
+---
+
 ## 🚨 URGENT — Captain's Orders (Do First)
 
 ### Music Exposure Session with Mylzeron & Mylonen

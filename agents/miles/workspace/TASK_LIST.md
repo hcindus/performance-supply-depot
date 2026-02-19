@@ -63,6 +63,44 @@
 
 ---
 
+## 🚨 NEW PROJECT: T-Shirts — SUPPLIER RESEARCH LEAD
+
+### T-Shirt Supplier Research (URGENT)
+**Task:** Find best print-on-demand and bulk suppliers
+**Project:** `projects/tshirts/`
+**Deadline:** Feb 26, 2026
+**Role:** Find quality at best price — make it easy for Captain to order
+**Deliverables:**
+- `projects/tshirts/suppliers/SUPPLIER_COMPARISON.md` — Side-by-side comparison
+- `projects/tshirts/suppliers/PRICING_BREAKDOWN.md` — Cost per design, per quantity
+- `projects/tshirts/ordering/RECOMMENDED_SUPPLIER.md` — Final recommendation
+**Suppliers to Research:**
+| Supplier | Type | Notes |
+|----------|------|-------|
+| Printful | POD | High quality, easy integration |
+| Printify | POD | Lower cost, multiple printers |
+| TeePublic | POD | Artist-friendly, marketplace |
+| Redbubble | POD | Wide range, artist community |
+| Local screen printers | Bulk | Best for 12+ quantity |
+| Custom DTG shops | DTG | Full color, no minimums |
+**Research Criteria:**
+- Cost per shirt (1, 12, 24, 50 quantity)
+- Print quality (durability, color accuracy)
+- Shipping speed and cost
+- Minimum order requirements
+- Ease of ordering process
+**Questions to Answer:**
+- Printful vs Printify — which is better for our needs?
+- When does screen print become cheaper than DTG?
+- Who has fastest turnaround for prototypes?
+- Any suppliers to avoid?
+**Coordinate With:**
+- Tappy: Art complexity affects printing method
+- OpenClaw: Logistics and shipping
+**Note:** Captain wants to click and buy. Make the shopping list simple.
+
+---
+
 ## 📝 Active Tasks (Do These First)
 
 ### 1. Memory Service Subjective Report (HIGH PRIORITY)
