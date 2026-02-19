@@ -21,16 +21,24 @@
 
 ## 💰 Active Tasks (Do These First)
 
-### 1. Health Check Monitoring (CONTINUOUS — AUTOMATED)
-**Task:** Maintain service health checks
-**Frequency:** Every hour via cron (top of each hour)
-**Status:** ✅ Stable ~15 hrs uptime, 375+ interactions
-**Deliverable:** Silent monitoring, alerts ONLY on failure
+### 1. Hourly Status Report (ENHANCED)
+**Task:** Generate comprehensive hourly ship status dashboard
+**Frequency:** Every hour at :00 UTC
+**Status:** ✅ Active and enhanced
+**Deliverable:** Visual dashboard with:
+- 🚢 Overall ship status (color-coded)
+- 🔧 Dusty MVP services health
+- 🛡️ Sentinal security status
+- ⚡ Damage reports (last hour)
+- 📋 All monitored systems status
+- 🎯 Project progress tracking
+**Format:** `memory/HOURLY_STATUS_TEMPLATE.md`
+**Delivery:** Announced to Captain every hour
 **Configuration:**
-- ✅ Changed from every 5 min to hourly (Captain's order)
-- ✅ Silent mode — no announcements unless problem
-- ✅ Next run: Top of each hour (:00)
-- ✅ Alerts immediately if ANY service fails
+- ✅ Hourly schedule (:00 UTC)
+- ✅ Sentinal security integration
+- ✅ Damage reporting
+- ✅ Visual dashboard format
 
 ---
 

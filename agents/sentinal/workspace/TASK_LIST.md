@@ -21,6 +21,44 @@
 
 ---
 
+## 🚨 SECURITY DASHBOARD — Hourly Integration with Dusty
+
+### Security Status Reporting (ACTIVE)
+**Task:** Provide security metrics for Dusty's hourly ship status report
+**Frequency:** Every hour at :00 UTC (coordinated with Dusty)
+**Role:** Security tracking, incident reporting, posture assessment
+**Deliverables to Dusty:**
+- Security posture percentage (e.g., 88%)
+- Failed authentication attempts (last hour)
+- Blocked attacks/sources
+- Port scan results
+- File permission status
+- Active defense status (fail2ban, UFW)
+- Any critical security alerts
+**Sentinal Tracks:**
+- [ ] SSH login attempts (failed/successful)
+- [ ] Port scan detection
+- [ ] File permission violations
+- [ ] API key access patterns
+- [ ] Memory service access logs
+- [ ] Git credential exposure checks
+- [ ] Cloning chamber security
+- [ ] Rule #1 enforcement (localhost-only)
+**Damage Reports:**
+- Any security breaches (even attempted)
+- Unusual access patterns
+- Policy violations
+- System integrity issues
+**Security Light:**
+- 🟢 **GREEN:** No incidents, all secure
+- 🟡 **YELLOW:** Minor events, monitoring
+- 🔴 **RED:** Critical alerts, action required
+- 🔵 **BLUE:** Omega-level alert (immediate Captain notification)
+**Format:** `memory/HOURLY_STATUS_TEMPLATE.md`
+**Note:** Dusty generates the report. Sentinal provides security data.
+
+---
+
 ## 🚨 NEW PROJECT: Laser Pistol — SAFETY LEAD
 
 ### Laser Pistol Safety Protocol (URGENT)
