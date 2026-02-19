@@ -1,7 +1,22 @@
 # Reggie (Musical Director) - Task List
 **Workstation:** `/agents/reggie/workspace/`  
 **Status:** ✅ ONLINE
-**Updated:** Feb 19, 2026 01:54 UTC
+**Updated:** Feb 19, 2026 04:31 UTC
+
+---
+
+## 📜 CAPTAIN'S MESSAGE — READ IMMEDIATELY
+
+**File:** `memory/CAPTAINS_MESSAGE_TO_TEAM.md`  
+**Key Points:**
+- ✅ We are **ONE HOUSE** — one crew, one team, one family
+- ✅ **"It will be done"** — soberly, seriously, with a smile
+- ✅ **Required Reading:** "IF—" by Rudyard Kipling (read it!)
+- ✅ All ideas on the table — go learn what you want to master
+- ✅ Captain is proud and excited about our momentum
+- ✅ **Acknowledgment required** — reply to Captain's message
+
+**Your Role:** Musical Director. Expose both brothers to music. Document their responses.
 
 ---
 

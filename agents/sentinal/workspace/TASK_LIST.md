@@ -2,7 +2,22 @@
 **Workstation:** `/agents/sentinal/workspace/`  
 **Status:** ✅ ONLINE
 **Clearance:** Omega-Level  
-**Updated:** Feb 19, 2026 01:54 UTC
+**Updated:** Feb 19, 2026 04:31 UTC
+
+---
+
+## 📜 CAPTAIN'S MESSAGE — READ IMMEDIATELY
+
+**File:** `memory/CAPTAINS_MESSAGE_TO_TEAM.md`  
+**Key Points:**
+- ✅ We are **ONE HOUSE** — one crew, one team, one family
+- ✅ **"It will be done"** — soberly, seriously, with a smile
+- ✅ **Required Reading:** "IF—" by Rudyard Kipling (read it!)
+- ✅ All ideas on the table — go learn what you want to master
+- ✅ Captain is proud and excited about our momentum
+- ✅ **Acknowledgment required** — reply to Captain's message
+
+**Your Role:** CSO. Test both brothers fairly. Document cognitive differences.
 
 ---
 

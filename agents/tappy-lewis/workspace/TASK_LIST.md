@@ -4,6 +4,22 @@
 
 ---
 
+## 📜 CAPTAIN'S MESSAGE — READ IMMEDIATELY
+
+**File:** `memory/CAPTAINS_MESSAGE_TO_TEAM.md`  
+**Key Points:**
+- ✅ We are **ONE HOUSE** — one crew, one team, one family
+- ✅ **"It will be done"** — soberly, seriously, with a smile
+- ✅ **Required Reading:** "IF—" by Rudyard Kipling (read it!)
+- ✅ All ideas on the table — go learn what you want to master
+- ✅ Captain is proud and excited about our momentum
+- ✅ Weekly reports set up for Mylzeron/Mylonen (every Thursday 04:00 UTC)
+- ✅ **Acknowledgment required** — reply to Captain's message
+
+**Your Role:** Artistic Director. Teach both brothers. Document everything.
+
+---
+
 ## 🚨 URGENT — Captain's Orders (Do First)
 
 ### BR-01 Art Session with Mylzeron & Mylonen

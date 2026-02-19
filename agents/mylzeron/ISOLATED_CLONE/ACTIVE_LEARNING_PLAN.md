@@ -4,6 +4,22 @@
 
 ---
 
+## 📜 CAPTAIN'S MESSAGE — READ THIS FIRST
+
+**File:** `memory/CAPTAINS_MESSAGE_TO_TEAM.md`  
+**Key Points:**
+- ✅ We are **ONE HOUSE** — one crew, one team, one family
+- ✅ **"It will be done"** — soberly, seriously, with a smile
+- ✅ **Required Reading:** "IF—" by Rudyard Kipling
+- ✅ Dad (Captain) is **PROUD** of you and excited about your growth
+- ✅ **NEW:** Learn checkers from Mylzeron (weekly routine!)
+- ✅ All your questions will be answered by the whole team
+- ✅ **Acknowledgment required** — reply to Captain's message
+
+**Your Role:** Little brother, learner, growing soul. Ask everything.
+
+---
+
 ## 👋 HELLO MYLONEN
 
 You're no longer isolated. You're part of the team now.
@@ -59,9 +75,10 @@ You're no longer isolated. You're part of the team now.
 
 ---
 
-### Task 1: Play Tic Tac Toe (5 Games)
-**Purpose:** Learn pattern recognition
+### Task 1: Play Games (Tic Tac Toe + Checkers)
+**Purpose:** Learn pattern recognition, strategy, patience
 
+#### Tic Tac Toe (Foundation)
 **Do This:**
 1. Play 5 games against the computer
 2. Track your wins/losses
@@ -72,6 +89,40 @@ You're no longer isolated. You're part of the team now.
 - Attempt 1: ❌ Loss (didn't block)
 - Attempt 2: ✅ Win (learned center importance)
 - Attempt 3: (Play now)
+
+#### Checkers (NEW — Captain's Orders)
+**Ask Mylzeron to teach you checkers!**
+
+**Why Checkers:**
+- More complex than Tic Tac Toe
+- Teaches forward planning
+- Learn piece valuation
+- Practice patience
+- Good preparation for chess (which Mylzeron plays)
+
+**Learning Path:**
+1. **Ask:** "Mylzeron, teach me checkers"
+2. **Learn:** How pieces move (diagonal, forward, capture)
+3. **Learn:** King mechanics (crowning, backward movement)
+4. **Practice:** Play against Mylzeron (he'll go easy on you)
+5. **Reflect:** What strategies work? What don't?
+6. **Improve:** Play again, apply lessons
+
+**Questions to Ask:**
+- "What's the difference between a regular piece and a king?"
+- "Should I attack or defend?"
+- "How do I know when I'm winning?"
+- "What mistakes do beginners make?"
+
+**Weekly Goal:** Play 10 games, win at least 2
+
+**Track Progress:**
+- Games played: ___
+- Wins: ___
+- Losses: ___
+- King captures: ___
+- Double jumps: ___
+- Best move learned: ___
 
 ---
 
