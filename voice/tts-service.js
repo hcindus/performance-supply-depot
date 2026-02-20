@@ -57,6 +57,17 @@ const CONFIG = {
         'rachel': '21m00Tcm4TlvDq8ikWAM',
         'sam': 'ODqDArmn3iD25GAF5W2S'
       },
+      
+      // GM/Pi Voice Modulation (based on Captain's aesthetic constants)
+      // GM = 1.618033988749895 (Golden Ratio)
+      // PI = 3.141592653589793
+      gmPiSettings: {
+        pitch: 1.618,        // GM for pitch
+        rate: 1.94,          // PI / GM for rate
+        style: 1.618,        // GM for style (expressiveness)
+        stability: 0.618,    // 1/GM for consistency
+        similarityBoost: 0.618 // 1/GM for clarity
+      },
       available: null
     }
   },
@@ -158,7 +169,13 @@ function speakElevenLabs(text, options = {}) {
     
     const postData = JSON.stringify({
       text: text,
-      model_id: 'eleven_monolingual_v1'
+      model_id: 'eleven_monolingual_v1',
+      voice_settings: {
+        stability: CONFIG.engines.elevenlabs.gmPiSettings.stability,
+        similarity_boost: CONFIG.engines.elevenlabs.gmPiSettings.similarityBoost,
+        style: CONFIG.engines.elevenlabs.gmPiSettings.style,
+        speed: CONFIG.engines.elevenlabs.gmPiSettings.rate
+      }
     });
     
     const options2 = {
