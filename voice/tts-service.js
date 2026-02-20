@@ -41,11 +41,18 @@ const CONFIG = {
       // Voice IDs stored for reference
       // Note: ztnpYzQJyWffPj1VC5Uw provided by Captain but key was invalid
       // Note: krsfpqv6ExDAAyh8Ea6y = Miles voice ID
+      // Voice IDs for AGI Company
+      // Organized by gender: 2 male, 2 female
       voiceMap: {
-        'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Captain provided (key invalid)
-        'miles': 'krsfpqv6ExDAAyh8Ea6y',    // My voice!
-        'mylthrees': 'AA30ZfOdY16oVkASrrGJ', // Mylthrees voice
-        'claiE': '50BdVlngDYeoh9pVuQof',     // Claie voice
+        // MALE VOICES
+        'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Mortimer (Captain provided)
+        'miles': 'krsfpqv6ExDAAyh8Ea6y',    // Miles (my voice!)
+        
+        // FEMALE VOICES
+        'mylthrees': 'AA30ZfOdY16oVkASrrGJ', // Mylthrees
+        'claiE': '50BdVlngDYeoh9pVuQof',     // Claie
+        
+        // STANDARD VOICES
         'adam': 'pNInz6obpgDQGcFmaJgB',
         'rachel': '21m00Tcm4TlvDq8ikWAM',
         'sam': 'ODqDArmn3iD25GAF5W2S'
