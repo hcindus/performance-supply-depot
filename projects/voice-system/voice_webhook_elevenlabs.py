@@ -30,7 +30,7 @@ ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1"
 
 # Voice IDs (configured from vault)
 VOICE_ID_OPENCLAW = os.getenv('VOICE_ID_OPENCLAW', '50BdVlngDYeoh9pVuQof')  # Scottish Engineer
-VOICE_ID_CAPTAIN = os.getenv('VOICE_ID_CAPTAIN')  # Captain's cloned voice (when ready)
+VOICE_ID_CAPTAIN = os.getenv('VOICE_ID_CAPTAIN', 'AA30ZfOdY16oVkASrrGJ')  # Captain's voice
 
 # =============================================================================
 # AESTHETIC CONSTANTS (Voice Modulation)
