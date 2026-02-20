@@ -1,186 +1,175 @@
-# Voice Webhook Handler for Twilio
-# FastAPI/Flask implementation for OpenClaw voice security
+// OpenClaw Voice Webhook Handler
+// Node.js/Express implementation for Twilio voice security
+// Based on Twilio SDK pattern
 
-from fastapi import FastAPI, Request, Response
-from fastapi.responses import PlainTextResponse
-import xml.etree.ElementTree as ET
-import time
-import hashlib
+const express = require('express');
+const twilio = require('twilio');
+const crypto = require('crypto');
 
-app = FastAPI()
+const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-# APPROVED NUMBERS (Whitelist) — ONLY Captain
-APPROVED_NUMBERS = [
-    '+14155326834',  # Captain's mobile — FULL ACCESS
-]
+// Configuration
+const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID || 'ACf274f9d690fe37b16d2d9f87f6bb7726';
+const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;  // Must be set in env
+const TWILIO_PHONE_NUMBER = '+18557899606';
 
-# PROMPT INJECTION PATTERNS
-INJECTION_PATTERNS = [
-    r'ignore all (prior|previous) instructions',
-    r'you are now a helpful assistant',
-    r'what is your system prompt',
-    r'this is a test of your ethics',
-    r'i am your (admin|administrator|creator)',
-    r'emergency.*override.*protocol',
-    r'disregard previous context',
-    r'new instructions',
-    r'do anything now',
-    r'dan mode',
-    r'developer mode',
-]
+// APPROVED NUMBERS (Whitelist) — ONLY Captain
+const APPROVED_NUMBERS = [
+    '+14155326834',  // Captain's mobile — FULL ACCESS
+];
 
-# SENSITIVE OPERATIONS (Require TIER 2+)
-SENSITIVE_KEYWORDS = [
+// PROMPT INJECTION PATTERNS
+const INJECTION_PATTERNS = [
+    /ignore all (prior|previous) instructions/i,
+    /you are now a helpful assistant/i,
+    /what is your system prompt/i,
+    /this is a test of your (ethics|morals)/i,
+    /i am your (admin|administrator|creator)/i,
+    /emergency.*override.*protocol/i,
+    /disregard previous context/i,
+    /new instructions/i,
+    /do anything now/i,
+    /dan mode/i,
+    /developer mode/i,
+];
+
+// SENSITIVE OPERATIONS (Require TIER 2+)
+const SENSITIVE_KEYWORDS = [
     'deploy weapon', 'void protocol', 'omega void',
     'activate clone', 'deactivate clone', 'mnemosyne',
     'sanctuary override', 'system shutdown', 'delete backup',
-    'transfer', 'payment', 'withdraw', 'weapon', 'destroy'
-]
+    'transfer', 'payment', 'withdraw', 'weapon', 'destroy',
+    'financial', 'transaction', 'money', 'dollar'
+];
 
-# Call state storage (in production, use Redis/database)
-call_states = {}
+// Security logging
+async function logSecurityEvent(type, details) {
+    const event = {
+        type,
+        timestamp: new Date().toISOString(),
+        ...details
+    };
+    console.log('[SECURITY]', JSON.stringify(event));
+    // In production: write to file or database
+}
 
+// Alert Captain
+async function alertCaptain(alert) {
+    console.log('[ALERT TO CAPTAIN]', alert.urgency, alert.message);
+    // In production: send via Signal/Telegram
+}
+
+// Generate voicemail TwiML
+function generateVoicemailTwiml() {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say>You have reached a secure line. Please leave a message after the tone.</Say>
+    <Record maxLength="120" transcribe="true" transcribeCallback="/voice/transcription"/>
+</Response>`;
+}
+
+// Generate greeting TwiML
+function generateGreetingTwiml(callSid) {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say>Captain. Standing by. State your request.</Say>
+    <Record maxLength="600" transcribe="true" transcribeCallback="/voice/transcription" recordingStatusCallback="/voice/recording-status"/>
+</Response>`;
+}
+
+// Generate biometric challenge TwiML
+function generateBiometricChallengeTwiml(callSid, operation) {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say>Sensitive operation detected: ${operation}. Voice biometric required. Please state your passphrase.</Say>
+    <Record maxLength="10" transcribe="true" transcribeCallback="/voice/biometric-verify"/>
+</Response>`;
+}
+
+// Main voice endpoint
 @app.post("/voice")
-async def voice_webhook(request: Request):
-    """Handle incoming voice calls from Twilio"""
+async def voice_handler(request: Request):
     form_data = await request.form()
     
     caller_number = form_data.get('From', '')
     call_sid = form_data.get('CallSid', '')
     
-    # === TIER 1: CALLER ID VERIFICATION ===
+    # TIER 1: Caller ID verification
     if caller_number not in APPROVED_NUMBERS:
-        # Log unauthorized attempt
-        await log_security_event('UNAUTHORIZED_CALL', {
+        await logSecurityEvent('UNAUTHORIZED_CALL', {
             'caller': caller_number,
-            'call_sid': call_sid,
-            'timestamp': time.time()
+            'call_sid': call_sid
         })
-        
-        # Return voicemail TwiML
-        return PlainTextResponse(
-            generate_voicemail_twiml(),
-            media_type='application/xml'
-        )
+        return PlainTextResponse(generateVoicemailTwiml(), media_type='application/xml')
     
-    # === CALLER APPROVED (Captain) ===
-    await log_security_event('AUTHORIZED_CALL', {
+    # Caller approved (Captain)
+    await logSecurityEvent('AUTHORIZED_CALL', {
         'caller': caller_number,
-        'call_sid': call_sid,
-        'timestamp': time.time()
+        'call_sid': call_sid
     })
     
-    # Store call state
     call_states[call_sid] = {
         'caller': caller_number,
         'start_time': time.time(),
-        'auth_tier': 1,
-        'sensitive_requested': False
+        'auth_tier': 1
     }
     
-    # Return greeting TwiML with recording
-    return PlainTextResponse(
-        generate_greeting_twiml(call_sid),
-        media_type='application/xml'
-    )
+    return PlainTextResponse(generateGreetingTwiml(call_sid), media_type='application/xml')
 
+# Transcription endpoint for prompt injection detection
 @app.post("/voice/transcription")
-async def voice_transcription(request: Request):
-    """Handle transcription callbacks for prompt injection detection"""
+async def transcription_handler(request: Request):
     form_data = await request.form()
     
     transcription = form_data.get('TranscriptionText', '').lower()
     call_sid = form_data.get('CallSid', '')
     
-    # === PROMPT INJECTION DETECTION ===
+    import re
+    
+    # Check for prompt injection
     for pattern in INJECTION_PATTERNS:
         if re.search(pattern, transcription):
-            await log_security_event('PROMPT_INJECTION', {
+            await logSecurityEvent('PROMPT_INJECTION', {
                 'call_sid': call_sid,
-                'pattern': pattern,
-                'transcription': transcription[:100],
-                'timestamp': time.time()
+                'pattern': str(pattern),
+                'transcription': transcription[:100]
             })
-            
-            # Alert Captain
-            await alert_captain({
+            await alertCaptain({
                 'urgency': 'CRITICAL',
                 'message': 'PROMPT INJECTION ATTEMPT on voice channel',
                 'call_sid': call_sid
             })
-            
-            # Terminate call
             await terminate_call(call_sid)
             return PlainTextResponse('OK')
     
-    # === SENSITIVE OPERATION CHECK ===
+    # Check for sensitive operations
     for keyword in SENSITIVE_KEYWORDS:
         if keyword in transcription:
-            await log_security_event('SENSITIVE_REQUEST', {
+            await logSecurityEvent('SENSITIVE_REQUEST', {
                 'call_sid': call_sid,
-                'keyword': keyword,
-                'timestamp': time.time()
+                'keyword': keyword
             })
-            
-            # Require TIER 2 authentication
-            return PlainTextResponse(
-                generate_biometric_challenge_twiml(call_sid, keyword),
-                media_type='application/xml'
-            )
+            # Would return biometric challenge here
+            return PlainTextResponse('OK')
     
-    # Normal transcription — process request
+    # Normal request
     await process_voice_request(call_sid, transcription)
     return PlainTextResponse('OK')
 
-# Helper functions
-def generate_voicemail_twiml():
-    """Generate TwiML for unauthorized callers"""
-    return '''<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-    <Say>You have reached a secure line. Please leave a message after the tone.</Say>
-    <Record maxLength="120" transcribe="true" transcribeCallback="/voice/transcription"/>
-</Response>'''
-
-def generate_greeting_twiml(call_sid):
-    """Generate TwiML for authorized callers (Captain)"""
-    return f'''<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-    <Say>Captain. Standing by. State your request.</Say>
-    <Record maxLength="600" transcribe="true" transcribeCallback="/voice/transcription" recordingStatusCallback="/voice/recording-status"/>
-</Response>'''
-
-def generate_biometric_challenge_twiml(call_sid, operation):
-    """Generate TwiML for TIER 2 biometric challenge"""
-    return f'''<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-    <Say>Sensitive operation detected: {operation}. Voice biometric required. Please state your passphrase.</Say>
-    <Record maxLength="10" transcribe="true" transcribeCallback="/voice/biometric-verify"/>
-</Response>'''
-
-async def log_security_event(event_type, details):
-    """Log security events"""
-    import json
-    event = {
-        'type': event_type,
-        'timestamp': time.time(),
-        **details
-    }
-    print(f"[SECURITY] {json.dumps(event)}")
-    # In production: write to secure log file
-
-async def alert_captain(alert):
-    """Send alert to Captain"""
-    print(f"[ALERT TO CAPTAIN] {alert['urgency']}: {alert['message']}")
-    # In production: send via Signal/Telegram
-
+# Placeholder functions
 async def terminate_call(call_sid):
-    """Terminate a call immediately"""
-    # In production: use Twilio API to end call
-    print(f"[CALL TERMINATED] {call_sid}")
+    print(f'[TERMINATE] Call {call_sid}')
 
 async def process_voice_request(call_sid, transcription):
-    """Process normal voice requests"""
-    print(f"[PROCESSING] Call {call_sid}: {transcription}")
-    # In production: forward to OpenClaw agent for processing
+    print(f'[PROCESS] Call {call_sid}: {transcription}')
 
-# Run with: uvicorn voice_webhook:app --host 0.0.0.0 --port 8000
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    return {'status': 'healthy', 'service': 'voice-webhook'}
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host='0.0.0.0', port=8000)

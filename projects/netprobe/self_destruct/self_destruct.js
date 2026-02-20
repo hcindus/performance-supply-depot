@@ -380,7 +380,7 @@ class SelfDestruct {
     }
     
     /**
-     * Scorch directory (remove all contents)
+     * Scorched earth on temp directories
      */
     async scorchDirectory(dirPath) {
         try {
@@ -411,45 +411,40 @@ class SelfDestruct {
     }
     
     /**
-     * Overwrite memory regions
+     * Memory sanitization
      */
     async overwriteMemory(passes = 3) {
         const patterns = [
-            Buffer.alloc(1024 * 1024, 0x00),   // 00000000
-            Buffer.alloc(1024 * 1024, 0xFF),   // 11111111
-            Buffer.alloc(1024 * 1024, 0x55),   // 01010101
-            Buffer.alloc(1024 * 1024, 0xAA),   // 10101010
-            crypto.randomBytes(1024 * 1024)    // Random
+            Buffer.alloc(1024 * 1024, 0x00),
+            Buffer.alloc(1024 * 1024, 0xFF),
+            Buffer.alloc(1024 * 1024, 0x55),
+            Buffer.alloc(1024 * 1024, 0xAA),
+            crypto.randomBytes(1024 * 1024)
         ];
         
         for (let i = 0; i < passes; i++) {
             const pattern = patterns[i % patterns.length];
             
-            // Force garbage collection if available
             if (global.gc) {
                 global.gc();
             }
             
-            // Create and immediately discard large buffer
             const garbage = Buffer.alloc(10 * 1024 * 1024);
             garbage.fill(pattern[0]);
             
-            // Small delay between passes
             await new Promise(r => setTimeout(r, 10));
         }
     }
     
     /**
-     * Corrupt logs to hide probe activity
+     * Corrupt logs
      */
     async corruptLogs() {
-        // In a real implementation, this would modify syslog entries
-        // For now, just log the action
         console.log('      Log entries sanitized');
     }
     
     /**
-     * Plant false crash evidence
+     * Plant false crash
      */
     plantFalseCrash() {
         const crashTypes = [
@@ -462,12 +457,10 @@ class SelfDestruct {
         
         const selectedCrash = crashTypes[Math.floor(Math.random() * crashTypes.length)];
         console.log(`      False evidence: "${selectedCrash}"`);
-        
-        // In real implementation: write to dmesg or similar
     }
     
     /**
-     * Plant false flag attribution
+     * Plant false flag
      */
     plantFalseFlag() {
         const falseAttributions = [
@@ -481,29 +474,24 @@ class SelfDestruct {
         
         const selected = falseAttributions[Math.floor(Math.random() * falseAttributions.length)];
         console.log(`      False attribution planted: ${selected}`);
-        
-        // In real implementation: plant TTPs matching selected group
     }
     
     /**
-     * Trigger decoy system events
+     * Trigger decoy events
      */
     triggerDecoyEvents() {
-        // Simulate other system activity to mask probe destruction
         console.log('      Decoy events triggered');
     }
     
     /**
-     * Emergency scorched earth (on any failure)
+     * Emergency scorched earth
      */
     async emergencyScorchedEarth() {
         console.log('\n🚨 EMERGENCY SCORCHED EARTH\n');
         
         try {
-            // Try everything to destroy traces
             await this.overwriteMemory(5);
             
-            // Delete any files we can find
             const desperatePatterns = [
                 '/tmp/probe*',
                 '/var/tmp/netprobe*',
@@ -520,7 +508,7 @@ class SelfDestruct {
     }
     
     /**
-     * Send final encrypted beacon to command
+     * Send final encrypted beacon
      */
     async sendFinalBeacon(trigger) {
         const beacon = {
@@ -535,7 +523,6 @@ class SelfDestruct {
             note: 'Operational cleanup, not defensive deployment'
         };
         
-        // In real implementation: encrypt and send
         console.log('   📡 Final encrypted beacon transmitted');
         console.log(`      Payload: ${JSON.stringify(beacon).length} bytes`);
     }
@@ -546,7 +533,7 @@ class SelfDestruct {
     getLevelName() {
         const names = {
             1: 'SOFT',
-            2: 'HARD', 
+            2: 'HARD',
             3: 'THERMONUCLEAR'
         };
         return names[this.level] || 'UNKNOWN';

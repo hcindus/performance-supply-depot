@@ -28,11 +28,41 @@ ELEVENLABS_API_KEY = os.getenv('ELEVENLABS_API_KEY')  # Primary key from vault
 ELEVENLABS_BACKUP_KEY = os.getenv('ELEVENLABS_BACKUP_KEY')  # Backup key
 ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1"
 
-# Voice IDs (configured from vault)
-VOICE_ID_OPENCLAW = os.getenv('VOICE_ID_OPENCLAW', '50BdVlngDYeoh9pVuQof')  # Scottish Engineer
-VOICE_ID_CAPTAIN = os.getenv('VOICE_ID_CAPTAIN', 'AA30ZfOdY16oVkASrrGJ')  # Captain's voice
-VOICE_ID_RESERVE = os.getenv('VOICE_ID_RESERVE', 'krsfpqv6ExDAAyh8Ea6y')  # Reserve/Backup voice
-VOICE_ID_SPECIAL = os.getenv('VOICE_ID_SPECIAL', 'ztnpYzQJyWffPj1VC5Uw')  # Additional/Specialized voice
+# Voice IDs (configured from vault) — 2 Male / 2 Female
+VOICE_CONFIG = {
+    # MALE VOICES
+    'openclaw': {
+        'id': '50BdVlngDYeoh9pVuQof',
+        'gender': 'male',
+        'persona': 'Scottish Engineer',
+        'use': 'OpenClaw agent responses'
+    },
+    'captain': {
+        'id': 'AA30ZfOdY16oVkASrrGJ',
+        'gender': 'male',
+        'persona': 'Captain (Cloned)',
+        'use': 'Captain voice responses'
+    },
+    # FEMALE VOICES
+    'reserve': {
+        'id': 'krsfpqv6ExDAAyh8Ea6y',
+        'gender': 'female',
+        'persona': 'Reserve Operator',
+        'use': 'Backup/Special ops'
+    },
+    'special': {
+        'id': 'ztnpYzQJyWffPj1VC5Uw',
+        'gender': 'female',
+        'persona': 'Special Agent',
+        'use': 'Additional persona'
+    }
+}
+
+# Legacy env var support
+VOICE_ID_OPENCLAW = os.getenv('VOICE_ID_OPENCLAW', VOICE_CONFIG['openclaw']['id'])
+VOICE_ID_CAPTAIN = os.getenv('VOICE_ID_CAPTAIN', VOICE_CONFIG['captain']['id'])
+VOICE_ID_RESERVE = os.getenv('VOICE_ID_RESERVE', VOICE_CONFIG['reserve']['id'])
+VOICE_ID_SPECIAL = os.getenv('VOICE_ID_SPECIAL', VOICE_CONFIG['special']['id'])
 
 # =============================================================================
 # AESTHETIC CONSTANTS (Voice Modulation)
