@@ -1,0 +1,65 @@
+{
+  "testRun": {
+    "id": "dusty-cron-fdc63bd5-$(date +%s)",
+    "timestamp": "$(date -Iseconds)",
+    "trigger": "cron",
+    "cronId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f"
+  },
+  "results": {
+    "overallStatus": "✅ SUCCESS",
+    "testsPassed": 6,
+    "testsFailed": 0,
+    "totalDurationMs": 82
+  },
+  "componentStatus": {
+    "telegramBridge": {
+      "status": "healthy",
+      "endpoint": "localhost:3001",
+      "uptime": "1h 28m",
+      "responseTimeMs": 21.80
+    },
+    "coreAgent": {
+      "status": "healthy", 
+      "endpoint": "localhost:3000",
+      "uptime": "52h 12m",
+      "responseTimeMs": 3.24
+    },
+    "openclawMock": {
+      "status": "healthy",
+      "endpoint": "localhost:4000",
+      "uptime": "3h 44m",
+      "totalInteractions": 139,
+      "responseTimeMs": 2.54
+    }
+  },
+  "e2eFlowTests": [
+    {
+      "name": "POST /webhook - /dust balance",
+      "status": "✅ PASS",
+      "bridgeToCoreAgent": true,
+      "coreAgentToOpenClaw": true,
+      "openClawResponseReceived": true,
+      "responseContainsBalanceData": true,
+      "durationMs": 18.83,
+      "sampleResponse": {
+        "action": "balance_report",
+        "hasDustData": true,
+        "dustTokens": 2847.32,
+        "portfolioValue": "~$1,412.15"
+      }
+    },
+    {
+      "name": "GET /test endpoint",
+      "status": "✅ PASS", 
+      "durationMs": 15.36
+    }
+  ],
+  "timingBreakdown": {
+    "bridgeHealth": 21.80,
+    "coreAgentHealth": 3.24,
+    "openclawHealth": 2.54,
+    "endToEndFlow": 18.83,
+    "dustQuery": 16.13,
+    "getTestEndpoint": 15.36
+  }
+}
