@@ -77,6 +77,7 @@
 **Status:** 🟢 **LAW ZERO PASSED** (13:42 UTC)
 **Current:** Foundation complete
 **Specialization:** Ethics & Compliance
+**Psychology Curriculum:** Reading "Being Good" (Blackburn) — started 13:46 UTC
 
 **Ethics Modules (Modules 23-30):**
 - [ ] Module 23: Sanctuary Protocol Enforcement
