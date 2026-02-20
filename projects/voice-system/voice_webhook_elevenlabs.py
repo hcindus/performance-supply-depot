@@ -28,8 +28,8 @@ ELEVENLABS_API_KEY = os.getenv('ELEVENLABS_API_KEY')  # Primary key from vault
 ELEVENLABS_BACKUP_KEY = os.getenv('ELEVENLABS_BACKUP_KEY')  # Backup key
 ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1"
 
-# Voice IDs (to be configured)
-VOICE_ID_OPENCLAW = os.getenv('VOICE_ID_OPENCLAW', 'pNInz6obpgDQGcFmaJgB')  # Default: Adam
+# Voice IDs (configured from vault)
+VOICE_ID_OPENCLAW = os.getenv('VOICE_ID_OPENCLAW', '50BdVlngDYeoh9pVuQof')  # Scottish Engineer
 VOICE_ID_CAPTAIN = os.getenv('VOICE_ID_CAPTAIN')  # Captain's cloned voice (when ready)
 
 # =============================================================================
