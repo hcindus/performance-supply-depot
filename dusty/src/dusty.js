@@ -3,7 +3,10 @@
 // Global Variables
 var dustData = [];
 var transactions = [];
-var apiKeys = { Binance: "", Kucoin: "" };
+var apiKeys = { 
+  Binance: process.env.BINANCE_API_KEY || "", 
+  Kucoin: process.env.KUCOIN_API_KEY || "" 
+};
 var walletAssets = { 
   Bitgert: { dust: 10, main: 50 }, 
   Ethereum: { dust: 0.001, main: 1 }, 

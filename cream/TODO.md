@@ -9,9 +9,9 @@
 - [x] README (`README.md`)
 
 ## In Progress 🔄
-- [ ] Add onboarding templates
-- [ ] Create invoice template
-- [ ] Build backend/API skeleton
+- [ ] Add onboarding templates ← DONE
+- [ ] Create invoice template ← DONE
+- [x] Build backend/API skeleton ← DONE
 - [ ] Add more lead management features
 - [ ] Test on actual device
 

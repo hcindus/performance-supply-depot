@@ -8,9 +8,9 @@
 - [x] README (`README.md`)
 
 ## In Progress 🔄
-- [ ] Add onboarding templates
-- [ ] Create invoice template
-- [ ] Build Node.js backend skeleton
+- [ ] Add onboarding templates ← DONE
+- [ ] Create invoice template ← DONE  
+- [x] Build backend/API skeleton ← DONE
 - [ ] Create React frontend mockup
 - [ ] Test on actual device
 
