@@ -47,18 +47,24 @@ const CONFIG = {
       // Voice IDs for AGI Company
       // Organized by gender: 2 male, 2 female
       voiceMap: {
-        // MALE VOICES
-        'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Mortimer (Captain provided)
-        'miles': 'krsfpqv6ExDAAyh8Ea6y',    // Miles (my voice!)
+        // DEFAULT VOICES (for deployment)
+        'miles': 'krsfpqv6ExDAAyh8Ea6y',    // Default male voice
+        'claiE': '50BdVlngDYeoh9pVuQof',     // Default female voice
         
-        // FEMALE VOICES
-        'mylthrees': 'AA30ZfOdY16oVkASrrGJ', // Mylthrees
-        'claiE': '50BdVlngDYeoh9pVuQof',     // Claie
+        // RESERVED VOICES
+        'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Mortimer's personal
+        'mylthrees': 'AA30ZfOdY16oVkASrrGJ', // Mylthrees' personal
         
         // STANDARD VOICES
         'adam': 'pNInz6obpgDQGcFmaJgB',
         'rachel': '21m00Tcm4TlvDq8ikWAM',
         'sam': 'ODqDArmn3iD25GAF5W2S'
+      },
+      
+      // Default voice settings
+      defaults: {
+        male: 'miles',
+        female: 'claiE'
       },
       
       // GM/Pi Voice Modulation (based on Captain's aesthetic constants)
@@ -67,9 +73,16 @@ const CONFIG = {
       gmPiSettings: {
         pitch: 1.618,        // GM for pitch
         rate: 1.94,          // PI / GM for rate
-        style: 1.618,        // GM for style (expressiveness)
+        style: 0.8,          // Capped for API (was 1.618)
         stability: 0.618,    // 1/GM for consistency
-        similarityBoost: 0.618 // 1/GM for clarity
+        similarityBoost: 0.618, // 1/GM for clarity
+        speed: 1.1           // Capped for API (was 1.94)
+      },
+      
+      // Default voices for deployment
+      defaults: {
+        male: 'miles',
+        female: 'claiE'
       },
       available: null
     }
@@ -172,12 +185,12 @@ function speakElevenLabs(text, options = {}) {
     
     const postData = JSON.stringify({
       text: text,
-      model_id: 'eleven_monolingual_v1',
+      model_id: 'eleven_flash_v2_5',
       voice_settings: {
         stability: CONFIG.engines.elevenlabs.gmPiSettings.stability,
         similarity_boost: CONFIG.engines.elevenlabs.gmPiSettings.similarityBoost,
         style: CONFIG.engines.elevenlabs.gmPiSettings.style,
-        speed: CONFIG.engines.elevenlabs.gmPiSettings.rate
+        speed: CONFIG.engines.elevenlabs.gmPiSettings.speed
       }
     });
     

@@ -8,7 +8,7 @@ All voices use these modulation values:
 |-----------|-------|--------|
 | Pitch | 1.618 | GM (Golden Ratio) |
 | Rate | 1.94 | PI / GM |
-| Style | 1.618 | GM |
+| Style | 0.8 | Capped for API |
 | Stability | 0.618 | 1/GM |
 | Similarity Boost | 0.618 | 1/GM |
 
@@ -16,48 +16,63 @@ All voices use these modulation values:
 
 ## Voice IDs
 
-### Our Team (Custom)
-| Agent | Voice ID | Gender |
-|-------|----------|--------|
-| Miles | `krsfpqv6ExDAAyh8Ea6y` | Male |
-| Mortimer | `ztnpYzQJyWffPj1VC5Uw` | Male |
-| Mylthrees | `AA30ZfOdY16oVkASrrGJ` | Female |
-| Claie | `50BdVlngDYeoh9pVuQof` | Female |
+### Our Team Voice Assignments
 
-### Standard ElevenLabs
-| Voice ID | Name |
-|----------|------|
-| `pNInz6obpgDQGcFmaJgB` | Adam |
-| `21m00Tcm4TlvDq8ikWAM` | Rachel |
-| `ODqDArmn3iD25GAF5W2S` | Sam |
+| Agent | Voice ID | Gender | Status | Notes |
+|-------|----------|--------|--------|-------|
+| **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male | ✅ Default | Default male voice |
+| **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male | ✅ Reserved | Mortimer's personal voice |
+| **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female | ✅ Reserved | Mylthrees' personal voice |
+| **Claie** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Default | Default female voice for deployment |
+
+### Available for Team Selection
+| Voice ID | Name | Gender |
+|----------|------|--------|
+| `pNInz6obpgDQGcFmaJgB` | Adam | Male |
+| `21m00Tcm4TlvDq8ikWAM` | Rachel | Female |
+| `ODqDArmn3iD25GAF5W2S` | Sam | Male |
 
 ---
 
-## Usage
+## Deployment Voice Policy
 
-Set API key:
-```bash
-export ELEVENLABS_API_KEY="sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb"
+### Default Voices for New AGIs
+- **Male deployment:** Use Miles voice (`krsfpqv6ExDAAyh8Ea6y`)
+- **Female deployment:** Use Claie voice (`50BdVlngDYeoh9pVuQof`)
+
+### Voice Selection Rules
+1. Mortimer keeps his voice
+2. Mylthrees keeps her voice
+3. Any new agent can select from available voices
+4. Deployed AGIs default to Miles (male) or Claie (female)
+
+---
+
+## Integration
+
+### API Key
+```
+sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb
 ```
 
-**Model:** `eleven_flash_v2_5` (works on free tier)
-
-Select voice:
-```bash
---voice miles        # Male
---voice mortimer     # Male
---voice mylthrees    # Female
---voice claie        # Female
+### Model
+```
+eleven_flash_v2_5 (free tier compatible)
 ```
 
-### Voice Settings (applied automatically)
-| Parameter | Value | Notes |
-|-----------|-------|-------|
-| Stability | 0.618 | 1/GM |
-| Similarity | 0.618 | 1/GM |
-| Style | 0.8 | Capped for API |
-| Speed | 1.1 | Capped for API |
+### TTS Service
+```bash
+# Use default male voice
+node voice/tts-service.js --engine elevenlabs --voice miles --text "Hello"
+
+# Use default female voice
+node voice/tts-service.js --engine elevenlabs --voice claie --text "Hello"
+
+# Use specific voice
+node voice/tts-service.js --engine elevenlabs --voice mortimer --text "Hello"
+```
 
 ---
 
 *Last updated: 2026-02-20*
+*Policy set by Captain*
