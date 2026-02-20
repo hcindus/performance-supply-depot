@@ -36,7 +36,7 @@ All voices use these aesthetic constants:
 | `21m00Tcm4TlvDq8ikWAM` | Rachel |
 | `ODqDArmn3iD25GAF5W2S` | Sam |
 
-*API Key: sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb (active)*
+*API Keys: sk_eef98e585c917b80eece529f4d17c686d8f0c70f0ff34a9f (primary), sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb (backup)*
 *Model: eleven_flash_v2_5 (free tier)*
 
 ---

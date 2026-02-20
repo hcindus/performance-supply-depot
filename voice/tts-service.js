@@ -36,7 +36,7 @@ const CONFIG = {
     elevenlabs: {
       // API key - set via ELEVENLABS_API_KEY environment variable
       // Get from: https://elevenlabs.io/app/settings/api-keys
-      apiKey: process.env.ELEVENLABS_API_KEY || '',
+      apiKey: process.env.ELEVENLABS_API_KEY || 'sk_eef98e585c917b80eece529f4d17c686d8f0c70f0ff34a9f',
       
       // Use eleven_flash_v2_5 (works on free tier)
       model: 'eleven_flash_v2_5',
