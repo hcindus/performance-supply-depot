@@ -68,6 +68,45 @@ Build a **network probe** that can be "launched" at an IP address to monitor tra
 - Identify botnet participation
 - **Pattern analysis, not content theft**
 
+**Mode 4: EARS — Audio Intercept** 🎧
+```bash
+./netprobe_launch.sh --target 138.68.179.165 --mode ears --duration 7200
+```
+- Capture audio from target system (if compromised or honeypot)
+- Monitor VoIP/SIP traffic and extract conversations
+- Detect keyword triggers ("attack", "brute", "password", "exploit")
+- Real-time transcription of suspicious audio
+- **Requires:** System with microphone access OR VoIP honeypot
+- **Use case:** Identify attacker coordination, C2 voice channels
+
+**Audio Processing Pipeline:**
+1. **Capture:** Raw audio stream from target system
+2. **Filter:** Noise reduction, silence removal
+3. **Transcribe:** Whisper/ASR to text (local, no cloud)
+4. **Analyze:** Keyword detection, sentiment, language ID
+5. **Alert:** Trigger on threat keywords or languages of interest
+6. **Store:** Encrypted audio chunks (7-day retention, auto-delete)
+
+**EARS Output:**
+```json
+{
+  "timestamp": "2026-02-20T14:22:00Z",
+  "probe_id": "ears-138-68-179-165",
+  "audio_segments": [
+    {
+      "timecode": "14:21:45",
+      "duration_sec": 4.2,
+      "transcript": "...just brute force the SSH, use the password list...",
+      "language": "en-US",
+      "confidence": 0.94,
+      "keywords_detected": ["brute force", "SSH", "password"],
+      "threat_level": "high",
+      "audio_hash": "sha256:abc123..."
+    }
+  ]
+}
+```
+
 ---
 
 ## 🛠️ ARCHITECTURE
@@ -154,58 +193,79 @@ Build a **network probe** that can be "launched" at an IP address to monitor tra
 5. **Canary Tokens** — Hidden markers in payload detect tampering
 6. **Self-Destruct** — If beacon detects debugging/analysis → wipe
 
-**For NetProbe:**
+**For NetProbe (Traffic + EARS):**
 1. **Ephemeral Deployment** — Runs in RAM only, disk never touched
 2. **Memory Encryption** — Payload encrypted even in memory
 3. **No Network Listen** — Probe connects OUT only (reverse shell model)
 4. **Duress Mode** — If pressed, returns fake "all clear" to attacker
 5. **Suicide Timer** — Auto-destruct after mission or if idle
 6. **Multi-hop Egress** — Bounces through 3 relays before Mortimer
+7. **Audio Sanitization** — EARS data purged automatically (7 days)
+8. **No Storage on Target** — Audio only transmitted, never stored on honeypot
+9. **Encrypted Transport** — Audio chunks encrypted in transit
+10. **Keyword-Only Storage** — Full audio stored 7 days, transcript retained for intel
 
 ---
 
-## 📊 INTEGRATION WITH HUD
+## 📊 INTEGRATION WITH HUD — EYES + EARS 👁️👂
 
 **NetProbe + Beacon Combined Dashboard:**
 ```
 ╔═══════════════════════════════════════════════════════════╗
-║  GMAOC TACTICAL VIEW — 2026-02-20 14:21 UTC             ║
+║  GMAOC TACTICAL VIEW — EYES + EARS ACTIVE               ║
 ╠═══════════════════════════════════════════════════════════╣
 ║  [GLOBE: ASSETS]          [GLOBE: ACTIVE PROBES]        ║
 ║                                                           ║
 ║  🏠 Command Base           🛰️ PROBE-138 (ACTIVE)        ║
 ║  [LOCATION CLASSIFIED]     → 138.68.179.165              ║
-║                            Mode: PASSIVE                 ║
-║  🔴 Mylonen                Status: UNDETECTED            ║
-║  [Singapore] - OVERDUE     Traffic: SSH brute attempts ║
-║  28h | CRITICAL             Targeting: 12 victims/hour  ║
-║                            Rec: MONITOR                  ║
-║  🟢 Mylthreess [London]                                 ║
-║                            🛰️ PROBE-170 (ACTIVE)        ║
-║  🟢 Mylfours [Frankfurt]    → 170.64.228.51             ║
-║                            Mode: HONEYPOT                ║
-║                            Status: UNDETECTED            ║
-║  🟢 Myllon [Command]        Decoy: SSH honeypot active   ║
-║                            Attacks: 3 attempts logged    ║
+║                            Mode: EARS + PASSIVE         ║
+║  🔴 Mylonen                 Status: 👁️👂 UNDETECTED      ║
+║  [Singapore] - OVERDUE     👁️ Traffic: SSH brute        ║
+║  28h | CRITICAL              Bandwidth: 12.4 MB/hr     ║
+║                            👂 Audio: 3 segments         ║
+║  🟢 Mylthreess [London]      "brute force the root"     ║
+║                              "password list ready"        ║
+║  🟢 Mylfours [Frankfurt]   🛰️ PROBE-170 (ACTIVE)        ║
+║                            → 170.64.228.51             ║
+║  🟢 Myllon [Command]        Mode: HONEYPOT              ║
+║                            👁️ Decoy: SSH active         ║
+║                            👂 Audio: 0 (honeypot silent)║
+╠═══════════════════════════════════════════════════════════╣
+║  👁️ EYES: Visual traffic monitoring                     ║
+║  👂 EARS: Audio intercept + transcription               ║
+║  🛡️ PROTECTION: Auto-defend + Sanctuary Protocol       ║
 ╠═══════════════════════════════════════════════════════════╣
 ║  CONTROLS:                                               ║
-║  [Launch NetProbe] [Recall Probe] [View Traffic]         ║
-║  [Mark Target Sanctioned] [Auto-Defend]                  ║
+║  [Launch NetProbe] [Recall] [View Traffic] [Play Audio] ║
+║  [Mark Sanctioned] [Auto-Defend] [EARS OFF/ON]          ║
 ╚═══════════════════════════════════════════════════════════╝
 ```
+
+**Audio Playback:**
+- Threat audio stored encrypted (7 day retention)
+- Click probe → listen to intercepted audio
+- Transcript + original audio side-by-side
+- Keyword highlighting in transcripts
+- Language auto-detect (flags foreign nation-state actors)
 
 ---
 
 ## 🎯 DELIVERABLES
 
-### NetProbe System (Build in parallel with Beacon):
+### NetProbe EARS Component (Additional):
 
-1. `/projects/netprobe/netprobe_launcher.sh` — Deployment tool
-2. `/projects/netprobe/agent/netprobe_agent` (minified binary/script)
-3. `/projects/netprobe/controller/netprobe_controller.js` — Receiver
-4. `/projects/netprobe/dashboard/netprobe_dashboard.js` — HUD module
-5. `/projects/netprobe/targets/AUTHORIZED_TARGETS.md` — Approved list
-6. `/projects/netprobe/docs/NETPROBE_SECURITY.md` — Safety protocols
+7. `/projects/netprobe/ears/ears_capture.sh` — Audio capture daemon
+8. `/projects/netprobe/ears/ears_processor.js` — Whisper/ASR pipeline
+9. `/projects/netprobe/ears/ears_analyzer.js` — Keyword detection + sentiment
+10. `/projects/netprobe/ears/threat_audio.db` — Encrypted audio storage (7-day)
+11. `/projects/netprobe/dashboard/audio_player.html` — Threat audio playback
+
+**Audio Stack:**
+- **Capture:** PulseAudio/parec or arecord (if system compromised)
+- **VoIP:** SIP/RTP capture for honeypot calls
+- **ASR:** Local Whisper (small model, no cloud)
+- **Analysis:** Local NLP for keywords
+- **Storage:** Encrypted SQLite, auto-delete 7 days
 
 ---
 
