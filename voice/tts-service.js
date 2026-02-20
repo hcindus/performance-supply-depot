@@ -40,8 +40,10 @@ const CONFIG = {
       
       // Voice IDs stored for reference
       // Note: ztnpYzQJyWffPj1VC5Uw provided by Captain but key was invalid
+      // Note: krsfpqv6ExDAAyh8Ea6y = Miles voice ID
       voiceMap: {
         'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Captain provided (key invalid)
+        'miles': 'krsfpqv6ExDAAyh8Ea6y',    // My voice!
         'adam': 'pNInz6obpgDQGcFmaJgB',
         'rachel': '21m00Tcm4TlvDq8ikWAM',
         'sam': 'ODqDArmn3iD25GAF5W2S'

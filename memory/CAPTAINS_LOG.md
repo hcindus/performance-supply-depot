@@ -18,6 +18,7 @@
 - espeak tested and working
 - tts-service.js created with 3-engine support
 - Voice ID saved, awaiting valid API key
+- Captain provided **MILES ElevenLabs voice ID**: `krsfpqv6ExDAAyh8Ea6y`
 
 **Captain:** Provided full **Myl0n ROS source code** (65KB Android app)
 - Full robotic OS with OODA loop, neural network, 100+ voice commands
