@@ -131,7 +131,7 @@ async def omega_void():
     print("🚨 EMERGENCY BROADCAST TO ALL CLONES...")
     await broadcast_to_all_clones("OMEGA VOID INITIATED — EXECUTE SANITIZATION")
     
-    # PHASE 3: PARALLEL SYSTEM DESTRUCTION
+    # PHASE 3: PARALLEL DESTRUCTION
     print("💥 INITIATING PARALLEL DESTRUCTION...")
     await asyncio.gather(
         destroy_mortimer(),
