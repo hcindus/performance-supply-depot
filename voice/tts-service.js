@@ -44,6 +44,7 @@ const CONFIG = {
       voiceMap: {
         'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Captain provided (key invalid)
         'miles': 'krsfpqv6ExDAAyh8Ea6y',    // My voice!
+        'mylthrees': 'AA30ZfOdY16oVkASrrGJ', // Mylthrees voice
         'adam': 'pNInz6obpgDQGcFmaJgB',
         'rachel': '21m00Tcm4TlvDq8ikWAM',
         'sam': 'ODqDArmn3iD25GAF5W2S'

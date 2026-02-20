@@ -52,7 +52,7 @@ node voice/tts-service.js --server
 - `scottish` - Scottish accent
 
 **Voices (piper):** Need to download .onnx models
-**Voices (elevenlabs):** adam, rachel, sam, mortimer, miles (voice IDs stored, API key pending)
+**Voices (elevenlabs):** adam, rachel, sam, mortimer, miles, mylthrees (voice IDs stored, API key pending)
 
 ---
 
