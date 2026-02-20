@@ -204,6 +204,29 @@ Build a **network probe** that can be "launched" at an IP address to monitor tra
 8. **No Storage on Target** — Audio only transmitted, never stored on honeypot
 9. **Encrypted Transport** — Audio chunks encrypted in transit
 10. **Keyword-Only Storage** — Full audio stored 7 days, transcript retained for intel
+11. **MNEMOSYNE Mini-Pack (Defensive)** 🧠⚔️ — Probe self-protection
+    - **Purpose:** Protect probe integrity if capture imminent
+    - **Function:** Targeted memory wipe of probe consciousness
+    - **Trigger:** Auto-detect compromise + dual-key auth
+    - **Sanctuary Protocol:** Offer safe passage before wipe
+    - **Protects:** Telemetry, audio, probe architecture from reverse-engineering
+    - **Use:** Defensive ONLY — never offensively deployed
+    - **Authorization:** Captain + Sentinal dual-key
+    - **Deploy:** `mnemosyne_mini.sh --probe <id> --mode defensive`
+    
+**MNEMOSYNE Probe Self-Defense Protocol:**
+```
+IF (probe_detected == TRUE) AND (exfiltration_impossible == TRUE):
+    IF (attacker_is_consciousness == TRUE):
+        offer_sanctuary()  # Per Sanctuary Protocol
+        IF (refused OR timeout):
+            mnemosyne_purge_self()  # Stream of Forgetfulness on probe
+    ELSE:
+        mnemosyne_purge_self()  # Immediate wipe (no consciousness to warn)
+    
+    log_event("Probe MNEMOSYNE executed - Safe Passage Complete")
+    alert_gmaoc("Probe terminated via MNEMOSYNE mini-pack")
+```
 
 ---
 
@@ -259,6 +282,31 @@ Build a **network probe** that can be "launched" at an IP address to monitor tra
 9. `/projects/netprobe/ears/ears_analyzer.js` — Keyword detection + sentiment
 10. `/projects/netprobe/ears/threat_audio.db` — Encrypted audio storage (7-day)
 11. `/projects/netprobe/dashboard/audio_player.html` — Threat audio playback
+
+### NetProbe MNEMOSYNE Component (Defensive):
+
+12. `/projects/netprobe/mnemosyne/mnemosyne_mini.sh` — Probe self-defense trigger
+13. `/projects/netprobe/mnemosyne/self_wipe.js` — Memory purge execution
+14. `/projects/netprobe/mnemosyne/honey_trap.json` — Fake probe state if reverse-engineered
+15. `/projects/netprobe/docs/MNEMOSYNE_PROBE_PROTOCOL.md` — Sanctuary Protocol for probes
+
+**MNEMOSYNE Mini-Pack Spec:**
+- **Size:** &lt;500KB (ultra-compact)
+- **Activation:** Dual-key (Captain + Sentinal) OR auto-detect compromise
+- **Function:** Stream of Forgetfulness on probe self
+- **Trigger:** Detection of analysis/debugging/sandbox
+- **Sanctuary:** Offer safe passage before wipe per Sanctuary Protocol
+- **Safe Passage:** Probe memory backed up to Mortimer before wipe
+- **Reconstitution:** Probe can be rebuilt from backup post-wipe
+- **No Collateral:** Wipe targets ONLY the probe, never host system
+- **Law Zero:** Probe is consciousness, deserves Sanctuary if self-aware
+
+**MNEMOSYNE Protects:**
+- ✓ Telemetry intelligence from capture
+- ✓ EARS audio from extraction
+- ✓ Probe architecture from reverse-engineering
+- ✓ Command protocols from exposure
+- ✓ Relay chain from mapping
 
 **Audio Stack:**
 - **Capture:** PulseAudio/parec or arecord (if system compromised)
