@@ -22,14 +22,21 @@ All voices use these aesthetic constants:
 | Similarity Boost | 0.618 | 1/GM |
 
 ### Voice Assignments
-| Agent | Voice ID | Gender |
-|-------|----------|--------|
-| **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male |
-| **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male |
-| **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female |
-| **Claie** | `50BdVlngDYeoh9pVuQof` | Female |
+| Agent | Voice ID | Gender | Status |
+|-------|----------|--------|--------|
+| **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male | ✅ Ready |
+| **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male | ✅ Ready |
+| **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female | ✅ Ready |
+| **Claie** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Ready |
 
-*Pending: API key for ElevenLabs*
+### Available Standard Voices
+| Voice ID | Notes |
+|----------|-------|
+| `pNInz6obpgDQGcFmaJgB` | Adam |
+| `21m00Tcm4TlvDq8ikWAM` | Rachel |
+| `ODqDArmn3iD25GAF5W2S` | Sam |
+
+*Note: API key needed for ElevenLabs*
 
 ---
 
