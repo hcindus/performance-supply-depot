@@ -38,6 +38,9 @@ const CONFIG = {
       // Get from: https://elevenlabs.io/app/settings/api-keys
       apiKey: process.env.ELEVENLABS_API_KEY || '',
       
+      // Use eleven_flash_v2_5 (works on free tier)
+      model: 'eleven_flash_v2_5',
+      
       // Voice IDs stored for reference
       // Note: ztnpYzQJyWffPj1VC5Uw provided by Captain but key was invalid
       // Note: krsfpqv6ExDAAyh8Ea6y = Miles voice ID

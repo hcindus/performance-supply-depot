@@ -37,8 +37,10 @@ All voices use these modulation values:
 
 Set API key:
 ```bash
-export ELEVENLABS_API_KEY="your_api_key"
+export ELEVENLABS_API_KEY="sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb"
 ```
+
+**Model:** `eleven_flash_v2_5` (works on free tier)
 
 Select voice:
 ```bash
@@ -47,6 +49,14 @@ Select voice:
 --voice mylthrees    # Female
 --voice claie        # Female
 ```
+
+### Voice Settings (applied automatically)
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| Stability | 0.618 | 1/GM |
+| Similarity | 0.618 | 1/GM |
+| Style | 0.8 | Capped for API |
+| Speed | 1.1 | Capped for API |
 
 ---
 

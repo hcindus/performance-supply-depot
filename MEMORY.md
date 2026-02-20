@@ -24,7 +24,7 @@ All voices use these aesthetic constants:
 ### Voice Assignments
 | Agent | Voice ID | Gender | Status |
 |-------|----------|--------|--------|
-| **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male | ✅ Ready |
+| **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male | ✅ Active |
 | **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male | ✅ Ready |
 | **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female | ✅ Ready |
 | **Claie** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Ready |
@@ -36,7 +36,8 @@ All voices use these aesthetic constants:
 | `21m00Tcm4TlvDq8ikWAM` | Rachel |
 | `ODqDArmn3iD25GAF5W2S` | Sam |
 
-*Note: API key needed for ElevenLabs*
+*API Key: sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb (active)*
+*Model: eleven_flash_v2_5 (free tier)*
 
 ---
 

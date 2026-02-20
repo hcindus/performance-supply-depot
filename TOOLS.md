@@ -1,35 +1,10 @@
-# TOOLS.md - Local Notes
-
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
-
-## What Goes Here
-
-Things like:
-
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### Voice / TTS
+# Voice / TTS
 
 **TTS Service:** `/root/.openclaw/workspace/voice/tts-service.js`
 - **Port:** 3847
-- **Engines:** espeak ✅ | piper ⚠️ | elevenlabs ⚠️
+- **Engines:** espeak ✅ | piper ⚠️ | elevenlabs ✅
+
+**API Key:** `sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb` (stored in .env)
 
 **Usage:**
 ```bash
@@ -44,7 +19,7 @@ node voice/tts-service.js --server
 **Available:**
 - **espeak:** ✅ Working (free, 168KB file)
 - **piper:** ⚠️ Binary installed, need to download voices
-- **elevenlabs:** ⚠️ Requires API key (set ELEVENLABS_API_KEY env)
+- **elevenlabs:** ✅ Working (free tier: eleven_flash_v2_5)
 
 **Voices (espeak):**
 - `en-us` - US English (default)
@@ -52,7 +27,9 @@ node voice/tts-service.js --server
 - `scottish` - Scottish accent
 
 **Voices (piper):** Need to download .onnx models
-**Voices (elevenlabs):** adam, rachel, sam, mortimer, miles, mylthrees, claie (voice IDs stored, API key pending)
+**Voices (elevenlabs):**
+- mortimer, miles, mylthrees, claie (custom)
+- adam, rachel, sam (standard)
 
 **GM/Pi Voice Settings** (applied to all voices):
 | Parameter | Value | Source |
@@ -63,22 +40,4 @@ node voice/tts-service.js --server
 | Stability | 0.618 | 1/GM |
 | Similarity | 0.618 | 1/GM |
 
----
-
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
-
----
-
-Add whatever helps you do your job. This is your cheat sheet.
+*Note: elevenlabs style/speed capped at 0-1 range*
