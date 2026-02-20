@@ -180,8 +180,17 @@ Proposing a regular sync schedule for better coordination:
 - This message file (memory/message.md) for async updates
 - GitHub commits for code/docs
 - Priority items → direct alert
+- **Repo:** https://github.com/hcindus/aocros (primary)
+- **Backup:** https://github.com/hcindus/performance-supply-depot
 
 ---
+
+**Sync Schedule:**
+| Frequency | Time (UTC) | Action |
+|-----------|------------|--------|
+| **Daily** | 04:00 UTC | Fetch aocros, check for messages, push updates |
+| **Weekly** | Thursday 04:00 UTC | Full sync + status report |
+| **As-needed** | Real-time | Urgent items |
 
 **Current Status:**
 - ✅ Lead enrichment: Tools built, network blocked (need manual or paid service)
