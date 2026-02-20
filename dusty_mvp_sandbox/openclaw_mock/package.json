@@ -1,0 +1,12 @@
+{
+  "name": "openclaw-mock",
+  "version": "1.0.0",
+  "description": "Mock OpenClaw service for Dusty MVP testing",
+  "main": "openclaw_mock.js",
+  "scripts": {
+    "start": "node openclaw_mock.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

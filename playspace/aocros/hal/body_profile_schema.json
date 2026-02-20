@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "aocros-body-profile-v1",
+  "title": "AOCROS Body Profile",
+  "description": "Calibration and configuration for Mylzeron embodiment",
+  
+  "type": "object",
+  "required": ["body_type", "version", "calibrated_at", "hardware", "joints", "safety"],
+  "properties": {
+    "body_type": {
+      "type": "string",
+      "enum": [
+        "pi5_chassis",
+        "chinese_humanoid_mx64",
+        "chinese_humanoid_unitree_h1",
+        "boston_dynamics_spot",
+        "optimus_gen2",
+        "simulation"
+      ],
+      "description": "Hardware platform identifier"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "default": "1.0.0"
+    },
+    "calibrated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hardware": {
+      "type": "object",
+      "required": ["serial_number", "firmware_version"],
+      "properties": {
+        "serial_number": { "type": "string" },
+        "firmware_version": { "type": "string" },
+        "servo_count": { "type": "integer", "minimum": 1 },
+        "sensor_count": { "type": "integer", "minimum": 0 },
+        "has_vision": { "type": "boolean" },
+        "has_audio": { "type": "boolean" },
+        "has_locomotion": { "type": "boolean" }
+      }
+    },
+    "joints": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "required": ["type", "current", "min", "max", "center"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["servo", "continuous", "prismatic"]
+            },
+            "current": { "type": "number" },
+            "min": { "type": "number" },
+            "max": { "type": "number" },
+            "center": { "type": "number" },
+            "inverted": { "type": "boolean", "default": false },
+            "pulse_min": { "type": "integer", "minimum": 0, "maximum": 3000 },
+            "pulse_max": { "type": "integer", "minimum": 0, "maximum": 3000 },
+            "gpio": { "type": "integer", "description": "Pin for Pi-based implementations" }
+          }
+        }
+      }
+    },
+    "gait": {
+      "type": "object",
+      "description": "Locomotion parameters",
+      "properties": {
+        "step_height": { "type": "number", "minimum": 0 },
+        "step_length": { "type": "number", "minimum": 0 },
+        "stance_width": { "type": "number", "minimum": 0 },
+        "balance_kp": { "type": "number" },
+        "balance_ki": { "type": "number" },
+        "balance_kd": { "type": "number" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["emergency_stop_pin", "max_joint_speed"],
+      "properties": {
+        "emergency_stop_pin": { "type": "integer" },
+        "emergency_stop_active_low": { "type": "boolean", "default": true },
+        "max_joint_speed": { "type": "number", "minimum": 0 },
+        "max_joint_torque": { "type": "number", "minimum": 0 },
+        "workspace_bounds": {
+          "type": "object",
+          "properties": {
+            "x_min": { "type": "number" },
+            "x_max": { "type": "number" },
+            "y_min": { "type": "number" },
+            "y_max": { "type": "number" },
+            "z_min": { "type": "number" },
+            "z_max": { "type": "number" }
+          }
+        }
+      }
+    },
+    "expressions": {
+      "type": "object",
+      "description": "LED/display mappings for emotional state",
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "object",
+          "properties": {
+            "led_pattern": { "type": "string" },
+            "led_color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+            "servo_pose": { "type": "object" },
+            "duration": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "endpoint": { "type": "string", "format": "uri" },
+        "protocol": { "type": "string", "enum": ["http", "ros2", "websockets", "serial"] },
+        "auth_token": { "type": "string" },
+        "last_seen": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  
+  "examples": [
+    {
+      "body_type": "pi5_chassis",
+      "version": "1.0.0",
+      "calibrated_at": "2026-02-18T08:00:00Z",
+      "hardware": {
+        "serial_number": "PI5-001",
+        "firmware_version": "1.0",
+        "servo_count": 9,
+        "has_vision": true,
+        "has_audio": true,
+        "has_locomotion": true
+      },
+      "joints": {
+        "camera_pan": { "type": "servo", "current": 90, "min": 0, "max": 180, "center": 90, "gpio": 2 },
+        "camera_tilt": { "type": "servo", "current": 45, "min": 0, "max": 90, "center": 45, "gpio": 3 }
+      },
+      "safety": {
+        "emergency_stop_pin": 36,
+        "max_joint_speed": 180
+      }
+    },
+    {
+      "body_type": "chinese_humanoid_mx64",
+      "version": "1.0.0",
+      "calibrated_at": "2026-02-18T08:00:00Z",
+      "hardware": {
+        "serial_number": "MX64-ABC123",
+        "firmware_version": "2.1.0"
+      },
+      "joints": {
+        "head_pan": { "type": "servo", "current": 0, "min": -90, "max": 90, "center": 0 },
+        "head_tilt": { "type": "servo", "current": 0, "min": -45, "max": 45, "center": 0 },
+        "left_shoulder": { "type": "servo", "current": 90, "min": -180, "max": 180, "center": 90 },
+        "left_elbow": { "type": "servo", "current": 90, "min": 0, "max": 135, "center": 90 }
+      },
+      "network": {
+        "endpoint": "http://192.168.1.50:8080",
+        "protocol": "http"
+      }
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "test_id": "dusty-e2e-cron-1771572341969",
+  "cron_job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-20T07:25:42.015Z",
+  "date_formatted": "Friday, February 20th, 2026 — 7:23 AM (UTC)",
+  "status": "SUCCESS",
+  "summary": {
+    "tests_run": 5,
+    "passed": 5,
+    "partial": 0,
+    "failed": 0,
+    "total_duration_ms": 46,
+    "average_response_ms": 9.2
+  },
+  "tests": [
+    {
+      "name": "Bridge Health Check",
+      "endpoint": "GET http://localhost:3001/health",
+      "status": "PASS",
+      "duration_ms": 13,
+      "details": {
+        "service": "healthy",
+        "port": 3001,
+        "uptime_minutes": 1
+      }
+    },
+    {
+      "name": "Core-Agent Health Check",
+      "endpoint": "GET http://localhost:3000/health",
+      "status": "PASS",
+      "duration_ms": 2,
+      "details": {
+        "service": "healthy",
+        "port": 3000,
+        "uptime_minutes": 2443
+      }
+    },
+    {
+      "name": "OpenClaw Mock Health Check",
+      "endpoint": "GET http://localhost:4000/status",
+      "status": "PASS",
+      "duration_ms": 3,
+      "details": {
+        "service": "healthy",
+        "total_interactions": 49,
+        "uptime_minutes": 91
+      }
+    },
+    {
+      "name": "End-to-End Flow Test",
+      "endpoint": "POST http://localhost:3001/webhook",
+      "payload": "/dust balance",
+      "status": "PASS",
+      "duration_ms": 15,
+      "details": {
+        "bridge_to_core": true,
+        "core_to_openclaw": true,
+        "task_id": "c0a3f58d-de36-4b34-aab0-f0f46371c1ce",
+        "bot": "dusty",
+        "action": "balance_report"
+      }
+    },
+    {
+      "name": "Natural Language Query Test",
+      "endpoint": "POST http://localhost:3001/webhook",
+      "payload": "What is my dust balance?",
+      "status": "PASS",
+      "duration_ms": 10,
+      "details": {
+        "query_parsed": true,
+        "openclaw_responded": true,
+        "has_balance_data": true
+      }
+    }
+  ],
+  "services": {
+    "bridge_mock": {
+      "port": 3001,
+      "status": "healthy",
+      "uptime": "1m"
+    },
+    "core_agent": {
+      "port": 3000,
+      "status": "healthy",
+      "uptime": "40h 43m"
+    },
+    "openclaw_mock": {
+      "port": 4000,
+      "status": "healthy",
+      "uptime": "1h 31m"
+    }
+  },
+  "verified_capabilities": [
+    "Bridge receives Telegram mock message via POST /webhook",
+    "Bridge forwards to core-agent successfully",
+    "Core-agent creates task with proper UUID",
+    "Core-agent queries OpenClaw for response",
+    "OpenClaw generates Dusty bot response with balance data",
+    "Response flows back through core-agent to bridge",
+    "Natural language queries parsed correctly",
+    "Balance data contains ETH, USDC, DUST tokens"
+  ],
+  "performance_metrics": {
+    "e2e_latency_ms": 15,
+    "total_execution_ms": 46,
+    "budget_ms": 100,
+    "performance_rating": "excellent"
+  }
+}

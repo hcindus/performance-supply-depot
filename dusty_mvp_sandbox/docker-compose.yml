@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  agent-core:
+    image: node:20-alpine
+    container_name: dusty_agent_core
+    working_dir: /app
+    volumes:
+      - ./core-agent:/app
+    command: sh -c "npm install --silent && npm start"
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+  telegram-bridge:
+    image: node:20-alpine
+    container_name: telegram_bridge_mock
+    volumes:
+      - ./bridge_mock:/app
+    working_dir: /app
+    command: sh -c "npm install --silent && node bridge_mock.js"
+    depends_on:
+      - agent-core
+  openclaw-mock:
+    image: node:20-alpine
+    container_name: openclaw_mock
+    volumes:
+      - ./openclaw_mock:/app
+    working_dir: /app
+    command: sh -c "node openclaw_mock.js"
+    ports:
+      - "4000:4000"
+    depends_on:
+      - agent-core

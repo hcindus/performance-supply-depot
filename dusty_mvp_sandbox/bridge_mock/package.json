@@ -1,0 +1,17 @@
+{
+  "name": "telegram-bridge-mock",
+  "version": "1.0.0",
+  "description": "Mock Telegram bridge for testing core-agent integration",
+  "main": "bridge_mock.js",
+  "scripts": {
+    "start": "node bridge_mock.js",
+    "dev": "node bridge_mock.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

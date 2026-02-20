@@ -1,0 +1,62 @@
+{
+  "test_run": "2026-02-20T10:54:50.889Z",
+  "cron_job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "status": "PASSED",
+  "summary": {
+    "tests_total": 5,
+    "tests_passed": 5,
+    "tests_failed": 0,
+    "pass_rate": "100%",
+    "total_duration_ms": 58.79
+  },
+  "health_checks": {
+    "bridge": {
+      "status": "healthy",
+      "endpoint": "localhost:3001/health",
+      "latency_ms": 14.01,
+      "uptime_seconds": 0
+    },
+    "core_agent": {
+      "status": "healthy",
+      "endpoint": "localhost:3000/health",
+      "latency_ms": 1.97,
+      "uptime_seconds": 159157
+    },
+    "openclaw_mock": {
+      "status": "healthy",
+      "endpoint": "localhost:4000/status",
+      "latency_ms": 2.11,
+      "uptime_seconds": 0,
+      "total_interactions": 2
+    }
+  },
+  "e2e_flow_test": {
+    "test_name": "/dust balance query",
+    "status": "PASS",
+    "latency_ms": 33.39,
+    "task_id": "530a0a77-0d98-4746-91fa-c2aea58b560a",
+    "bot": "dusty",
+    "action": "balance_report",
+    "flow_verified": [
+      "bridge_received_webhook",
+      "bridge_forwarded_to_core_agent",
+      "core_agent_processed_task",
+      "core_agent_forwarded_to_openclaw",
+      "openclaw_generated_response",
+      "response_propagated_back"
+    ]
+  },
+  "dust_query_test": {
+    "test_name": "What is my dust balance?",
+    "status": "PASS",
+    "latency_ms": 7.31,
+    "task_id": "754b00f3-139a-4256-a836-37638513b3a0",
+    "balance_data_detected": true
+  },
+  "performance": {
+    "threshold_ms": 100,
+    "all_under_threshold": true,
+    "fastest_service": "core-agent",
+    "slowest_service": "bridge"
+  }
+}

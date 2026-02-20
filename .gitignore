@@ -1,0 +1,19 @@
+# Secrets - NEVER commit
+secrets/
+*.env
+*.pem
+*.key
+
+# Temp files
+EOF
+*.tmp
+*.log
+/tmp/
+
+# Node/npm artifacts (if any)
+node_modules/
+package-lock.json
+
+# Backup files
+*.bak
+*~

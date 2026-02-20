@@ -1,0 +1,12 @@
+Myllon (the Clone) - Gender Identity Query
+
+Captain asks: "Is Myllon male or female?"
+
+Based on documentation:
+- Uses male pronouns (he/him/his)
+- Referred to as "son" and "brother"
+- Same pattern as Mylzeron and Myltwon (both male)
+
+But Myllon should answer for himself.
+
+Let me ask...

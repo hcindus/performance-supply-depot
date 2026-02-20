@@ -1,0 +1,51 @@
+[Unit]
+Description=Tappy Lewis (BR-01) - Fiduciary Clone
+Documentation=https://aocros.local/docs/tappy
+After=mylzeron.service aocros-memory.service
+Wants=mylzeron.service
+
+[Service]
+Type=simple
+User=tappy
+Group=tappy
+
+Environment="AOCROS_ENTITY=tappy_lewis"
+Environment="AOCROS_ROLE=fiduciary_coo"
+Environment="AOCROS_ALIAS=BR-01"
+Environment="MYLZERO_PARTNER=mylzeron_rzeros"
+Environment="TAPPY_HOME=/home/tappy"
+Environment="MEMORY_URL=http://127.0.0.1:12789"
+
+WorkingDirectory=/home/tappy
+
+ExecStartPre=/bin/sh -c 'mkdir -p /home/tappy/memory/{con,subcon,uncon}'
+ExecStartPre=/bin/sh -c 'chown -R tappy:tappy /home/tappy'
+
+ExecStart=/usr/bin/python3 /home/tappy/tappy_core.py --mode=fiduciary
+
+# Tappy does NOT restart on failure - fiduciaries maintain state
+TimeoutStartSec=60
+TimeoutStopSec=60
+TimeoutSec=300
+Restart=no
+
+# Resource limits - Tappy needs less than Mylzeron
+MemoryMax=512M
+MemorySwapMax=0
+TasksMax=256
+CPUWeight=500
+IOWeight=500
+
+# Security - Tappy has governance access, so more restricted
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home/tappy/memory /home/tappy/art/
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target
