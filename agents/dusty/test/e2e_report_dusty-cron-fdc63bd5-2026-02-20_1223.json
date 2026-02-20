@@ -1,0 +1,78 @@
+{
+  "testRun": "2026-02-20T12:25:24.000Z",
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "testId": "dusty-end-to-end-test-1771590324039",
+  "status": "PASSED",
+  "summary": {
+    "totalTests": 6,
+    "passed": 6,
+    "failed": 0,
+    "passRate": "100%",
+    "totalDurationMs": 76
+  },
+  "services": [
+    {
+      "name": "Telegram Bridge",
+      "endpoint": "localhost:3001/health",
+      "status": "healthy",
+      "latencyMs": 14.02,
+      "uptime": "0h 0m"
+    },
+    {
+      "name": "Core-Agent",
+      "endpoint": "localhost:3000/health",
+      "status": "healthy",
+      "latencyMs": 2.51,
+      "uptime": "45h 43m"
+    },
+    {
+      "name": "OpenClaw Mock",
+      "endpoint": "localhost:4000/status",
+      "status": "healthy",
+      "latencyMs": 2.87,
+      "uptime": "1h 31m",
+      "totalInteractions": 45
+    }
+  ],
+  "endToEndTests": [
+    {
+      "name": "POST /webhook - /dust balance",
+      "status": "PASS",
+      "latencyMs": 34.35,
+      "taskId": "5ed3d6a8-9973-494a-9a36-daf0dc8af949",
+      "bot": "dusty",
+      "action": "balance_report",
+      "flow": [
+        { "step": "Bridge → Core-Agent", "status": "PASS" },
+        { "step": "Core-Agent → OpenClaw", "status": "PASS" }
+      ]
+    },
+    {
+      "name": "POST /webhook - Dust balance query",
+      "status": "PASS",
+      "latencyMs": 11.45,
+      "action": "balance_report"
+    },
+    {
+      "name": "GET /test endpoint",
+      "status": "PASS",
+      "latencyMs": 8.27
+    }
+  ],
+  "timing": {
+    "bridgeHealth": 14.02,
+    "coreAgentHealth": 2.51,
+    "openclawHealth": 2.87,
+    "healthChecksTotal": 19.40,
+    "e2eFlow": 34.35,
+    "dustQuery": 11.45,
+    "getTest": 8.27,
+    "totalExecution": 76
+  },
+  "notes": [
+    "Bridge was restarted with correct CORE_AGENT_URL environment variable",
+    "All services responding within acceptable thresholds (<100ms)",
+    "E2E flow properly forwards Bridge → Core-Agent → OpenClaw"
+  ],
+  "reportFile": "dusty_e2e_test_report_2026-02-20_1225.md"
+}

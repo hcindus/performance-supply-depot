@@ -1,77 +1,39 @@
 {
-  "test_id": "dusty-cron-fdc63bd5",
-  "timestamp": "2026-02-19T11:39:19.216Z",
-  "test_type": "Dusty MVP End-to-End Test",
-  "status": "PASS",
-  "summary": {
-    "total_tests": 5,
-    "passed": 5,
+  "testId": "dusty-cron-fdc63bd5-2026-02-20_0023",
+  "timestamp": "2026-02-20T00:23:57.454Z",
+  "trigger": "cron",
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "status": "SUCCESS",
+  "results": {
+    "passed": 6,
     "failed": 0,
-    "pass_rate": "100%",
-    "total_duration_ms": 57.95
+    "total": 6
   },
-  "test_results": [
-    {
-      "name": "Bridge Health",
-      "status": "PASS",
-      "endpoint": "localhost:3001/health",
-      "response_time_ms": 15.87,
-      "service": "telegram-bridge-mock",
-      "uptime": "20h 55m"
+  "components": {
+    "bridge": {
+      "healthy": true,
+      "responseTimeMs": 13.08,
+      "uptimeHours": 33.67
     },
-    {
-      "name": "Core-Agent Health",
-      "status": "PASS",
-      "endpoint": "localhost:3000/health",
-      "response_time_ms": 2.79,
-      "service": "dusty-core-agent",
-      "uptime": "20h 57m"
+    "coreAgent": {
+      "healthy": true,
+      "responseTimeMs": 1.79,
+      "uptimeHours": 33.70
     },
-    {
-      "name": "OpenClaw Health",
-      "status": "PASS",
-      "endpoint": "localhost:4000/status",
-      "response_time_ms": 2.40,
-      "service": "openclaw-mock",
-      "total_interactions": 534,
-      "uptime": "20h 57m"
-    },
-    {
-      "name": "End-to-End Flow",
-      "status": "PASS",
-      "request": "/dust balance",
-      "task_id": "f40ad0df-4bed-4672-b131-808d69a2c6bd",
-      "response_time_ms": 19.83,
-      "openclaw_response_preview": "📊 **Your Current Balances** • ETH: 0.5234 ETH (~$1,247.50)...",
-      "forwarded": true
-    },
-    {
-      "name": "Dust-Specific Query",
-      "status": "PASS",
-      "request": "What is my dust balance?",
-      "task_id": "f4fc75d0-0dc9-443f-aff4-9c39060db5fe",
-      "response_time_ms": 17.06,
-      "balance_data_extracted": true
+    "openclaw": {
+      "healthy": true,
+      "responseTimeMs": 2.51,
+      "uptimeHours": 33.68,
+      "totalInteractions": 909
     }
-  ],
-  "pipeline_validation": {
-    "telegram_bridge": "✅ Connected and responsive",
-    "core_agent_processing": "✅ Receiving and processing messages",
-    "openclaw_response": "✅ Generating balance responses",
-    "response_delivery": "✅ Full round-trip successful"
   },
-  "timing_analysis": {
-    "health_checks_total_ms": 21.06,
-    "end_to_end_flow_ms": 19.83,
-    "dust_query_ms": 17.06,
-    "average_response_ms": 11.59,
-    "latency_grade": "EXCELLENT (< 50ms)"
+  "e2eFlow": {
+    "status": "PASS",
+    "bridgeToCoreAgent": true,
+    "coreAgentToOpenclaw": true,
+    "openclawResponseReceived": true,
+    "responseTimeMs": 9.58
   },
-  "cron_info": {
-    "job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
-    "scheduled_time": "2026-02-19T11:38:00Z",
-    "execution_time": "2026-02-19T11:39:19Z",
-    "delay_seconds": 79
-  },
-  "next_recommended_action": "System healthy - no action required"
+  "totalDurationMs": 52,
+  "reportFile": "e2e_report_dusty-cron-fdc63bd5-2026-02-20_0023.md"
 }

@@ -1,0 +1,54 @@
+{
+  "test_id": "dusty-e2e-2026-02-20T04:39:15.497Z",
+  "timestamp": "2026-02-20T04:39:15.571Z",
+  "status": "PASS",
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0,
+    "total_duration_ms": 71.39874
+  },
+  "tests": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "durationMs": 14.062395
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "durationMs": 2.94816
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "durationMs": 2.033996
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PASS",
+      "durationMs": 19.797537
+    },
+    {
+      "name": "Balance Query",
+      "status": "PASS",
+      "durationMs": 9.533996
+    },
+    {
+      "name": "Dust Identification",
+      "status": "PASS",
+      "durationMs": 12.110339
+    },
+    {
+      "name": "Consolidation Plan",
+      "status": "PASS",
+      "durationMs": 10.912317
+    }
+  ],
+  "timings": {
+    "bridgeHealth": 14.062395,
+    "coreHealth": 2.94816,
+    "openclawHealth": 2.033996,
+    "e2eFlow": 19.797537
+  }
+}
