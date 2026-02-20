@@ -1,0 +1,92 @@
+{
+  "test_id": "dusty-cron-fdc63bd5",
+  "timestamp": "2026-02-19T17:09:25.657Z",
+  "test_type": "Dusty MVP End-to-End Test",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "pass_rate": "100%",
+    "total_duration_ms": 78
+  },
+  "test_results": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "endpoint": "localhost:3001/health",
+      "response_time_ms": 13.70,
+      "service": "telegram-bridge-mock",
+      "uptime": "26h 25m"
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "endpoint": "localhost:3000/health",
+      "response_time_ms": 2.58,
+      "service": "dusty-core-agent",
+      "uptime": "26h 27m"
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "endpoint": "localhost:4000/status",
+      "response_time_ms": 2.38,
+      "service": "openclaw-mock",
+      "total_interactions": 678,
+      "uptime": "26h 27m"
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PASS",
+      "request": "/dust balance",
+      "task_id": "c6a65799-2fbb-4cca-8cc5-b96de2dbb91d",
+      "response_time_ms": 21.45,
+      "openclaw_response_preview": "📊 **Your Current Balances** • ETH: 0.5234 ETH (~$1,247.50)...",
+      "forwarded": true
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "request": "What is my dust balance?",
+      "response_time_ms": 10.83,
+      "balance_data_extracted": true
+    },
+    {
+      "name": "Bridge GET /test",
+      "status": "PASS",
+      "response_time_ms": 24.13
+    }
+  ],
+  "pipeline_validation": {
+    "telegram_bridge": "✅ Connected and responsive",
+    "core_agent_processing": "✅ Receiving and processing messages",
+    "openclaw_response": "✅ Generating balance responses with portfolio data",
+    "response_delivery": "✅ Full round-trip successful"
+  },
+  "timing_analysis": {
+    "health_checks_total_ms": 18.66,
+    "end_to_end_flow_ms": 21.45,
+    "dust_query_ms": 10.83,
+    "average_response_ms": 12.51,
+    "latency_grade": "EXCELLENT (< 50ms)"
+  },
+  "cron_info": {
+    "job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+    "scheduled_time": "2026-02-19T17:08:00Z",
+    "execution_time": "2026-02-19T17:09:25Z",
+    "delay_seconds": 85
+  },
+  "sample_response": {
+    "bot": "dusty",
+    "action": "balance_report",
+    "data": {
+      "eth": 0.5234,
+      "usdc": 150,
+      "dust_tokens": 2847.32,
+      "dust_value_usd": 15.65,
+      "total_portfolio_usd": 1412.15
+    }
+  },
+  "next_recommended_action": "System healthy - no action required"
+}

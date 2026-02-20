@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM HUD Supply | Thermal Paper, Bond Paper & Ink Ribbons for POS Systems</title>
+    <meta name="description" content="High-quality thermal receipt paper, bond paper rolls, and ink ribbons for your POS printers. Fast delivery, bulk pricing for multifamily, HUD housing, and property management.">
+    <style>
+        :root {
+            --primary: #004080;
+            --primary-dark: #003366;
+            --accent: #ff6600;
+            --accent-hover: #e65c00;
+            --bg-light: #f8f9fa;
+            --bg-blue: #e9f2ff;
+            --text-dark: #333;
+            --text-light: #fff;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header / Hero */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.5;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 52px;
+            margin: 0 0 20px 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin: 20px 0;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-light);
+            padding: 18px 50px;
+            font-size: 22px;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 700;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: var(--text-light);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: #e9f2ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        /* Products */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            padding: 30px;
+            width: 350px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background: var(--bg-blue);
+        }
+
+        .product-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        /* Benefits */
+        .benefits-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 100px 20px;
+        }
+
+        .benefits-section h2 {
+            color: var(--text-light);
+        }
+
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.97);
+            color: var(--text-dark);
+            padding: 35px;
+            border-radius: var(--radius);
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: white;
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            color: var(--primary);
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--bg-blue);
+            padding: 100px 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: left;
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 6px;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Trust Section */
+        .trust {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .testimonial {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--bg-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: var(--accent);
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.9; }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 15px 35px;
+                font-size: 18px;
+            }
+
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .benefits-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+
+        /* Utility */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 { margin-top: 10px; }
+        .mt-2 { margin-top: 20px; }
+        .mt-3 { margin-top: 30px; }
+        .mb-1 { margin-bottom: 10px; }
+        .mb-2 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Promo Banner -->
+    <div class="promo-banner text-center">
+        🎉 Q1 2026 Special: 10% Off First Order + Free Shipping on $500+ — Limited Time!
+    </div>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="container">
+            <h1>Premium POS Supplies for Property Management</h1>
+            <p class="subtitle">Thermal Paper, Bond Paper & Ink Ribbons — Delivered Fast for Your Properties</p>
+            <p class="hero-text">Reliable POS consumables trusted by multifamily managers, HUD housing, and commercial facilities nationwide. Competitive bulk pricing with no minimums on many items.</p>
+            <a href="#quote-form" class="btn">Get Bulk Quote & Free Shipping Offer</a>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Our Top POS Supplies</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/350x200/004080/FFFFFF?text=Thermal+Paper+Rolls" alt="Thermal Receipt Paper">
+                    <h3>🔥 Thermal Receipt Paper Rolls</h3>
+                    <p>3 1/8" x 230' BPA-free, bright white, jam-resistant thermal paper. Compatible with Epson, Star, Citizen, and other leading POS brands.</p>
+                    <ul style="padding-left: 20px; margin: 15px 0;">
+                        <li>BPA-free, eco-friendly</li>
+                        <li>Jam-resistant coating</li>
+                        <li>Bright white prints</li>
+                    </ul>
+                    <div class="price-tag">As low as $0.20/roll (50+ rolls)</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/350x200/0066CC/FFFFFF?text=Bond+Paper+Rolls" alt="Bond Paper Rolls">
+                    <h3>📄 Bond Paper Rolls</h3>
+                    <p>1-Ply & 2-Ply carbonless paper for impact printers. Perfect for kitchen printers, receipt printers, and multi-copy systems.</p>
+                    <ul style="padding-left: 20px; margin: 15px 0;">
+                        <li>3" x 150' 1-ply white</li>
+                        <li>3" x 90' 2-ply carbonless</li>
+                        <li>Durable, fade-resistant</li>
+                    </ul>
+                    <div class="price-tag">Volume pricing available</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/350x200/FF6600/FFFFFF?text=Ink+Ribbons" alt="Ink Ribbons">
+                    <h3>🖨️ Ink Ribbons & Cartridges</h3>
+                    <p>Premium ink ribbons for impact printers. ERC-30/34/38, SP700, TM-U220 compatible. Long-lasting, smudge-free prints.</p>
+                    <ul style="padding-left: 20px; margin: 15px 0;">
+                        <li>ERC-30/34/38 compatible</li>
+                        <li>SP700 series ready</li>
+                        <li>TM-U220 compatible</li>
+                    </ul>
+                    <div class="price-tag">Boxes of 6+ for best pricing</div>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 18px; color: #666;">
+                💡 <strong>Custom sizes, printed logos, and private labeling available</strong> — contact us for details.
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Why Property Managers Choose AM HUD Supply</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Cost Savings on Bulk</h3>
+                    <p>Volume discounts up to 25% — keep your on-site offices and leasing centers stocked without breaking budget.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Fast Nationwide Delivery</h3>
+                    <p>Next-day or 2-day options to multifamily sites, HUD properties, and commercial facilities across the US.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Guaranteed Compatibility</h3>
+                    <p>Works seamlessly with common POS/printer brands — no jams, no reprints, reliable every time.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Dedicated Support</h3>
+                    <p>Expert team for quotes, re-orders, and custom needs — easy dashboard for repeat orders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="form-section" id="quote-form">
+        <div class="container">
+            <h2>Request Your Custom Quote Today</h2>
+            <p style="font-size: 18px; max-width: 700px; margin: 0 auto;">Get pricing, samples, or schedule a quick call — plus claim your Q1 2026 promo.</p>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@property.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Property / Company Name *</label>
+                    <input type="text" id="company" name="company" placeholder="ABC Property Management" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="volume">Estimated Monthly Volume *</label>
+                    <select id="volume" name="volume" required>
+                        <option value="">Select volume range</option>
+                        <option value="low">Under 50 rolls/ribbons per month</option>
+                        <option value="med">50-200 rolls/ribbons per month</option>
+                        <option value="high">200+ rolls/ribbons per month</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="needs">Specific Needs</label>
+                    <input type="text" id="needs" name="needs" placeholder="e.g., 3 1/8 thermal, ERC-38 ribbons, custom printing">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your property type, printer models, or any special requirements..."></textarea>
+                </div>
+
+                <button type="submit">📩 Get Quote & Promo Details</button>
+            </form>
+
+            <p style="font-size: 14px; margin-top: 25px; color: #666;">
+                🔒 Your information is secure — we never share or spam. Expect a response within 24 hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <h2>Trusted for Reliable POS Supplies</h2>
+            <p style="font-size: 18px; max-width: 800px; margin: 20px auto;">
+                Serving multifamily, HUD-affiliated properties, and facility teams with consistent quality and service since 2015.
+            </p>
+
+            <div class="testimonial">
+                "AM HUD Supply keeps our leasing offices running smoothly — fast delivery and great prices on thermal paper and ink ribbons. Their team knows exactly what our properties need and always delivers on time. Highly recommended for any property management company!"
+                <div class="testimonial-author">— Sarah Martinez, Regional Property Manager<br>📍 Managing 2,400+ units across 12 communities</div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; color: var(--primary);">500+</div>
+                    <div style="color: #666;">Properties Served</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; color: var(--primary);">99.8%</div>
+                    <div style="color: #666;">On-Time Delivery</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; color: var(--primary);">24hr</div>
+                    <div style="color: #666;">Response Time</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; font-weight: 700; color: var(--primary);">4.9★</div>
+                    <div style="color: #666;">Customer Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 24px; margin-bottom: 10px;">📦 AM HUD Supply</p>
+            <p style="opacity: 0.8; max-width: 600px; margin: 0 auto 20px;">
+                Your trusted source for thermal paper, bond paper, ink ribbons, and POS consumables. 
+                Focused on property management and housing needs.
+            </p>
+            <p style="margin-bottom: 20px;">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </p>
+            <p style="opacity: 0.6; font-size: 14px;">
+                &copy; 2015-2026 AM HUD Supply. All rights reserved.<br>
+                Questions? Call us at <a href="tel:+1-800-555-0123">1-800-555-0123</a> or email <a href="mailto:sales@amhudsupply.com">sales@amhudsupply.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "testRunId": "dusty-cron-fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-20T10:39:13.256Z",
+  "testType": "dusty-end-to-end-test",
+  "status": "SUCCESS",
+  "summary": {
+    "totalTests": 6,
+    "passed": 6,
+    "failed": 0,
+    "partial": 2,
+    "totalDurationMs": 52
+  },
+  "results": {
+    "healthChecks": {
+      "telegramBridge": {
+        "status": "PASS",
+        "endpoint": "localhost:3001/health",
+        "responseTimeMs": 16.07,
+        "uptime": "0h 29m"
+      },
+      "coreAgent": {
+        "status": "PASS",
+        "endpoint": "localhost:3000/health",
+        "responseTimeMs": 2.86,
+        "uptime": "43h 57m"
+      },
+      "openclawMock": {
+        "status": "PASS",
+        "endpoint": "localhost:4000/status",
+        "responseTimeMs": 3.18,
+        "uptime": "4h 45m",
+        "totalInteractions": 142
+      }
+    },
+    "endToEndFlows": {
+      "postWebhook": {
+        "status": "PASS",
+        "bridgeToCoreAgent": true,
+        "coreAgentToOpenclaw": true,
+        "responseTimeMs": 12.23,
+        "taskId": "d62514dd-4e9a-48f1-8d29-b796fb0834ea"
+      },
+      "getTest": {
+        "status": "PASS",
+        "mockMessageSent": true,
+        "coreAgentResponded": true,
+        "responseTimeMs": 7.20
+      },
+      "dustSpecificQuery": {
+        "status": "PASS",
+        "query": "What is my dust balance?",
+        "coreAgentProcessed": true,
+        "openclawResponded": true,
+        "responseTimeMs": 6.77,
+        "openclawResponsePreview": "📊 **Your Current Balances**..."
+      }
+    }
+  },
+  "evidence": {
+    "bridgeLogSample": "OpenClaw responded successfully",
+    "coreAgentLogSample": "Task created: d62514dd-4e9a-48f1-8d29-b796fb0834ea, OpenClaw responded successfully",
+    "openclawResponseSample": {
+      "bot": "dusty",
+      "action": "balance_report",
+      "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)"
+    }
+  }
+}

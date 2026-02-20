@@ -1,0 +1,57 @@
+{
+  "test_id": "dusty-complete-3f2041d9",
+  "test_type": "Dusty MVP Complete End-to-End Test",
+  "timestamp": "2026-02-20T13:09:59.177335+00:00",
+  "status": "PASS",
+  "cron_job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "pass_rate": "100%",
+    "total_duration_ms": 101.99
+  },
+  "pipeline_validation": {
+    "telegram_bridge": "\u2705 Connected and responsive",
+    "core_agent_processing": "\u2705 Processing messages",
+    "openclaw_response": "\u2705 Generating responses",
+    "end_to_end_flow": "\u2705 Full pipeline operational"
+  },
+  "endpoints": {
+    "bridge_mock": "http://localhost:3001",
+    "core_agent": "http://localhost:3000",
+    "openclaw_mock": "http://localhost:4000"
+  },
+  "test_results": [
+    {
+      "name": "Service Health Check",
+      "status": "PASS",
+      "duration_ms": 58.11
+    },
+    {
+      "name": "Send Mock Telegram Message (Webhook)",
+      "status": "PASS",
+      "duration_ms": 29.79
+    },
+    {
+      "name": "Trigger Bridge Test Roundtrip",
+      "status": "PASS",
+      "duration_ms": 8.34
+    },
+    {
+      "name": "Core-Agent Processing",
+      "status": "PASS",
+      "duration_ms": 1.01
+    },
+    {
+      "name": "OpenClaw Response",
+      "status": "PASS",
+      "duration_ms": 0.9
+    },
+    {
+      "name": "End-to-End Flow Verification",
+      "status": "PASS",
+      "duration_ms": 3.44
+    }
+  ]
+}

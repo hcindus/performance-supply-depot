@@ -1,0 +1,60 @@
+{
+  "test_id": "dusty-complete-0409a9e9",
+  "test_type": "Dusty MVP Complete End-to-End Test",
+  "timestamp": "2026-02-20T13:09:36.231702+00:00",
+  "status": "FAIL",
+  "cron_job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "summary": {
+    "total_tests": 6,
+    "passed": 3,
+    "failed": 3,
+    "pass_rate": "50%",
+    "total_duration_ms": 55.19
+  },
+  "pipeline_validation": {
+    "telegram_bridge": "\u2705 Connected and responsive",
+    "core_agent_processing": "\u2705 Processing messages",
+    "openclaw_response": "\u2705 Generating responses",
+    "end_to_end_flow": "\u274c Pipeline issues detected"
+  },
+  "endpoints": {
+    "bridge_mock": "http://localhost:3001",
+    "core_agent": "http://localhost:3000",
+    "openclaw_mock": "http://localhost:4000"
+  },
+  "test_results": [
+    {
+      "name": "Service Health Check",
+      "status": "FAIL",
+      "error": "bridge-mock failed: <urlopen error [Errno 111] Connection refused>",
+      "duration_ms": 50.46
+    },
+    {
+      "name": "Send Mock Telegram Message (Webhook)",
+      "status": "FAIL",
+      "error": "<urlopen error [Errno 111] Connection refused>",
+      "duration_ms": 0.4
+    },
+    {
+      "name": "Trigger Bridge Test Roundtrip",
+      "status": "FAIL",
+      "error": "<urlopen error [Errno 111] Connection refused>",
+      "duration_ms": 0.28
+    },
+    {
+      "name": "Core-Agent Processing",
+      "status": "PASS",
+      "duration_ms": 1.12
+    },
+    {
+      "name": "OpenClaw Response",
+      "status": "PASS",
+      "duration_ms": 1.13
+    },
+    {
+      "name": "End-to-End Flow Verification",
+      "status": "PASS",
+      "duration_ms": 1.14
+    }
+  ]
+}

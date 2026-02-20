@@ -1,0 +1,41 @@
+{
+  "test_id": "dusty-complete-29292ad1",
+  "test_type": "Dusty MVP Complete End-to-End Test",
+  "timestamp": "2026-02-19T18:42:17.885482+00:00",
+  "status": "FAIL",
+  "summary": {
+    "total_tests": 4,
+    "passed": 3,
+    "failed": 1,
+    "pass_rate": "75%",
+    "total_duration_ms": 67.2
+  },
+  "pipeline_validation": {
+    "telegram_bridge": "\u2705 Connected and responsive",
+    "core_agent_processing": "\u2705 Processing messages",
+    "openclaw_response": "\u2705 Generating responses"
+  },
+  "test_results": [
+    {
+      "name": "Service Health Check",
+      "status": "PASS",
+      "duration_ms": 56.7
+    },
+    {
+      "name": "Send Mock Telegram Message",
+      "status": "FAIL",
+      "error": "HTTP Error 404: Not Found",
+      "duration_ms": 6.76
+    },
+    {
+      "name": "Core-Agent Processing",
+      "status": "PASS",
+      "duration_ms": 1.8
+    },
+    {
+      "name": "OpenClaw Response",
+      "status": "PASS",
+      "duration_ms": 1.69
+    }
+  ]
+}
