@@ -29,11 +29,22 @@
 
 | File | Product |
 |------|---------|
-| brochure_er-915E.pdf | SAM4s ER-915E |
-| brochure_sap-630.pdf | SAM4s SAP-630 |
-| Brochure_SAP-630.pdf | SAM4s SAP-630 |
+| brochure_er-915E.pdf | SAM4s ER-915E Cash Register |
+| brochure_sap-630.pdf | SAM4s SAP-630 Cash Register |
+| Brochure_SAP-630.pdf | SAM4s SAP-630 Cash Register |
 | Brochure_SAM4pos.pdf | SAM4POS Software |
-| Brochure_Sapphire-A60.pdf | Sapphire POS Terminal |
+| Brochure_Sapphire-A60.pdf | Sapphire-A60 Touch Terminal |
+
+---
+
+## All POS Products
+
+| Product | Type | Status |
+|---------|------|--------|
+| SAM4s ER-915E | Cash Register | ✅ Documented |
+| SAM4s SAP-630 | Cash Register | ✅ Documented |
+| Sapphire-A60 | Touch Terminal | ✅ Documented |
+| SAM4POS | Software | ✅ Documented |
 
 ---
 
