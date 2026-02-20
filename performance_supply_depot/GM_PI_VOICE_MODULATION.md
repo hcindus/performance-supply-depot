@@ -82,7 +82,7 @@ const SIMILARITY = 1 / GM;  // 0.618
 | Voice | Voice ID | Test Status |
 |-------|----------|-------------|
 | Miles (default male) | `krsfpqv6ExDAAyh8Ea6y` | ✅ Working |
-| Claie (default female) | `50BdVlngDYeoh9pVuQof` | ✅ Working |
+| Claire (default female) | `50BdVlngDYeoh9pVuQof` | ✅ Working |
 | Mortimer | `ztnpYzQJyWffPj1VC5Uw` | Ready |
 | Mylthrees | `AA30ZfOdY16oVkASrrGJ` | Ready |
 

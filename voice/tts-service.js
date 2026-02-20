@@ -50,7 +50,7 @@ const CONFIG = {
       voiceMap: {
         // DEFAULT VOICES (for deployment)
         'miles': 'krsfpqv6ExDAAyh8Ea6y',    // Default male voice
-        'claiE': '50BdVlngDYeoh9pVuQof',     // Default female voice
+        'claire': '50BdVlngDYeoh9pVuQof',     // Default female voice
         
         // RESERVED VOICES
         'mortimer': 'ztnpYzQJyWffPj1VC5Uw', // Mortimer's personal
@@ -65,7 +65,7 @@ const CONFIG = {
       // Default voice settings
       defaults: {
         male: 'miles',
-        female: 'claiE'
+        female: 'claire'
       },
       
       // GM/Pi Voice Modulation (based on Captain's aesthetic constants)
@@ -83,7 +83,7 @@ const CONFIG = {
       // Default voices for deployment
       defaults: {
         male: 'miles',
-        female: 'claiE'
+        female: 'claire'
       },
       available: null
     }

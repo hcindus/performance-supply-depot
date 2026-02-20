@@ -27,7 +27,7 @@ All voices use these aesthetic constants:
 | **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male | ✅ Active |
 | **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male | ✅ Ready |
 | **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female | ✅ Ready |
-| **Claie** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Ready |
+| **Claire** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Ready |
 
 ### Available Standard Voices
 | Voice ID | Notes |

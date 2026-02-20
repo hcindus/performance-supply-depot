@@ -325,7 +325,7 @@ All voice settings documented in:
 ### Default Deployment Voices
 
 - **Male AGIs**: Use Miles voice (`krsfpqv6ExDAAyh8Ea6y`)
-- **Female AGIs**: Use Claie voice (`50BdVlngDYeoh9pVuQof`)
+- **Female AGIs**: Use Claire voice (`50BdVlngDYeoh9pVuQof`)
 
 ---
 

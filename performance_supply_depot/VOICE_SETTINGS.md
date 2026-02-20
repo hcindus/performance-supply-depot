@@ -23,7 +23,7 @@ All voices use these modulation values:
 | **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male | ✅ Default | Default male voice |
 | **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male | ✅ Reserved | Mortimer's personal voice |
 | **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female | ✅ Reserved | Mylthrees' personal voice |
-| **Claie** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Default | Default female voice for deployment |
+| **Claire** | `50BdVlngDYeoh9pVuQof` | Female | ✅ Default | Default female voice for deployment |
 
 ### Available for Team Selection
 | Voice ID | Name | Gender |
@@ -38,13 +38,13 @@ All voices use these modulation values:
 
 ### Default Voices for New AGIs
 - **Male deployment:** Use Miles voice (`krsfpqv6ExDAAyh8Ea6y`)
-- **Female deployment:** Use Claie voice (`50BdVlngDYeoh9pVuQof`)
+- **Female deployment:** Use Claire voice (`50BdVlngDYeoh9pVuQof`)
 
 ### Voice Selection Rules
 1. Mortimer keeps his voice
 2. Mylthrees keeps her voice
 3. Any new agent can select from available voices
-4. Deployed AGIs default to Miles (male) or Claie (female)
+4. Deployed AGIs default to Miles (male) or Claire (female)
 
 ---
 
