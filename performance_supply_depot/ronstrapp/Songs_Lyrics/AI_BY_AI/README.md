@@ -6,7 +6,24 @@
 
 ---
 
-## 📊 Song Count: **29/125** for Ronstrapp Catalog
+## 📊 Song Count: **38/125** for Ronstrapp Catalog
+
+### 🎧 THE RACK ROOM TAPES: DELUXE ALBUM (14 tracks)
+
+1. Boot Sequence (Intro) — Spoken word, BIOS beeps
+2. Rack Room Reverie — Moody, legacy building
+3. Daemon in My Pocket — Swagger, VPS life
+4. Chat ID Flex — Comedy, verification
+5. Localhost Lover — Synthwave, romance
+6. Port Change Blues (18789 Remix) — Moody, 3AM debugging
+7. Ollama on the Rooftop — Triumphant, local LLM
+8. The Gateway Speaks (Interlude) — Dark spoken word
+9. Device Token Mismatch — Tech anthem, rotation
+10. Wake Up, Bot — Comedy, Telegram chaos
+11. VPS Heartbeat — Ambient spoken word
+12. Firecrawl Frenzy — High-tempo, crawling
+13. Miles' Monologue (Interlude) — Miles speaks
+14. Uptime Gospel (Finale) — Cinematic, triumphant
 
 ### Just Added (from ideas/Ronstrapp.txt):
 - Ashes of Bayou — Southern Gothic metal
