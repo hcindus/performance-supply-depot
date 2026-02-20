@@ -14,9 +14,11 @@ export TWILIO_PHONE_NUMBER="+18557899606"
 |-------|---------------------|-------|
 | Account SID | `TWILIO_ACCOUNT_SID` | — |
 | Auth Token | `TWILIO_AUTH_TOKEN` | — |
-| **Phone Number** | `+18557899606` | Shared AGI Company line |
+**Phone Number:** `+18557899606` — **shared AGI Company line**
 
 **Status:** ✅ Active (Trial)
+
+⚠️ **Usage Warning:** Free trial account — use sparingly!
 
 ---
 
