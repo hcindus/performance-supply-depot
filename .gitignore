@@ -1,5 +1,6 @@
 # Secrets - NEVER commit
 secrets/
+armory/vault/
 *.env
 *.pem
 *.key

@@ -85,10 +85,18 @@
 
 ### Voice Configuration
 **Provider:** Twilio  
-**Number:** [To be assigned]  
+**Number:** +18557899606  
+**Account SID:** ACf274f9d690fe37b16d2d9f87f6bb7726  
+**Auth Token:** [REDACTED — Q-LEVEL VAULT]  
 **TTS Engine:** ElevenLabs (Scottish accent)  
 **Webhook:** `/voice` endpoint  
-**Status:** ⏳ Awaiting setup
+**Status:** ✅ Active — Awaiting Captain approval for call handling
+
+**Security Notes:**
+- Auth token stored in encrypted vault (not in Git)
+- Webhook endpoint requires authentication
+- All calls logged with metadata
+- Recording: Enabled for all calls (encrypted storage)
 
 ---
 
