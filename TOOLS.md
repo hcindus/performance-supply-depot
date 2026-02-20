@@ -54,6 +54,15 @@ node voice/tts-service.js --server
 **Voices (piper):** Need to download .onnx models
 **Voices (elevenlabs):** adam, rachel, sam, mortimer, miles, mylthrees, claie (voice IDs stored, API key pending)
 
+**GM/Pi Voice Settings** (applied to all voices):
+| Parameter | Value | Source |
+|-----------|-------|--------|
+| Pitch | 1.618 | GM |
+| Rate | 1.94 | PI/GM |
+| Style | 1.618 | GM |
+| Stability | 0.618 | 1/GM |
+| Similarity | 0.618 | 1/GM |
+
 ---
 
 ### Cameras

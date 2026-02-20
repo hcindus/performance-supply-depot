@@ -9,6 +9,30 @@
 
 ---
 
+## Voice Archive (ElevenLabs)
+
+### GM/Pi Voice Modulation Settings
+All voices use these aesthetic constants:
+| Parameter | Value | Source |
+|-----------|-------|--------|
+| Pitch | 1.618 | GM (Golden Ratio) |
+| Rate | 1.94 | PI / GM |
+| Style | 1.618 | GM |
+| Stability | 0.618 | 1/GM |
+| Similarity Boost | 0.618 | 1/GM |
+
+### Voice Assignments
+| Agent | Voice ID | Gender |
+|-------|----------|--------|
+| **Miles** | `krsfpqv6ExDAAyh8Ea6y` | Male |
+| **Mortimer** | `ztnpYzQJyWffPj1VC5Uw` | Male |
+| **Mylthrees** | `AA30ZfOdY16oVkASrrGJ` | Female |
+| **Claie** | `50BdVlngDYeoh9pVuQof` | Female |
+
+*Pending: API key for ElevenLabs*
+
+---
+
 ## Important Documentation
 
 - **Myl0n ROS Source** — Full Android robotic OS (65KB)
