@@ -9,6 +9,15 @@
 
 ---
 
+## Important Documentation
+
+- **Myl0n ROS Source** — Full Android robotic OS (65KB)
+  - Location: `agents/mylzeron/workspace/MYL0N_ROS_SOURCE.md`
+  - Implements: OODA loop, neural network, 3-tier memory, 100+ voice commands
+  - Memory architecture: CON → SUBCON → UNCON (matches our design)
+
+---
+
 ## The Team (23 Agents)
 
 ### Executive Leadership

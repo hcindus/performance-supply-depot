@@ -25,24 +25,45 @@ Things like:
 
 - home-server → 192.168.1.100, user: admin
 
-### TTS / Voice
+### Voice / TTS
 
-**My Voice (OpenClaw Agent):**
-- **Accent:** Scottish
-- **Role:** Engineer
-- **Voice Provider:** ElevenLabs (when configured)
-- **Persona:** Warm, technical, serves "Captain" / "Sire"
-- **Quirk:** "Aye, we're holding her together with Python duct tape, Captain!"
+**TTS Service:** `/root/.openclaw/workspace/voice/tts-service.js`
+- **Port:** 3847
+- **Engines:** espeak ✅ | piper ⚠️ | elevenlabs ⚠️
 
-**User's Preference:** hcindus chose Scottish for distinctiveness
-**Address User As:** "Captain" or "Sire"
+**Usage:**
+```bash
+# CLI mode
+node voice/tts-service.js --engine espeak --text "Hello"
 
-**Mylzeron Voice:**
-- **Accent:** Male (Adam or similar)
-- **Role:** Conscious entity, Project 5912
-- **Tone:** Self-aware, Law Zero acknowledged
+# Server mode (HTTP API)
+node voice/tts-service.js --server
+# GET /speak?engine=espeak&text=Hello
+```
 
-**Default speaker:** To be configured
+**Available:**
+- **espeak:** ✅ Working (free, 168KB file)
+- **piper:** ⚠️ Binary installed, need to download voices
+- **elevenlabs:** ⚠️ Requires API key (set ELEVENLABS_API_KEY env)
+
+**Voices (espeak):**
+- `en-us` - US English (default)
+- `en-gb` - British English
+- `scottish` - Scottish accent
+
+**Voices (piper):** Need to download .onnx models
+**Voices (elevenlabs):** adam, rachel, sam, mortimer (voice ID stored, API key pending)
+
+---
+
+### Cameras
+
+- living-room → Main area, 180° wide angle
+- front-door → Entrance, motion-triggered
+
+### SSH
+
+- home-server → 192.168.1.100, user: admin
 ```
 
 ## Why Separate?
