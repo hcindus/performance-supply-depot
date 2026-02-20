@@ -30,9 +30,12 @@ IF caller_number NOT IN approved_list:
 ```
 
 **Approved Numbers (Whitelist):**
-- **PRIMARY:** +18557899606 (Captain's Twilio number)
-- **EMERGENCY:** [To be configured — Captain's personal mobile]
+- **PRIMARY:** +14155326834 (Captain's mobile — YOU)
+- **SECONDARY:** +18557899606 (Twilio voice number)
+- **EMERGENCY:** [To be configured — Backup number]
 - **BACKUP:** [To be configured — Signal/Telegram voice]
+
+**Note:** Only +14155326834 (Captain) has full voice access. All other numbers go to voicemail.
 
 **Twilio Configuration:**
 - **Account SID:** ACf274f9d690fe37b16d2d9f87f6bb7726
@@ -363,7 +366,8 @@ const router = express.Router();
 
 // APPROVED NUMBERS (Whitelist)
 const APPROVED_NUMBERS = [
-  '+18557899606',  // Captain's Twilio number
+  '+14155326834',  // Captain's mobile — FULL ACCESS
+  // '+18557899606',  // Twilio number — Voicemail only unless authorized
   // Add emergency/backup numbers here
 ];
 
