@@ -32,6 +32,7 @@ ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1"
 VOICE_ID_OPENCLAW = os.getenv('VOICE_ID_OPENCLAW', '50BdVlngDYeoh9pVuQof')  # Scottish Engineer
 VOICE_ID_CAPTAIN = os.getenv('VOICE_ID_CAPTAIN', 'AA30ZfOdY16oVkASrrGJ')  # Captain's voice
 VOICE_ID_RESERVE = os.getenv('VOICE_ID_RESERVE', 'krsfpqv6ExDAAyh8Ea6y')  # Reserve/Backup voice
+VOICE_ID_SPECIAL = os.getenv('VOICE_ID_SPECIAL', 'ztnpYzQJyWffPj1VC5Uw')  # Additional/Specialized voice
 
 # =============================================================================
 # AESTHETIC CONSTANTS (Voice Modulation)
