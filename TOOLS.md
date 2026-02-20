@@ -4,7 +4,13 @@
 - **Port:** 3847
 - **Engines:** espeak ✅ | piper ⚠️ | elevenlabs ✅
 
-**API Key:** `sk_eef98e585c917b80eece529f4d17c686d8f0c70f0ff34a9f` (backup: sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb)
+**ElevenLabs API Keys:** (stored in tts-service.js)
+- Primary: `sk_eef98e585c917b80eece529f4d17c686d8f0c70f0ff34a9f`
+- Backup: `sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb
+
+**Twilio:**
+- Phone: `+18557899606`
+- Credentials: Store as `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` env vars
 
 **Usage:**
 ```bash
