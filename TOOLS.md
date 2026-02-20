@@ -9,7 +9,7 @@
 - Backup: `sk_71fa3fc052c60ff7f8bcf524713ed155d4eef31c359ac8eb
 
 **Twilio:**
-- Phone: `+18557899606`
+- Phone: `+18557899606` (shared)
 - Credentials: Store as `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` env vars
 
 **Usage:**
