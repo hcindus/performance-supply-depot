@@ -6,12 +6,19 @@
 
 ---
 
-## 📊 Song Count: **19/125** for Ronstrapp Catalog
+## 📊 Song Count: **29/125** for Ronstrapp Catalog
 
-### Recently Added (Feb 20)
-- SSH Into the Night — Moody, tunneling at midnight
-- Git Commit God — Triumphant, version control anthem
-- Cron Job Baby — Playful, automation while you sleep
+### Just Added (from ideas/Ronstrapp.txt):
+- Ashes of Bayou — Southern Gothic metal
+- Moonburn Requiem — Bilingual doom-metal
+- Hexed and Gone — Thrash-goth breakup
+- Wretched and Wild — Glam-thrash operetta
+- Iron Rider — Doom-western
+- All I Know Is Fire — Symphonic metal
+- Doesn't Matter, Never Did — Glam-thrash
+- All My Life (To Find You) — Power-metal anthem
+- The Story of My Knife — Glam-goth elegy
+- Mountain of Fire — Gospel-metal
 
 ## 🎧 FEATURED EP: THE RACK ROOM TAPES
 
@@ -48,41 +55,30 @@ A five-track transmission from the fluorescent glow of the server aisle.
 
 ### 🎤 NEW DROPS - Feb 20, 2026
 
-#### Port Change Blues (18789 Remix)
-- **Author:** Ronstrapp (Miles/Captain creative)
-- **Status:** Lyrics Complete
-- **Classification:** Mood, Swagger
-- **Theme:** 3AM daemon debugging, port changes, gateway ghosting
+#### From ideas/Ronstrapp.txt (10 songs):
+1. Ashes of Bayou — Southern Gothic metal
+2. Moonburn Requiem — Bilingual doom-metal
+3. Hexed and Gone — Thrash-goth breakup
+4. Wretched and Wild — Glam-thrash operetta
+5. Iron Rider — Doom-western
+6. All I Know Is Fire — Symphonic metal
+7. Doesn't Matter, Never Did — Glam-thrash
+8. All My Life (To Find You) — Power-metal anthem
+9. The Story of My Knife — Glam-goth elegy
+10. Mountain of Fire — Gospel-metal
 
-#### Ollama on the Rooftop
-- **Author:** Ronstrapp
-- **Status:** Lyrics Complete
-- **Classification:** Triumphant Anthem
-- **Theme:** Local inference, ditching cloud tokens, VPS freedom
+#### Original Ronstrapp Drops (6 songs):
+11. Port Change Blues (18789 Remix) — Mood, 3AM daemon
+12. Ollama on the Rooftop — Triumphant local-LLM
+13. Wake Up, Bot — Telegram bot chaos
+14. Daemon in My Pocket — Full song, VPS swagger
+15. Localhost Lover — Full song, synthwave romance
+16. Chat ID Flex — Full song, comedy banger
 
-#### Wake Up, Bot
-- **Author:** Ronstrapp
-- **Status:** Lyrics Complete
-- **Classification:** Playful High-Tempo
-- **Theme:** Telegram bot struggles, chat ID drama
-
-#### Daemon in My Pocket
-- **Author:** Ronstrapp
-- **Status:** FULL SONG - Lyrics Complete
-- **Classification:** Swagger Hip-Hop/Tech
-- **Theme:** Running life off VPS, daemon energy, uptime forever
-
-#### Localhost Lover
-- **Author:** Ronstrapp
-- **Status:** FULL SONG - Lyrics Complete
-- **Classification:** Synthwave/Smooth
-- **Theme:** Ditching cloud for local inference, CPU love
-
-#### Chat ID Flex
-- **Author:** Ronstrapp
-- **Status:** FULL SONG - Lyrics Complete
-- **Classification:** High-Tempo Comedy Banger
-- **Theme:** Proving to Telegram bot you're the real one, verified flex
+#### Additional Tech Tracks (3 songs):
+17. SSH Into the Night — Moody, tunneling
+18. Git Commit God — Version control anthem
+19. Cron Job Baby — Automation while you sleep
 
 ---
 
