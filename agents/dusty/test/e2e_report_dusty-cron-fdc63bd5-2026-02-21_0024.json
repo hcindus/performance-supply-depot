@@ -1,0 +1,72 @@
+{
+  "testRunId": "dusty-cron-fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-21T00:24:12.634Z",
+  "testType": "dusty-end-to-end-test",
+  "status": "PARTIAL_SUCCESS",
+  "summary": {
+    "totalTests": 6,
+    "passed": 6,
+    "failed": 0,
+    "partial": 2,
+    "totalDurationMs": 66
+  },
+  "results": {
+    "healthChecks": {
+      "telegramBridge": {
+        "status": "PASS",
+        "endpoint": "localhost:3001/health",
+        "responseTimeMs": 13.97,
+        "uptime": "6h 58m"
+      },
+      "coreAgent": {
+        "status": "PASS",
+        "endpoint": "localhost:3000/health",
+        "responseTimeMs": 2.71,
+        "uptime": "57h 42m"
+      },
+      "openclawMock": {
+        "status": "PASS",
+        "endpoint": "localhost:4000/status",
+        "responseTimeMs": 3.64,
+        "uptime": "9h 14m",
+        "totalInteractions": 287
+      }
+    },
+    "endToEndFlows": {
+      "postWebhook": {
+        "status": "PARTIAL",
+        "bridgeToCoreAgent": true,
+        "coreAgentToOpenclaw": false,
+        "responseTimeMs": 18.16,
+        "taskId": "43399010-8c2b-4d02-ae16-2ac6b16849f0"
+      },
+      "getTest": {
+        "status": "PASS",
+        "mockMessageSent": true,
+        "coreAgentResponded": true,
+        "responseTimeMs": 12.21
+      },
+      "dustSpecificQuery": {
+        "status": "PARTIAL",
+        "query": "What is my dust balance?",
+        "coreAgentProcessed": true,
+        "openclawResponded": false,
+        "responseTimeMs": 11.14
+      }
+    }
+  },
+  "timing": {
+    "bridgeHealthMs": 13.97,
+    "coreAgentHealthMs": 2.71,
+    "openclawHealthMs": 3.64,
+    "endToEndFlowMs": 18.16,
+    "dustQueryMs": 11.14,
+    "getTestMs": 12.21,
+    "totalExecutionMs": 66
+  },
+  "componentStatus": {
+    "telegramBridgeMock": "HEALTHY",
+    "coreAgent": "HEALTHY",
+    "openclawMock": "HEALTHY"
+  }
+}
