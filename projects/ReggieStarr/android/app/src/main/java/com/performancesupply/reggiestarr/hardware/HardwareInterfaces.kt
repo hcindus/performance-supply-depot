@@ -17,6 +17,7 @@ interface Printer {
     fun printQRCode(data: String, size: Int = 200)
     fun cutPaper(partial: Boolean = false)
     fun openCashDrawer()
+    fun ringBell()
     fun getStatus(): PrinterStatus
 }
 
@@ -102,6 +103,43 @@ interface CashDrawer {
     fun open()
     fun isOpen(): Boolean  // Requires sensor
     fun isConnected(): Boolean
+    fun ringBell()        // Ring the cash drawer bell
+}
+
+// ==================== POS BELL INTERFACE ====================
+
+/**
+ * POS Bell peripheral (connected via RJ11/RJ12 drawer kick signal)
+ * Typically wired to the cash drawer for attention/alerts
+ */
+interface POSBell {
+    fun connect(): Boolean
+    fun disconnect()
+    fun isConnected(): Boolean
+    
+    /**
+     * Ring the bell
+     * @param count Number of rings (1-10)
+     * @param durationMs Duration of each ring in milliseconds
+     */
+    fun ring(count: Int = 1, durationMs: Int = 200)
+    
+    /**
+     * Play a specific tone pattern
+     * @param pattern Predefined patterns: SHORT, LONG, DOUBLE, ALARM
+     */
+    fun playPattern(pattern: BellPattern)
+}
+
+enum class BellPattern {
+    SHORT,      // Single short beep
+    LONG,       // Single long beep
+    DOUBLE,     // Two beeps
+    TRIPLE,     // Three beeps
+    ALARM,      // Attention alarm (3 long)
+    NO_SALE,    // Cash drawer open signal
+    ALERT,      // Customer attention
+    ERROR       // Error indication
 }
 
 // ==================== HARDWARE MANAGER ====================
@@ -117,6 +155,7 @@ class HardwareManager {
     fun getScale(): Scale? = devices[DeviceType.SCALE] as? Scale
     fun getScanner(): BarcodeScanner? = devices[DeviceType.SCANNER] as? BarcodeScanner
     fun getCashDrawer(): CashDrawer? = devices[DeviceType.CASH_DRAWER] as? CashDrawer
+    fun getPOSBell(): POSBell? = devices[DeviceType.POS_BELL] as? POSBell
     
     fun connectAll(): Map<DeviceType, Boolean> {
         return devices.mapValues { (_, device) ->
@@ -157,7 +196,8 @@ enum class DeviceType {
     PRINTER,
     SCALE,
     SCANNER,
-    CASH_DRAWER
+    CASH_DRAWER,
+    POS_BELL
 }
 
 enum class ConnectionStatus {

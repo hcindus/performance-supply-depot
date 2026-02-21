@@ -15,6 +15,9 @@ import json
 import sqlite3
 import urllib.request
 import urllib.error
+import sys
+import time
+import subprocess
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass, asdict
 from collections import defaultdict
@@ -26,6 +29,17 @@ try:
     QR_AVAILABLE = True
 except ImportError:
     QR_AVAILABLE = False
+
+# Optional sound for bell/alert
+try:
+    import winsound  # Windows
+    SOUND_AVAILABLE = True
+except ImportError:
+    try:
+        import subprocess  # Linux/macOS
+        SOUND_AVAILABLE = True
+    except ImportError:
+        SOUND_AVAILABLE = False
 
 # ==================== CONFIGURATION ====================
 
@@ -709,7 +723,63 @@ class CashRegister:
     def return_merchandise(self): pass
     def multiplier(self): pass
     def plu_lookup(self): pass
-    def no_sale(self): return "Drawer opened"
+    def no_sale(self):
+        """No Sale - Open drawer and ring bell"""
+        result = "Drawer opened"
+        
+        # Ring the bell (for attention)
+        self.ring_bell(pattern="no_sale")
+        
+        return result
+    
+    def ring_bell(self, pattern: str = "short"):
+        """Ring the POS bell
+        Patterns: short, long, double, triple, no_sale, alert, error
+        """
+        try:
+            if sys.platform == "win32":
+                import winsound
+                if pattern == "no_sale":
+                    winsound.MessageBeep(winsound.MB_OK)
+                elif pattern == "error":
+                    winsound.MessageBeep(winsound.MB_ICONHAND)
+                else:
+                    winsound.Beep(1000, 200)
+            else:
+                # Linux/macOS - use beep or aplay
+                import subprocess
+                freq = 1000
+                duration = 200
+                count = 1
+                
+                if pattern == "no_sale":
+                    count = 2
+                    duration = 150
+                elif pattern == "double":
+                    count = 2
+                elif pattern == "triple":
+                    count = 3
+                elif pattern == "error":
+                    freq = 500
+                    duration = 300
+                    count = 3
+                
+                for _ in range(count):
+                    try:
+                        subprocess.run(['beep', '-f', str(freq), '-l', str(duration)], 
+                                    capture_output=True, timeout=1)
+                    except FileNotFoundError:
+                        # beep not installed, try speaker
+                        try:
+                            subprocess.run(['paplay', '/usr/share/sounds/gtk-events/click.wav'],
+                                        capture_output=True, timeout=1)
+                        except:
+                            pass  # No sound available
+                    if count > 1:
+                        import time
+                        time.sleep(0.15)
+        except Exception as e:
+            pass  # Silently fail if no sound
     def tax_modifier(self): pass
     def discount(self): pass
     def bag_fee(self): pass

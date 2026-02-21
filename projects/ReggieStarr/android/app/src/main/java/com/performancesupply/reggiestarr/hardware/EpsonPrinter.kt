@@ -185,6 +185,16 @@ class EpsonPrinter(
         outputStream?.flush()
     }
     
+    override fun ringBell() {
+        // Ring the bell connected to the printer/drawer
+        // ESC p m t1 t2 with pin 5 (m=1) typically triggers bell
+        // GS r n m - Generate pulse (n = pin, m = delay)
+        outputStream?.write(byteArrayOf(
+            0x1D, 0x72, 0x01  // n=1 (drawer open), m=0 (sync)
+        ))
+        outputStream?.flush()
+    }
+    
     override fun getStatus(): PrinterStatus {
         // Request status
         outputStream?.write(byteArrayOf(0x10, 0x04, 0x01))  // Printer status
