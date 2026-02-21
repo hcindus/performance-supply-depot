@@ -1,436 +1,244 @@
 #!/usr/bin/env python3
 """
-Socket Arsenal — NetProbe v2
+NetProbe v2 - Socket-Based Reconnaissance System
 Classification: OMEGA-LEVEL
-Date: 2026-02-20 23:01 UTC
-Purpose: Multi-target reconnaissance with socket-based stealth
-
-Features:
-- Concurrent 47-target monitoring (selector-based)
-- Non-blocking I/O for all connections
-- Custom binary protocol (lower signature than HTTP)
-- XChaCha20-Poly1305 encrypted beacons
-- Dossier system integration
-- Self-destruct on compromise detection
-
-Based on: RealPython Socket Programming Guide (selectors, non-blocking I/O)
+Authorization: DEPLOYED per Captain order 2026-02-21 05:40 UTC
 """
 
-import sys
+import socket
+import selectors
 import json
 import time
-import logging
-from typing import Dict, List, Optional, Any, Callable
-from dataclasses import dataclass, field
-from pathlib import Path
+import sys
+import os
+import threading
+from datetime import datetime
+from typing import Dict, List, Tuple, Optional
 
-# Add parent to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from core.socket_manager import SocketManager, ConnectionData, ConnectionState
-from core.protocol_handler import ProtocolHandler, Message, ContentType
-from core.encryption_layer import SocketEncryptionManager
-
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger('NetProbeV2')
-
-
-@dataclass
-class TargetProfile:
-    """Target configuration for reconnaissance."""
-    ip: str
-    port: int = 80
-    priority: int = 5  # 1 = highest, 10 = lowest
-    mode: str = "passive"  # passive, banner, scan
-    layers: int = 1  # Penetration depth (1-5)
-    metadata: Dict[str, Any] = field(default_factory=dict)
-
-
-@dataclass
-class ProbeResult:
-    """Result from target reconnaissance."""
-    target: TargetProfile
-    status: str  # "success", "filtered", "timeout", "error"
-    timestamp: float
-    response_time_ms: Optional[float] = None
-    banner: Optional[bytes] = None
-    intelligence: Dict[str, Any] = field(default_factory=dict)
-    error_message: Optional[str] = None
-
+# Import encryption layer
+sys.path.insert(0, '/root/.openclaw/workspace/projects/socket-arsenal/core')
+try:
+    from encryption_layer import ChaCha20Encryption
+    ENCRYPTION_AVAILABLE = True
+except ImportError:
+    ENCRYPTION_AVAILABLE = False
+    print("⚠️ Encryption layer not available")
 
 class NetProbeV2:
     """
-    Advanced socket-based reconnaissance system.
-    
-    Monitors multiple targets concurrently using selectors.
-    Lower network signature than HTTP-based NetProbe v1.
+    Socket-based network reconnaissance probe
+    Features: TCP sockets, selectors for concurrency, non-blocking I/O
     """
     
-    def __init__(self, master_key: Optional[bytes] = None):
-        """Initialize NetProbe v2."""
-        self.socket_mgr = SocketManager(timeout=5.0)  # 5s select timeout
-        self.protocol = ProtocolHandler()
-        self.encryption = SocketEncryptionManager(master_key)
-        
-        # Target management
-        self.targets: Dict[str, TargetProfile] = {}
-        self.results: List[ProbeResult] = []
-        self.active_probes: Dict[Any, TargetProfile] = {}  # sock -> target
-        
-        # Callbacks
-        self.on_result: Optional[Callable[[ProbeResult], None]] = None
-        self.on_intelligence: Optional[Callable[[str, Dict], None]] = None
-        
-        # Self-destruct trigger
-        self.compromise_detected = False
-        
-        # Register handlers
-        self.socket_mgr.register_handler('connect', self._on_connect)
-        self.socket_mgr.register_handler('read', self._on_read)
-        self.socket_mgr.register_handler('close', self._on_close)
-        self.socket_mgr.register_handler('error', self._on_error)
-        
-        logger.info("NetProbe v2 initialized")
+    VERSION = "2.0.0"
     
-    def load_targets_from_dossier(self, dossier_path: str):
-        """Load targets from dossier system."""
-        # Parse INDEX.md or individual dossier files
-        import re
-        
-        dossier_dir = Path(dossier_path)
-        if not dossier_dir.exists():
-            logger.error(f"Dossier path not found: {dossier_path}")
-            return
-        
-        # Read master index
-        index_file = dossier_dir / "INDEX.md"
-        if index_file.exists():
-            content = index_file.read_text()
-            # Extract IP addresses from table
-            ip_pattern = r'\|\s*(\d+)\s*\|\s*([\d.]+)\s*\|\s*(\d+)\s*\|\s*([\w\s]+)\s*\|'
-            matches = re.findall(ip_pattern, content)
-            
-            for rank, ip, attempts, host in matches[:47]:  # Top 47
-                priority = 1 if int(rank) <= 3 else (2 if int(rank) <= 10 else 3)
-                target = TargetProfile(
-                    ip=ip,
-                    port=22,  # SSH for brute force attackers
-                    priority=priority,
-                    mode="banner",
-                    layers=1,
-                    metadata={
-                        "rank": int(rank),
-                        "attempts": int(attempts),
-                        "host": host.strip(),
-                        "authorized": True  # Standing order
-                    }
-                )
-                self.add_target(target)
-                logger.info(f"Loaded target #{rank}: {ip} ({host.strip()})")
-    
-    def add_target(self, target: TargetProfile):
-        """Add target to probe manifest."""
-        target_id = f"{target.ip}:{target.port}"
-        self.targets[target_id] = target
-        logger.debug(f"Added target: {target_id}")
-    
-    def launch_probe(self, target: TargetProfile):
-        """Initiate probe connection to target."""
-        try:
-            sock = self.socket_mgr.connect(target.ip, target.port, metadata={"target": target})
-            self.active_probes[sock] = target
-            
-            # Register for encryption
-            session_id = f"probe_{target.ip}_{int(time.time())}"
-            self.encryption.register_socket(sock, session_id)
-            
-            logger.info(f"Launched probe to {target.ip}:{target.port} (mode: {target.mode})")
-            
-        except Exception as e:
-            logger.error(f"Failed to launch probe to {target.ip}: {e}")
-            result = ProbeResult(
-                target=target,
-                status="error",
-                timestamp=time.time(),
-                error_message=str(e)
-            )
-            self.results.append(result)
-            if self.on_result:
-                self.on_result(result)
-    
-    def _on_connect(self, sock, data: ConnectionData):
-        """Handle connection establishment."""
-        target = self.active_probes.get(sock)
-        if not target:
-            return
-        
-        logger.info(f"Connected to {target.ip}:{target.port}")
-        
-        # Send probe payload based on mode
-        if target.mode == "banner":
-            # Just wait for banner (send nothing)
-            pass
-        elif target.mode == "scan":
-            # Send HTTP HEAD request (stealthy)
-            payload = b"HEAD / HTTP/1.0\r\nHost: " + target.ip.encode() + b"\r\n\r\n"
-            
-            # Encrypt before sending
-            encrypted = self.encryption.prepare_for_send(sock, payload)
-            self.socket_mgr.send(sock, encrypted)
-    
-    def _on_read(self, sock, data: ConnectionData, received_bytes: bytes):
-        """Handle incoming data."""
-        target = self.active_probes.get(sock)
-        if not target:
-            return
-        
-        try:
-            # Decrypt if encrypted
-            plaintext = self.encryption.process_received(sock, received_bytes)
-        except Exception:
-            # Not encrypted or decryption failed — use raw
-            plaintext = received_bytes
-        
-        # Analyze response
-        intelligence = self._analyze_response(plaintext, target)
-        
-        # Check for honeypot indicators
-        if self._detect_honeypot(plaintext, target):
-            logger.warning(f"⚠️ HONEYPOT DETECTED on {target.ip} — activating self-destruct")
-            self.compromise_detected = True
-            self._initiate_self_destruct(sock, target, data)
-            return
-        
-        # Store result
-        result = ProbeResult(
-            target=target,
-            status="success",
-            timestamp=time.time(),
-            banner=plaintext[:1024],  # First 1KB
-            intelligence=intelligence
-        )
-        self.results.append(result)
-        
-        if self.on_result:
-            self.on_result(result)
-        
-        if self.on_intelligence:
-            self.on_intelligence(target.ip, intelligence)
-        
-        logger.info(f"Intelligence gathered from {target.ip}: {len(intelligence)} indicators")
-        
-        # Close connection (probe complete)
-        self.socket_mgr.disconnect(sock)
-    
-    def _analyze_response(self, data: bytes, target: TargetProfile) -> Dict[str, Any]:
-        """Extract intelligence from response."""
-        intel = {
-            "timestamp": time.time(),
-            "data_length": len(data),
-            "indicators": []
-        }
-        
-        # Look for service banners
-        if b"SSH" in data:
-            intel["indicators"].append("ssh_service")
-            # Extract version if present
-            if b"OpenSSH" in data:
-                version_start = data.find(b"OpenSSH")
-                version_end = data.find(b" ", version_start + 8)
-                if version_end > version_start:
-                    intel["ssh_version"] = data[version_start:version_end].decode('utf-8', errors='ignore')
-        
-        if b"HTTP" in data:
-            intel["indicators"].append("http_service")
-            # Extract server header
-            server_start = data.find(b"Server: ")
-            if server_start >= 0:
-                server_end = data.find(b"\r\n", server_start)
-                if server_end > server_start:
-                    intel["http_server"] = data[server_start+8:server_end].decode('utf-8', errors='ignore')
-        
-        # Check for common honeypot signatures
-        if b"honeypot" in data.lower() or b"cowrie" in data.lower():
-            intel["indicators"].append("possible_honeypot")
-        
-        # Port response time
-        intel["analysis_complete"] = True
-        
-        return intel
-    
-    def _detect_honeypot(self, data: bytes, target: TargetProfile) -> bool:
-        """Detect if target is a honeypot."""
-        honeypot_signatures = [
-            b"cowrie", b"kippo", b"dionaea", b"conpot",
-            b"honeypot", b"lab", b"sandbox"
-        ]
-        
-        data_lower = data.lower()
-        for sig in honeypot_signatures:
-            if sig in data_lower:
-                return True
-        
-        # Check for unrealistic response patterns
-        if len(data) > 10000:  # Suspiciously large banner
-            return True
-        
-        return False
-    
-    def _initiate_self_destruct(self, sock, target: TargetProfile, data: ConnectionData):
-        """Trigger probe self-destruction on compromise."""
-        logger.critical(f"🔥 SELF-DESTRUCT: Probe against {target.ip} compromised")
-        
-        # Level 2 HARD destruction — wipes all probe traces
-        # (Implementation would scrub memory, close connections, wipe logs)
-        
-        # For now: immediate disconnect and cleanup
-        self.socket_mgr.disconnect(sock)
-        
-        # Mark for cleanup
-        if target.ip in [t.ip for t in self.targets.values()]:
-            # Remove from active targets (blacklist)
-            pass
-    
-    def _on_close(self, sock, data: ConnectionData):
-        """Handle connection close."""
-        target = self.active_probes.pop(sock, None)
-        if target:
-            self.encryption.unregister_socket(sock)
-            logger.debug(f"Connection closed to {target.ip}")
-    
-    def _on_error(self, sock, data: ConnectionData, error: Exception):
-        """Handle connection error."""
-        target = self.active_probes.pop(sock, None)
-        if target:
-            result = ProbeResult(
-                target=target,
-                status="error",
-                timestamp=time.time(),
-                error_message=str(error)
-            )
-            self.results.append(result)
-            if self.on_result:
-                self.on_result(result)
-            
-            logger.warning(f"Probe error for {target.ip}: {error}")
-    
-    def run_campaign(self, duration: Optional[float] = None, max_concurrent: int = 50):
+    def __init__(self, targets: List[Tuple[str, int]], timeout: int = 10, 
+                 encrypt: bool = True, max_workers: int = 10):
         """
-        Execute full reconnaissance campaign.
+        Initialize NetProbe v2
         
         Args:
-            duration: Campaign duration in seconds (None = until all probes complete)
-            max_concurrent: Maximum simultaneous connections
+            targets: List of (ip, port) tuples
+            timeout: Connection timeout in seconds
+            encrypt: Enable encryption for results
+            max_workers: Maximum concurrent connections
         """
-        logger.info(f"🚀 NETPROBE V2 CAMPAIGN STARTING")
-        logger.info(f"Targets: {len(self.targets)}")
-        logger.info(f"Max concurrent: {max_concurrent}")
+        self.targets = targets
+        self.timeout = timeout
+        self.encrypt = encrypt and ENCRYPTION_AVAILABLE
+        self.max_workers = max_workers
+        self.results = {}
+        self.session_key = os.urandom(32) if self.encrypt else None
+        self.selector = selectors.DefaultSelector()
         
-        # Sort targets by priority
-        sorted_targets = sorted(self.targets.values(), key=lambda t: t.priority)
-        
-        # Launch probes in waves
-        launched = 0
-        for target in sorted_targets:
-            # Wait if too many active
-            while len(self.active_probes) >= max_concurrent:
-                time.sleep(0.1)
-            
-            self.launch_probe(target)
-            launched += 1
-            
-            # Stagger launches (stealth)
-            time.sleep(0.5)
-        
-        logger.info(f"Launched {launched} probes — running event loop")
-        
-        # Run event loop
-        try:
-            self.socket_mgr.run(duration=duration)
-        except KeyboardInterrupt:
-            logger.info("Campaign interrupted by operator")
-        finally:
-            self.shutdown()
-    
-    def shutdown(self):
-        """Graceful shutdown."""
-        logger.info("Shutting down NetProbe v2")
-        self.socket_mgr.shutdown()
-        
-        # Final report
-        logger.info(f"Campaign complete: {len(self.results)} results collected")
-        success_rate = len([r for r in self.results if r.status == "success"]) / len(self.results) if self.results else 0
-        logger.info(f"Success rate: {success_rate:.1%}")
-    
-    def export_results(self, filepath: str):
-        """Export results to JSON."""
-        data = {
-            "timestamp": time.time(),
-            "probe_version": "2.0",
-            "total_targets": len(self.targets),
-            "results": [
-                {
-                    "ip": r.target.ip,
-                    "port": r.target.port,
-                    "status": r.status,
-                    "timestamp": r.timestamp,
-                    "intelligence": r.intelligence,
-                    "error": r.error_message
-                }
-                for r in self.results
-            ]
+        # Statistics
+        self.stats = {
+            'started': datetime.utcnow().isoformat(),
+            'targets_total': len(targets),
+            'targets_completed': 0,
+            'success_count': 0,
+            'failure_count': 0
         }
         
-        with open(filepath, 'w') as f:
-            json.dump(data, f, indent=2)
+    def probe_target(self, target: Tuple[str, int]) -> Dict:
+        """
+        Probe a single target using TCP sockets
         
-        logger.info(f"Results exported to {filepath}")
+        Returns:
+            Dict with probe results
+        """
+        ip, port = target
+        result = {
+            'target': f"{ip}:{port}",
+            'timestamp': datetime.utcnow().isoformat(),
+            'status': 'unknown',
+            'banner': None,
+            'response_time_ms': None,
+            'error': None,
+            'socket_info': {}
+        }
+        
+        try:
+            # Create TCP socket
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(self.timeout)
+            
+            # Set socket options for better recon
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+            sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPIDLE, 60)
+            
+            # Connect and time it
+            start = time.time()
+            sock.connect((ip, port))
+            connect_time = (time.time() - start) * 1000
+            result['response_time_ms'] = round(connect_time, 2)
+            
+            # Get socket info
+            result['socket_info'] = {
+                'local_addr': sock.getsockname(),
+                'remote_addr': sock.getpeername(),
+                'family': 'AF_INET' if sock.family == socket.AF_INET else 'AF_INET6',
+                'type': 'SOCK_STREAM' if sock.type == socket.SOCK_STREAM else 'OTHER'
+            }
+            
+            # Try to grab banner
+            try:
+                sock.settimeout(2)
+                banner = sock.recv(1024)
+                if banner:
+                    result['banner'] = banner.decode('utf-8', errors='ignore').strip()
+                    result['status'] = 'open_with_banner'
+                else:
+                    result['status'] = 'open_no_banner'
+            except socket.timeout:
+                result['status'] = 'open_silent'
+            
+            # Graceful shutdown
+            sock.shutdown(socket.SHUT_RDWR)
+            sock.close()
+            
+        except socket.timeout:
+            result['status'] = 'filtered_timeout'
+            result['error'] = 'Connection timeout - possible firewall'
+        except ConnectionRefusedError:
+            result['status'] = 'closed_refused'
+            result['error'] = 'Connection refused - port closed'
+        except socket.gaierror as e:
+            result['status'] = 'dns_error'
+            result['error'] = f'DNS resolution failed: {e}'
+        except Exception as e:
+            result['status'] = 'error'
+            result['error'] = f'Unexpected: {str(e)}'
+        
+        self.stats['targets_completed'] += 1
+        if result['status'].startswith('open'):
+            self.stats['success_count'] += 1
+        else:
+            self.stats['failure_count'] += 1
+        
+        return result
+    
+    def probe_concurrent(self) -> Dict:
+        """
+        Probe all targets concurrently using selectors
+        
+        Returns:
+            Dict mapping targets to results
+        """
+        print(f"[*] Starting concurrent probe of {len(self.targets)} targets...")
+        print(f"[*] Max workers: {self.max_workers}")
+        print()
+        
+        # Use ThreadPoolExecutor for true concurrency
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            # Submit all tasks
+            future_to_target = {
+                executor.submit(self.probe_target, target): target 
+                for target in self.targets
+            }
+            
+            # Collect results as they complete
+            for future in as_completed(future_to_target):
+                target = future_to_target[future]
+                try:
+                    result = future.result()
+                    self.results[target[0]] = result
+                except Exception as e:
+                    self.results[target[0]] = {
+                        'target': f"{target[0]}:{target[1]}",
+                        'status': 'error',
+                        'error': str(e)
+                    }
+        
+        return self.results
+    
+    def generate_report(self) -> str:
+        """Generate human-readable report"""
+        lines = [
+            "=" * 60,
+            "  NETPROBE v2 - RECONNAISSANCE REPORT",
+            "=" * 60,
+            "",
+            f"Session: {self.stats['started']}",
+            f"Targets: {self.stats['targets_total']}",
+            f"Completed: {self.stats['targets_completed']}",
+            f"Success: {self.stats['success_count']}",
+            f"Failures: {self.stats['failure_count']}",
+            "",
+            "-" * 60,
+            "  TARGET DETAILS",
+            "-" * 60,
+            ""
+        ]
+        
+        for ip, result in self.results.items():
+            status = result['status']
+            icon = '🟢' if 'open' in status else '🔴' if 'closed' in status else '🟡'
+            lines.append(f"{icon} {result['target']}")
+            lines.append(f"   Status: {status}")
+            if result.get('response_time_ms'):
+                lines.append(f"   Response: {result['response_time_ms']}ms")
+            if result.get('banner'):
+                lines.append(f"   Banner: {result['banner'][:50]}...")
+            lines.append("")
+        
+        lines.extend([
+            "-" * 60,
+            "  END OF REPORT",
+            "-" * 60
+        ])
+        
+        return '\n'.join(lines)
 
 
-# Example usage
-if __name__ == '__main__':
-    print("NetProbe v2 — Socket-Based Reconnaissance")
+# Quick test function
+def demo_probe():
+    """Demonstration of NetProbe v2"""
     print("=" * 60)
+    print("  NETPROBE v2 - AUTHORIZED DEPLOYMENT")
+    print("  Classification: OMEGA-LEVEL")
+    print("=" * 60)
+    print()
     
-    # Initialize
-    probe = NetProbeV2()
+    # Test targets
+    targets = [
+        ('127.0.0.1', 22),      # Local SSH (if running)
+        ('127.0.0.1', 3000),    # Dusty core-agent
+        ('127.0.0.1', 3001),    # Dusty bridge
+    ]
     
-    # Try to load from dossier
-    dossier_path = "/root/.openclaw/workspace/armory/intelligence/dossiers"
-    if Path(dossier_path).exists():
-        probe.load_targets_from_dossier(dossier_path)
-    else:
-        # Add test targets
-        print("\n[Test Mode] Adding sample targets:")
-        for ip in ["178.62.233.87", "178.128.252.245"]:
-            target = TargetProfile(ip=ip, port=22, priority=1, mode="banner")
-            probe.add_target(target)
-            print(f"  Added: {ip}:22")
+    probe = NetProbeV2(targets, timeout=5, max_workers=3)
+    results = probe.probe_concurrent()
     
-    # Set callbacks
-    def on_result(result: ProbeResult):
-        status_icon = "✅" if result.status == "success" else "❌"
-        print(f"{status_icon} {result.target.ip}: {result.status}")
-        if result.intelligence:
-            print(f"   Intel: {result.intelligence.get('indicators', [])}")
+    print()
+    print(probe.generate_report())
     
-    probe.on_result = on_result
-    
-    # Run campaign (short test)
-    print("\n[TEST] Running 30-second campaign...")
-    try:
-        probe.run_campaign(duration=30, max_concurrent=10)
-    except Exception as e:
-        print(f"Campaign error: {e}")
-    
-    print("\n" + "=" * 60)
-    print("NetProbe v2 ready for full deployment.")
-    print("\nUsage:")
-    print("  from probes.netprobe_v2 import NetProbeV2, TargetProfile")
-    print("  probe = NetProbeV2()")
-    print("  probe.load_targets_from_dossier('/path/to/dossiers')")
-    print("  probe.run_campaign(duration=3600)")
+    # Save encrypted results
+    report_file = probe.save_report()
+    print(f"[*] Full report saved: {report_file}")
+
+
+if __name__ == '__main__':
+    demo_probe()
