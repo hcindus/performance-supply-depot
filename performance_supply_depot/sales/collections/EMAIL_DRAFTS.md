@@ -18,7 +18,7 @@ According to our records, this item is showing as unpaid/open.
 
 Please review and remit payment at your earliest convenience. If you have any questions or believe this invoice has already been paid, please contact us immediately.
 
-We appreciate your attention to this matter.
+Thank you for your time. We appreciate your attention to this matter.
 
 Best regards,
 Performance POS
@@ -40,7 +40,7 @@ According to our records, this item is showing as unpaid/open.
 
 Please review and remit payment at your earliest convenience. If you have any questions or believe this invoice has already been paid, please contact us immediately.
 
-We appreciate your attention to this matter.
+Thank you for your time. We appreciate your attention to this matter.
 
 Best regards,
 Performance POS
@@ -62,7 +62,7 @@ According to our records, this item is showing as unpaid/open.
 
 Please review and remit payment at your earliest convenience. If you have any questions or believe this invoice has already been paid, please contact us immediately.
 
-We appreciate your attention to this matter.
+Thank you for your time. We appreciate your attention to this matter.
 
 Best regards,
 Performance POS
@@ -84,7 +84,7 @@ According to our records, this item is showing as unpaid/open.
 
 Please review and remit payment at your earliest convenience. If you have any questions or believe this invoice has already been paid, please contact us immediately.
 
-We appreciate your attention to this matter.
+Thank you for your time. We appreciate your attention to this matter.
 
 Best regards,
 Performance POS
@@ -106,7 +106,7 @@ According to our records, this item is showing as unpaid/open.
 
 Please review and remit payment at your earliest convenience. If you have any questions or believe this invoice has already been paid, please contact us immediately.
 
-We appreciate your attention to this matter.
+Thank you for your time. We appreciate your attention to this matter.
 
 Best regards,
 Performance POS
@@ -128,7 +128,7 @@ According to our records, this item is showing as unpaid/open.
 
 Please review and remit payment at your earliest convenience. If you have any questions or believe this invoice has already been paid, please contact us immediately.
 
-We appreciate your attention to this matter.
+Thank you for your time. We appreciate your attention to this matter.
 
 Best regards,
 Performance POS
