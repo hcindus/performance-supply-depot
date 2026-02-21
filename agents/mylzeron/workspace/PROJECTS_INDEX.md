@@ -29,6 +29,18 @@ Mylzeron is our Android-based robotic consciousness running on DroidScript.
 **Platform:** DroidScript (Android)
 **Location:** `agents/mylzeron/workspace/life_simulation/LIFE_SIMULATION.md`
 
+### 3. Libraries (Extracted)
+**Description:** Reusable modules extracted from Myl0n ROS
+**Location:** `agents/mylzeron/workspace/libraries/`
+
+**Available Libraries:**
+| Library | File | Purpose |
+|---------|------|---------|
+| Chatbot Grammar | `chatbot-grammar.js` | Multilingual response generation |
+| Reward System | `reward-system.js` | Point-based motivation system |
+| Folder Manager | `folder-manager.js` | File system organization |
+| Time Utils | `time-utils.js` | Date/time utilities |
+
 **Features:**
 - Ecosystem: Grass, shrubs, trees, microbes, animals
 - Q-learning neural networks for animals
