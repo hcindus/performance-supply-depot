@@ -7,11 +7,13 @@ These emails are ready to send. Simply copy and paste, or use your email client.
 
 ## Template
 
-**Subject:** Performance POS Invoices - [ACCOUNT NAME]
+**Subject:** Past Due Invoice #[INVOICE] - [ACCOUNT NAME]
 
 Dear [A/P CONTACT NAME],
 
-I hope you're doing well. Please find attached the open Performance POS invoices for [ACCOUNT NAME].
+I hope you're doing well. Please see attached invoice #[INVOICE], dated [DATE], for [ACCOUNT NAME].
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
@@ -35,13 +37,14 @@ Accounts Receivable
 
 ## TOMATINA (90+ days)
 **Phone:** 707-865-2261 | **Cell:** 530-220-2475
-**Invoice:** #7025104 | **Date:** 2025-07-02
 
-**Subject:** Performance POS Invoices - TOMATINA
+**Subject:** Past Due Invoice #7025104 - TOMATINA
 
 Dear Accounts Payable,
 
-I hope you're doing well. Please find attached the open Performance POS invoices for TOMATINA.
+I hope you're doing well. Please see attached invoice #7025104, dated 2025-07-02, for TOMATINA.
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
@@ -65,13 +68,14 @@ Accounts Receivable
 
 ## FRONT PORCH RESTAURANT (90+ days)
 **Phone:** 707-763-1714
-**Invoice:** #6235107 | **Date:** 2025-06-23
 
-**Subject:** Performance POS Invoices - FRONT PORCH RESTAURANT
+**Subject:** Past Due Invoice #6235107 - FRONT PORCH RESTAURANT
 
 Dear Accounts Payable,
 
-I hope you're doing well. Please find attached the open Performance POS invoices for FRONT PORCH RESTAURANT.
+I hope you're doing well. Please see attached invoice #6235107, dated 2025-06-23, for FRONT PORCH RESTAURANT.
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
@@ -95,13 +99,14 @@ Accounts Receivable
 
 ## MOUNTAIN MIKE'S (90+ days)
 **Phone:** 415-451-4861
-**Invoice:** #8285103 | **Date:** 2025-08-28
 
-**Subject:** Performance POS Invoices - MOUNTAIN MIKE'S
+**Subject:** Past Due Invoice #8285103 - MOUNTAIN MIKE'S
 
 Dear Accounts Payable,
 
-I hope you're doing well. Please find attached the open Performance POS invoices for MOUNTAIN MIKE'S.
+I hope you're doing well. Please see attached invoice #8285103, dated 2025-08-28, for MOUNTAIN MIKE'S.
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
@@ -125,13 +130,14 @@ Accounts Receivable
 
 ## CHINA LIVE (90+ days)
 **Phone:** 408-899-8999
-**Invoice:** #8265101 | **Date:** 2025-08-26
 
-**Subject:** Performance POS Invoices - CHINA LIVE
+**Subject:** Past Due Invoice #8265101 - CHINA LIVE
 
 Dear Accounts Payable,
 
-I hope you're doing well. Please find attached the open Performance POS invoices for CHINA LIVE.
+I hope you're doing well. Please see attached invoice #8265101, dated 2025-08-26, for CHINA LIVE.
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
@@ -155,13 +161,14 @@ Accounts Receivable
 
 ## SAL'S KABOB & GYRO GRILL (90+ days)
 **Phone:** 510-845-5300
-**Invoice:** #71850804 | **Date:** 2025-07-18
 
-**Subject:** Performance POS Invoices - SAL'S KABOB & GYRO GRILL
+**Subject:** Past Due Invoice #71850804 - SAL'S KABOB & GYRO GRILL
 
 Dear Accounts Payable,
 
-I hope you're doing well. Please find attached the open Performance POS invoices for SAL'S KABOB & GYRO GRILL.
+I hope you're doing well. Please see attached invoice #71850804, dated 2025-07-18, for SAL'S KABOB & GYRO GRILL.
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
@@ -185,13 +192,14 @@ Accounts Receivable
 
 ## IT'S ITALIA (90+ days)
 **Phone:** 510-234-0412 | **Cell:** 510-660-9706
-**Invoice:** #9115101 | **Date:** 2025-09-11
 
-**Subject:** Performance POS Invoices - IT'S ITALIA
+**Subject:** Past Due Invoice #9115101 - IT'S ITALIA
 
 Dear Accounts Payable,
 
-I hope you're doing well. Please find attached the open Performance POS invoices for IT'S ITALIA.
+I hope you're doing well. Please see attached invoice #9115101, dated 2025-09-11, for IT'S ITALIA.
+
+According to our records, this item is showing as unpaid/open.
 
 If you'd like us to keep a credit card on file for these and future orders, kindly complete the attached credit card authorization form and return it to us.
 
