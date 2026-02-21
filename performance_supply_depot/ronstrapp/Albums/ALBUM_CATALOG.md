@@ -1,67 +1,71 @@
-# Ronstrapp — Album Catalog & Music Video Directory
+# Ronstrapp — Complete Song Catalog
 
-## Albums
-
-### 1. "The Rack Room Tapes" (Debut Album)
-**Genre:** Southern Gothic Metal  
-**Theme:** Bayou folklore, heartbreak, redemption  
-**Year:** 2025  
-**Tracklist:**
-
-| # | Song | Genre | Duration | Music Video |
-|---|------|-------|----------|-------------|
-| 1 | Ashes of Bayou | Southern Gothic Metal | 4:32 | ✅ Scripted |
-| 2 | Moonburn Requiem | Bilingual Doom-Metal | 5:15 | ✅ Scripted |
-| 3 | Hexed and Gone | Thrash-Goth | 3:48 | ✅ Scripted |
-| 4 | Wretched and Wild | Glam-Thrash Operetta | 4:05 | ✅ Scripted |
-| 5 | Iron Rider | Gothic-Western Metal | 4:22 | ✅ Scripted |
+## TOTAL: 24 Songs
 
 ---
 
-### 2. "Inferno Amor" (Second Album)
-**Genre:** Symphonic Power Metal  
-**Theme:** Passion, fire, eternal love  
-**Year:** 2026  
-**Tracklist:**
+### ALBUM 1: "The Rack Room Tapes" (Original)
+**Genre:** Southern Gothic Metal | **Year:** 2025
 
-| # | Song | Genre | Duration | Music Video |
-|---|------|-------|----------|-------------|
-| 1 | All I Know Is Fire | Symphonic Power-Metal | 4:45 | ✅ Scripted |
-| 2 | Doesn't Matter, Never Did | Glam-Thrash | 3:32 | ✅ Scripted |
-| 3 | All My Life (To Find You) | Power-Metal | 4:18 | ✅ Scripted |
-| 4 | The Story of My Knife | Glam-Goth Metal | 4:55 | ✅ Scripted |
-| 5 | Mountain of Fire | Gospel-Metal | 5:02 | ✅ Scripted |
+| # | Song | Genre |
+|---|------|-------|
+| 1 | Ashes of Bayou | Southern Gothic Metal |
+| 2 | Moonburn Requiem | Bilingual Doom-Metal |
+| 3 | Hexed and Gone | Thrash-Goth |
+| 4 | Wretched and Wild | Glam-Thrash Operetta |
+| 5 | Iron Rider | Gothic-Western Metal |
 
 ---
 
-## Music Videos (All 10 Scripted)
+### ALBUM 2: "Inferno Amor"
+**Genre:** Symphonic Power Metal | **Year:** 2026
 
-| Song | Esthetic | Location |
-|------|----------|----------|
-| Ashes of Bayou | Southern Gothic, swamp, fog, torches | Louisiana Bayou, crossroads, juke joint |
-| Moonburn Requiem | Bilingual, moonlit cemetery, fire | Desert ruins, ballroom, ocean, mountain |
-| Hexed and Gone | Thrash-goth, hex symbols, fire | Witch's cottage, forest clearing, pyre |
-| Wretched and Wild | Glam-thrash, theatrical, broken mirrors | Broken theater, backstage, dressing room |
-| Iron Rider | Gothic-western, desert, train tracks | Desert, ghost town, saloon, moving train |
-| All I Know Is Fire | Symphonic, volcano, obsidian | Volcano interior, lava rivers, obsidian palace |
-| Doesn't Matter, Never Did | Glam-thrash, glitter, neon | Rock club, city rooftops, glitter explosion |
-| All My Life (To Find You) | Power-metal, triumphant, light | Mountain peak, starlit field, wedding chapel |
-| The Story of My Knife | Glam-goth, rain, neon city | Rain-soaked city, alleyways, late-night diner |
-| Mountain of Fire | Gospel-metal, train, salvation | Train tracks, trestle bridge, Union Depot, heaven gates |
+| # | Song | Genre |
+|---|------|-------|
+| 1 | All I Know Is Fire | Symphonic Power-Metal |
+| 2 | Doesn't Matter, Never Did | Glam-Thrash |
+| 3 | All My Life (To Find You) | Power-Metal |
+| 4 | The Story of My Knife | Glam-Goth Metal |
+| 5 | Mountain of Fire | Gospel-Metal |
 
 ---
 
-## Production Notes
+### ALBUM 3: "The Rack Room Tapes: Deluxe" (NEW!)
+**Genre:** Cyber-Trap / Synthwave / Gospel | **Year:** 2026
 
-- **Producer:** Reggie (Tappy's creative partner)
-- **Director:** Tappy Lewis (creative vision)
-- **Cinematography:** Dark, atmospheric, high-contrast
-- **Color Palette:** 
-  - Album 1: Blues, greens, browns (bayou/swamp), rust, sunset
-  - Album 2: Reds, golds, blacks (fire/passion), neon
+| # | Track | Type |
+|---|-------|------|
+| 1 | BOOT SEQUENCE | Intro |
+| 2 | RACK ROOM REVERIE | Thesis |
+| 3 | DAEMON IN MY POCKET | Swagger |
+| 4 | CHAT ID FLEX | Comedy |
+| 5 | LOCALHOST LOVER | Synthwave |
+| 6 | PORT CHANGE BLUES | Blues-Trap |
+| 7 | OLLAMA ON THE ROOFTOP | Triumphant |
+| 8 | THE GATEWAY SPEAKS | Interlude |
+| 9 | DEVICE TOKEN MISMATCH | Metaphorical |
+| 10 | WAKE UP, BOT | Call-Response |
+| 11 | VPS HEARTBEAT | Ambient |
+| 12 | FIRECRAWL FRENZY | Glitch |
+| 13 | MILES' MONOLOGUE | Interlude |
+| 14 | UPTIME GOSPEL | Finale |
 
 ---
 
-*Catalog Version: 2.0*
-*Last Updated: 2026-02-21*
-*Status: All 10 music videos scripted*
+### BONUS TRACKS
+
+| Song | Project |
+|------|---------|
+| The Dairy Defenders (Opening Theme) | Milk Man Live Action |
+| The Destroyers Lullaby | AI_BY_AI |
+
+---
+
+## MUSIC VIDEOS
+
+All 10 songs from Albums 1-2 have music videos scripted.
+
+---
+
+*Catalog Updated: 2026-02-21*
+*Total: 24 Songs*
