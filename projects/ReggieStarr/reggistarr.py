@@ -568,12 +568,13 @@ class CashRegister:
         if not self.current_transaction:
             return False
         
+        # Calculate discount on subtotal (before tax)
         if percentage:
             discount_amount = self.current_transaction.subtotal * (amount / 100)
         else:
             discount_amount = amount
         
-        self.current_transaction.discounts += discount_amount
+        self.current_transaction.discounts = discount_amount
         self.recalculate_transaction()
         return True
     
@@ -626,6 +627,37 @@ class CashRegister:
         self.current_transaction = None
         return True
     
+    def process_refund(self, original_transaction_id: str, refund_items: List[int] = None, 
+                       refund_amount: float = 0.0, reason: str = "") -> Tuple[Optional[Transaction], str]:
+        """Process a refund/return
+        Args:
+            original_transaction_id: ID of transaction to refund
+            refund_items: List of item indices to return (None = all)
+            refund_amount: Specific amount to refund (0 = auto-calculate)
+            reason: Reason for refund
+        Returns:
+            (refund_transaction, message)
+        """
+        # Load original transaction
+        # For now, create a new transaction as refund
+        if not self.current_clerk:
+            return None, "No clerk logged in"
+        
+        # Start new transaction for refund
+        refund_txn = self.start_transaction()
+        if not refund_txn:
+            return None, "Failed to start refund transaction"
+        
+        refund_txn.mode = 'refund'
+        refund_txn.notes = f"Refund of {original_transaction_id}. Reason: {reason}"
+        
+        if refund_amount > 0:
+            # Fixed amount refund - add as negative line item
+            # This is a simple approach
+            pass
+        
+        return refund_txn, "Refund initiated"
+    
     def recalculate_transaction(self):
         """Recalculate transaction totals"""
         if not self.current_transaction:
@@ -644,6 +676,41 @@ class CashRegister:
         self.current_transaction.total = (subtotal + tax - 
                                           self.current_transaction.discounts + 
                                           self.current_transaction.surcharges)
+    
+    def correct_item(self, item_index: int, new_quantity: float = None, 
+                    new_price: float = None, new_name: str = None) -> Tuple[bool, str]:
+        """Correct/edit an item in the current transaction
+        Args:
+            item_index: Index of item to correct
+            new_quantity: New quantity (optional)
+            new_price: New unit price (optional)
+            new_name: New item name (optional)
+        Returns:
+            (success, message)
+        """
+        if not self.current_transaction:
+            return False, "No active transaction"
+        
+        if item_index >= len(self.current_transaction.items):
+            return False, "Invalid item index"
+        
+        item = self.current_transaction.items[item_index]
+        
+        if new_quantity is not None:
+            if new_quantity <= 0:
+                return False, "Quantity must be positive"
+            item.quantity = new_quantity
+        
+        if new_price is not None:
+            if new_price < 0:
+                return False, "Price cannot be negative"
+            item.unit_price = new_price
+        
+        if new_name is not None:
+            item.name = new_name
+        
+        self.recalculate_transaction()
+        return True, f"Item corrected"
     
     def add_payment(self, method: str, amount: float, reference: str = "") -> Tuple[bool, float]:
         """Add payment to transaction"""

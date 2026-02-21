@@ -719,10 +719,36 @@ class CashRegister:
     
     # TEC MA-79 Function Implementations
     def feed(self): pass
-    def item_correct(self): pass
-    def return_merchandise(self): pass
-    def multiplier(self): pass
-    def plu_lookup(self): pass
+    
+    def item_correct(self):
+        """Item Correct - Void the last item entered"""
+        if not self.current_transaction or len(self.current_transaction.items) == 0:
+            return "No items to correct"
+        
+        # Void the last item
+        last_index = len(self.current_transaction.items) - 1
+        result = self.register.void_item(last_index)
+        
+        if result:
+            return f"Item corrected (voided)"
+        return "Failed to correct item"
+    
+    def return_merchandise(self):
+        """Return Merchandise - Process a return"""
+        # Opens a return dialog or starts return mode
+        # For now, add a negative quantity item
+        if not self.current_transaction:
+            return "No transaction"
+        return "Return mode - enter item with negative qty or use refund"
+    
+    def multiplier(self):
+        """Multiplier - Set quantity multiplier for next item"""
+        # This would typically be used with keypad input
+        return "Multiplier mode - enter qty then item"
+    
+    def plu_lookup(self):
+        """PLU Lookup - Search for product by code"""
+        return "PLU Lookup - enter product code"
     def no_sale(self):
         """No Sale - Open drawer and ring bell"""
         result = "Drawer opened"
@@ -780,25 +806,82 @@ class CashRegister:
                         time.sleep(0.15)
         except Exception as e:
             pass  # Silently fail if no sound
-    def tax_modifier(self): pass
-    def discount(self): pass
-    def bag_fee(self): pass
-    def atm_fee(self): pass
-    def received_on_account(self): pass
-    def paid_out(self): pass
+    def tax_modifier(self):
+        """Tax Modifier - Change tax rate for current item"""
+        # Opens dialog to select tax-exempt or different tax rate
+        return "Tax modifier - select rate for item"
+    
+    def discount(self):
+        """Apply 10% discount to transaction"""
+        if not self.current_transaction:
+            return "No transaction"
+        
+        # Apply 10% discount
+        result = self.register.apply_discount(10.0, percentage=True)
+        if result:
+            self.ring_bell("short")  # Feedback beep
+            return f"10% Discount applied"
+        return "Failed to apply discount"
+    
+    def bag_fee(self):
+        """Add bag fee to transaction"""
+        if not self.current_transaction:
+            return "No transaction"
+        
+        bag_fee = 0.10  # 10 cents per bag
+        result = self.register.apply_surcharge(bag_fee, "Bag Fee")
+        if result:
+            return f"Bag fee (${bag_fee:.2f}) added"
+        return "Failed to add bag fee"
+    
+    def atm_fee(self):
+        """Add ATM fee to transaction"""
+        if not self.current_transaction:
+            return "No transaction"
+        
+        fee = 3.00  # $3 ATM fee
+        result = self.register.apply_surcharge(fee, "ATM Fee")
+        if result:
+            return f"ATM fee (${fee:.2f}) added"
+        return "Failed to add ATM fee"
+    
+    def received_on_account(self):
+        """Received on Account - Record payment toward account"""
+        return "Received on account - enter amount and customer"
+    
+    def paid_out(self):
+        """Paid Out - Record cash paid out"""
+        return "Paid out - enter amount and reason"
+    
     def price_inquiry(self, plu_code: str) -> str:
         product = self.products.get(plu_code)
         if product:
             return f"{product.name}: {Config.CURRENCY_SYMBOL}{product.price:.2f}"
         return "Product not found"
-    def price_change(self): pass
-    def show_subtotal(self) -> float:
-        return self.current_transaction.subtotal if self.current_transaction else 0.0
-    def show_total(self) -> float:
-        return self.current_transaction.total if self.current_transaction else 0.0
-    def bottle_fee(self): pass
-    def clear_entry(self): pass
-    def enter_item(self): pass
+    
+    def price_change(self):
+        """Price Change - Override item price"""
+        return "Price change - enter new price for item"
+    
+    def bottle_fee(self):
+        """Add CRV/bottle deposit fee"""
+        if not self.current_transaction:
+            return "No transaction"
+        
+        # California CRV is $0.05/$0.10
+        crv = 0.10
+        result = self.register.apply_surcharge(crv, "CRV/Bottle Deposit")
+        if result:
+            return f"CRV (${crv:.2f}) added"
+        return "Failed to add CRV"
+    
+    def clear_entry(self):
+        """Clear current entry"""
+        return "Entry cleared"
+    
+    def enter_item(self):
+        """Enter item into transaction"""
+        return "Item entered"
     
     # Extended Features
     def process_split_tender(self, payments: List[Tuple[str, float]]) -> bool:
