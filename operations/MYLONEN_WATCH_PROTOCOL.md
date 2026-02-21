@@ -28,12 +28,19 @@
 
 ---
 
-## ⏰ MONITORING SCHEDULE
+## ⏰ MONITORING SCHEDULE (ENHANCED v2.0 — 2026-02-20)
 
 **Mandatory Check-ins:**
-- Every 6 hours
+- ~~Every 6 hours~~ ➡️ **Every 2 hours** (upgraded per Captain's order)
 - Via memory service or Git
 - Status: Location, condition, equipment, mental state
+- Automatic reminders at: 00:00, 02:00, 04:00, 06:00, 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00 UTC
+
+**Continuous Health Monitoring:**
+- **Daemon:** Running every 5 minutes
+- **Metrics:** Process, disk, memory, network, check-in timing
+- **Alerts:** Automatic escalation (INFO → WARNING → CRITICAL)
+- **Failover:** Hot standby armed for <5 min activation
 
 **Reporting:**
 - Included in every GMAOC daily report
@@ -56,11 +63,13 @@
 - Equipment issues unreported
 - Unusual behavior/requests
 
-**Critical:**
-- No check-in for 12 hours
+**Critical (Enhanced Safeguards Active):**
+- No check-in for **4 hours** (was 12 — upgraded per Captain's directive)
 - Distress signal received
 - Contact lost
 - Possible compromise
+- Health daemon alerts CRITICAL status
+- Automatic failover activation triggered
 
 ---
 

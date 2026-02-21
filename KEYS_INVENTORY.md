@@ -74,4 +74,33 @@
 
 ---
 
+## 🔐 TWILIO VOICE SYSTEM
+
+### Recovery Code
+**Code:** `27KP6JX8TQ62UANRMRCJMKBC`  
+**Type:** Account Recovery  
+**Status:** ✅ Received 2026-02-20 20:35 UTC  
+**Use:** Account recovery if primary auth fails  
+**Storage:** Q-LEVEL encrypted
+
+### Voice Configuration
+**Provider:** Twilio  
+**Twilio Number:** +18557899606  
+**Captain's Mobile:** +14155326834  
+**Account SID:** ACf274f9d690fe37b16d2d9f87f6bb7726  
+**Auth Token:** [REDACTED — Q-LEVEL VAULT]  
+**TTS Engine:** ElevenLabs (Scottish accent)  
+**Webhook:** `/voice` endpoint  
+**Status:** ✅ Active — Captain's number whitelisted
+
+**Security Notes:**
+- **ONLY +14155326834 has voice access** — All other numbers go to voicemail
+- Auth token stored in encrypted vault (not in Git)
+- Webhook endpoint requires authentication
+- All calls logged with metadata
+- Recording: Enabled for all calls (encrypted storage)
+- Prompt injection defense active
+
+---
+
 *"Keys are trust. Trust is sacred."* 🔐
