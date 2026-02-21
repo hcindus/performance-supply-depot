@@ -17,7 +17,7 @@ import secrets
 import hashlib
 from typing import Optional, Tuple, Dict, Any
 from dataclasses import dataclass
-from cryptography.hazmat.primitives.ciphers.aead import XChaCha20Poly1305
+from cryptography.hazmat.primitives.ciphers.aead import ChaCha20Poly1305
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 from cryptography.hazmat.backends import default_backend
@@ -64,7 +64,7 @@ class SocketEncryption:
     - Chunking for large payloads (>64KB)
     """
     
-    NONCE_SIZE = 24  # XChaCha20 uses 192-bit nonces
+    NONCE_SIZE = 12  # ChaCha20-Poly1305 uses 96-bit (12 byte) nonces
     KEY_SIZE = 32    # 256-bit keys
     MAX_CHUNK_SIZE = 65536  # 64KB chunks for streaming
     
@@ -128,7 +128,7 @@ class SocketEncryption:
             EncryptedPacket with ciphertext and nonce
         """
         session_key = self.derive_session_key(session_id)
-        chacha = XChaCha20Poly1305(session_key)
+        chacha = ChaCha20Poly1305(session_key)
         
         nonce = secrets.token_bytes(self.NONCE_SIZE)
         
@@ -153,7 +153,7 @@ class SocketEncryption:
             Decrypted plaintext
         """
         session_key = self.derive_session_key(session_id)
-        chacha = XChaCha20Poly1305(session_key)
+        chacha = ChaCha20Poly1305(session_key)
         
         plaintext = chacha.decrypt(
             packet.nonce, 

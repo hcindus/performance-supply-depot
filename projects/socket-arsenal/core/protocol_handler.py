@@ -77,9 +77,9 @@ class ProtocolHandler:
         """
         # Encode content based on type
         if message.content_type == ContentType.JSON:
-            content_bytes = json.dumps(message.content).encode(message.content_encoding)
+            content_bytes = json.dumps(message.content).encode('utf-8')
         elif message.content_type == ContentType.TEXT:
-            content_bytes = message.content.encode(message.content_encoding)
+            content_bytes = message.content.encode('utf-8')
         else:
             # Binary content
             content_bytes = message.content if isinstance(message.content, bytes) else bytes(message.content)
@@ -146,10 +146,10 @@ class ProtocolHandler:
             
             # Parse content type
             if content_type_str == ContentType.JSON.value:
-                content = json.loads(content_bytes.decode(content_encoding))
+                content = json.loads(content_bytes.decode('utf-8'))
                 content_type = ContentType.JSON
             elif content_type_str == ContentType.TEXT.value:
-                content = content_bytes.decode(content_encoding)
+                content = content_bytes.decode('utf-8')
                 content_type = ContentType.TEXT
             else:
                 content = content_bytes
