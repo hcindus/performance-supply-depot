@@ -1,0 +1,131 @@
+{
+  "startTime": "2026-02-21T05:38:57.169Z",
+  "tests": {
+    "healthChecks": {
+      "bridgeHealth": {
+        "success": true,
+        "latency": "20.15",
+        "data": {
+          "status": "healthy",
+          "timestamp": "2026-02-21T05:38:57.186Z",
+          "service": "telegram-bridge-mock",
+          "port": 3001,
+          "coreAgentUrl": "http://localhost:3000/tasks",
+          "uptime": 43989.506709536
+        }
+      },
+      "coreAgentHealth": {
+        "success": true,
+        "latency": "3.21",
+        "data": {
+          "status": "healthy",
+          "service": "dusty-core-agent",
+          "port": 3000,
+          "uptime": 226623.426611714,
+          "timestamp": "2026-02-21T05:38:57.192Z"
+        }
+      },
+      "openclawHealth": {
+        "success": true,
+        "latency": "3.66",
+        "data": {
+          "status": "healthy",
+          "service": "openclaw-mock",
+          "port": 4000,
+          "uptime": 52168.540496351,
+          "timestamp": "2026-02-21T05:38:57.195Z",
+          "total_interactions": 472
+        }
+      }
+    },
+    "bridgeForward": {
+      "success": true,
+      "latency": "10.11",
+      "data": {
+        "ok": true,
+        "forwarded": true,
+        "coreAgentResponse": {
+          "ok": true,
+          "id": "ee24850e-e7f5-40ba-9b4f-7a5bef34537c",
+          "status": "pending",
+          "openclawResponse": {
+            "bot": "dusty",
+            "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)\n• Random airdrops: 15 small tokens (~$3.20 total)\n\n**Total Portfolio Value: ~$1,412.15**\n\nI found some dust worth consolidating! 💰",
+            "action": "balance_report",
+            "data": {
+              "eth": 0.5234,
+              "usdc": 150,
+              "dust_tokens": 2847.32,
+              "dust_value_usd": 15.65
+            }
+          }
+        }
+      }
+    },
+    "openclawResponse": {
+      "success": true,
+      "latency": "included in core-agent",
+      "data": {
+        "bot": "dusty",
+        "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)\n• Random airdrops: 15 small tokens (~$3.20 total)\n\n**Total Portfolio Value: ~$1,412.15**\n\nI found some dust worth consolidating! 💰",
+        "action": "balance_report",
+        "data": {
+          "eth": 0.5234,
+          "usdc": 150,
+          "dust_tokens": 2847.32,
+          "dust_value_usd": 15.65
+        }
+      }
+    }
+  },
+  "phase1": {
+    "name": "Service Health Checks",
+    "status": "passed"
+  },
+  "phase2": {
+    "name": "Send Telegram Message via Bridge",
+    "status": "passed"
+  },
+  "phase3": {
+    "name": "Core-Agent Processing",
+    "status": "passed"
+  },
+  "phase4": {
+    "name": "OpenClaw Response Verification",
+    "status": "passed"
+  },
+  "bonusTests": [
+    {
+      "query": "What is my balance?",
+      "expectedAction": "balance_report",
+      "actualAction": "balance_report",
+      "latency": "5.59",
+      "passed": true
+    },
+    {
+      "query": "Find my dust",
+      "expectedAction": "dust_identification",
+      "actualAction": "dust_identification",
+      "latency": "5.73",
+      "passed": true
+    },
+    {
+      "query": "How do I consolidate?",
+      "expectedAction": "transfer_decision",
+      "actualAction": "transfer_decision",
+      "latency": "11.79",
+      "passed": true
+    }
+  ],
+  "openclawStats": {
+    "totalInteractions": 481
+  },
+  "endTime": "2026-02-21T05:38:57.233Z",
+  "totalDuration": 64,
+  "totalDurationMs": "64.00",
+  "overall": "passed",
+  "passed": 4,
+  "failed": 0,
+  "warnings": 0,
+  "skipped": 0
+}
