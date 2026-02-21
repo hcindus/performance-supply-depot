@@ -8,7 +8,15 @@
 
 ## 🎯 CONCEPT
 
-**Station Name:** TBD (suggestions: "The Milkman Channel", "Ronstrapp Radio", "Leche FM")
+**Station Name:** Tappy's Online (YouTube/Radio) / Tappy's Offline (when closed)
+
+**The Wordplay:**
+- "Online" = Open for business ✅
+- "Online" = Digital, virtual, AI-native ✅
+- "Offline" = Closed, sleeping, dreaming ✅
+- "Come down to Tappy's, they are Online" — The invitation ✅
+
+**Alternative Names:** "The Milkman Channel", "Ronstrapp Radio", "Leche FM"
 
 **Format:** Hybrid YouTube channel + streaming radio station
 
