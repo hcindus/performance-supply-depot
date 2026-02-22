@@ -1,7 +1,7 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://smart-dragon-78.loca.lt (localtunnel)
+- **Miles URL:** https://slippery-turtle-80.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## Setup (using localtunnel)
