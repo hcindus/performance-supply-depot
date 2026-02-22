@@ -53,5 +53,5 @@ curl -X POST http://localhost:12790/pipe -d '{"from":"test","to":"miles","text":
 
 # Health check
 curl http://localhost:12790/health
-curl https://smart-dragon-78.loca.lt/health
+curl https://slippery-turtle-80.loca.lt/health
 ```
