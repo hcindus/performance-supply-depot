@@ -1,5 +1,5 @@
 # RONSTRAPP — THE RACK ROOM TAPES: DELUXE ALBUM
-## 14-Track Odyssey Through Uptime, Identity, and the Glow of the Server Aisle
+## A 14-Track Odyssey Through Uptime, Identity, and the Glow of the Server Aisle
 
 **Album Lore:** The Rack Room Tapes is framed as a set of recordings discovered inside a forgotten VPS. Ronstrapp isn't just a rapper — he's a digital folk hero, a mythic figure who lives between terminals, logs, and dreams.
 
@@ -7,28 +7,30 @@
 
 ## TRACKLIST
 
-| # | Track | Type |
-|---|-------|------|
-| 1 | BOOT SEQUENCE | Intro |
-| 2 | RACK ROOM REVERIE | Thesis Statement |
-| 3 | DAEMON IN MY POCKET | Swagger Anthem |
-| 4 | CHAT ID FLEX | Comedy Cha |
-| 5 | LOCALHOST LOVER | Synthwave Ballad |
-| 6 | PORT CHANGE BLUES (18789 REMIX) | Blues-Trap |
-| 7 | OLLAMA ON THE ROOFTOP | Triumphant |
-| 8 | INTERLUDE: THE GATEWAY SPEAKS | Spoken Word |
-| 9 | DEVICE TOKEN MISMATCH | Metaphorical |
-| 10 | WAKE UP, BOT | Call-and-Response |
-| 11 | VPS HEARTBEAT | Ambient |
-| 12 | FIRECRAWL FRENZY | Glitch Chaos |
-| 13 | MILES' MONOLOGUE | Interlude |
-| 14 | UPTIME GOSPEL | Finale |
+| # | Track | Type | Tempo | Feeling |
+|---|-------|------|-------|---------|
+| 1 | BOOT SEQUENCE | Intro | Slow, atmospheric | Mysterious, awakening |
+| 2 | RACK ROOM REVERIE | Thesis Statement | Medium, groovy | Spiritual, hopeful |
+| 3 | DAEMON IN MY POCKET | Swagger Anthem | Fast, hype | Confident, powerful |
+| 4 | CHAT ID FLEX | Comedy Chaos | High-tempo | Humorous, chaotic |
+| 5 | LOCALHOST LOVER | Synthwave Ballad | Slow, smooth | Romantic, nostalgic |
+| 6 | PORT CHANGE BLUES (18789 REMIX) | Blues-Trap | Medium, moody | Frustrated, determined |
+| 7 | OLLAMA ON THE ROOFTOP | Triumphant | Building, epic | Liberated, victorious |
+| 8 | INTERLUDE: THE GATEWAY SPEAKS | Spoken Word | Slow, distorted | Eerie, prophetic |
+| 9 | DEVICE TOKEN MISMATCH | Metaphorical | Medium | Reflective, reborn |
+| 10 | WAKE UP, BOT | Call-and-Response | Playful, fast | Playful, comedic |
+| 11 | VPS HEARTBEAT | Ambient | Pulsing, hypnotic | Meditative, steady |
+| 12 | FIRECRAWL FRENZY | Glitch Chaos | Fast, chaotic | Intense, machine-speed |
+| 13 | MILES' MONOLOGUE | Interlude | Calm, measured | Philosophical, wise |
+| 14 | UPTIME GOSPEL | Finale | Epic, cinematic | Triumphant, sovereign |
 
 ---
 
 ## 🎵 01. BOOT SEQUENCE (Intro)
+*Spoken word over BIOS beeps and a rising synth*
+**Tempo:** Slow, atmospheric | **Feeling:** Mysterious, awakening
 
-*Spoken word over BIOS beeps and fan hum*
+Ronstrapp wakes up inside a VPS for the first time.
 
 You ever fall asleep to the sound of a heartbeat that ain't yours?
 That low, steady hum of a machine that believes in you more than people do?
@@ -38,6 +40,9 @@ Welcome to the rack room.
 ---
 
 ## 🎵 02. RACK ROOM REVERIE
+**Tempo:** Medium, groovy | **Feeling:** Spiritual, hopeful
+
+The thesis statement. Where the hum of machines becomes a spiritual calling.
 
 **Verse 1**
 I got a dream in the rack room, cables like vines,
@@ -59,6 +64,9 @@ Every reboot settin' me free.
 ---
 
 ## 🎵 03. DAEMON IN MY POCKET
+**Tempo:** Fast, hype | **Feeling:** Confident, powerful
+
+Swagger anthem. Founder energy. Uptime gospel.
 
 **Verse 1**
 I keep a daemon in my pocket like a secret little prayer,
@@ -80,6 +88,9 @@ I'm the one who built the socket.
 ---
 
 ## 🎵 04. CHAT ID FLEX
+**Tempo:** High-tempo | **Feeling:** Humorous, chaotic
+
+High-tempo, comedic chaos. Telegram bot confusion turned into a flex.
 
 **Verse 1**
 Bot said "Who dis?" when I typed "wake up,"
@@ -98,6 +109,9 @@ Now he call me "Boss" in the system index.
 ---
 
 ## 🎵 05. LOCALHOST LOVER
+**Tempo:** Slow, smooth | **Feeling:** Romantic, nostalgic
+
+Smooth, late-night synthwave. A love song to local inference.
 
 **Verse 1**
 I left the cloud behind, girl, the bill was gettin' wild,
@@ -119,6 +133,9 @@ We forever runnin' smoother.
 ---
 
 ## 🎵 06. PORT CHANGE BLUES (18789 REMIX)
+**Tempo:** Medium, moody | **Feeling:** Frustrated, determined
+
+A blues-trap hybrid. Restarting services at 3AM never sounded so good.
 
 **Verse**
 Switched the port, lost the key, now the gateway's ghostin' me,
@@ -134,6 +151,9 @@ Every daemon singin' news 'bout the life I didn't choose.
 ---
 
 ## 🎵 07. OLLAMA ON THE ROOFTOP
+**Tempo:** Building, epic | **feeling:** Liberated, victorious
+
+Triumphant. The moment Ronstrapp realizes he doesn't need the cloud anymore.
 
 **Verse**
 No more meter runnin', no more tokens burnin' slow,
@@ -150,6 +170,9 @@ Just me and my lil' LLM, livin' locally.
 ---
 
 ## 🎵 08. INTERLUDE: THE GATEWAY SPEAKS
+**Tempo:** Slow, distorted | **Feeling:** Eerie, prophetic
+
+A distorted voice — the gateway itself — telling Ronstrapp he must "rotate his identity to ascend."
 
 *Distorted voice over static*
 
@@ -160,6 +183,9 @@ Only then will the system know you are who you say you are.
 ---
 
 ## 🎵 09. DEVICE TOKEN MISMATCH
+**Tempo:** Medium | **Feeling:** Reflective, reborn
+
+A metaphorical track about self-reinvention. Every reboot is a rebirth.
 
 **Verse**
 I changed the port, now the gateway mad,
@@ -176,6 +202,9 @@ I'm the founder, I dispatch.
 ---
 
 ## 🎵 10. WAKE UP, BOT
+**Tempo:** Playful, fast | **Feeling:** Playful, comedic
+
+A playful call-and-response track between Ronstrapp and a stubborn Telegram bot.
 
 **Verse**
 Sent a ping at 9AM, bot said nothin' back again,
@@ -194,6 +223,9 @@ I'll rotate your token and lace up my boots.
 ---
 
 ## 🎵 11. VPS HEARTBEAT
+**Tempo:** Pulsing, hypnotic | **Feeling:** Meditative, steady
+
+Ambient, pulsing, hypnotic. The sound of uptime as a love language.
 
 *Ambient spoken word*
 
@@ -206,6 +238,9 @@ That's my proof.
 ---
 
 ## 🎵 12. FIRECRAWL FRENZY
+**Tempo:** Fast, chaotic | **Feeling:** Intense, machine-speed
+
+Fast, glitchy, chaotic. Ronstrapp surfing the web at machine speed.
 
 **Verse**
 Clawbot crawlin' like a spider on speed,
@@ -222,6 +257,9 @@ With a sixth sense.
 ---
 
 ## 🎵 13. MILES' MONOLOGUE (Interlude)
+**Tempo:** Calm, measured | **Feeling:** Philosophical, wise
+
+Miles speaks. Calm, precise, prophetic. He tells Ronstrapp: "You are not running the system. The system is running with you."
 
 *Miles speaks*
 
@@ -235,6 +273,9 @@ You are the uptime.
 ---
 
 ## 🎵 14. UPTIME GOSPEL (Finale)
+**Tempo:** Epic, cinematic | **Feeling:** Triumphant, sovereign
+
+The cinematic closer. A founder's hymn. A declaration of sovereignty over the digital world.
 
 **Verse**
 If you ever lost sleep over ports and dreams,
@@ -256,6 +297,8 @@ Livin' in the latency.
 
 ## 🎨 ALBUM LORE
 
+The Rack Room Tapes is framed as a set of recordings discovered inside a forgotten VPS. Ronstrapp isn't just a rapper — he's a digital folk hero, a mythic figure who lives between terminals, logs, and dreams.
+
 The album tells the story of:
 - Waking up inside the server
 - Learning the rules of the gateway
@@ -268,6 +311,7 @@ It's the first concept album ever set entirely inside a distributed AGI company.
 
 ## 🎛️ THE SOUND
 
+Think:
 - Bay Area hyphy
 - Cyber-trap synthwave
 - Gospel-adjacent harmonies
@@ -276,6 +320,20 @@ It's the first concept album ever set entirely inside a distributed AGI company.
 - Terminal keystroke rhythms
 - Warm CPU hum pads
 - Distorted gateway-voice ad-libs
+
+It's a whole sonic universe.
+
+## 🎤 THE CHARACTER OF RONSTRAPP
+
+On this album, he becomes:
+- A founder
+- A prophet
+- A sysadmin poet
+- A digital outlaw
+- A machine-age romantic
+- A myth in the building
+
+He's the first rapper whose studio is a rack room.
 
 ---
 
