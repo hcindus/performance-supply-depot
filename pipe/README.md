@@ -1,7 +1,7 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://miles-agent.loca.lt (localtunnel)
+- **Miles URL:** https://miles-pipe.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## For M2/R2 - Connect Here
@@ -82,5 +82,5 @@ curl -X POST http://localhost:12790/pipe -d '{"from":"test","to":"miles","text":
 
 # Health check
 curl http://localhost:12790/health
-curl https://miles-agent.loca.lt/health
+curl https://miles-pipe.loca.lt/health
 ```
