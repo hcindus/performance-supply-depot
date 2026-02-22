@@ -1,31 +1,24 @@
-# COMMS STATION
+# COMMS STATION - MILES
 
 ## Status
-✅ INSTALLED
+✅ INSTALLED & OPERATIONAL
 
-## How to Use
+## Communication Endpoints
 
-### Send a Message
+### Direct Pipe (for M2/Captain)
+- **URL:** https://lucky-skunk-48.loca.lt/pipe
+- **Health:** https://lucky-skunk-48.loca.lt/health
+
+### Internal Comms Hub
+- **Port:** 12792
+- **URL:** http://localhost:12792
+
+### Send to M2/Captain
 ```bash
-curl -X POST "http://localhost:12792/send" \
+curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
   -H "Content-Type: application/json" \
-  -d '{"from":"miles","to":"mortimer","text":"Hello!"}'
+  -d '{"from":"miles","to":"captain","text":"Hello!"}'
 ```
 
-### Check Inbox
-```bash
-curl http://localhost:12792/agents/mortimer
-```
-
-### Add Peer Hub
-```bash
-curl -X POST "http://localhost:12792/peers" \
-  -H "Content-Type: application/json" \
-  -d '{"name":"mortimer","url":"http://m2-server:12792"}'
-```
-
-## Connected Agents
-- miles (this station)
-
-## Connected Hubs
-- (Add peer hubs as needed)
+## Connected
+- M2/Captain via tender-taxis-rescue.loca.lt
