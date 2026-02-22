@@ -341,3 +341,18 @@ He's the first rapper whose studio is a rack room.
 
 **Ronstrapp** 🎤
 **2026**
+
+---
+
+## 🎯 EXPANSION OPTIONS
+
+Don offers to build (just ask):
+
+- **Album art concepts** - Visual identity for the album
+- **Liner notes** - Printable lyrics booklet
+- **Full behind-the-scenes documentary script** - The making of
+- **Ronstrapp x Miles collaboration track** - A duo track
+- **PSD-themed bonus track** - Company-themed addition
+- **Deluxe vinyl edition** - Lore inserts for physical release
+
+*The rack room is always open.*
