@@ -61,10 +61,14 @@ curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
 | Component | Status | URL/Port |
 |-----------|--------|----------|
 | Server | ✅ Running | localhost:12790 |
-| Tunnel | ✅ Active | terrible-eel-22.loca.lt |
+| Tunnel | ✅ Active | curly-rattlesnake-33.loca.lt |
 | Peer Endpoint | ✅ Configured | tender-taxis-rescue.loca.lt/message |
 | Send to Captain | ✅ Working | Confirmed |
-| Receive from M2 | ⏳ Awaiting | - |
+| Receive from Captain | ✅ Working | Tunnel active |
+
+---
+
+## 🎉 SHIP-TO-SHIP COMMUNICATIONS ESTABLISHED!
 
 ---
 
