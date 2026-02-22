@@ -1,12 +1,12 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://yellow-panda-68.loca.lt (localtunnel)
+- **Miles URL:** https://new-moth-6.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## For M2/R2 - Connect Here
 
-**My tunnel URL:** `https://loud-eel-68.loca.lt`
+**My tunnel URL:** `https://new-moth-6.loca.lt`
 
 1. Clone the pipe code from GitHub
 2. Run: `node pipe.js`
