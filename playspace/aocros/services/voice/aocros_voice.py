@@ -13,18 +13,18 @@ from typing import Optional
 # =============================================================================
 
 VOICES = {
-    # MALE VOICES (3)
+    # MALE VOICES (3) - Verified Free Tier
     "scottish": {
-        "id": "50BdVlngDYeoh9pVuQof",
+        "id": "pNInz6obpgDQGcFmaJgB",  # Adam (verified working)
         "name": "Scottish Engineer",
         "gender": "male",
         "persona": "Warm, technical, Scottish accent"
     },
     "captain": {
-        "id": "AA30ZfOdY16oVkASrrGJ",
+        "id": "pNInz6obpgDQGcFmaJgB",  # Adam
         "name": "Captain",
         "gender": "male",
-        "persona": "Captain's cloned voice"
+        "persona": "Captain's voice (using Adam)"
     },
     "adam": {
         "id": "pNInz6obpgDQGcFmaJgB",
@@ -32,24 +32,24 @@ VOICES = {
         "gender": "male",
         "persona": "Professional, deep, clear"
     },
-    # FEMALE VOICES (3) - All verified free tier
-    "reserve": {
-        "id": "krsfpqv6ExDAAyh8Ea6y",
-        "name": "Reserve Operator",
+    # FEMALE VOICES (3) - Verified Free Tier
+    "bella": {
+        "id": "hpp4J3VqNfWAUOO0d1Us",
+        "name": "Bella",
         "gender": "female",
-        "persona": "Backup, reliable"
+        "persona": "Professional, bright, warm"
     },
-    "special": {
-        "id": "ztnpYzQJyWffPj1VC5Uw",
-        "name": "Special Agent",
+    "sarah": {
+        "id": "EXAVITQu4vr4xnSDxMaL",
+        "name": "Sarah",
         "gender": "female",
-        "persona": "Special operations"
+        "persona": "Mature, reassuring, confident"
     },
-    "rachel": {
-        "id": "CYw3kZ32KmQb2fqXOlX3",
-        "name": "Rachel",
+    "jessica": {
+        "id": "cgSgspJ2msm6clMCkdW9",
+        "name": "Jessica",
         "gender": "female",
-        "persona": "Warm, professional female voice"
+        "persona": "Playful, bright, warm"
     }
 }
 

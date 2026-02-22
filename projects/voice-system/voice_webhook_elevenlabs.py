@@ -30,7 +30,7 @@ ELEVENLABS_API_URL = "https://api.elevenlabs.io/v1"
 
 # Voice IDs (configured from vault) — 2 Male / 2 Female
 VOICE_CONFIG = {
-    # MALE VOICES
+    # MALE VOICES (2)
     'openclaw': {
         'id': '50BdVlngDYeoh9pVuQof',
         'gender': 'male',
@@ -43,7 +43,7 @@ VOICE_CONFIG = {
         'persona': 'Captain (Cloned)',
         'use': 'Captain voice responses'
     },
-    # FEMALE VOICES
+    # FEMALE VOICES (2)
     'reserve': {
         'id': 'krsfpqv6ExDAAyh8Ea6y',
         'gender': 'female',

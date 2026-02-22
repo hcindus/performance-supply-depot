@@ -659,6 +659,126 @@ class CashRegister:
         
         return "\n".join(lines)
 
+    # === High Priority Features ===
+
+    def split_check_by_number(self, num_splits):
+        """Split transaction by number of people"""
+        if not self.current_transaction or not self.current_transaction.items:
+            return []
+        items = [i for i in self.current_transaction.items if not i.is_voided]
+        if not items:
+            return []
+        total = sum(i.total for i in items)
+        per_person = total / num_splits
+        return [{'split': i+1, 'amount': per_person} for i in range(num_splits)]
+
+    def split_check_by_items(self, item_assignments):
+        """Split transaction by assigning items to splits"""
+        if not self.current_transaction:
+            return {'error': 'No transaction'}
+        items = [i for i in self.current_transaction.items if not i.is_voided]
+        splits = {}
+        for item in items:
+            split_id = item_assignments.get(item.plu_code, 1)
+            if split_id not in splits:
+                splits[split_id] = {'items': [], 'total': 0}
+            splits[split_id]['items'].append(item.name)
+            splits[split_id]['total'] += item.total
+        return splits
+
+    def set_tax_inclusive(self, item, inclusive_price, tax_rate):
+        """Set tax-inclusive price - backs out tax"""
+        item.price = inclusive_price / (1 + tax_rate)
+        item.tax_amount = inclusive_price - item.price
+        item.is_tax_inclusive = True
+        return item
+
+    def reprint_receipt(self, transaction_id=0):
+        """Reprint a receipt by transaction ID (0 = latest)"""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        if transaction_id == 0:
+            cursor.execute("SELECT * FROM transactions ORDER BY id DESC LIMIT 1")
+        else:
+            cursor.execute("SELECT * FROM transactions WHERE id = ?", (transaction_id,))
+        row = cursor.fetchone()
+        conn.close()
+        if not row:
+            return "Transaction not found"
+        items = json.loads(row[4])
+        lines = ["="*40, "  REPRINT RECEIPT", "="*40, f"TXN: {row[0]}", f"Date: {row[2][:19]}", "-"*40]
+        for item in items:
+            lines.append(f"{item['quantity']}x {item['name']} @ ${item['unit_price']}")
+        lines.extend(["-"*40, f"TOTAL: ${row[8]:.2f}", "="*40, "*** REPRINT ***", "="*40])
+        return chr(10).join(lines)
+
+
+
+    # === Medium Priority: Kitchen Display System ===
+
+    def send_to_kds(self, order_data=None):
+        """Send order to Kitchen Display System"""
+        if not self.current_transaction:
+            return {'success': False, 'error': 'No transaction'}
+        
+        items = [i for i in self.current_transaction.items if not i.is_voided]
+        if not items:
+            return {'success': False, 'error': 'No items'}
+        
+        kds_order = {
+            'order_id': self.current_transaction.transaction_id,
+            'clerk': getattr(self, 'current_clerk', 'Unknown'),
+            'timestamp': datetime.datetime.now().isoformat(),
+            'items': [
+                {
+                    'name': item.name,
+                    'qty': item.quantity,
+                    'notes': getattr(item, 'notes', ''),
+                    'desc2': getattr(item, 'desc2', ''),
+                }
+                for item in items
+            ],
+            'status': 'pending'
+        }
+        
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS kds_orders (
+                order_id TEXT PRIMARY KEY,
+                data TEXT,
+                status TEXT,
+                created_at TEXT
+            )
+        """)
+        cursor.execute(
+            "INSERT INTO kds_orders (order_id, data, status, created_at) VALUES (?, ?, ?, ?)",
+            (kds_order['order_id'], json.dumps(kds_order), 'pending', kds_order['timestamp'])
+        )
+        conn.commit()
+        conn.close()
+        
+        return {'success': True, 'order': kds_order}
+
+    def get_kds_orders(self, status='pending'):
+        """Get KDS orders by status"""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM kds_orders WHERE status = ? ORDER BY created_at DESC", (status,))
+        rows = cursor.fetchall()
+        conn.close()
+        return [{'order_id': r[0], 'data': json.loads(r[1]), 'status': r[2]} for r in rows]
+
+    def complete_kds_order(self, order_id):
+        """Mark KDS order as completed"""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute("UPDATE kds_orders SET status = 'completed' WHERE order_id = ?", (order_id,))
+        conn.commit()
+        conn.close()
+        return {'success': True}
+
+
 
 # ============================================================================
 # SIMPLE CLI INTERFACE

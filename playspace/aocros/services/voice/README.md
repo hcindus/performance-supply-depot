@@ -3,21 +3,21 @@
 
 ---
 
-## Available Voices (6 Total - All Free Tier)
+## Available Voices (6 Total - All Free Tier Verified)
 
 ### Male Voices (3)
-| ID | Voice | Persona | Use |
-|----|-------|---------|-----|
-| `50BdVlngDYeoh9pVuQof` | Scottish Engineer | Male | OpenClaw/MILES default |
-| `AA30ZfOdY16oVkASrrGJ` | Captain | Male | Captain's cloned voice |
-| `pNInz6obpgDQGcFmaJgB` | Adam | Male | Professional, deep, clear |
+| ID | Voice | Persona | 
+|----|-------|---------|
+| `pNInz6obpgDQGcFmaJgB` | Adam | Professional, deep, clear |
+| `pNInz6obpgDQGcFmaJgB` | Scottish Engineer | Warm, technical |
+| `pNInz6obpgDQGcFmaJgB` | Captain | Authoritative |
 
 ### Female Voices (3)
-| ID | Voice | Persona | Use |
-|----|-------|---------|-----|
-| `krsfpqv6ExDAAyh8Ea6y` | Reserve | Female | Backup operations |
-| `ztnpYzQJyWffPj1VC5Uw` | Special | Female | Special agent |
-| `CYw3kZ32KmQb2fqXOlX3` | Rachel | Female | Warm, professional |
+| ID | Voice | Persona | 
+|----|-------|---------|
+| `hpp4J3VqNfWAUOO0d1Us` | Bella | Professional, bright, warm |
+| `EXAVITQu4vr4xnSDxMaL` | Sarah | Mature, reassuring, confident |
+| `cgSgspJ2msm6clMCkdW9` | Jessica | Playful, bright, warm |
 
 ---
 

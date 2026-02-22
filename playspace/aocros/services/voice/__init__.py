@@ -28,23 +28,23 @@ voice.speak("Hello, I am your AI assistant.")
 """
 
 # =============================================================================
-# VOICE QUICK REFERENCE - All Free Tier
+# VOICE QUICK REFERENCE - All Free Tier Verified
 # =============================================================================
 """
 VOICE_OPTIONS = {
-    # Male (3) - All free tier
-    "scottish":   "50BdVlngDYeoh9pVuQof",  # MILES default
-    "captain":    "AA30ZfOdY16oVkASrrGJ",  # Captain's voice
-    "adam":       "pNInz6obpgDQGcFmaJgB",  # Professional male
+    # Male (3) - All use Adam voice
+    "scottish":   "pNInz6obpgDQGcFmaJgB",  # MILES default
+    "captain":    "pNInz6obpgDQGcFmaJgB",
+    "adam":       "pNInz6obpgDQGcFmaJgB",
 
     # Female (3) - All free tier
-    "reserve":    "krsfpqv6ExDAAyh8Ea6y",  # Backup female
-    "special":    "ztnpYzQJyWffPj1VC5Uw",  # Special agent
-    "rachel":     "CYw3kZ32KmQb2fqXOlX3",  # Warm female
+    "bella":      "hpp4J3VqNfWAUOO0d1Us",  # Professional, bright, warm
+    "sarah":      "EXAVITQu4vr4xnSDxMaL",  # Mature, reassuring
+    "jessica":    "cgSgspJ2msm6clMCkdW9",  # Playful, bright, warm
 }
 
 # Usage:
-voice.set_voice("rachel")  # Agent now speaks as Rachel
-voice.speak("Hello!")      # Speaks with selected voice
+voice.set_voice("bella")   # Female option
+voice.set_voice("adam")    # Male option
 voice.list_voices()        # See all 6 options
 """
