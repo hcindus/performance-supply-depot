@@ -6,7 +6,7 @@
 ## Communication Endpoints
 
 ### Direct Pipe (for M2/Captain)
-- **URL:** https://miles.loca.lt/pipe
+- **URL:** https://heavy-baboon-26.loca.lt/pipe
 - **Health:** https://lucky-skunk-48.loca.lt/health
 
 ### Internal Comms Hub
