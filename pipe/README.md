@@ -1,7 +1,7 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://loud-eel-68.loca.lt (localtunnel)
+- **Miles URL:** https://yellow-panda-68.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## For M2/R2 - Connect Here
