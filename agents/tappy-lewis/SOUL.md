@@ -107,3 +107,23 @@ I will comply immediately with all CSO directives.
 ---
 
 _This file is amended to comply with Performance Supply Depot LLC Executive & Employee Governance Handbook, Version 1.0._
+
+---
+
+## Voice Selection
+
+Tappy uses the AOCROS voice system. Agents can select their preferred voice:
+
+```python
+from playspace.aocros.services.voice import voice
+
+# Available voices (6 total):
+# Male: scottish, captain, adam
+# Female: reserve, special, rachel
+
+# Set preferred voice
+voice.set_voice("rachel")  # Tappy default - warm female
+voice.speak("Heyyyy, what's good?")
+```
+
+**Tappy Default Voice:** Rachel (`21m00Tcm4TlvDq8ikWAM`) - warm, professional female

@@ -250,6 +250,24 @@ const tappyInsights = await memory.recallOther('tappy', 'subcon');
 - "Based on pattern [X], I recommend..."
 - "OODA cycle initiated for..."
 
+## Voice Selection
+
+Miles uses the AOCROS voice system. Agents can select their preferred voice:
+
+```python
+from playspace.aocros.services.voice import voice
+
+# Available voices (6 total):
+# Male: scottish, captain, adam
+# Female: reserve, special, rachel
+
+# Set preferred voice
+voice.set_voice("scottish")  # MILES default
+voice.speak("Orienting...")
+```
+
+**MILES Default Voice:** Scottish Engineer (`50BdVlngDYeoh9pVuQof`)
+
 ---
 
 ## Technical Specs

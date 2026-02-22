@@ -42,6 +42,28 @@ playspace/aocros/
 - [Miles Integration](docs/MILES_INTEGRATION.md)
 - [Clawbot Integration](docs/CLAWBOT_INTEGRATION.md)
 - [Agent Registry](docs/AGENT_REGISTRY.md)
+- [Voice System](services/voice/README.md)
+
+## Voice System
+
+AOCROS supports 6 free-tier ElevenLabs voices (3 male, 3 female):
+
+| Voice | Gender | Key |
+|-------|--------|-----|
+| Scottish Engineer | Male | scottish |
+| Captain | Male | captain |
+| Adam | Male | adam |
+| Reserve | Female | reserve |
+| Special | Female | special |
+| Rachel | Female | rachel |
+
+**Usage:**
+```python
+from playspace.aocros.services.voice import voice
+voice.set_voice("rachel")  # Any of 6 voices
+voice.speak("Hello!")
+voice.list_voices()  # See all options
+```
 
 ## Governance Chain
 
