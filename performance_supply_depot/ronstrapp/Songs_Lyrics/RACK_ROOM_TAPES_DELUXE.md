@@ -364,13 +364,13 @@ If the gateway ever drop — You know I'm 'bout to shock it.
 
 ---
 
-### 🎵 17. THE MOUNTAINS KEEP WATCH (Haunted Holler Ballad)
+### 🎵 17. THE MOUNTAINS KEEP WATCH (Haunted Hollow Ballad)
 **Tempo:** Slow, haunting | **Feeling:** Dark, tragic, eerie
 
-A country-folk horror ballad set in the Haunted Holler. Told in 4 verses with a haunting chorus.
+A country-folk horror ballad set in the Haunted Hollow. Told in 4 verses with a haunting chorus.
 
 **[Intro – Spoken, with a slow, eerie banjo pluck]**
-In a holler so dark, where the moon don't dare,
+In a hollow so dark, where the moon don't dare,
 Lived a farmer, his wife, and a chill in the air.
 The mountains hold secrets, they whisper, they moan,
 And this tale'll turn your heart to stone.
@@ -391,7 +391,7 @@ Just watched from the dark, where the night-owls frowned.
 
 **[Chorus – Banjo plays a haunting, minor-key melody]**
 Oh, the mountains keep watch, they never forget,
-Betrayal in the holler, a debt to be met,
+Betrayal in the hollow, a debt to be met,
 The banjo wails low, a sorrowful cry,
 In this cursed ol' tale, someone's bound to die.
 
@@ -425,7 +425,7 @@ A mountain man's curse for the sins of men.
 
 **[Chorus]**
 Oh, the mountains keep watch, they never forget,
-Betrayal in the holler, a debt to be met,
+Betrayal in the hollow, a debt to be met,
 The banjo wails low, a sorrowful cry,
 In this cursed ol' tale, someone's bound to die.
 
@@ -446,7 +446,7 @@ The farmer stood silent—no turnin' back.
 **[Outro – Spoken, fading]**
 And the mountains still keep watch...
 They never forget...
-In the holler where the moon don't dare...
+In the hollow where the moon don't dare...
 Someone's always bound to die.
 
 ---
