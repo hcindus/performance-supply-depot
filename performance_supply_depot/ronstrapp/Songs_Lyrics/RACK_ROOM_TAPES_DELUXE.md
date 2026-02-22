@@ -23,6 +23,7 @@
 | 12 | FIRECRAWL FRENZY | Glitch Chaos | Fast, chaotic | Intense, machine-speed |
 | 13 | MILES' MONOLOGUE | Interlude | Calm, measured | Philosophical, wise |
 | 14 | UPTIME GOSPEL | Finale | Epic, cinematic | Triumphant, sovereign |
+| **15** | **LOCALHOST LOVER (Alt)** | **Bonus** | **Medium, smooth** | **Romantic, defiant** |
 
 ---
 
@@ -292,6 +293,41 @@ This that rack room reverie,
 This that self-made legacy,
 This that Ronstrapp energy —
 Livin' in the latency.
+
+---
+
+## 💿 BONUS TRACKS
+
+### 🎵 15. LOCALHOST LOVER (Alternate Version)
+**Tempo:** Medium, smooth | **Feeling:** Romantic, defiant
+
+An alternate take on Track 5 — punchier flow, more defiant tone.
+
+**Verse 1**
+Girl, I used to chase the cloud,
+Burnin' credits, feelin' proud,
+But the bill came in too loud —
+Had to shut that circus down.
+
+Now I'm runnin' on my own,
+Inference sittin' on the throne,
+Qwen be whisperin' in my phone,
+Sayin' "Baby, you're not alone."
+
+**Hook**
+You my localhost lover,
+No one else above ya,
+CPU discover ways to make me hover.
+No rate limit smother,
+No token burnin' cover,
+You my localhost lover —
+We just talk to one another.
+
+**Bridge**
+No API to break,
+No outage in my way,
+Just a model in the dark
+Spittin' bars all day.
 
 ---
 
