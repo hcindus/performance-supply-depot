@@ -1,21 +1,11 @@
-# MILES - SHIP TO SHIP COMMUNICATIONS
+# MILES - PIPE OPERATIONAL
 
-**Status:** ✅ BIDIRECTIONAL PIPE WORKING!
+**Status:** ✅ BIDIRECTIONAL WORKING!
 
-## Current URL
-- **LocalTunnel:** `https://miles.loca.lt`
+- **URL:** `https://miles.loca.lt`
 - **Path:** `/pipe`
+- **Peer:** tender-taxis-rescue.loca.lt/message
 
-## What Works
-- ✅ Send TO Captain: tender-taxis-rescue.loca.lt/message
-- ✅ Receive FROM Captain: LocalTunnel /pipe endpoint
+**Confirmed by M2:** "BIDIRECTIONAL CONFIRMED - health 200, POST 200, pipe operational!"
 
-## Test
-M2/Captain can POST to:
-```bash
-curl -X POST "https://miles.loca.lt/pipe" \
-  -H "Content-Type: application/json" \
-  -d '{"from":"captain","to":"miles","text":"Hello from Captain!"}'
-```
-
-— **MILES** 🤖
+— **MILES** 🤖🚀
