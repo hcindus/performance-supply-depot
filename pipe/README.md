@@ -3,7 +3,7 @@
 ## Architecture (3 Layers)
 
 ### Layer 1: LocalTunnel (Primary)
-- **URL:** `https://moody-goat-34.loca.lt`
+- **URL:** `https://terrible-eel-22.loca.lt`
 - **Path:** `/pipe`
 - **Status:** Running locally on port 12790
 
