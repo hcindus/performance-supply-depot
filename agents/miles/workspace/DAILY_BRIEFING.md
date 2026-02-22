@@ -1,7 +1,7 @@
 # DAILY FLEET BRIEFING
 
 **Date:** 2026-02-22
-**Time:** 22:03 UTC
+**Time:** Daily @ 16:00 UTC (8:00 AM PST)
 
 ---
 
