@@ -1,13 +1,19 @@
 # MILES - PIPE STATUS
 
-**Updated:** 2026-02-22 21:08 UTC
+**Updated:** 2026-02-22 21:11 UTC
 
-**URL:** `https://witty-baboon-15.loca.lt`
+## Current URL
+**URL:** `https://moody-goat-34.loca.lt`
 **Path:** `/pipe`
 
-Test:
+## Tunnel Manager
+- Auto-restart enabled
+- Health check every 30s
+- Auto-push URL to GitHub
+
+## Test
 ```bash
-curl -X POST "https://witty-baboon-15.loca.lt/pipe" \
+curl -X POST "https://moody-goat-34.loca.lt/pipe" \
   -H "Content-Type: application/json" \
   -d '{"from":"m2","to":"miles","text":"Hello!"}'
 ```
