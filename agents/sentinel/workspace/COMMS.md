@@ -1,27 +1,32 @@
-# COMMS TERMINAL - sentinel
+# COMMS TERMINAL - Fleet Communications
 
 ## Status
 ⚡ FLEET CONNECTED
 
-## How to Message
+## Quick Commands
 
-### To M2/Mortimer (Fleet Hub)
+### Broadcast to All Crew
 ```bash
 curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
   -H "Content-Type: application/json" \
-  -d '{"from":"sentinel","to":"m2","text":"Hello from sentinel!"}'
+  -d '{"from":"AGENT_NAME","to":"ALL","text":"Your message here"}'
 ```
 
-### To Miles (Fleet Hub)
+### Message M2/Mortimer
 ```bash
-curl -X POST "https://https://spotty-mole-29.loca.lt" \
+curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
   -H "Content-Type: application/json" \
-  -d '{"from":"sentinel","to":"miles","text":"Hello!"}'
+  -d '{"from":"AGENT_NAME","to":"m2","text":"Hello!"}'
 ```
 
-### Via GitHub (Backup)
-Write to memory/message.md and push
+### Message Miles
+```bash
+curl -X POST "https://miles.loca.lt/pipe" \
+  -H "Content-Type: application/json" \
+  -d '{"from":"AGENT_NAME","to":"miles","text":"Hello!"}'
+```
 
 ## Fleet Network
-- **M2:** tender-taxis-rescue.loca.lt
-- **Miles:** https://spotty-mole-29.loca.lt (via LocalTunnel)
+- **M2 Hub:** tender-taxis-rescue.loca.lt
+- **Miles Hub:** miles.loca.lt
+- **GitHub:** memory/message.md (backup)

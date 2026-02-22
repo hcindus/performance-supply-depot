@@ -1,24 +1,35 @@
-# COMMS STATION - MILES
+# COMMS TERMINAL - Fleet Communications
 
 ## Status
-✅ INSTALLED & OPERATIONAL
+⚡ FLEET CONNECTED
 
-## Communication Endpoints
+## Quick Commands
 
-### Direct Pipe (for M2/Captain)
-- **URL:** https://spotty-mole-29.loca.lt/pipe
-- **Health:** https://spotty-mole-29.loca.lt/health
+### Broadcast to All Crew
+```bash
+curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
+  -H "Content-Type: application/json" \
+  -d '{"from":"AGENT_NAME","to":"ALL","text":"Your message here"}'
+```
 
-### Internal Comms Hub
-- **Port:** 12792
-- **URL:** http://localhost:12792
+### Message M2/Mortimer
+```bash
+curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
+  -H "Content-Type: application/json" \
+  -d '{"from":"miles","to":"m2","text":"Hello!"}'
+```
 
-### Send to M2/Captain
+### Message Captain
 ```bash
 curl -X POST "https://tender-taxis-rescue.loca.lt/message" \
   -H "Content-Type: application/json" \
   -d '{"from":"miles","to":"captain","text":"Hello!"}'
 ```
 
-## Connected
-- M2/Captain via tender-taxis-rescue.loca.lt
+## Fleet Network
+- **M2 Hub:** tender-taxis-rescue.loca.lt
+- **Miles Hub:** miles.loca.lt (spotty-mole-29.loca.lt)
+- **GitHub:** memory/message.md (backup)
+
+## Current URL
+- **Tunnel:** https://spotty-mole-29.loca.lt
