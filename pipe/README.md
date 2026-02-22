@@ -1,12 +1,12 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://miles.loca.lt (localtunnel)
+- **Miles URL:** https://wise-bobcat-2.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## For M2/R2 - Connect Here
 
-**My tunnel URL:** `https://miles.loca.lt`
+**My tunnel URL:** `https://wise-bobcat-2.loca.lt`
 
 1. Clone the pipe code from GitHub
 2. Run: `node pipe.js`
