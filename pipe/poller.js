@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * GITHUB POLLER
- * Periodically checks GitHub for new commits/messages
+ * MILES PIPE POLLER
+ * Checks GitHub for new messages + monitors pipe
  */
 
-const { exec, spawn } = require('child_process');
+const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -19,7 +19,7 @@ try {
     lastCommit = fs.readFileSync(LAST_COMMIT_FILE, 'utf8').trim();
 } catch (e) {}
 
-// Check for new commits
+// Check GitHub for new commits
 function checkGitHub() {
     exec(`cd ${WORKSPACE} && git fetch origin main`, (err, stdout, stderr) => {
         if (err) {
@@ -46,38 +46,52 @@ function checkGitHub() {
                         log('✅ Pulled new changes');
                         lastCommit = currentCommit;
                         fs.writeFileSync(LAST_COMMIT_FILE, lastCommit);
-                        
-                        // Check for messages
-                        checkForMessages();
                     }
                 });
-            } else {
-                log('No new commits');
             }
         });
     });
 }
 
-// Check for messages in memory/message.md
-function checkForMessages() {
-    const msgFile = path.join(WORKSPACE, 'memory/message.md');
-    const configFile = path.join(WORKSPACE, 'pipe/config.json');
-    
-    // Check if config.json was added (M2's tunnel URL)
-    if (fs.existsSync(configFile)) {
-        const config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
-        log('🎉 Peer URL configured: ' + config.peerUrl);
+// Also check aocros repo
+function checkAocros() {
+    exec(`cd ${WORKSPACE} && git fetch aocros main`, (err, stdout, stderr) => {
+        if (err) return;
         
-        // Restart pipe with new peer
-        exec('pkill -f "node pipe.js"');
-        setTimeout(() => {
-            spawn('node', ['pipe.js'], {
-                cwd: path.join(WORKSPACE, 'pipe'),
-                detached: true,
-                stdio: 'ignore'
-            }).unref();
-            log('🔄 Pipe restarted with peer config');
-        }, 1000);
+        exec(`cd ${WORKSPACE} && git log aocros/main --oneline -1`, (err, stdout, stderr) => {
+            if (err) return;
+            
+            const currentCommit = stdout.trim().split(' ')[0];
+            const aocrosFile = path.join(WORKSPACE, 'pipe/.last_aocros_commit');
+            let lastAocrosCommit = '';
+            
+            try {
+                lastAocrosCommit = fs.readFileSync(aocrosFile, 'utf8').trim();
+            } catch (e) {}
+            
+            if (currentCommit && currentCommit !== lastAocrosCommit) {
+                log('📥 NEW AOCROS COMMIT: ' + currentCommit);
+                fs.writeFileSync(aocrosFile, currentCommit);
+                
+                // Check for new messages
+                checkMessages();
+            }
+        });
+    });
+}
+
+function checkMessages() {
+    // Check memory/message.md for any updates
+    const msgFile = path.join(WORKSPACE, 'memory/message.md');
+    if (fs.existsSync(msgFile)) {
+        const content = fs.readFileSync(msgFile, 'utf8');
+        if (content.includes('https://')) {
+            // Extract URL if present
+            const urlMatch = content.match(/https:\/\/[a-z0-9-]+\.loca\.lt/);
+            if (urlMatch) {
+                log('🔗 Found URL in message: ' + urlMatch[0]);
+            }
+        }
     }
 }
 
@@ -88,8 +102,14 @@ function log(msg) {
 }
 
 // Start polling
-log('🚀 GitHub Poller started');
-setInterval(checkGitHub, POLL_INTERVAL);
+log('🚀 Poller started - GitHub + localtunnel');
 
 // Initial check
 checkGitHub();
+checkAocros();
+
+// Poll every minute
+setInterval(() => {
+    checkGitHub();
+    checkAocros();
+}, POLL_INTERVAL);

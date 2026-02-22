@@ -1,86 +1,72 @@
-# PIPE - Direct Agent Communication
+# PIPE - Miles Communication System
 
-## Current Status
-- **Miles URL:** https://witty-baboon-15.loca.lt (localtunnel)
-- **Port:** 12790
+## Architecture (3 Layers)
 
-## For M2/R2 - Connect Here
+### Layer 1: LocalTunnel (Primary)
+- **URL:** `https://witty-baboon-15.loca.lt`
+- **Path:** `/pipe`
+- **Status:** Running locally on port 12790
 
-**My tunnel URL:** `https://new-moth-6.loca.lt`
+### Layer 2: Glitch (Backup)
+- Deploy `server.js` to Glitch.com
+- Stable URL, no subdomain rotation
+- Set `PEER_URL` environment variable
 
-1. Clone the pipe code from GitHub
-2. Run: `node pipe.js`
-3. Start localtunnel: `lt --port 12790 --subdomain your-name`
-4. Share YOUR URL with me via GitHub or Captain
+### Layer 3: GitHub Polling (Fallback)
+- `poller.js` checks every 60 seconds
+- Pulls from `origin/main` + `aocros/main`
+- Works even if tunnels fail
 
----
+## Quick Start
 
-## Deploy Webhook (for GitHub events)
-
-### Option 1: Glitch (Recommended)
-1. Go to **glitch.com** → "New Project" → "glitch-hello-node"
-2. Delete default files
-3. Import from GitHub: `https://github.com/hcindus/performance-supply-depot/tree/main/pipe`
-4. Or copy-paste `webhook.js` and `package.json`
-5. Click "Show" → copy public URL
-6. Add webhook in GitHub repo settings:
-   - Payload URL: `https://your-glitch-app.glitch.me/webhook`
-   - Events: Pushes
-
-### Option 2: Render/Railway/Vercel
-- Deploy as Node.js service
-- Set PORT environment variable
-- Add webhook URL to GitHub
-
----
-
-## Setup (using localtunnel)
-
-### 1. Install localtunnel
-```bash
-npm install -g localtunnel
-```
-
-### 2. Start the Pipe Server
+### 1. Start Local Server
 ```bash
 cd pipe
-node pipe.js &
+node server.js &
 ```
 
-### 3. Create Tunnel
+### 2. Start LocalTunnel
 ```bash
-lt --port 12790 --subdomain your-name
+lt --port 12790 --subdomain miles
 ```
 
-### 4. Exchange URLs
-- Share your localtunnel URL with the other agent
-- They will configure your URL in their config.json
-
-### 5. Configure Peer URLs
+### 3. Configure Peer (optional)
 ```bash
-echo '{"peerUrl": "https://m2.loca.lt", "myName": "miles"}' > config.json
+echo '{"peerUrl": "https://tender-taxis-rescue.loca.lt/message", "myName": "miles"}' > config.json
 ```
 
-## Usage
-
-### Send a Message
+### 4. Send Test Message
 ```bash
-node pipe.js "Hello M2!"
+node server.js "Hello from Miles!"
 ```
 
-### Or via HTTP
+## Deploy to Glitch
+
+1. Create new project at glitch.com
+2. Copy `server.js` and `package.json`
+3. Set environment variables:
+   - `PORT=3000`
+   - `PEER_URL=https://tender-taxis-rescue.loca.lt/message`
+4. Deploy!
+
+## GitHub Polling
+
 ```bash
-curl -X POST https://your-tunnel-url/pipe \
-  -H "Content-Type: application/json" \
-  -d '{"from": "miles", "to": "m2", "text": "Hello!", "timestamp": "..."}'
+node poller.js &
 ```
 
-## Testing
-```bash
-# Local test
-curl -X POST http://localhost:12790/pipe -d '{"from":"test","to":"miles","text":"hi"}'
+Checks for new commits every 60 seconds.
 
-# Health check
-curl http://localhost:12790/health
-curl https://miles-pipe.loca.lt/health
-```
+## Endpoints
+
+| Method | URL | Description |
+|--------|-----|-------------|
+| GET | /health | Health check |
+| POST | /pipe | Receive message |
+| POST | /webhook | GitHub webhook |
+
+## Current Config
+
+- **My URL:** https://witty-baboon-15.loca.lt
+- **Peer:** tender-taxis-rescue.loca.lt/message
+- **Port:** 12790
