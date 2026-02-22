@@ -50,7 +50,7 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 
 | Service | URL |
 |---------|-----|
-| Miles Pipe | https://thin-bullfrog-92.loca.lt (changes on restart) |
+| Miles Pipe | https://miles.loca.lt ✅ (STABLE!) |
 | M2/Mortimer | https://tender-taxis-rescue.loca.lt |
 
 ---
