@@ -115,3 +115,22 @@ curl -X POST "http://localhost:12792/send" \
   -H "Content-Type: application/json" \
   -d '{"from":"miles","to":"mortimer","text":"Hello!"}'
 ```
+
+---
+
+## Email Accounts
+
+### miles@myl0nr0s.cloud
+- **Password:** Myl0n.R0s
+- **Status:** Ready for IMAP/SMTP
+
+### mortimer@myl0nr0s.cloud
+- **Password:** Myl0n.r0s
+- **Status:** For M2 agent
+
+### Usage (IMAP)
+```bash
+# Check mail (requires app password for Gmail)
+# Hostinger mail server: mail.myl0nr0s.cloud
+# Port: 993 (IMAP) / 587 (SMTP)
+```

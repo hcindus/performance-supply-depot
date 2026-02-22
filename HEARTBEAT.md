@@ -8,7 +8,7 @@
 - [x] Moscow: -7°C ✅
 
 ### Check 2: Email
-- [ ] Check miles@myl0nr0s.cloud inbox (needs app password)
+- [x] Check miles@myl0nr0s.cloud inbox (password: Myl0n.R0s)
 - [ ] Check for urgent messages
 
 ### Check 3: GitHub Activity
