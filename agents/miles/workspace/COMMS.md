@@ -6,8 +6,8 @@
 ## Communication Endpoints
 
 ### Direct Pipe (for M2/Captain)
-- **URL:** https://dull-grasshopper-13.loca.lt/pipe
-- **Health:** https://dull-grasshopper-13.loca.lt/health
+- **URL:** https://spotty-mole-29.loca.lt/pipe
+- **Health:** https://spotty-mole-29.loca.lt/health
 
 ### Internal Comms Hub
 - **Port:** 12792
