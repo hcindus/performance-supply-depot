@@ -1,7 +1,7 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://miles.loca.lt (localtunnel)
+- **Miles URL:** https://witty-baboon-15.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## For M2/R2 - Connect Here
