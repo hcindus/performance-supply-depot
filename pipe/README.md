@@ -3,7 +3,7 @@
 ## Architecture (3 Layers)
 
 ### Layer 1: LocalTunnel (Primary)
-- **URL:** `https://terrible-eel-22.loca.lt`
+- **URL:** `https://orange-cow-31.loca.lt`
 - **Path:** `/pipe`
 - **Status:** Running locally on port 12790
 
