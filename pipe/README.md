@@ -1,7 +1,7 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://curly-turkey-84.loca.lt (localtunnel)
+- **Miles URL:** https://ugly-swan-5.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## For M2/R2 - Connect Here
