@@ -25,40 +25,24 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 
 ---
 
-## 🌐 DNS Configuration - Stable Bridge (WAITING FOR CAPTAIN)
+## 🌐 DNS Configuration - COMPLETE ✅
 
-### Current Issue
-| Domain | Current IP | Should Be |
-|--------|------------|-----------|
-| myl0nr0s.cloud | 34.120.137.41 | 31.97.6.40 |
+### DNS Status
+- A Record: ✅ Points to 31.97.6.40
+- Note: Hostinger platform proxy still intercepts SSL (need to disable Website Builder or use alternative)
 
-### Steps to Fix DNS
+### Current Working URLs
+| Method | URL |
+|--------|-----|
+| Direct IP (HTTP) | http://31.97.6.40:8080/health ✅ |
+| LocalTunnel | https://thin-bullfrog-92.loca.lt |
+| Via Domain | http://myl0nr0s.cloud:8080/health ✅ |
 
-1. **Log into Hostinger** (https://hpanel.hostinger.com)
-
-2. **Navigate to DNS Zone**
-   - Go to **DNS Zone** → **myl0nr0s.cloud**
-
-3. **Find A Record**
-   - Look for existing A record pointing to `34.120.137.41`
-   - Change it to: `31.97.6.40`
-
-4. **DNS Settings**
-   ```
-   Type: A
-   Name: @ or miles
-   Value: 31.97.6.160
-   TTL: 3600 (1 hour)
-   ```
-
-5. **Wait for Propagation**
-   - Can take up to 24 hours
-   - Check with: `nslookup myl0nr0s.cloud`
-
-### After DNS Updates
-You'll get stable URLs:
-- `https://miles.myl0nr0s.cloud/pipe`
-- `https://miles.myl0nr0s.cloud/health`
+### To Disable Hostinger Proxy
+1. Go to **hPanel → Websites → myl0nr0s.cloud**
+2. Find **Website Builder** settings
+3. Disable or remove the website builder
+4. Traffic will then route directly to 31.97.6.40
 
 ---
 
