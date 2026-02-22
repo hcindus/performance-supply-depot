@@ -25,6 +25,7 @@
 | 14 | UPTIME GOSPEL | Finale | Epic, cinematic | Triumphant, sovereign |
 | **15** | **LOCALHOST LOVER (Alt)** | **Bonus** | **Medium, smooth** | **Romantic, defiant** |
 | **16** | **DAEMON IN MY POCKET (Alt)** | **Bonus** | **Fast, hype** | **Confident, powerful** |
+| **17** | **THE MOUNTAINS KEEP WATCH** | **Bonus** | **Slow, haunting** | **Dark, tragic, eerie** |
 
 ---
 
@@ -360,6 +361,93 @@ I'm runnin' on that uptime, nothin' ever offline,
 Packets in a straight line, Ronstrapp in his prime.
 Daemon in my pocket, heartbeat like a rocket,
 If the gateway ever drop — You know I'm 'bout to shock it.
+
+---
+
+### 🎵 17. THE MOUNTAINS KEEP WATCH (Haunted Holler Ballad)
+**Tempo:** Slow, haunting | **Feeling:** Dark, tragic, eerie
+
+A country-folk horror ballad set in the Haunted Holler. Told in 4 verses with a haunting chorus.
+
+**[Intro – Spoken, with a slow, eerie banjo pluck]**
+In a holler so dark, where the moon don't dare,
+Lived a farmer, his wife, and a chill in the air.
+The mountains hold secrets, they whisper, they moan,
+And this tale'll turn your heart to stone.
+
+**[Verse 1 – The Farmer's Watch]**
+Farmer John lived high on a ridge so steep,
+His cabin cold, where the shadows creep,
+His wife, she'd wander when the sun sank low,
+To the blacksmith's forge, where the embers glow.
+
+John watched from the pines, his eyes like a hawk,
+Saw her laugh, saw her touch, heard the sweet-talk,
+The hammer'd ring, but the sparks weren't just steel,
+Their love burned fierce, a wound he could feel.
+
+He gripped his ol' scythe, but he didn't make a sound,
+Just watched from the dark, where the night-owls frowned.
+
+**[Chorus – Banjo plays a haunting, minor-key melody]**
+Oh, the mountains keep watch, they never forget,
+Betrayal in the holler, a debt to be met,
+The banjo wails low, a sorrowful cry,
+In this cursed ol' tale, someone's bound to die.
+
+**[Verse 2 – The Merchant's Arrival]**
+A merchant came creepin' through the mountain pass,
+With a mule half-dead and a grin like glass,
+His silks were tattered, his spices turned sour,
+But his words held a charm, a dark kinda power.
+
+He knocked on John's door, while the wife was near,
+Her eyes lit up, but John felt the fear,
+"Come in," said the farmer, his voice cold as frost,
+But he knew what was comin', knew the line she'd cross.
+
+By the firelight's glow, the merchant took his chance,
+And the wife gave in to that wicked dance.
+
+**[Verse 3 – The Tea with a Shadow]**
+John watched from the window, his heart black as coal,
+Saw the merchant's hands claim what he couldn't control,
+The wife laughed low, in the candle's dim light,
+While the merchant took his fill in the dead of night.
+
+When the deed was done, John called with a grin,
+"Come share some tea, traveler, come on in."
+They sat at the table, the air thick with dread,
+The merchant sipped slow, but his hands turned red,
+
+For the tea held a poison, brewed from the glen,
+A mountain man's curse for the sins of men.
+
+**[Chorus]**
+Oh, the mountains keep watch, they never forget,
+Betrayal in the holler, a debt to be met,
+The banjo wails low, a sorrowful cry,
+In this cursed ol' tale, someone's bound to die.
+
+**[Verse 4 – The Blacksmith's Doom]**
+The merchant fell cold, his eyes wide with fright,
+His body went still 'neath the moon's pale light,
+But John wasn't done, his rage burned deep,
+He crept to the forge where the blacksmith'd sleep.
+
+The fire still smoldered, the air thick with sin,
+John's scythe gleamed cruel, a reaper's grin,
+He struck with a fury, the blacksmith awoke,
+But the blade found its mark, and his spirit broke.
+
+Blood stained the anvil, the embers turned black,
+The farmer stood silent—no turnin' back.
+
+**[Outro – Spoken, fading]**
+And the mountains still keep watch...
+They never forget...
+In the holler where the moon don't dare...
+Someone's always bound to die.
 
 ---
 
