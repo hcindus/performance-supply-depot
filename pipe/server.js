@@ -1,25 +1,24 @@
 #!/usr/bin/env node
 /**
- * MILES PIPE - Simple Message Relay
+ * MILES PIPE - Simple Message Relay with Agent Status
  * 
  * Supports:
  * - POST /pipe - Receive messages
  * - GET /health - Health check
+ * - GET /agents - List active agents
  * - GitHub webhook integration
- * 
- * Environment:
- *   PORT - Port to listen on (default: 12790)
- *   PEER_URL - Where to forward messages
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { spawn } = require('child_process');
 
 const PORT = process.env.PORT || 12790;
 const CONFIG_FILE = path.join(__dirname, 'config.json');
 const MESSAGES_LOG = path.join(__dirname, 'messages.log');
+
+// Agent status tracking
+let activeAgents = {};
 
 // Load config
 function loadConfig() {
@@ -42,11 +41,36 @@ function logMessage(from, to, text) {
     console.log(`[PIPE] ${from} -> ${to}: ${text}`);
 }
 
+// Register agent heartbeat
+function registerAgent(agentId) {
+    activeAgents[agentId] = {
+        lastSeen: Date.now(),
+        online: true
+    };
+}
+
+// Get active agents
+function getActiveAgents() {
+    const now = Date.now();
+    const active = [];
+    for (const [agent, data] of Object.entries(activeAgents)) {
+        if (now - data.lastSeen < 120000) { // 2 min timeout
+            active.push(agent);
+        }
+    }
+    return active;
+}
+
 // Handle incoming message
 function handlePipe(body, res) {
     try {
         const msg = JSON.parse(body);
-        logMessage(msg.from || 'unknown', msg.to || 'unknown', msg.text || msg.message || '');
+        const from = msg.from || 'unknown';
+        
+        // Register sender as active
+        registerAgent(from);
+        
+        logMessage(from, msg.to || 'unknown', msg.text || msg.message || '');
         
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ status: 'ok', received: true }));
@@ -80,7 +104,6 @@ async function forwardToPeer(msg) {
 
 // HTTP Server
 const server = http.createServer((req, res) => {
-    // CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -93,8 +116,23 @@ const server = http.createServer((req, res) => {
     
     // Health check
     if (req.url === '/health') {
+        registerAgent(loadConfig().myName || 'miles');
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ status: 'alive', name: loadConfig().myName || 'miles' }));
+        res.end(JSON.stringify({ 
+            status: 'alive', 
+            name: loadConfig().myName || 'miles',
+            agents: getActiveAgents()
+        }));
+        return;
+    }
+    
+    // Agents list
+    if (req.url === '/agents' && req.method === 'GET') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ 
+            agents: getActiveAgents(),
+            timestamp: Date.now()
+        }));
         return;
     }
     
@@ -114,7 +152,6 @@ const server = http.createServer((req, res) => {
         req.on('data', chunk => body += chunk);
         req.on('end', () => {
             console.log('[PIPE] GitHub webhook received');
-            // Could trigger git pull here
             res.writeHead(200);
             res.end('OK');
         });
@@ -136,7 +173,7 @@ server.listen(PORT);
 // CLI: send message
 if (process.argv[2]) {
     const msg = {
-        from: loadConfig().myName || 'miles',
+        from: config.myName || 'miles',
         to: 'm2',
         text: process.argv[2],
         timestamp: new Date().toISOString()
