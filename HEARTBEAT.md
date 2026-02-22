@@ -19,6 +19,7 @@
 ### Check 4: M2 Coordination
 - [x] Review agents/mortimer-2/workspace/DAILY_SYNC.md ✅
 - [x] Update with today's status ✅
+- [x] Mortimer check-ins ✅ (ongoing)
 
 ### Check 5: ReggieStarr Updates
 - [x] Added 11 languages (from 3) ✅
@@ -27,4 +28,10 @@
 - [x] Added @ function handlers (@discount, @refund, etc.) ✅
 - [x] Added new GUI buttons (Refund, Item Correct, Return, Scale, Tare, ATM Fee) ✅
 - [x] Code compiles without errors ✅
+
+### Check 6: REPO AUDIT (Monthly)
+- [x] Voice system verified ✅
+- [x] All commits pushed ✅
+- [x] Documentation complete ✅
+- [ ] Gap analysis (rotate through folders)
 
