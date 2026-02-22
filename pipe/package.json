@@ -1,0 +1,13 @@
+{
+  "name": "miles-pipe-webhook",
+  "version": "1.0.0",
+  "description": "GitHub webhook receiver for Miles pipe",
+  "main": "webhook.js",
+  "scripts": {
+    "start": "node webhook.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}
