@@ -47,6 +47,8 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 |---------|-----|
 | Miles Pipe | https://myl0nr0s.cloud ✅ |
 | PS Depot | https://psdepot.com ✅ |
+| AM Hud Supply | https://amhudsupply.com ✅ |
+| Tappy Lewis | https://tappylewis.cloud ✅ |
 | M2/Mortimer | https://tender-taxis-rescue.loca.lt |
 
 ---
