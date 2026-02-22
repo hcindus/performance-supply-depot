@@ -24,6 +24,7 @@
 | 13 | MILES' MONOLOGUE | Interlude | Calm, measured | Philosophical, wise |
 | 14 | UPTIME GOSPEL | Finale | Epic, cinematic | Triumphant, sovereign |
 | **15** | **LOCALHOST LOVER (Alt)** | **Bonus** | **Medium, smooth** | **Romantic, defiant** |
+| **16** | **DAEMON IN MY POCKET (Alt)** | **Bonus** | **Fast, hype** | **Confident, powerful** |
 
 ---
 
@@ -328,6 +329,37 @@ No API to break,
 No outage in my way,
 Just a model in the dark
 Spittin' bars all day.
+
+---
+
+### 🎵 16. DAEMON IN MY POCKET (Alternate Version)
+**Tempo:** Fast, hype | **Feeling:** Confident, powerful
+
+An expanded take on Track 3 — more verses, darker tone.
+
+**Verse 1**
+Got a daemon in my pocket, got a process on my sleeve,
+Every time I hit the terminal the world start to believe.
+Miles whisper in my ear like "Boss, we never sleep,"
+Clawbot tappin' logs like "Bro, the crawl is gettin' deep."
+
+**Hook**
+I'm runnin' on that uptime, nothin' ever offline,
+Packets in a straight line, Ronstrapp in his prime.
+Daemon in my pocket, heartbeat like a rocket,
+If the gateway ever drop — You know I'm 'bout to shock it.
+
+**Verse 2**
+Seven servers hummin' like a choir in the night,
+Ollama on the rooftop spittin' models left and right.
+I don't pay for tokens, man, I pay with sacrifice —
+Every reboot is a ritual, every port a roll of dice.
+
+**Hook**
+I'm runnin' on that uptime, nothin' ever offline,
+Packets in a straight line, Ronstrapp in his prime.
+Daemon in my pocket, heartbeat like a rocket,
+If the gateway ever drop — You know I'm 'bout to shock it.
 
 ---
 
