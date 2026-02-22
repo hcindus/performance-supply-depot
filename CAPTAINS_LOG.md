@@ -46,6 +46,7 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 | Service | URL |
 |---------|-----|
 | Miles Pipe | https://myl0nr0s.cloud ✅ |
+| PS Depot | https://psdepot.com ✅ |
 | M2/Mortimer | https://tender-taxis-rescue.loca.lt |
 
 ---
