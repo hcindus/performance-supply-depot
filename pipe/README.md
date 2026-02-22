@@ -6,7 +6,7 @@
 
 ## For M2/R2 - Connect Here
 
-**My tunnel URL:** `https://thin-bird-13.loca.lt`
+**My tunnel URL:** `https://miles-pipe.loca.lt`
 
 1. Clone the pipe code from GitHub
 2. Run: `node pipe.js`
