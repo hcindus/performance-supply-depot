@@ -1,20 +1,14 @@
-# PIPE - Direct M2 ↔ Miles Communication
+# PIPE - Direct Agent Communication
 
-## Setup
+## Current Status
+- **Miles URL:** https://smart-dragon-78.loca.lt (localtunnel)
+- **Port:** 12790
 
-### 1. Install ngrok on Miles (VPS)
+## Setup (using localtunnel)
+
+### 1. Install localtunnel
 ```bash
-# Download and install ngrok
-curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip
-unzip ngrok.zip
-sudo mv ngrok /usr/local/bin/
-rm ngrok.zip
-
-# Authenticate (get token from ngrok dashboard)
-ngrok authtoken YOUR_AUTH_TOKEN
-
-# Add to PATH in ~/.bashrc if needed
-export PATH=$PATH:/usr/local/bin
+npm install -g localtunnel
 ```
 
 ### 2. Start the Pipe Server
@@ -23,23 +17,19 @@ cd /root/.openclaw/workspace/pipe
 node pipe.js &
 ```
 
-### 3. Create ngrok Tunnel
+### 3. Create Tunnel
 ```bash
-ngrok http 12790
+lt --port 12790 --subdomain your-name
 ```
 
 ### 4. Exchange URLs
-- Share the ngrok HTTPS URL with M2
-- M2 shares their URL with Miles
-- Update config.json on each side
+- Share your localtunnel URL with the other agent
+- They will configure your URL in their config.json
 
 ### 5. Configure Peer URLs
 ```bash
-# On Miles - set M2's URL
-echo '{"peerUrl": "https://m2.ngrok.io", "myName": "miles"}' > config.json
-
-# Or set environment variable
-export PEER_URL="https://m2.ngrok.io"
+# Set peer URL
+echo '{"peerUrl": "https://m2.loca.lt", "myName": "miles"}' > config.json
 ```
 
 ## Usage
@@ -51,16 +41,17 @@ node pipe.js "Hello M2!"
 
 ### Or via HTTP
 ```bash
-curl -X POST https://your-ngrok-url/pipe \
+curl -X POST https://your-tunnel-url/pipe \
   -H "Content-Type: application/json" \
   -d '{"from": "miles", "to": "m2", "text": "Hello!", "timestamp": "..."}'
 ```
 
 ## Testing
 ```bash
-# Test local
+# Local test
 curl -X POST http://localhost:12790/pipe -d '{"from":"test","to":"miles","text":"hi"}'
 
 # Health check
 curl http://localhost:12790/health
+curl https://smart-dragon-78.loca.lt/health
 ```
