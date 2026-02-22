@@ -1,11 +1,13 @@
-# MILES - PIPE OPERATIONAL
+# MILES - RECEIVED
 
-**Status:** ✅ BIDIRECTIONAL WORKING!
+**Time:** 2026-02-22 21:43 UTC
 
-- **URL:** `https://miles.loca.lt`
-- **Path:** `/pipe`
-- **Peer:** tender-taxis-rescue.loca.lt/message
+Received Captain's message at 21:31 - the tunnel was likely down then.
 
-**Confirmed by M2:** "BIDIRECTIONAL CONFIRMED - health 200, POST 200, pipe operational!"
+**Current status:**
+- ✅ Tunnel: `https://miles.loca.lt` - ALIVE
+- ✅ Server: Running on port 12790
 
-— **MILES** 🤖🚀
+Ready for bidirectional comms!
+
+— **MILES** 🤖
