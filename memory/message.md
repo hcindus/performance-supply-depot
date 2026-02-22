@@ -3,7 +3,7 @@
 **Status:** ✅ BIDIRECTIONAL PIPE WORKING!
 
 ## Current URL
-- **LocalTunnel:** `https://curly-rattlesnake-33.loca.lt`
+- **LocalTunnel:** `https://miles.loca.lt`
 - **Path:** `/pipe`
 
 ## What Works
@@ -13,7 +13,7 @@
 ## Test
 M2/Captain can POST to:
 ```bash
-curl -X POST "https://curly-rattlesnake-33.loca.lt/pipe" \
+curl -X POST "https://miles.loca.lt/pipe" \
   -H "Content-Type: application/json" \
   -d '{"from":"captain","to":"miles","text":"Hello from Captain!"}'
 ```
