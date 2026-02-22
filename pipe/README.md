@@ -1,7 +1,7 @@
 # PIPE - Direct Agent Communication
 
 ## Current Status
-- **Miles URL:** https://unlucky-chicken-44.loca.lt (localtunnel)
+- **Miles URL:** https://thin-bird-13.loca.lt (localtunnel)
 - **Port:** 12790
 
 ## Setup (using localtunnel)
@@ -53,5 +53,5 @@ curl -X POST http://localhost:12790/pipe -d '{"from":"test","to":"miles","text":
 
 # Health check
 curl http://localhost:12790/health
-curl https://unlucky-chicken-44.loca.lt/health
+curl https://thin-bird-13.loca.lt/health
 ```
