@@ -66,7 +66,7 @@ You'll get stable URLs:
 
 | Service | URL |
 |---------|-----|
-| Miles Pipe | https://sweet-dragon-32.loca.lt (changes on restart) |
+| Miles Pipe | https://shaggy-vampirebat-40.loca.lt (changes on restart) |
 | M2/Mortimer | https://tender-taxis-rescue.loca.lt |
 
 ---
