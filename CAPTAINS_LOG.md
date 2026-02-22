@@ -25,7 +25,7 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 
 ---
 
-## 🌐 DNS Configuration - Stable Bridge (PENDING)
+## 🌐 DNS Configuration - Stable Bridge (WAITING FOR CAPTAIN)
 
 ### Current Issue
 | Domain | Current IP | Should Be |
