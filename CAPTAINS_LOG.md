@@ -28,21 +28,16 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 ## 🌐 DNS Configuration - COMPLETE ✅
 
 ### DNS Status
-- A Record: ✅ Points to 31.97.6.40
-- Note: Hostinger platform proxy still intercepts SSL (need to disable Website Builder or use alternative)
+- **A Record:** ✅ 31.97.6.40
+- **AAAA Record:** ✅ 2a02:4780:4:c1b1::1
+- **HTTPS:** ✅ WORKING!
 
 ### Current Working URLs
-| Method | URL |
-|--------|-----|
-| Direct IP (HTTP) | http://31.97.6.40:8080/health ✅ |
-| LocalTunnel | https://thin-bullfrog-92.loca.lt |
-| Via Domain | http://myl0nr0s.cloud:8080/health ✅ |
-
-### To Disable Hostinger Proxy
-1. Go to **hPanel → Websites → myl0nr0s.cloud**
-2. Find **Website Builder** settings
-3. Disable or remove the website builder
-4. Traffic will then route directly to 31.97.6.40
+| URL | Status |
+|-----|--------|
+| https://myl0nr0s.cloud/health | ✅ ALIVE |
+| http://myl0nr0s.cloud/health | ✅ ALIVE |
+| https://miles.loca.lt | ✅ (LocalTunnel) |
 
 ---
 
@@ -50,7 +45,7 @@ echo "Your message" | mail -s "Subject" recipient@example.com
 
 | Service | URL |
 |---------|-----|
-| Miles Pipe | https://miles.loca.lt ✅ (STABLE!) |
+| Miles Pipe | https://myl0nr0s.cloud ✅ |
 | M2/Mortimer | https://tender-taxis-rescue.loca.lt |
 
 ---
