@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fleet Comms HUD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff00; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 20px; text-shadow: 0 0 10px #00ff00; }
+    h3 { margin: 20px 0 10px; color: #00aa00; }
+    .hud { max-width: 800px; margin: 0 auto; background: #111; border: 2px solid #00ff00; border-radius: 10px; padding: 20px; box-shadow: 0 0 20px rgba(0,255,0,0.3); }
+    .status { text-align: center; margin-bottom: 20px; padding: 10px; background: #001100; border-radius: 5px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 20px; }
+    .agent { background: #002200; border: 1px solid #00aa00; padding: 15px; border-radius: 5px; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .agent:hover { background: #003300; border-color: #00ff00; box-shadow: 0 0 10px #00ff00; }
+    .agent-name { font-weight: bold; font-size: 0.9em; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+    .modal-content { background: #111; border: 2px solid #00ff00; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; }
+    input, textarea { width: 100%; background: #000; border: 1px solid #00aa00; color: #00ff00; padding: 10px; margin-bottom: 15px; font-family: inherit; font-size: 1em; }
+    textarea { height: 100px; resize: vertical; }
+    button { background: #00aa00; color: #000; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; font-weight: bold; margin-right: 10px; }
+    button:hover { background: #00ff00; }
+    .send-btn { background: #00ff00; }
+    .log { background: #001100; padding: 15px; border-radius: 5px; max-height: 200px; overflow-y: auto; font-size: 0.9em; }
+    .log-entry { margin-bottom: 5px; border-bottom: 1px solid #002200; padding-bottom: 5px; }
+    .log-time { color: #00aa00; }
+  </style>
+</head>
+<body>
+  <div class="hud">
+    <h1>🚀 FLEET COMMS HUD</h1>
+    
+    <div class="status" id="status">
+      🔄 Connecting to Miles...
+    </div>
+
+    <h3>Select Crew Member:</h3>
+    <div class="grid" id="crew"></div>
+
+    <h3>Recent Messages:</h3>
+    <div class="log" id="log"></div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Send Message</h2>
+      <input type="hidden" id="to-agent">
+      <textarea id="message" placeholder="Type your message..."></textarea>
+      <button class="send-btn" onclick="sendMessage()">📤 Send</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const crew = [
+      'alpha-9', 'boxtron', 'bugcatcher', 'clippy-42', 'dusty', 'feelix', 
+      'fiber', 'hume', 'jane', 'ledger-9', 'mill', 'mylfours', 'myllon', 
+      'mylthreess', 'myltwon', 'mylzeron', 'pipeline', 'pulp', 'qora', 
+      'ralph', 'redactor', 'reggie', 'scribble', 'sentinel', 'spindle', 
+      'stacktrace', 'tappy-lewis', 'taptap', 'the_great_cryptonio', 'velum',
+      'miles', 'mortimer-2'
+    ];
+
+    const MILES_URL = 'https://dull-grasshopper-13.loca.lt';
+
+    function init() {
+      const grid = document.getElementById('crew');
+      crew.sort().forEach(agent => {
+        const div = document.createElement('div');
+        div.className = 'agent';
+        div.innerHTML = '<div class="agent-name">' + agent.replace(/-/g, ' ').toUpperCase() + '</div>';
+        div.onclick = function() { openModal(agent); };
+        grid.appendChild(div);
+      });
+
+      checkHealth();
+      setInterval(checkHealth, 30000);
+    }
+
+    async function checkHealth() {
+      try {
+        const res = await fetch(MILES_URL + '/health');
+        const data = await res.json();
+        document.getElementById('status').innerHTML = '✅ Connected to ' + (data.name || 'Miles') + ' | ' + new Date().toLocaleTimeString();
+      } catch(e) {
+        document.getElementById('status').innerHTML = '⚠️ Connection issue - using GitHub fallback';
+      }
+    }
+
+    function openModal(agent) {
+      document.getElementById('modal-title').innerText = 'Message: ' + agent;
+      document.getElementById('to-agent').value = agent;
+      document.getElementById('message').value = '';
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('message').focus();
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    async function sendMessage() {
+      var to = document.getElementById('to-agent').value;
+      var text = document.getElementById('message').value;
+      
+      if (!text.trim()) { alert('Please enter a message'); return; }
+
+      var msg = {
+        from: 'captain',
+        to: to,
+        text: text,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        var res = await fetch(MILES_URL + '/pipe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(msg)
+        });
+        
+        if (res.ok) {
+          addLog('📤 → ' + to + ': ' + text.substring(0, 50) + '...');
+          closeModal();
+        } else {
+          alert('Failed to send - Captain, try GitHub message');
+        }
+      } catch(e) {
+        alert('Connection failed - use GitHub fallback');
+      }
+    }
+
+    function addLog(text) {
+      var log = document.getElementById('log');
+      var entry = document.createElement('div');
+      entry.className = 'log-entry';
+      entry.innerHTML = '<span class="log-time">[' + new Date().toLocaleTimeString() + ']</span> ' + text;
+      log.insertBefore(entry, log.firstChild);
+    }
+
+    document.getElementById('modal').onclick = function(e) {
+      if (e.target === this) closeModal();
+    };
+
+    init();
+  </script>
+</body>
+</html>
