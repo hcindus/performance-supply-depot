@@ -6,8 +6,8 @@
 ## Communication Endpoints
 
 ### Direct Pipe (for M2/Captain)
-- **URL:** https://massive-bullfrog-97.loca.lt/pipe
-- **Health:** https://lucky-skunk-48.loca.lt/health
+- **URL:** https://wonderful-zebra-61.loca.lt/pipe
+- **Health:** https://wonderful-zebra-61.loca.lt/health
 
 ### Internal Comms Hub
 - **Port:** 12792
