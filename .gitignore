@@ -1,0 +1,20 @@
+# Secrets - NEVER commit
+secrets/
+armory/vault/
+*.env
+*.pem
+*.key
+
+# Temp files
+EOF
+*.tmp
+*.log
+/tmp/
+
+# Node/npm artifacts (if any)
+node_modules/
+package-lock.json
+
+# Backup files
+*.bak
+*~

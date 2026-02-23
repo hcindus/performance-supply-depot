@@ -1,0 +1,151 @@
+#!/usr/bin/env node
+
+/**
+ * Setup Script - Generate new wallet
+ * Creates a new wallet and saves it securely to state/wallet.json
+ */
+
+import { generate, save, exists, getWalletInfo, importFromSeed, importFromPrivateKey } from './lib/wallet.js';
+import { homedir } from 'os';
+import { join } from 'path';
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+const forceFlag = args.includes('--force');
+const jsonFlag = args.includes('--json');
+const helpFlag = args.includes('--help') || args.includes('-h');
+const importFlag = args.includes('--import');
+const seedIndex = args.indexOf('--seed');
+const privKeyIndex = args.indexOf('--private-key');
+const seedPhrase = seedIndex >= 0 ? args[seedIndex + 1] : null;
+const privateKey = privKeyIndex >= 0 ? args[privKeyIndex + 1] : null;
+
+function showHelp() {
+  console.log(`
+EVM Wallet Setup
+
+Usage: node src/setup.js [options]
+
+Options:
+  --force           Overwrite existing wallet
+  --json            Output in JSON format
+  --import          Import from seed phrase or private key
+  --seed <phrase>   12 or 24 word seed phrase
+  --private-key <key>  Import from private key
+  --help            Show this help message
+
+Examples:
+  node src/setup.js           # Generate new wallet
+  node src/setup.js --force   # Overwrite existing wallet
+  node src/setup.js --import --seed "word1 word2 ... word12"  # Import from seed
+  node src/setup.js --import --private-key "0x..."  # Import from private key
+`);
+}
+
+function exitWithError(message, code = 1) {
+  if (jsonFlag) {
+    console.log(JSON.stringify({ success: false, error: message }));
+  } else {
+    console.error(`Error: ${message}`);
+  }
+  process.exit(code);
+}
+
+async function main() {
+  try {
+    if (helpFlag) {
+      showHelp();
+      return;
+    }
+
+    // Check if wallet already exists
+    if (exists() && !forceFlag) {
+      const info = getWalletInfo();
+      if (jsonFlag) {
+        console.log(JSON.stringify({
+          success: false,
+          error: 'Wallet already exists',
+          existing_wallet: info
+        }));
+      } else {
+        console.log('❌ Wallet already exists!');
+        console.log(`Address: ${info.address}`);
+        console.log(`Created: ${info.createdAt}`);
+        console.log('\nUse --force to overwrite or check existing wallet first.');
+      }
+      process.exit(1);
+    }
+
+    // Generate or import wallet
+    let wallet;
+    
+    if (importFlag) {
+      if (seedPhrase) {
+        // Import from seed phrase
+        if (!jsonFlag) {
+          console.log('📥 Importing wallet from seed phrase...');
+        }
+        try {
+          wallet = importFromSeed(seedPhrase);
+        } catch (e) {
+          exitWithError('Failed to import seed: ' + e.message);
+        }
+      } else if (privateKey) {
+        // Import from private key
+        if (!jsonFlag) {
+          console.log('🔑 Importing wallet from private key...');
+        }
+        try {
+          wallet = importFromPrivateKey(privateKey);
+        } catch (e) {
+          exitWithError('Failed to import private key: ' + e.message);
+        }
+      } else {
+        exitWithError('Import flag set but no seed phrase or private key provided');
+      }
+    } else {
+      // Generate new wallet
+      if (!jsonFlag) {
+        console.log('🔐 Generating new wallet...');
+      }
+      wallet = generate();
+    }
+    
+    save(wallet);
+    
+    if (jsonFlag) {
+      console.log(JSON.stringify({
+        success: true,
+        address: wallet.address,
+        created_at: wallet.createdAt
+      }));
+    } else {
+      console.log('✅ Wallet created successfully!');
+      console.log(`\nAddress: ${wallet.address}`);
+      console.log(`Created: ${wallet.createdAt}`);
+      console.log(`\nWallet saved to: ${join(homedir(), '.evm-wallet.json')}`);
+      console.log('🔒 Private key stored securely (chmod 600)');
+      
+      if (wallet.imported) {
+        console.log('\n📥 Wallet IMPORTED successfully!');
+      } else {
+        console.log('\n✅ Wallet created successfully!');
+      }
+      console.log(`\nAddress: ${wallet.address}`);
+      console.log(`Created: ${wallet.createdAt}`);
+      console.log('\n⚠️  IMPORTANT: Back up your wallet file! If lost, funds cannot be recovered.');
+      
+      console.log('\nNext steps:');
+      console.log('1. Fund your wallet by sending ETH to the address above');
+      console.log('2. Check balance: node src/balance.js base');
+      console.log('3. Start with small amounts on Base (lowest gas fees)');
+    }
+    
+  } catch (error) {
+    exitWithError(error.message);
+  }
+}
+
+main().catch(error => {
+  exitWithError(`Unexpected error: ${error.message}`);
+});

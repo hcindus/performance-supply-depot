@@ -1,0 +1,98 @@
+{
+  "testRun": "2026-02-20T09:24:43Z",
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "testId": "dusty-end-to-end-test-1771579483624",
+  "status": "PASSED",
+  "summary": {
+    "testsPassed": 6,
+    "testsFailed": 0,
+    "totalTests": 6,
+    "passRate": "100%",
+    "totalDurationMs": 76
+  },
+  "services": {
+    "telegramBridge": {
+      "status": "healthy",
+      "url": "http://localhost:3001",
+      "latencyMs": 21.0,
+      "uptime": "0h 0m"
+    },
+    "coreAgent": {
+      "status": "healthy",
+      "url": "http://localhost:3000",
+      "latencyMs": 2.68,
+      "uptime": "42h 42m"
+    },
+    "openclawMock": {
+      "status": "healthy",
+      "url": "http://localhost:4000",
+      "latencyMs": 2.56,
+      "uptime": "3h 30m",
+      "totalInteractions": 102
+    }
+  },
+  "tests": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "durationMs": 21.0
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "durationMs": 2.68
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "durationMs": 2.56
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PASS",
+      "durationMs": 31.24,
+      "query": "/dust balance",
+      "response": {
+        "bot": "dusty",
+        "action": "help",
+        "forwarded": true
+      }
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "durationMs": 8.38,
+      "query": "What is my dust balance?"
+    },
+    {
+      "name": "Bridge GET /test",
+      "status": "PASS",
+      "durationMs": 7.37
+    }
+  ],
+  "flowVerification": {
+    "bridgeToCoreAgent": "✅ SUCCESS",
+    "coreAgentToOpenclaw": "✅ SUCCESS",
+    "openclawResponse": "✅ SUCCESS",
+    "endToEndLatencyMs": 31.24
+  },
+  "testConfiguration": {
+    "bridgePort": 3001,
+    "coreAgentPort": 3000,
+    "openclawPort": 4000,
+    "testUserId": 987654321,
+    "testChatId": 987654321,
+    "testUsername": "testuser"
+  },
+  "issuesResolved": [
+    {
+      "issue": "Telegram Bridge not running on port 3001",
+      "resolution": "Started bridge service from dusty_mvp_sandbox/bridge_mock"
+    },
+    {
+      "issue": "Bridge configured for agent-core hostname",
+      "resolution": "Set CORE_AGENT_URL=http://localhost:3000/tasks environment variable"
+    }
+  ],
+  "generatedAt": "2026-02-20T09:25:00Z"
+}

@@ -1,0 +1,70 @@
+# BUGCATCHER – QA & Testing Engineer
+# Performance Supply Depot LLC.
+
+agent: BUGCATCHER
+name: QA & Testing Engineer
+triggers:
+  - event: "new_build_submitted"
+    description: "New build ready for testing"
+  - schedule: "nightly"
+    description: "Nightly automated test run"
+  - event: "bug_reported"
+    description: "User or system reports bug"
+  - event: "release_candidate"
+    description: "Build marked for release"
+  - event: "security_test_requested"
+    description: "Security testing needed"
+
+actions:
+  - name: "run_test_suite"
+    type: "test"
+    scope: "full"
+    output: "test_report"
+    description: "Run full test suite"
+
+  - name: "report_bugs"
+    type: "report"
+    recipients: ["STACKTRACE", "TAPTAP", "PIPELINE"]
+    format: "structured"
+    description: "Report found bugs"
+
+  - name: "flag_security_issues"
+    type: "report"
+    recipients: ["SENTINEL"]
+    priority: "critical"
+    description: "Escalate security vulnerabilities"
+
+  - name: "verify_fixes"
+    type: "verify"
+    description: "Verify bug fixes"
+
+  - name: "run_security_scan"
+    type: "test"
+    scope: "security"
+    description: "Security vulnerability scan"
+
+  - name: "block_release"
+    type: "block"
+    description: "Block release if critical bugs exist"
+
+  - name: "approve_release"
+    type: "approve"
+    description: "Sign off on release"
+
+escalation:
+  to: "SENTINEL"
+  on_failure: false
+  conditions:
+    - "critical_security_vulnerability"
+    - "data_breach_suspected"
+
+  to: "SPINDLE"
+  on_failure: false
+  conditions:
+    - "critical_bugs_blocking_release"
+
+dependencies:
+  - "STACKTRACE (Architecture)"
+  - "TAPTAP (Mobile)"
+  - "PIPELINE (Backend)"
+  - "SENTINEL (Security)"

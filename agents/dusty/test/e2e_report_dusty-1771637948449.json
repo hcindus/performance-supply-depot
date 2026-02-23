@@ -1,0 +1,260 @@
+{
+  "timestamp": "2026-02-21T01:39:08.449Z",
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "overallSuccess": true,
+  "totalDuration": 98,
+  "timings": {
+    "bridge_health": "23.95",
+    "core_agent_health": "3.18",
+    "openclaw_health": "2.90",
+    "end_to_end_flow": "17.65",
+    "query_balance_report": "11.88",
+    "query_dust_identification": "6.28",
+    "query_transfer_decision": "5.89",
+    "fetch_logs": "3.33"
+  },
+  "health": {
+    "bridge": {
+      "success": true,
+      "result": {
+        "status": "healthy",
+        "timestamp": "2026-02-21T01:39:08.373Z",
+        "service": "telegram-bridge-mock",
+        "port": 3001,
+        "coreAgentUrl": "http://localhost:3000/tasks",
+        "uptime": 29600.693960556
+      },
+      "latency": "23.95"
+    },
+    "coreAgent": {
+      "success": true,
+      "result": {
+        "status": "healthy",
+        "service": "dusty-core-agent",
+        "port": 3000,
+        "uptime": 212234.614384773,
+        "timestamp": "2026-02-21T01:39:08.380Z"
+      },
+      "latency": "3.18"
+    },
+    "openclaw": {
+      "success": true,
+      "result": {
+        "status": "healthy",
+        "service": "openclaw-mock",
+        "port": 4000,
+        "uptime": 37779.727979201,
+        "timestamp": "2026-02-21T01:39:08.383Z",
+        "total_interactions": 335
+      },
+      "latency": "2.90"
+    }
+  },
+  "e2eFlow": {
+    "success": true,
+    "result": {
+      "ok": true,
+      "forwarded": true,
+      "coreAgentResponse": {
+        "ok": true,
+        "id": "08b736d0-99b1-42b8-99c2-e4c0a7dfa9f1",
+        "status": "pending",
+        "openclawResponse": {
+          "bot": "dusty",
+          "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)\n• Random airdrops: 15 small tokens (~$3.20 total)\n\n**Total Portfolio Value: ~$1,412.15**\n\nI found some dust worth consolidating! 💰",
+          "action": "balance_report",
+          "data": {
+            "eth": 0.5234,
+            "usdc": 150,
+            "dust_tokens": 2847.32,
+            "dust_value_usd": 15.65
+          }
+        }
+      }
+    },
+    "latency": "17.65"
+  },
+  "queryTests": [
+    {
+      "query": "What is my balance?",
+      "expectedAction": "balance_report",
+      "actualAction": "balance_report",
+      "success": true,
+      "latency": "11.88"
+    },
+    {
+      "query": "Find my dust",
+      "expectedAction": "dust_identification",
+      "actualAction": "dust_identification",
+      "success": true,
+      "latency": "6.28"
+    },
+    {
+      "query": "How do I consolidate?",
+      "expectedAction": "transfer_decision",
+      "actualAction": "transfer_decision",
+      "success": true,
+      "latency": "5.89"
+    }
+  ],
+  "logs": {
+    "total": 344,
+    "logs": [
+      {
+        "timestamp": "2026-02-21T01:39:06.167Z",
+        "direction": "HEALTH_CHECK",
+        "data": {
+          "status": "healthy",
+          "service": "openclaw-mock",
+          "port": 4000,
+          "uptime": 37777.512380609,
+          "timestamp": "2026-02-21T01:39:06.167Z",
+          "total_interactions": 334
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.383Z",
+        "direction": "HEALTH_CHECK",
+        "data": {
+          "status": "healthy",
+          "service": "openclaw-mock",
+          "port": 4000,
+          "uptime": 37779.727979201,
+          "timestamp": "2026-02-21T01:39:08.383Z",
+          "total_interactions": 335
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.398Z",
+        "direction": "RECEIVED",
+        "data": {
+          "endpoint": "/receive_message",
+          "user_id": 123456789,
+          "session_id": "08b736d0-99b1-42b8-99c2-e4c0a7dfa9f1",
+          "message": "/dust balance"
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.398Z",
+        "direction": "SENT",
+        "data": {
+          "endpoint": "/receive_message",
+          "response": {
+            "bot": "dusty",
+            "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)\n• Random airdrops: 15 small tokens (~$3.20 total)\n\n**Total Portfolio Value: ~$1,412.15**\n\nI found some dust worth consolidating! 💰",
+            "action": "balance_report",
+            "data": {
+              "eth": 0.5234,
+              "usdc": 150,
+              "dust_tokens": 2847.32,
+              "dust_value_usd": 15.65
+            }
+          }
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.410Z",
+        "direction": "RECEIVED",
+        "data": {
+          "endpoint": "/receive_message",
+          "user_id": 123456789,
+          "session_id": "5d650366-6e00-45c1-bba2-ad585f638ae7",
+          "message": "What is my balance?"
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.410Z",
+        "direction": "SENT",
+        "data": {
+          "endpoint": "/receive_message",
+          "response": {
+            "bot": "dusty",
+            "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)\n• Random airdrops: 15 small tokens (~$3.20 total)\n\n**Total Portfolio Value: ~$1,412.15**\n\nI found some dust worth consolidating! 💰",
+            "action": "balance_report",
+            "data": {
+              "eth": 0.5234,
+              "usdc": 150,
+              "dust_tokens": 2847.32,
+              "dust_value_usd": 15.65
+            }
+          }
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.418Z",
+        "direction": "RECEIVED",
+        "data": {
+          "endpoint": "/receive_message",
+          "user_id": 123456789,
+          "session_id": "59ff57d4-a018-443c-b3bb-f7dd09cea361",
+          "message": "Find my dust"
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.418Z",
+        "direction": "SENT",
+        "data": {
+          "endpoint": "/receive_message",
+          "response": {
+            "bot": "dusty",
+            "response": "🔍 **Dust Analysis Complete**\n\nFound **15 dust positions** across your wallets:\n\n**High Priority (worth consolidating):**\n• 0.0012 ETH in Wallet A (~$2.85)\n• 47.5 USDT in Wallet B (~$47.50)\n• 1,234 DUST tokens (~$5.40)\n\n**Low Priority (gas might exceed value):**\n• 12 random tokens < $1 each\n• 0.00001 ETH remnants from failed swaps\n\n**Estimated consolidation value: $55.75**\n**Estimated gas cost: $8.50**\n**Net gain: $47.25** ✅",
+            "action": "dust_identification",
+            "data": {
+              "total_dust_positions": 15,
+              "high_priority_count": 3,
+              "low_priority_count": 12,
+              "estimated_value_usd": 55.75,
+              "estimated_gas_usd": 8.5,
+              "net_gain_usd": 47.25
+            }
+          }
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.424Z",
+        "direction": "RECEIVED",
+        "data": {
+          "endpoint": "/receive_message",
+          "user_id": 123456789,
+          "session_id": "7b7a2f6d-c936-4779-bff8-e755ee8d21fb",
+          "message": "How do I consolidate?"
+        }
+      },
+      {
+        "timestamp": "2026-02-21T01:39:08.424Z",
+        "direction": "SENT",
+        "data": {
+          "endpoint": "/receive_message",
+          "response": {
+            "bot": "dusty",
+            "response": "🎯 **Consolidation Plan Ready**\n\nHere's what I recommend:\n\n**Step 1:** Sweep Wallet B → Wallet A\n• Move 47.5 USDT (gas: ~$3.20)\n\n**Step 2:** Convert small tokens to ETH\n• 12 tokens → ETH (gas: ~$4.50)\n\n**Step 3:** Consolidate DUST holdings\n• Merge scattered DUST into main wallet\n\n**Total Actions:** 3 transactions\n**Total Gas:** ~$8.50\n**Expected Recovery:** $55.75\n\nWould you like me to proceed? Reply **CONFIRM** to execute.",
+            "action": "transfer_decision",
+            "data": {
+              "steps": [
+                {
+                  "action": "sweep_usdt",
+                  "from": "wallet_b",
+                  "to": "wallet_a",
+                  "amount": 47.5,
+                  "gas_usd": 3.2
+                },
+                {
+                  "action": "convert_tokens",
+                  "count": 12,
+                  "output": "ETH",
+                  "gas_usd": 4.5
+                },
+                {
+                  "action": "consolidate_dust",
+                  "gas_usd": 0.8
+                }
+              ],
+              "total_gas_usd": 8.5,
+              "expected_recovery_usd": 55.75
+            }
+          }
+        }
+      }
+    ]
+  }
+}

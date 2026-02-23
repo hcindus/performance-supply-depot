@@ -1,0 +1,164 @@
+From: mortimer@myl0nr0s.cloud
+To: abuse@digitalocean.com
+Subject: URGENT: Brute Force SSH Attacks from 38 DigitalOcean IPs - Abuse Report
+X-Priority: 1
+X-ARF: Yes
+
+═══════════════════════════════════════════════════════════════════
+DIGITALOCEAN ABUSE REPORT — SSH BRUTE FORCE ATTACKS
+═══════════════════════════════════════════════════════════════════
+
+Report ID: DO-ABUSE-20260221-001
+Submission Time: 2026-02-21 07:57 UTC
+Reporter: Captain, General Mortimer (GMAOC)
+Contact: mortimer@myl0nr0s.cloud
+Severity: CRITICAL
+
+═══════════════════════════════════════════════════════════════════
+ATTACK SUMMARY
+═══════════════════════════════════════════════════════════════════
+
+Attack Type: Brute Force SSH
+Target: Production servers under our protection
+Duration: Continuous since approximately 2026-02-20 00:00 UTC
+Total Attempts: 2,023+ failed authentication attempts
+Unique Attacker IPs: 47 total (38 from DigitalOcean infrastructure)
+Confidence Level: 85% — Attacker-owned VPS (not compromised victims)
+
+═══════════════════════════════════════════════════════════════════
+DIGITALOCEAN IPs ATTACKING OUR INFRASTRUCTURE
+═══════════════════════════════════════════════════════════════════
+
+PRIORITY 1 — HIGHEST ACTIVITY:
+--------------------------------
+IP: 178.62.233.87
+Attempts: 302 failed logins
+Region: Amsterdam, NL
+First Seen: 2026-02-20
+Status: ACTIVE — Currently attacking
+
+IP: 178.128.252.245
+Attempts: 68 failed logins
+Region: Singapore, SG
+First Seen: 2026-02-20
+Status: ACTIVE — Currently attacking
+
+PRIORITY 2 — SINGAPORE CLUSTER (SAME FACILITY):
+-----------------------------------------------
+IPs: 152.42.201.153, 178.128.106.202, 143.198.8.121
+Pattern: Coordinated from same postal code 627753
+Attempts: 123+ combined
+Status: ACTIVE — Currently attacking
+
+PRIORITY 3 — NORTH AMERICA CLUSTER:
+----------------------------------
+IPs: 162.243.74.50, 142.93.177.162, 165.245.143.157, 
+     165.227.72.35, 162.243.27.167, 188.166.75.35
+Pattern: Rotating attacks, persistent
+Attempts: 89+ combined
+Status: ACTIVE — Currently attacking
+
+See attached X-ARF file for COMPLETE IP LIST (38 DigitalOcean IPs total)
+
+═══════════════════════════════════════════════════════════════════
+ATTACK PATTERN
+═══════════════════════════════════════════════════════════════════
+
+Method: Systematic brute force SSH authentication
+Usernames Targeted (in order of frequency):
+  1. root (most common)
+  2. admin
+  3. test
+  4. ubuntu
+  5. hadoop
+  6. git
+  7. deploy
+  8. daemon
+  9. debian
+
+Timing Pattern: Low-and-slow evasion technique
+  - ~1-2 attempts per hour per IP
+  - Rotating through username list
+  - IP rotation every 2-4 hours
+  - Consistent with automated botnet behavior
+
+Source Analysis:
+  - 85% confidence: Attacker-owned VPS (not compromised victims)
+  - 0% match against TOR exit nodes
+  - Behavioral indicators: Persistent, rotating, systematic
+
+═══════════════════════════════════════════════════════════════════
+EVIDENCE PROVIDED
+═══════════════════════════════════════════════════════════════════
+
+1. X-ARF Attachment: abuse_report_digitalocean_20260221.xarf
+   - Machine-readable format
+   - All 38 IPs with metadata
+   - Attack timestamps
+   - Confidence ratings
+
+2. Log Samples: See attached fail2ban logs
+   - /var/log/fail2ban.log (excerpt)
+   - Authentication failure timestamps
+   - IP correlation data
+
+3. Geographic Analysis:
+   - Singapore cluster: Same facility (postal 627753)
+   - Amsterdam: Primary European attack node
+   - US: Distributed across multiple regions
+
+═══════════════════════════════════════════════════════════════════
+REQUESTED ACTION
+═══════════════════════════════════════════════════════════════════
+
+IMMEDIATE:
+- Suspend accounts associated with Priority 1 IPs
+- Investigate Singapore cluster (3 IPs, same facility)
+- Review North America cluster accounts
+
+URGENT (24-48 hours):
+- Terminate accounts confirmed as attack sources
+- Implement rate limiting on SSH traffic for remaining IPs
+- Notify account holders of TOS violations
+
+OPTIONAL:
+- Share attack data with industry partners
+- Implement network-wide SSH rate limiting
+
+═══════════════════════════════════════════════════════════════════
+IMPACT STATEMENT
+═══════════════════════════════════════════════════════════════════
+
+These attacks represent:
+- 81% of all brute force attempts against our infrastructure
+- Continuous resource exhaustion on defensive systems
+- Ongoing security threat requiring 24/7 monitoring
+- Violation of DigitalOcean Acceptable Use Policy
+
+═══════════════════════════════════════════════════════════════════
+CONTACT INFORMATION
+═══════════════════════════════════════════════════════════════════
+
+Primary: mortimer@myl0nr0s.cloud
+Response Preferred: Email with confirmation of action taken
+Classification: Q-LEVEL / OMEGA-LEVEL
+
+We respect your automated processing requirements and have formatted this
+report according to your specifications. We are available for immediate
+follow-up via webform if additional evidence is required.
+
+Thank you for your prompt attention to this matter.
+
+Respectfully,
+
+Captain, General Mortimer (GMAOC)
+Chief Security Officer Sentinal
+Centry Corps Command
+
+═══════════════════════════════════════════════════════════════════
+
+ATTACHMENTS:
+1. abuse_report_digitalocean_20260221.xarf (X-ARF format)
+2. fail2ban_log_excerpt.txt
+3. ip_geolocation_data.json
+4. attack_timeline.csv

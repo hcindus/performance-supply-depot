@@ -1,0 +1,19 @@
+{
+  "name": "dusty",
+  "version": "1.0.0",
+  "description": "Cross-chain cryptocurrency wallet that consolidates dust across multiple networks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/bitgert.js",
+    "start": "node src/server.js",
+    "health-check": "node -e \"const b=require('./src/bitgert.js');b.healthCheck().then(h=>console.log(JSON.stringify(h,null,2)))\""
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "ethers": "^6.16.0",
+    "express": "^5.2.1"
+  },
+  "keywords": ["crypto", "wallet", "dust", "bitgert", "evm"],
+  "license": "ISC"
+}

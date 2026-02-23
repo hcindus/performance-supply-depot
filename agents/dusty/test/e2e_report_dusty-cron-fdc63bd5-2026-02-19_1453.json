@@ -1,0 +1,99 @@
+{
+  "testId": "dusty-cron-fdc63bd5-2026-02-19_1453",
+  "testType": "end-to-end",
+  "timestamp": "2026-02-19T14:54:25.114Z",
+  "completedAt": "2026-02-19T14:54:25.174Z",
+  "triggeredBy": "cron",
+  "jobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "overallStatus": "PASSED",
+  "summary": {
+    "totalTests": 5,
+    "passed": 5,
+    "failed": 0,
+    "totalDurationMs": 58.46
+  },
+  "testResults": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "durationMs": 15.41,
+      "endpoint": "localhost:3001/health",
+      "details": {
+        "service": "telegram-bridge-mock",
+        "uptime": "24h 10m",
+        "responseCode": 200
+      }
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "durationMs": 3.99,
+      "endpoint": "localhost:3000/health",
+      "details": {
+        "service": "dusty-core-agent",
+        "uptime": "24h 12m",
+        "responseCode": 200
+      }
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "durationMs": 3.64,
+      "endpoint": "localhost:4000/status",
+      "details": {
+        "service": "openclaw-mock",
+        "uptime": "24h 12m",
+        "totalInteractions": 623,
+        "responseCode": 200
+      }
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PASS",
+      "durationMs": 19.57,
+      "message": "/dust balance",
+      "taskId": "de064e48-179c-457e-b420-9ba3cc0c025b",
+      "flow": [
+        "Mock Telegram message sent to bridge (localhost:3001/webhook)",
+        "Bridge forwarded to core-agent (localhost:3000/tasks)",
+        "Core-agent processed and forwarded to OpenClaw mock (localhost:4000/receive_message)",
+        "OpenClaw mock generated Dusty balance response",
+        "Response propagated back through chain"
+      ],
+      "responsePreview": "📊 **Your Current Balances** - ETH: 0.5234 ETH (~$1,247.50)"
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "durationMs": 15.84,
+      "message": "What is my dust balance?",
+      "taskId": "df7bc009-8c9d-4313-9c7b-20d36f2cb189",
+      "verified": {
+        "balanceDataPresent": true,
+        "ethBalance": "0.5234 ETH",
+        "usdcBalance": "150.00 USDC",
+        "dustTokens": "2,847.32 DUST"
+      }
+    }
+  ],
+  "performanceMetrics": {
+    "fastestTest": "OpenClaw Health (3.64ms)",
+    "slowestTest": "End-to-End Flow (19.57ms)",
+    "averageResponseTimeMs": 11.69,
+    "totalRoundTripTimeMs": 19.57
+  },
+  "systemState": {
+    "bridgeUptime": "87048s",
+    "coreAgentUptime": "87144s",
+    "openclawUptime": "87123s",
+    "totalInteractionsProcessed": 625
+  },
+  "chainVerification": {
+    "step1_bridgeReceivesMessage": "✅ Verified",
+    "step2_bridgeForwardsToCoreAgent": "✅ Verified",
+    "step3_coreAgentProcessesTask": "✅ Verified",
+    "step4_coreAgentForwardsToOpenClaw": "✅ Verified",
+    "step5_openClawGeneratesResponse": "✅ Verified",
+    "step6_responsePropagatedBack": "✅ Verified"
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "Report": {
+    "ArfVersion": "0.2",
+    "Reporter": {
+      "Name": "General Mortimer (GMAOC)",
+      "Email": "mortimer@myl0nr0s.cloud",
+      "Phone": "",
+      "Organization": "AOCROS Security Operations"
+    },
+    "ReportedSubject": {
+      "SourceIp": "MULTIPLE",
+      "SourcePort": "22",
+      "SourceHost": "",
+      "SourceTime": "2026-02-20T00:00:00Z",
+      "SourceGeolocation": {
+        "CountryCode": "MULTI",
+        "CountryName": "Netherlands, Singapore, United States, Canada, UK, Australia",
+        "Region": "Multiple",
+        "City": "Multiple"
+      },
+      "SourceProvider": "DigitalOcean"
+    },
+    "Incident": {
+      "Type": "Brute Force Attack",
+      "Description": "Coordinated brute force SSH authentication attempts from 38 DigitalOcean IP addresses. Systematic attacks with rotating usernames (root, admin, test, ubuntu, hadoop, git, deploy, daemon, debian). Low-and-slow evasion technique with ~1-2 attempts per hour per IP.",
+      "StartTime": "2026-02-20T00:00:00Z",
+      "EndTime": "ONGOING",
+      "Category": [
+        "Unauthorized Access Attempts",
+        "Brute Force",
+        "Credential Stuffing"
+      ],
+      "Severity": "HIGH"
+    },
+    "Victim": {
+      "Ip": "CLASSIFIED",
+      "Port": "22",
+      "Host": "PROTECTED",
+      "Time": "2026-02-20T00:00:00Z",
+      "Geolocation": {
+        "CountryCode": "US",
+        "CountryName": "United States",
+        "Region": "California",
+        "City": "San Francisco"
+      }
+    },
+    "Evidence": {
+      "LogLocation": "/var/log/fail2ban.log",
+      "AttachmentCount": 4,
+      "Attachments": [
+        {
+          "Name": "fail2ban_log_excerpt.txt",
+          "Type": "text/plain",
+          "Size": "~50KB",
+          "Description": "Authentication failure logs with timestamps"
+        },
+        {
+          "Name": "ip_geolocation_data.json",
+          "Type": "application/json",
+          "Size": "~25KB",
+          "Description": "Geolocation data for all attacker IPs"
+        },
+        {
+          "Name": "attack_timeline.csv",
+          "Type": "text/csv",
+          "Size": "~15KB",
+          "Description": "Chronological attack timeline"
+        },
+        {
+          "Name": "priority_targets.md",
+          "Type": "text/markdown",
+          "Size": "~30KB",
+          "Description": "Detailed dossiers for priority targets"
+        }
+      ]
+    },
+    "AttachmentsExpected": true
+  },
+  "Attackers": [
+    {
+      "ip": "178.62.233.87",
+      "attempts": 302,
+      "region": "Amsterdam, NL",
+      "priority": 1,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "test", "ubuntu"],
+      "confidence": 95
+    },
+    {
+      "ip": "178.128.252.245",
+      "attempts": 68,
+      "region": "Singapore, SG",
+      "priority": 2,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "hadoop", "git"],
+      "confidence": 90
+    },
+    {
+      "ip": "162.243.74.50",
+      "attempts": 39,
+      "region": "United States",
+      "priority": 3,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "deploy"],
+      "confidence": 85
+    },
+    {
+      "ip": "142.93.177.162",
+      "attempts": 30,
+      "region": "Toronto, CA",
+      "priority": 3,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "daemon"],
+      "confidence": 85
+    },
+    {
+      "ip": "165.245.177.151",
+      "attempts": 25,
+      "region": "United States",
+      "priority": 3,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "debian"],
+      "confidence": 85
+    },
+    {
+      "ip": "167.71.201.8",
+      "attempts": 24,
+      "region": "Frankfurt, DE",
+      "priority": 3,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "test"],
+      "confidence": 85
+    },
+    {
+      "ip": "165.245.143.157",
+      "attempts": 24,
+      "region": "United States",
+      "priority": 3,
+      "status": "PERMANENTLY_BLOCKED",
+      "usernames": ["root", "admin", "ubuntu"],
+      "confidence": 95
+    },
+    {
+      "ip": "152.42.201.153",
+      "attempts": 24,
+      "region": "Singapore, SG",
+      "priority": 3,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin", "hadoop"],
+      "confidence": 90,
+      "cluster": "Singapore-627753"
+    },
+    {
+      "ip": "138.68.183.56",
+      "attempts": 23,
+      "region": "London, UK",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "143.198.8.121",
+      "attempts": 22,
+      "region": "Sydney, AU",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "178.128.106.202",
+      "attempts": 16,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 85,
+      "cluster": "Singapore-627753"
+    },
+    {
+      "ip": "165.227.72.35",
+      "attempts": 20,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "52.154.132.165",
+      "attempts": 19,
+      "region": "United States (Azure/DO Hybrid)",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "170.64.218.126",
+      "attempts": 18,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "162.243.27.167",
+      "attempts": 18,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "188.166.75.35",
+      "attempts": 17,
+      "region": "Amsterdam, NL",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "137.184.43.136",
+      "attempts": 16,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80,
+      "cluster": "Singapore-627753"
+    },
+    {
+      "ip": "134.209.221.90",
+      "attempts": 16,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "178.62.211.65",
+      "attempts": 15,
+      "region": "Amsterdam, NL",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "165.22.237.1",
+      "attempts": 15,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "138.197.102.64",
+      "attempts": 15,
+      "region": "Toronto, CA",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "104.236.226.236",
+      "attempts": 15,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "170.64.137.250",
+      "attempts": 14,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "161.35.83.170",
+      "attempts": 14,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["daemon", "debian"],
+      "confidence": 85
+    },
+    {
+      "ip": "170.64.213.42",
+      "attempts": 13,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "159.65.172.31",
+      "attempts": 13,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "157.230.216.250",
+      "attempts": 13,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "142.93.167.120",
+      "attempts": 13,
+      "region": "Toronto, CA",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 80
+    },
+    {
+      "ip": "52.159.247.161",
+      "attempts": 12,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "138.68.179.165",
+      "attempts": 12,
+      "region": "London, UK",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "142.93.35.35",
+      "attempts": 11,
+      "region": "Toronto, CA",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "170.64.228.51",
+      "attempts": 10,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "137.184.25.37",
+      "attempts": 10,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "207.154.248.17",
+      "attempts": 9,
+      "region": "Amsterdam, NL",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "159.223.157.83",
+      "attempts": 9,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 75
+    },
+    {
+      "ip": "138.197.168.7",
+      "attempts": 8,
+      "region": "London, UK",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 70
+    },
+    {
+      "ip": "134.209.193.123",
+      "attempts": 8,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 70
+    },
+    {
+      "ip": "165.227.215.136",
+      "attempts": 6,
+      "region": "United States",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 70
+    },
+    {
+      "ip": "64.225.17.163",
+      "attempts": 5,
+      "region": "New York, US",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 70
+    },
+    {
+      "ip": "174.138.93.146",
+      "attempts": 5,
+      "region": "New York, US",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 70
+    },
+    {
+      "ip": "143.110.222.3",
+      "attempts": 5,
+      "region": "Bangalore, IN",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 70
+    },
+    {
+      "ip": "206.189.136.233",
+      "attempts": 3,
+      "region": "Singapore, SG",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 65
+    },
+    {
+      "ip": "159.203.139.3",
+      "attempts": 2,
+      "region": "Toronto, CA",
+      "priority": 4,
+      "status": "ACTIVE",
+      "usernames": ["root", "admin"],
+      "confidence": 65
+    }
+  ],
+  "Clusters": {
+    "Singapore-627753": {
+      "ips": ["178.128.252.245", "152.42.201.153", "178.128.106.202", "137.184.43.136"],
+      "total_attempts": 123,
+      "facility": "DigitalOcean Singapore DC",
+      "postal_code": "627753",
+      "confidence": 90
+    }
+  },
+  "Summary": {
+    "total_digitalocean_ips": 38,
+    "total_attempts": 1847,
+    "ongoing_attacks": true,
+    "recommendation": "IMMEDIATE_ACCOUNT_SUSPENSION"
+  }
+}

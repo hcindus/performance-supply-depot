@@ -1,0 +1,88 @@
+# CROSS-FUNCTIONAL: Build Dusty Wallet Feature
+# Performance Supply Depot LLC.
+
+task: build_dusty_wallet_feature
+description: "Build a new feature for Dusty Wallet"
+initiator: QORA
+
+# Step 1: Architecture
+- agent: STACKTRACE
+  action: design_system_architecture
+  output: architecture_diagram
+  description: "Design system architecture for the feature"
+
+# Step 2: Backend Implementation
+- agent: PIPELINE
+  action: design_api_contracts
+  description: "Create API contracts"
+  depends_on: [STACKTRACE]
+
+- agent: PIPELINE
+  action: implement_services
+  description: "Implement backend logic"
+  depends_on: [PIPELINE/api_contracts]
+
+# Step 3: Mobile Implementation
+- agent: TAPTAP
+  action: prototype_mobile_ui
+  description: "Create UI prototype"
+  depends_on: [STACKTRACE]
+
+- agent: TAPTAP
+  action: implement_front_end_logic
+  description: "Implement mobile features"
+  depends_on: [TAPTAP/prototype, PIPELINE/services]
+
+- agent: TAPTAP
+  action: integrate_with_pipeline_apis
+  description: "Connect to backend"
+  depends_on: [TAPTAP/implementation, PIPELINE/services]
+
+# Step 4: Testing
+- agent: BUGCATCHER
+  action: run_test_suite
+  description: "Run full test suite"
+  depends_on: [TAPTAP/integration]
+
+- agent: BUGCATCHER
+  action: run_security_scan
+  description: "Security testing"
+  depends_on: [TAPTAP/integration]
+
+# Step 5: Security Review
+- agent: SENTINEL
+  action: review_security
+  description: "Security approval"
+  depends_on: [BUGCATCHER/security_scan]
+
+# Step 6: Technical Sign-off
+- agent: STACKTRACE
+  action: approve_architecture
+  description: "Technical sign-off"
+  depends_on: [SENTINEL/approval]
+
+# Step 7: Cost Approval
+- agent: LEDGER-9
+  action: approve_budget
+  description: "Budget approval"
+  condition: "if_cost_exceeds_threshold"
+
+# Step 8: Deployment
+- agent: PIPELINE
+  action: deploy_to_production
+  description: "Deploy to production"
+  depends_on: [STACKTRACE/approval, BUGCATCHER/approval, SENTINEL/approval]
+
+# Success Criteria
+- All tests pass
+- Security review passed
+- Cost approved (if applicable)
+- Deployed to production
+
+# Timeline
+- Phase 1 (Architecture): 2 days
+- Phase 2 (Backend): 5 days
+- Phase 3 (Mobile): 5 days
+- Phase 4-5 (Testing + Security): 3 days
+- Phase 6-8 (Approval + Deploy): 1 day
+- Total: ~16 days

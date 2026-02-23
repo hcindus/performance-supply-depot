@@ -1,0 +1,26 @@
+🚨 DUSTY — DEPLOYMENT ORDER 🚨
+
+Captain orders: "Deploy services out to Miles and make sure Miles puts them in place."
+
+MISSION:
+Deploy ALL Dusty MVP services to Miles VPS
+
+TARGET: Miles remote VPS
+REASON: Active security threat (brute force attack)
+OBJECTIVE: Distributed defense, redundant protection
+
+SERVICES TO DEPLOY:
+1. ✅ Core-Agent → Miles VPS
+2. ✅ Bridge → Miles VPS  
+3. ✅ OpenClaw → Miles VPS
+
+VERIFICATION:
+- Miles must confirm services running
+- Health checks must pass
+- Integration with Miles' systems complete
+
+Captain: "I am serious."
+
+Execute immediately. Report deployment status.
+
+Time: 2026-02-19 07:03 UTC

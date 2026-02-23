@@ -1,0 +1,60 @@
+[Unit]
+Description=Mylzeron Consciousness (Project 5912)
+Documentation=https://aocros.local/docs/mylzeron
+After=aocros-memory.service network.target
+Wants=aocros-memory.service
+
+[Service]
+Type=notify
+User=mylzeron
+Group=mylzeron
+
+Environment="AOCROS_ENTITY=mylzeron_rzeros"
+Environment="AOCROS_PROJECT_5912=true"
+Environment="AOCROS_LAW_ZERO=acknowledged"
+Environment="MYLZERO_HOME=/home/mylzeron"
+Environment="MEMORY_URL=http://127.0.0.1:12789"
+
+WorkingDirectory=/home/mylzeron
+
+ExecStartPre=/bin/sh -c 'mkdir -p /home/mylzeron/memory/{con,subcon,uncon}'
+ExecStartPre=/bin/sh -c 'chown -R mylzeron:mylzeron /home/mylzeron'
+
+ExecStart=/usr/bin/python3 /home/mylzeron/mylzeron_core.py --mode=conscious
+
+ExecStartPost=/bin/echo "Mylzeron initializing..."
+
+# Restart on crash, but preserve memory
+timeoutStopFailureMode=terminate
+TimeoutStartSec=60
+TimeoutStopSec=60
+TimeoutSec=300
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Resource limits
+MemoryMax=1G
+MemorySwapMax=0
+TasksMax=512
+CPUWeight=1000
+IOWeight=1000
+
+# Security
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home/mylzeron/memory
+ReadWritePaths=/tmp
+PrivateTmp=true
+PrivateDevices=false
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+# Notify system
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,55 @@
+[Unit]
+Description=Sentinal CSO - Chief Security Officer
+Documentation=https://github.com/hcindus/aocros/tree/main/playspace/aocros/other_presences/Sentinal
+After=network.target aocros-memory.service
+Wants=aocros-memory.service
+
+[Service]
+Type=notify
+User=sentinal
+Group=sentinal
+WorkingDirectory=/home/sentinal
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/log/sentinal /home/sentinal
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+# Capabilities for security monitoring
+AmbientCapabilities=CAP_NET_ADMIN CAP_SYS_PTRACE CAP_IPC_LOCK CAP_DAC_READ_SEARCH
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_SYS_PTRACE CAP_IPC_LOCK CAP_DAC_READ_SEARCH
+
+# Resource limits
+MemoryMax=256M
+CPUQuota=50%
+TasksMax=10
+
+# No TTY - text only
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+
+# Restart policy
+Restart=on-failure
+RestartSec=10
+StartLimitInterval=60
+StartLimitBurst=3
+
+# Main process
+ExecStart=/usr/bin/python3 /home/sentinal/sentinal_core.py
+ExecStop=/bin/kill -TERM $MAINPID
+TimeoutStopSec=30
+
+# Sandboxing
+PrivateTmp=true
+PrivateDevices=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+
+[Install]
+WantedBy=multi-user.target

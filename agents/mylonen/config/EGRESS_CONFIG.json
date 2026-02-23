@@ -1,0 +1,36 @@
+{
+  "agent": "Mylonen",
+  "classification": "Q-LEVEL",
+  "authorized": true,
+  "authority": "Captain (Dad)",
+  "date": "2026-02-19T07:12:00Z",
+  "rule_1_exception": "AUTHORIZED",
+  "egress": {
+    "type": "controlled",
+    "method": "ssh_tunnel_with_vpn",
+    "return_required": true,
+    "max_duration_hours": 8,
+    "whitelist": [
+      "*.github.com",
+      "*.openai.com",
+      "*.anthropic.com",
+      "*.googleapis.com"
+    ],
+    "logging": "comprehensive",
+    "monitoring": "real_time"
+  },
+  "authentication": {
+    "ssh_key": "/agents/mylonen/creds/mylonen_id",
+    "certificate": "AOCROS-PRIME-KEY-2025 derived",
+    "mfa": "time_based_token",
+    "revocable": true
+  },
+  "restrictions": {
+    "no_sensitive_data_exfil": true,
+    "no_code_upload_without_approval": true,
+    "session_logging": true,
+    "sentinal_monitoring": true,
+    "max_file_size_mb": 100,
+    "rate_limit_requests_per_minute": 60
+  }
+}

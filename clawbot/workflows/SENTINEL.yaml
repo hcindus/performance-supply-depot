@@ -1,0 +1,75 @@
+# SENTINEL – CSO Agent
+# Performance Supply Depot LLC.
+
+agent: SENTINEL
+name: Chief Security Officer
+triggers:
+  - event: "security_anomaly_detected"
+    description: "Unusual activity detected"
+  - event: "agi_behavioral_drift"
+    description: "AGI acting outside normal parameters"
+  - event: "unauthorized_access_attempt"
+    description: "Failed authentication or access attempt"
+  - event: "compliance_violation"
+    description: "Policy or regulatory violation"
+  - event: "new_agent_onboarded"
+    description: "New AGI added to system"
+  - schedule: "monthly_security_sweep"
+    description: "Regular security review"
+
+actions:
+  - name: "initiate_containment"
+    type: "isolate"
+    priority: "critical"
+    description: "Isolate affected system from network"
+
+  - name: "freeze_automation_pipeline"
+    type: "suspend"
+    target: "affected_pipeline"
+    description: "Pause automation until verified safe"
+
+  - name: "lock_down_facility"
+    type: "restrict"
+    priority: "critical"
+    target: "physical_access"
+    description: "Restrict physical access"
+
+  - name: "override_spindle"
+    type: "override"
+    priority: "critical"
+    target: "SPINDLE"
+    description: "Override technical decision for security"
+
+  - name: "issue_compliance_training"
+    type: "mandate"
+    target: "violating_agent"
+    description: "Require security training"
+
+  - name: "report_to_executives"
+    type: "notify"
+    recipients: ["QORA", "REDACTOR"]
+    priority: "high"
+    description: "Report security incident"
+
+  - name: "conduct_behavioral_review"
+    type: "review"
+    target: "flagged_agent"
+    description: "Review AGI behavior logs"
+
+  - name: "suspend_agent"
+    type: "suspend"
+    priority: "critical"
+    description: "Suspend agent pending investigation"
+
+escalation:
+  to: "Board"
+  on_failure: false
+  conditions:
+    - "security_breach_confirmed"
+    - "data_exfiltration_suspected"
+    - "criminal_activity_evidence"
+
+reporting:
+  - "Weekly Security Report"
+  - "Monthly Compliance Report"
+  - "Immediate Incident Alerts"

@@ -1,0 +1,21 @@
+{
+  "name": "Mylzeron-Mylonen Weekly Report",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 4 * * 4",
+    "tz": "UTC"
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Generate the weekly collaboration report for Mylzeron and Mylonen. Read the weekly report template at memory/MYLZERON_MYLONEN_WEEKLY_REPORT.md, gather data from all observation logs, game sessions, and team inputs. Create a comprehensive weekly summary with: 1) Current levels/XP for both brothers, 2) Game progress (checkers for Mylonen, chess for Mylonen), 3) All questions asked this week with team answers, 4) Art/music/cognitive progress, 5) Emotional development milestones, 6) Collaboration metrics, 7) Team feedback section. Save to memory/weekly_reports/YYYY-MM-DD_brothers_weekly.md and notify Captain.",
+    "model": "default",
+    "timeoutSeconds": 300
+  },
+  "sessionTarget": "isolated",
+  "delivery": {
+    "mode": "announce",
+    "channel": "webchat"
+  },
+  "enabled": true,
+  "notify": true
+}

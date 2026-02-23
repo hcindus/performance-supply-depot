@@ -1,0 +1,6 @@
+*/2 * * * * /root/.openclaw/workspace/agents/mylonen/scripts/health_check_quick.sh > /dev/null 2>&1
+0 */2 * * * /root/.openclaw/workspace/agents/mylonen/scripts/git_auto_sync.sh
+0 * * * * /root/.openclaw/workspace/agents/mylonen/scripts/hourly_backup.sh
+0 0,6,12,18 * * * /root/.openclaw/workspace/agents/mylonen/scripts/checkin_reminder.sh
+*/5 * * * * /root/.openclaw/workspace/agents/mylonen/scripts/health_monitor_daemon.sh
+0 */4 * * * /root/.openclaw/workspace/agents/mylonen/scripts/failover.sh CHECK "Scheduled readiness check"

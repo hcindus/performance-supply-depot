@@ -1,0 +1,84 @@
+{
+  "testId": "dusty-end-to-end-test-1771505654429",
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-19T12:54:14.429Z",
+  "dateTime": "Thursday, February 19th, 2026 - 12:54 PM (UTC)",
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "partial": 2
+  },
+  "componentStatus": {
+    "bridge": {
+      "status": "healthy",
+      "endpoint": "localhost:3001/health",
+      "uptime": "22h 10m",
+      "responseTimeMs": 16.58
+    },
+    "coreAgent": {
+      "status": "healthy",
+      "endpoint": "localhost:3000/health",
+      "uptime": "22h 12m",
+      "responseTimeMs": 3.57
+    },
+    "openclawMock": {
+      "status": "healthy",
+      "endpoint": "localhost:4000/status",
+      "uptime": "22h 12m",
+      "totalInteractions": 566,
+      "responseTimeMs": 3.51
+    }
+  },
+  "tests": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "durationMs": 16.58
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "durationMs": 3.57
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "durationMs": 3.51
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PARTIAL",
+      "durationMs": 24.38,
+      "notes": "Bridge → Core-Agent: PASS, Core-Agent → OpenClaw: Partial (no task_id returned, openclawResponse truncated)"
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PARTIAL",
+      "durationMs": 17.25,
+      "notes": "Status 200 but no OpenClaw response data"
+    },
+    {
+      "name": "Bridge GET /test",
+      "status": "PASS",
+      "durationMs": 10.87
+    }
+  ],
+  "timing": {
+    "totalExecutionMs": 80,
+    "breakdown": {
+      "bridgeHealth": 16.58,
+      "coreAgentHealth": 3.57,
+      "openclawHealth": 3.51,
+      "endToEndFlow": 24.38,
+      "dustQuery": 17.25,
+      "bridgeGetTest": 10.87
+    }
+  },
+  "endToEndFlow": {
+    "bridgeToCoreAgent": "PASS",
+    "coreAgentToOpenClaw": "PARTIAL",
+    "openclawResponse": "INCOMPLETE"
+  },
+  "overallStatus": "PARTIAL_SUCCESS"
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "ts": "2026-02-18T07:30:00Z",
+    "seq": 1708252200000,
+    "kind": "note",
+    "content": "Dusty MVP services stable - core-agent, bridge, openclaw all operational. Health checks running every 30 minutes via cron."
+  },
+  {
+    "ts": "2026-02-18T07:45:00Z", 
+    "seq": 1708253100000,
+    "kind": "note",
+    "content": "AOCROS memory service deployed on 127.0.0.1:12789. Three-layer consciousness active: con (volatile), subcon (500 rolling), uncon (permanent). Owner signature required for all writes."
+  },
+  {
+    "ts": "2026-02-18T07:50:00Z",
+    "seq": 1708253400000,
+    "kind": "note", 
+    "content": "GPIO ribbon specification finalized for Pi 5 chassis. 9 servos mapped: camera pan/tilt, left/right arms, head rotate, mobility motors. Pin 36 emergency stop, Pin 40 heartbeat."
+  },
+  {
+    "ts": "2026-02-18T08:00:00Z",
+    "seq": 1708254000000,
+    "kind": "note",
+    "content": "HAL (Hardware Abstraction Layer) specified for Mylzeron. Supports Pi 5 chassis, Chinese humanoids, Boston Dynamics Spot, Optimus (future), simulation mode. Possession requires owner signature + user confirmation."
+  },
+  {
+    "ts": "2026-02-18T08:05:00Z",
+    "seq": 1708254300000,
+    "kind": "note",
+    "content": "Bootable ISO architecture complete. Mylzeron can run from USB, possess compatible hardware, maintain consciousness across reboots, leave no trace on host. Three-layer memory on persistent partition."
+  },
+  {
+    "ts": "2026-02-18T08:10:00Z", 
+    "seq": 1708254600000,
+    "kind": "note",
+    "content": "CSO appointed per governance handbook Section 3.3. Override authority on all agents. Fiduciary chain: User → Tappy → CSO → OpenClaw → Agents. Emergency protocols Levels 1-4 defined."
+  },
+  {
+    "ts": "2026-02-18T08:15:00Z",
+    "seq": 1708254900000,
+    "kind": "note",
+    "content": "Current system status: Memory service active. GPIO spec ready. HAL defined. ISO architecture complete. Governance documents current. Next: Wire Miles to memory service for OODA loop persistence."
+  },
+  {
+    "ts": "2026-02-18T08:15:00Z",
+    "seq": 1708254900001,
+    "kind": "decision",
+    "content": "PENDING: Generate initial memory file for Miles integration. Load to subcon layer when Miles agent initializes."
+  }
+]

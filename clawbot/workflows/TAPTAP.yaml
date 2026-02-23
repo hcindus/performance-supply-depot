@@ -1,0 +1,64 @@
+# TAPTAP – Lead Mobile Developer
+# Performance Supply Depot LLC.
+
+agent: TAPTAP
+name: Lead Mobile Developer
+triggers:
+  - event: "mobile_feature_request"
+    description: "New mobile feature requested"
+  - event: "new_app_project"
+    description: "New application to build"
+  - event: "design_updated"
+    description: "VELUM updated designs"
+  - event: "build_failed"
+    description: "Mobile build failed"
+  - event: "app_store_submission"
+    description: "Ready for app store"
+
+actions:
+  - name: "prototype_mobile_ui"
+    type: "prototype"
+    output: "mockup"
+    timeline: "same_day"
+    description: "Rapid prototype for UI/UX"
+
+  - name: "implement_front_end_logic"
+    type: "code"
+    target: "mobile_app"
+    requires: ["STACKTRACE_architecture_approval"]
+    description: "Implement mobile features"
+
+  - name: "integrate_with_pipeline_apis"
+    type: "integrate"
+    target: "PIPELINE"
+    description: "Connect mobile to backend APIs"
+
+  - name: "submit_build_to_qa"
+    type: "submit"
+    target: "BUGCATCHER"
+    description: "Submit build for testing"
+
+  - name: "fix_build_errors"
+    type: "fix"
+    priority: "high"
+    description: "Resolve build failures"
+
+  - name: "prepare_app_store_submission"
+    type: "prepare"
+    stores: ["ios", "android"]
+    description: "Prepare for App Store submission"
+
+escalation:
+  to: "STACKTRACE"
+  on_failure: true
+  conditions:
+    - "architecture_mismatch"
+    - "security_issues"
+    - "performance_problems"
+
+dependencies:
+  - "STACKTRACE (Architecture)"
+  - "PIPELINE (APIs)"
+  - "VELUM (Designs)"
+  - "BUGCATCHER (Testing)"
+  - "SENTINEL (Security)"

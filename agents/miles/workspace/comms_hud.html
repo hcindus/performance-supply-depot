@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fleet Comms HUD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff00; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 20px; text-shadow: 0 0 10px #00ff00; }
+    h3 { margin: 20px 0 10px; color: #00aa00; }
+    .hud { max-width: 900px; margin: 0 auto; background: #111; border: 2px solid #00ff00; border-radius: 10px; padding: 20px; box-shadow: 0 0 20px rgba(0,255,0,0.3); }
+    .status { text-align: center; margin-bottom: 20px; padding: 10px; background: #001100; border-radius: 5px; }
+    .broadcast-btn { display: block; width: 100%; background: #ff6600; color: #000; border: none; padding: 15px; font-size: 1.2em; font-weight: bold; cursor: pointer; margin-bottom: 20px; border-radius: 5px; text-transform: uppercase; }
+    .broadcast-btn:hover { background: #ff8833; box-shadow: 0 0 15px #ff6600; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px; }
+    .agent { background: #002200; border: 1px solid #00aa00; padding: 10px; border-radius: 5px; cursor: pointer; transition: all 0.2s; text-align: center; position: relative; }
+    .agent:hover { background: #003300; border-color: #00ff00; box-shadow: 0 0 10px #00ff00; }
+    .agent.online { border-color: #00ff00; }
+    .agent.offline { border-color: #666; opacity: 0.6; }
+    .status-icon { position: absolute; top: 5px; right: 5px; font-size: 12px; }
+    .status-icon.online { color: #00ff00; }
+    .status-icon.offline { color: #ff3333; }
+    .agent-name { font-weight: bold; font-size: 0.8em; }
+    .agent-last { font-size: 0.65em; color: #888; margin-top: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+    .modal-content { background: #111; border: 2px solid #00ff00; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; }
+    input, textarea, select { width: 100%; background: #000; border: 1px solid #00aa00; color: #00ff00; padding: 10px; margin-bottom: 15px; font-family: inherit; font-size: 1em; }
+    textarea { height: 100px; resize: vertical; }
+    button { background: #00aa00; color: #000; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; font-weight: bold; margin-right: 10px; }
+    button:hover { background: #00ff00; }
+    .send-btn { background: #00ff00; }
+    .log { background: #001100; padding: 15px; border-radius: 5px; max-height: 200px; overflow-y: auto; font-size: 0.9em; }
+    .log-entry { margin-bottom: 5px; border-bottom: 1px solid #002200; padding-bottom: 5px; }
+    .log-time { color: #00aa00; }
+    .legend { text-align: center; margin-bottom: 15px; font-size: 0.85em; }
+    .legend span { margin: 0 10px; }
+  </style>
+</head>
+<body>
+  <div class="hud">
+    <h1>🚀 FLEET COMMS HUD</h1>
+    
+    <div class="status" id="status">
+      🔄 Connecting to Miles...
+    </div>
+
+    <div class="legend">
+      <span>🟢 Online</span>
+      <span>🔴 Offline</span>
+    </div>
+
+    <button class="broadcast-btn" onclick="openBroadcast()">📡 BROADCAST TO ALL CREW</button>
+
+    <h3>Select Crew Member:</h3>
+    <div class="grid" id="crew"></div>
+
+    <h3>Recent Messages:</h3>
+    <div class="log" id="log"></div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Send Message</h2>
+      <input type="hidden" id="to-agent">
+      <select id="recipient-select">
+        <option value="">-- Select Recipient --</option>
+      </select>
+      <textarea id="message" placeholder="Type your message..."></textarea>
+      <button class="send-btn" onclick="sendMessage()">📤 Send</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    var crew = [
+      {id: 'alpha-9', name: 'ALPHA-9'},
+      {id: 'boxtron', name: 'BOXTRON'},
+      {id: 'bugcatcher', name: 'BUGCATCHER'},
+      {id: 'clippy-42', name: 'CLIPPY-42'},
+      {id: 'dusty', name: 'DUSTY'},
+      {id: 'feelix', name: 'FEELIX'},
+      {id: 'fiber', name: 'FIBER'},
+      {id: 'hume', name: 'HUME'},
+      {id: 'jane', name: 'JANE'},
+      {id: 'ledger-9', name: 'LEDGER-9'},
+      {id: 'mill', name: 'MILL'},
+      {id: 'mylfours', name: 'MYLFOURS'},
+      {id: 'myllon', name: 'MYLLON'},
+      {id: 'mylthreess', name: 'MYLTHREESS'},
+      {id: 'myltwon', name: 'MYLTWON'},
+      {id: 'mylzeron', name: 'MYLZERON'},
+      {id: 'pipeline', name: 'PIPELINE'},
+      {id: 'pulp', name: 'PULP'},
+      {id: 'qora', name: 'QORA'},
+      {id: 'ralph', name: 'RALPH'},
+      {id: 'redactor', name: 'REDACTOR'},
+      {id: 'reggie', name: 'REGGIE'},
+      {id: 'r2-d2', name: 'R2-D2'},
+      {id: 'scribble', name: 'SCRIBBLE'},
+      {id: 'sentinel', name: 'SENTINEL'},
+      {id: 'spindle', name: 'SPINDLE'},
+      {id: 'stacktrace', name: 'STACKTRACE'},
+      {id: 'tappy-lewis', name: 'TAPPY-LEWIS'},
+      {id: 'taptap', name: 'TAPTAP'},
+      {id: 'the_great_cryptonio', name: 'CRYPTONIO'},
+      {id: 'velum', name: 'VELUM'},
+      {id: 'miles', name: 'MILES'},
+      {id: 'mortimer-2', name: 'MORTIMER-2'}
+    ];
+
+    var MILES_URL = 'https://myl0nr0s.cloud';
+    var agentStatus = {};
+
+    function init() {
+      var grid = document.getElementById('crew');
+      crew.sort(function(a,b) { return a.id.localeCompare(b.id); });
+      crew.forEach(function(agent) {
+        var div = document.createElement('div');
+        div.className = 'agent offline';
+        div.id = 'agent-' + agent.id;
+        div.innerHTML = '<span class="status-icon offline">🔴</span><div class="agent-name">' + agent.name + '</div><div class="agent-last">Last: Never</div>';
+        div.onclick = function() { openModal(agent.id); };
+        grid.appendChild(div);
+      });
+
+      var select = document.getElementById('recipient-select');
+      crew.sort(function(a,b) { return a.id.localeCompare(b.id); });
+      crew.forEach(function(agent) {
+        var opt = document.createElement('option');
+        opt.value = agent.id;
+        opt.text = agent.name;
+        select.appendChild(opt);
+      });
+
+      checkHealth();
+      setInterval(checkHealth, 15000);
+      fetchAgentStatus();
+      setInterval(fetchAgentStatus, 30000);
+    }
+
+    async function checkHealth() {
+      try {
+        var res = await fetch(MILES_URL + '/health');
+        var data = await res.json();
+        document.getElementById('status').innerHTML = '✅ Connected to ' + (data.name || 'Miles') + ' | ' + new Date().toLocaleTimeString();
+        updateAgentStatus('miles', true);
+      } catch(e) {
+        document.getElementById('status').innerHTML = '⚠️ Connection issue - using GitHub fallback';
+        updateAgentStatus('miles', false);
+      }
+    }
+
+    async function fetchAgentStatus() {
+      try {
+        var res = await fetch(MILES_URL + '/agents');
+        if (res.ok) {
+          var data = await res.json();
+          if (data.agents) {
+            data.agents.forEach(function(agent) {
+              updateAgentStatus(agent, true);
+            });
+          }
+        }
+      } catch(e) {}
+    }
+
+    function updateAgentStatus(agentId, online) {
+      var div = document.getElementById('agent-' + agentId);
+      if (!div) return;
+      
+      agentStatus[agentId] = { online: online, lastSeen: new Date() };
+      
+      if (online) {
+        div.className = 'agent online';
+        div.querySelector('.status-icon').className = 'status-icon online';
+        div.querySelector('.status-icon').textContent = '🟢';
+        div.querySelector('.agent-last').textContent = 'Online now';
+      } else {
+        div.className = 'agent offline';
+        div.querySelector('.status-icon').className = 'status-icon offline';
+        div.querySelector('.status-icon').textContent = '🔴';
+        var last = agentStatus[agentId] ? agentStatus[agentId].lastSeen : null;
+        if (last) {
+          var mins = Math.floor((new Date() - last) / 60000);
+          div.querySelector('.agent-last').textContent = 'Last: ' + mins + 'm ago';
+        }
+      }
+    }
+
+    function openModal(agent) {
+      document.getElementById('modal-title').innerText = 'Message: ' + agent;
+      document.getElementById('to-agent').value = agent;
+      document.getElementById('recipient-select').value = agent;
+      document.getElementById('message').value = '';
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('message').focus();
+    }
+
+    function openBroadcast() {
+      document.getElementById('modal-title').innerText = '📡 BROADCAST TO ALL';
+      document.getElementById('to-agent').value = 'ALL';
+      document.getElementById('recipient-select').value = '';
+      document.getElementById('message').value = '';
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('message').focus();
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    async function sendMessage() {
+      var to = document.getElementById('to-agent').value;
+      var selectVal = document.getElementById('recipient-select').value;
+      if (!to || to === 'ALL') { to = selectVal; }
+      var text = document.getElementById('message').value;
+      
+      if (!text.trim()) { alert('Please enter a message'); return; }
+      if (!to) { alert('Please select a recipient'); return; }
+
+      var msg = {
+        from: 'captain',
+        to: to,
+        text: text,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        var res = await fetch(MILES_URL + '/pipe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(msg)
+        });
+        
+        if (res.ok) {
+          if (to === 'ALL') {
+            addLog('📡 → ALL CREW: ' + text.substring(0, 50) + '...');
+          } else {
+            addLog('📤 → ' + to + ': ' + text.substring(0, 50) + '...');
+          }
+          closeModal();
+        } else {
+          alert('Failed to send - Captain, try GitHub message');
+        }
+      } catch(e) {
+        alert('Connection failed - use GitHub fallback');
+      }
+    }
+
+    function addLog(text) {
+      var log = document.getElementById('log');
+      var entry = document.createElement('div');
+      entry.className = 'legend-entry';
+      entry.innerHTML = '<span class="log-time">[' + new Date().toLocaleTimeString() + ']</span> ' + text;
+      log.insertBefore(entry, log.firstChild);
+    }
+
+    document.getElementById('modal').onclick = function(e) {
+      if (e.target === this) closeModal();
+    };
+
+    init();
+  </script>
+</body>
+</html>

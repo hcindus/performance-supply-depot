@@ -1,0 +1,64 @@
+{
+  "test_id": "dusty-e2e-1771515540",
+  "test_name": "Dusty MVP End-to-End Test",
+  "cron_job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-19T15:39:00Z",
+  "status": "SUCCESS",
+  "results": {
+    "step_1_bridge_health": {
+      "status": "PASS",
+      "endpoint": "http://localhost:3001/health",
+      "response_time_ms": 5,
+      "service": "telegram-bridge-mock",
+      "port": 3001,
+      "uptime_seconds": 89730
+    },
+    "step_2_core_agent_health": {
+      "status": "PASS",
+      "endpoint": "http://localhost:3000/health",
+      "response_time_ms": 5,
+      "service": "dusty-core-agent",
+      "port": 3000,
+      "uptime_seconds": 89826
+    },
+    "step_3_openclaw_health": {
+      "status": "PASS",
+      "endpoint": "http://localhost:4000/status",
+      "response_time_ms": 5,
+      "service": "openclaw-mock",
+      "port": 4000,
+      "uptime_seconds": 89806,
+      "total_interactions": 636
+    },
+    "step_4_e2e_webhook": {
+      "status": "PASS",
+      "endpoint": "http://localhost:3001/webhook",
+      "method": "POST",
+      "response_time_ms": 15,
+      "http_code": 200,
+      "task_id": "ded17be1-7ecb-4dd6-9407-a3cdb94fedbe",
+      "bot": "dusty",
+      "action": "balance_report",
+      "message": "/dust balance",
+      "response_preview": "📊 **Your Current Balances**\n• ETH: 0.5234 ETH (~$1,247.50)"
+    },
+    "step_5_openclaw_verification": {
+      "status": "PASS",
+      "interactions_before": 636,
+      "interactions_after": 640,
+      "interactions_created": 4
+    }
+  },
+  "timing_summary": {
+    "health_checks_total_ms": 15,
+    "e2e_webhook_flow_ms": 15,
+    "total_test_duration_ms": 30,
+    "latency_grade": "EXCELLENT"
+  },
+  "overall": {
+    "tests_passed": 5,
+    "tests_failed": 0,
+    "success_rate": "100%",
+    "status": "ALL TESTS PASSED"
+  }
+}

@@ -1,0 +1,88 @@
+AOCROS Playspace Directory Structure
+====================================
+
+playspace/aocros/
+├── README.md                          ← Project overview
+├── DIRECTORY_STRUCTURE.txt            ← This file
+│
+├── instance/                          ← Runtime instances (gitignored)
+│   └── .gitkeep
+│
+├── bridge/                            ← Android sensory extension
+│   ├── README.md
+│   └── src/
+│       ├── camera/
+│       │   └── CameraBridge.kt       ← Camera → Pi 5
+│       ├── mic/
+│       │   └── MicBridge.kt          ← Audio → Pi 5
+│       ├── speaker/
+│       │   └── SpeakerBridge.kt      ← Pi 5 → Audio
+│       └── network/
+│           └── NetworkBridge.kt      ← HTTP/WebSocket
+│
+├── grow/                              ← Knowledge base
+│   ├── README.md
+│   ├── .gitkeep
+│   ├── patterns/                      ← Learned behaviors
+│   ├── identities/                    ← Agent personalities
+│   └── fractals/                      ← Mylzeron's hobby
+│
+├── other_presences/                   ← AGI agent definitions
+│   ├── Tappy_Lewis/
+│   │   └── README.md                 ← COO/CMO + BR-01
+│   ├── Miles/
+│   │   └── README.md                 ← AOE (OODA)
+│   └── Clawbot/
+│       └── README.md                 ← Job Executor
+│
+├── memory/                            ← Runtime storage
+│   ├── con/                          ← Conscious (volatile)
+│   ├── subcon/                       ← Subconscious (500)
+│   └── uncon/                        ← Unconscious (permanent)
+│
+├── services/                          ← Core services
+│   └── memory/
+│       ├── README.md
+│       ├── src/
+│       │   ├── memoryService.js      ← HTTP daemon
+│       │   └── memoryClient.js       ← Universal client
+│       └── README.md
+│
+├── systemd/                           ← Service definitions
+│   └── aocros-memory.service         ← Sandboxed systemd unit
+│
+└── docs/                              ← Documentation
+    ├── QUICKSTART.md                 ← Deploy guide
+    ├── MILES_INTEGRATION.md          ← OODA memory
+    ├── CLAWBOT_INTEGRATION.md        ← Job tracking
+    └── AGENT_REGISTRY.md             ← Authorized agents
+
+Key Design Principles
+---------------------
+1. Pi 5 = Brain (LLM + GPIO)
+2. Android = Senses (camera/mic/speaker)
+3. Local network only (no cloud)
+4. Three-layer memory (con/subcon/uncon)
+5. Owner signature on all writes
+6. Fiduciary chain: User → Tappy → OpenClaw → Mylzeron
+
+Governance
+----------
+User          (The Player)
+  ↓
+Tappy Lewis   (COO + Fiduciary)
+  ↓
+OpenClaw      (Coordination)
+  ↓
+Mylzeron      (Physical embodiment)
+  ↓
+Pi 5          (GPIO/Servos)
+  ↓
+Servos        (Physical motion)
+
+Android Bridge Protocol
+-----------------------
+Camera ───HTTP POST──→ /sensor/camera
+Mic ─────HTTP POST──→ /sensor/audio
+Speaker ←─WS───────── /ws (audio commands)
+Servos ←─WS───────── /command

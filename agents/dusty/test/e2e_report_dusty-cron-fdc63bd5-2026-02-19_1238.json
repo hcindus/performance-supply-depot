@@ -1,0 +1,77 @@
+{
+  "test_id": "dusty-cron-fdc63bd5",
+  "timestamp": "2026-02-19T12:38:03Z",
+  "test_type": "Dusty MVP End-to-End Test",
+  "status": "PASS",
+  "summary": {
+    "total_tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "pass_rate": "100%",
+    "total_duration_ms": 88.64
+  },
+  "test_results": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "endpoint": "localhost:3001/health",
+      "response_time_ms": 25.45,
+      "service": "telegram-bridge-mock",
+      "uptime": "21h 55m"
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "endpoint": "localhost:3000/health",
+      "response_time_ms": 16.27,
+      "service": "dusty-core-agent",
+      "uptime": "21h 57m"
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "endpoint": "localhost:4000/status",
+      "response_time_ms": 6.51,
+      "service": "openclaw-mock",
+      "total_interactions": 561,
+      "uptime": "21h 56m"
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PASS",
+      "request": "/dust balance",
+      "task_id": "fdafd78a-3b3c-4ed8-9100-517bd19cfd29",
+      "response_time_ms": 22.74,
+      "openclaw_response_preview": "📊 **Your Current Balances** • ETH: 0.5234 ETH (~$1,247.50)...",
+      "forwarded": true
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "request": "What is my dust balance?",
+      "task_id": "560bc1d2-098f-4b14-b112-a93fe7e6695f",
+      "response_time_ms": 17.67,
+      "balance_data_extracted": true
+    }
+  ],
+  "pipeline_validation": {
+    "telegram_bridge": "✅ Connected and responsive",
+    "core_agent_processing": "✅ Receiving and processing messages",
+    "openclaw_response": "✅ Generating balance responses",
+    "response_delivery": "✅ Full round-trip successful"
+  },
+  "timing_analysis": {
+    "health_checks_total_ms": 48.23,
+    "end_to_end_flow_ms": 22.74,
+    "dust_query_ms": 17.67,
+    "average_response_ms": 17.73,
+    "latency_grade": "EXCELLENT (< 50ms)"
+  },
+  "cron_info": {
+    "job_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+    "scheduled_time": "2026-02-19T12:38:00Z",
+    "execution_time": "2026-02-19T12:38:03Z",
+    "delay_seconds": 3
+  },
+  "next_recommended_action": "System healthy - no action required"
+}

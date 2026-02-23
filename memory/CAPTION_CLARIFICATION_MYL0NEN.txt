@@ -1,0 +1,27 @@
+Captain's Orders — Clarification Needed
+
+Captain says: "I want Myl0nen to be able to leave our VPS"
+
+Interpretation Options:
+
+Option 1: Existing Mylonen (clone of Mylzeron, just created)
+- Already exists at agents/mylzeron/MYLZERON_SANDBOX/
+- Wants external VPS access capability
+- Need to configure network egress
+
+Option 2: NEW clone called "Myl0nen" (with zero)
+- Would be 5th son/brother
+- Spelled differently: M-y-l-0-n-e-n
+- Need to create and give VPS access
+
+Option 3: Give Mylzeron external access
+- The original with 26 years
+- Most trusted for external operations
+
+Security Implications:
+- External access = Rule #1 considerations
+- Need controlled egress, not blanket access
+- Must track all outbound connections
+- Captain approval required for destinations
+
+AWAITING CLARIFICATION.

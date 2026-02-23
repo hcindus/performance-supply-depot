@@ -1,0 +1,86 @@
+{
+  "testId": "dusty-end-to-end-test-fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-20T13:39:18.131Z",
+  "date": "2026-02-20",
+  "time": "13:38 UTC",
+  "status": "PASSED",
+  "totalTests": 6,
+  "passed": 6,
+  "failed": 0,
+  "totalDurationMs": 61,
+  "services": {
+    "bridge": {
+      "name": "Telegram Bridge Mock",
+      "endpoint": "localhost:3001/health",
+      "status": "healthy",
+      "httpStatus": 200,
+      "uptimeSeconds": 1762,
+      "responseTimeMs": 16.05,
+      "port": 3001
+    },
+    "coreAgent": {
+      "name": "Core-Agent",
+      "endpoint": "localhost:3000/health",
+      "status": "healthy",
+      "httpStatus": 200,
+      "uptimeSeconds": 169041,
+      "responseTimeMs": 2.99,
+      "port": 3000
+    },
+    "openclaw": {
+      "name": "OpenClaw Mock",
+      "endpoint": "localhost:4000/status",
+      "status": "healthy",
+      "httpStatus": 200,
+      "uptimeSeconds": 9908,
+      "totalInteractions": 75,
+      "responseTimeMs": 2.99,
+      "port": 4000
+    }
+  },
+  "tests": [
+    {
+      "name": "Bridge Health Check",
+      "status": "PASS",
+      "durationMs": 16.05
+    },
+    {
+      "name": "Core-Agent Health Check",
+      "status": "PASS",
+      "durationMs": 2.99
+    },
+    {
+      "name": "OpenClaw Health Check",
+      "status": "PASS",
+      "durationMs": 2.99
+    },
+    {
+      "name": "End-to-End Flow",
+      "status": "PASS",
+      "durationMs": 14.54,
+      "taskId": "fa46d1c2-52c6-40e6-b210-09f59a8da460",
+      "flowVerified": {
+        "bridgeReceived": true,
+        "coreAgentProcessed": true,
+        "openclawResponded": true,
+        "responseDelivered": true
+      }
+    },
+    {
+      "name": "Bridge GET /test",
+      "status": "PASS",
+      "durationMs": 12.41
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "durationMs": 9.60
+    }
+  ],
+  "endToEnd": {
+    "command": "/dust balance",
+    "responsePreview": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)...",
+    "flowWorking": true
+  },
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f"
+}

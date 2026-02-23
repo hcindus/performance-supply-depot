@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "crypto-market-data": {
+      "version": "1.0.2",
+      "installedAt": 1771393924549
+    },
+    "web": {
+      "version": "1.0.0",
+      "installedAt": 1771393929563
+    },
+    "evm-wallet": {
+      "version": "1.0.3",
+      "installedAt": 1771393942813
+    },
+    "mobile": {
+      "version": "1.0.0",
+      "installedAt": 1771393954572
+    }
+  }
+}

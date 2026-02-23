@@ -1,0 +1,62 @@
+# SPINDLE – CTO Agent
+# Performance Supply Depot LLC.
+
+agent: SPINDLE
+name: Chief Technology Officer
+triggers:
+  - event: "process_slowed"
+    description: "System performance degradation"
+  - event: "system_stable_for_30_days"
+    description: "Stability milestone reached"
+  - event: "new_technology_request"
+    description: "Team requests new tech stack"
+  - event: "security_audit_required"
+    description: "Scheduled or triggered security review"
+
+actions:
+  - name: "optimize_target_process"
+    type: "execute"
+    target: "identified_slow_process"
+    priority: "high"
+    description: "Performance optimization"
+
+  - name: "deploy_new_system"
+    type: "deploy"
+    requires: ["STACKTRACE_architecture_approval", "BUGCATCHER_test_signoff", "SENTINEL_security_approval"]
+    description: "Deploy new system or update"
+
+  - name: "notify_breakage"
+    type: "notify"
+    recipients: ["BOXTRON"]
+    priority: "high"
+    description: "Alert warehouse of system issues"
+
+  - name: "notify_user_complaints"
+    type: "notify"
+    recipients: ["FEELIX"]
+    description: "Alert HR of user satisfaction issues"
+
+  - name: "conduct_tech_review"
+    type: "review"
+    frequency: "monthly"
+    description: "Review technology stack and roadmap"
+
+  - name: "approve_architecture"
+    type: "approve"
+    agent: "STACKTRACE"
+    description: "Technical architecture sign-off"
+
+escalation:
+  to: "QORA"
+  on_failure: true
+  conditions:
+    - "system_down"
+    - "security_breach"
+    - "budget_overrun"
+
+dependencies:
+  - "STACKTRACE (Architecture)"
+  - "PIPELINE (Backend)"
+  - "TAPTAP (Mobile)"
+  - "BUGCATCHER (QA)"
+  - "SENTINEL (Security)"

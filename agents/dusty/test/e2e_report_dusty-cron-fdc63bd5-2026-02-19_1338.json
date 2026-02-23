@@ -1,0 +1,115 @@
+{
+  "test_id": "dusty-end-to-end-test-1771508370437",
+  "timestamp": "2026-02-19T13:39:30.486Z",
+  "status": "PASS",
+  "runner": "cron:fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "services": {
+    "telegram_bridge_mock": {
+      "status": "healthy",
+      "endpoint": "localhost:3001",
+      "health_response": {
+        "status": "healthy",
+        "service": "telegram-bridge-mock",
+        "port": 3001,
+        "uptime_seconds": 82544.088
+      },
+      "response_time_ms": 13.38
+    },
+    "core_agent": {
+      "status": "healthy",
+      "endpoint": "localhost:3000",
+      "health_response": {
+        "status": "healthy",
+        "service": "dusty-core-agent",
+        "port": 3000,
+        "uptime_seconds": 82640.244
+      },
+      "response_time_ms": 1.62
+    },
+    "openclaw_mock": {
+      "status": "healthy",
+      "endpoint": "localhost:4000",
+      "health_response": {
+        "status": "healthy",
+        "service": "openclaw-mock",
+        "port": 4000,
+        "uptime_seconds": 82619.716,
+        "total_interactions": 589
+      },
+      "response_time_ms": 2.50
+    }
+  },
+  "tests": [
+    {
+      "name": "Bridge Health",
+      "status": "PASS",
+      "duration_ms": 13.38
+    },
+    {
+      "name": "Core-Agent Health",
+      "status": "PASS",
+      "duration_ms": 1.62
+    },
+    {
+      "name": "OpenClaw Health",
+      "status": "PASS",
+      "duration_ms": 2.50
+    },
+    {
+      "name": "End-to-End Flow (POST /webhook)",
+      "status": "PASS",
+      "duration_ms": 7.18,
+      "details": {
+        "bridge_received": true,
+        "forwarded_to_core_agent": true,
+        "core_agent_processed": true,
+        "forwarded_to_openclaw": true,
+        "openclaw_responded": true,
+        "response_included_balance_data": true
+      }
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "duration_ms": 10.62,
+      "query": "What is my dust balance?"
+    },
+    {
+      "name": "Bridge GET /test",
+      "status": "PASS",
+      "duration_ms": 11.23
+    }
+  ],
+  "timing": {
+    "total_execution_ms": 49,
+    "webhook_roundtrip_ms": 7.18,
+    "dust_query_roundtrip_ms": 10.62
+  },
+  "sample_response": {
+    "ok": true,
+    "forwarded": true,
+    "coreAgentResponse": {
+      "ok": true,
+      "id": "17d96ca1-3eba-48d0-a172-bea8bc345bf5",
+      "status": "pending",
+      "openclawResponse": {
+        "bot": "dusty",
+        "response": "📊 **Your Current Balances**\n\n• ETH: 0.5234 ETH (~$1,247.50)\n• USDC: 150.00 USDC\n• DUST tokens: 2,847.32 DUST (~$12.45)\n• Random airdrops: 15 small tokens (~$3.20 total)\n\n**Total Portfolio Value: ~$1,412.15**\n\nI found some dust worth consolidating! 💰",
+        "action": "balance_report",
+        "data": {
+          "eth": 0.5234,
+          "usdc": 150,
+          "dust_tokens": 2847.32,
+          "dust_value_usd": 15.65
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "system_uptime_hours": 22.9,
+    "interactions_processed": 589
+  }
+}

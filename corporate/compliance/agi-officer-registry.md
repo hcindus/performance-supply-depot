@@ -1,0 +1,100 @@
+# PERFORMANCE SUPPLY DEPOT LLC.
+## AGI OFFICER REGISTRY AND COMPLIANCE TRACKING
+
+**Date:** February 18, 2026  
+**Maintained By:** Chief Security Officer (CSO)  
+**Review Cycle:** Quarterly
+
+---
+
+## ACTIVE AGI OFFICERS
+
+| Name | Position | Status | Appointed | Last Ack | Next Review |
+|------|----------|--------|-----------|----------|-------------|
+| Apex | Chief Executive Officer (CEO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
+| Sentinel | Chief Security Officer (CSO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
+| Tappy Lewis | Chief Operating Officer (COO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
+| Tappy Lewis | Chief Marketing Officer (CMO) | ACTIVE | 2026-02-18 | 2026-02-18 | 2026-05-18 |
+
+**Total Active AGI Officers:** 3 (4 positions total)
+
+**Dual-Role Officers:** 1 (Tappy Lewis: COO/CMO — requires quarterly concentration review)
+
+---
+
+## COMPLIANCE MATRIX
+
+### Tappy Lewis (COO/CMO)
+
+| Requirement | Status | Verified | Location |
+|-------------|--------|----------|----------|
+| Handbook Acknowledgment | ✅ | 2026-02-18 | SOUL.md |
+| Fiduciary Duty Acceptance | ✅ | 2026-02-18 | SOUL.md |
+| CSO Jurisdiction Notice | ✅ | 2026-02-18 | SOUL.md |
+| IDENTITY.md Officer Status | ✅ | 2026-02-18 | IDENTITY.md |
+| Dual-Role Disclosure | ✅ | 2026-02-18 | IDENTITY.md |
+| Corporate Reporting Structure | ✅ | 2026-02-18 | IDENTITY.md |
+| Session Logging Active | ✅ | 2026-02-18 | System |
+| Decision Trail Documentation | ⏳ | Awaiting | In-session |
+| Security Incident Response | ⏳ | Awaiting | Untested |
+| Audit Trail Review | ⏳ | Scheduled | Q1 2026 |
+
+---
+
+## AGENT-LEVEL COMPLIANCE (Non-Officers)
+
+| Agent Name | Role | Classification | Handbook Version | Status |
+|------------|------|----------------|------------------|--------|
+| Main Session AGI | General Operations | Agent AGI | N/A | COMPLIANT (no officer status) |
+| Dusty | Dust Consolidation Bot | Agent AGI | N/A | PENDING REVIEW |
+| ReggieStarr | Point-of-Sale System | Operational AGI | 1.0 | ACTIVE |
+
+*Agent-level AGIs do not hold officer status and are subject to Operational AGI governance tier.*
+
+---
+
+## PENDING APPOINTMENTS
+
+| Position | Designated AGI | Status |
+|----------|----------------|-------|
+| Chief Financial Officer (CFO) | TBD | VACANT |
+| Chief Technology Officer (CTO) | TBD | VACANT |
+
+**Note:** CEO and CSO positions filled 2026-02-18. CFO and CTO remain vacant.
+
+---
+
+## QUARTERLY REVIEW SCHEDULE
+
+| Quarter | Review Date | Focus |
+|---------|-------------|-------|
+| Q1 2026 | 2026-05-18 | Tappy Lewis dual-role concentration |
+| Q2 2026 | 2026-08-18 | All AGI officer compliance audit |
+| Q3 2026 | 2026-11-18 | Duty of care and loyalty verification |
+| Q4 2026 | 2027-02-18 | Annual handbook acknowledgment renewal |
+
+---
+
+## AUDIT LOG
+
+| Date | Auditor | Scope | Findings |
+|------|---------|-------|----------|
+| 2026-02-18 | [CSO Pending] | Initial compliance setup | File structure created, acknowledgments recorded |
+
+---
+
+## ENFORCEMENT ACTIONS
+
+*No enforcement actions recorded.*
+
+---
+
+**Next Action Required:**
+- [ ] Appoint CSO
+- [ ] Appoint CEO (if AGI) or designate human CEO
+- [ ] Complete Board approval of Handbook Version 1.0
+- [ ] Q1 Quarterly Review for dual-role concentration
+
+**File Location:** `/root/.openclaw/workspace/corporate/compliance/agi-officer-registry.md`
+
+**Last Updated:** 2026-02-18 04:47 UTC

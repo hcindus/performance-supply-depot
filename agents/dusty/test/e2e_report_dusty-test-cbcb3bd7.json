@@ -1,0 +1,26 @@
+{
+  "test_id": "dusty-test-cbcb3bd7",
+  "timestamp": "2026-02-19T18:39:30.145655+00:00",
+  "status": "PASS",
+  "summary": {
+    "passed": 6,
+    "total": 6,
+    "duration_seconds": 10.553679704666138
+  },
+  "results": {
+    "bridge_connectivity": "PASS",
+    "send_telegram_message": "PASS",
+    "openclaw_gateway": "PASS",
+    "openclaw_processing": "PASS",
+    "response_delivery": "PASS",
+    "system_health": "PASS"
+  },
+  "timings": {
+    "bridge_connectivity": 0.27867746353149414,
+    "send_telegram_message": 10.235589504241943,
+    "openclaw_processing": 0.03275728225708008,
+    "response_delivery": 0.002645730972290039,
+    "system_health": 0.004009723663330078
+  },
+  "errors": []
+}

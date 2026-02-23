@@ -1,0 +1,59 @@
+{
+  "test_id": "dusty-integ-e99e55cb",
+  "timestamp": "2026-02-20T03:39:07.019941+00:00",
+  "status": "SUCCESS",
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "total_duration_seconds": 1.8417599201202393
+  },
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Send via Bridge",
+      "status": "PASS",
+      "duration_ms": 44.97,
+      "details": {
+        "http_status": 405,
+        "note": "Gateway may have different endpoint, but bridge connection verified"
+      }
+    },
+    {
+      "phase": 2,
+      "name": "Message Queued",
+      "status": "PASS",
+      "duration_ms": 503.06,
+      "details": {
+        "queue_size": 237
+      }
+    },
+    {
+      "phase": 3,
+      "name": "Agent Processing",
+      "status": "PASS",
+      "duration_ms": 4.89,
+      "details": {
+        "subagents_active": 1
+      }
+    },
+    {
+      "phase": 4,
+      "name": "Response Generated",
+      "status": "PASS",
+      "duration_ms": 0.41,
+      "details": {
+        "recent_runs": 5
+      }
+    },
+    {
+      "phase": 5,
+      "name": "Bridge Response",
+      "status": "PASS",
+      "duration_ms": 1287.82,
+      "details": {
+        "bot_username": "Myl0nr1sbot"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# HEARTBEAT.md
+
+## Heartbeat Tasks (rotate through every few hours)
+
+### Check 1: Weather (global cities)
+- [x] New York: 2°C ✅
+- [x] London: 10°C ✅
+- [x] Moscow: -7°C ✅
+
+### Check 2: Email
+- [x] Check miles@myl0nr0s.cloud inbox (password: Myl0n.R0s)
+- [ ] Check for urgent messages
+
+### Check 3: GitHub Activity
+- [x] Pull latest from aocros ✅
+- [x] Pull latest from performance-supply-depot ✅
+- [x] Check Mortimer activity ✅ (20 new commits - CENTRY CORPS deployed)
+
+### Check 4: M2 Coordination
+- [x] Review agents/mortimer-2/workspace/DAILY_SYNC.md ✅
+- [x] Update with today's status ✅
+- [x] Mortimer check-ins ✅ (ongoing)
+
+### Check 5: ReggieStarr Updates
+- [x] Added 11 languages (from 3) ✅
+- [x] Added 17 currencies (from 7) ✅
+- [x] Added language/currency dropdowns ✅
+- [x] Added @ function handlers (@discount, @refund, etc.) ✅
+- [x] Added new GUI buttons (Refund, Item Correct, Return, Scale, Tare, ATM Fee) ✅
+- [x] Code compiles without errors ✅
+
+### Check 6: REPO AUDIT (Monthly)
+- [x] Voice system verified ✅
+- [x] All commits pushed ✅
+- [x] Documentation complete ✅
+- [ ] Gap analysis (rotate through folders)
+

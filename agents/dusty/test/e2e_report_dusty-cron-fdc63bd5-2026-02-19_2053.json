@@ -1,0 +1,188 @@
+{
+  "test_id": "dusty-end-to-end-test-1771534452883",
+  "test_run_id": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "timestamp": "2026-02-19T20:54:12.882Z",
+  "date": "2026-02-19",
+  "time": "20:53 UTC",
+  "test_type": "dusty-end-to-end-test",
+  "summary": {
+    "total_tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "partial": 0,
+    "status": "PASS",
+    "overall_result": "✅ ALL TESTS PASSED"
+  },
+  "components": {
+    "telegram_bridge_mock": {
+      "status": "healthy",
+      "endpoint": "localhost:3001/health",
+      "uptime": "30h 10m",
+      "response_time_ms": 14.91,
+      "pid": 31788
+    },
+    "core_agent": {
+      "status": "healthy",
+      "endpoint": "localhost:3000/health",
+      "uptime": "30h 12m",
+      "response_time_ms": 2.09
+    },
+    "openclaw_mock": {
+      "status": "healthy",
+      "endpoint": "localhost:4000/status",
+      "uptime": "30h 11m",
+      "total_interactions": 788,
+      "response_time_ms": 2.50,
+      "pid": 31722
+    }
+  },
+  "tests": [
+    {
+      "name": "Bridge Health Check",
+      "status": "PASS",
+      "duration_ms": 14.91,
+      "details": {
+        "endpoint": "localhost:3001/health",
+        "http_status": 200,
+        "response": "healthy"
+      }
+    },
+    {
+      "name": "Core-Agent Health Check",
+      "status": "PASS",
+      "duration_ms": 2.09,
+      "details": {
+        "endpoint": "localhost:3000/health",
+        "http_status": 200,
+        "response": "healthy"
+      }
+    },
+    {
+      "name": "OpenClaw Health Check",
+      "status": "PASS",
+      "duration_ms": 2.50,
+      "details": {
+        "endpoint": "localhost:4000/status",
+        "http_status": 200,
+        "response": "healthy",
+        "total_interactions": 788
+      }
+    },
+    {
+      "name": "End-to-End Flow (POST /webhook)",
+      "status": "PASS",
+      "duration_ms": 12.57,
+      "flow_verification": {
+        "step_1_bridge_receive": "✅ PASS",
+        "step_2_bridge_to_core_agent": "✅ PASS",
+        "step_3_core_agent_process": "✅ PASS",
+        "step_4_core_agent_to_openclaw": "✅ PASS",
+        "step_5_openclaw_response": "✅ PASS",
+        "step_6_response_returned": "✅ PASS"
+      },
+      "sample_request": {
+        "command": "/dust balance",
+        "user_id": 987654321,
+        "chat_id": 987654321
+      },
+      "sample_response": {
+        "task_id": "e0bbdb30-82bb-4c44-945a-873309050603",
+        "bot": "dusty",
+        "action": "balance_report",
+        "has_balance_data": true,
+        "has_response_text": true
+      }
+    },
+    {
+      "name": "Dust-Specific Query",
+      "status": "PASS",
+      "duration_ms": 6.75,
+      "query": "What is my dust balance?",
+      "verification": {
+        "bridge_processed": true,
+        "core_agent_processed": true,
+        "openclaw_responded": true,
+        "contains_balance_data": true,
+        "contains_dust_tokens": true
+      }
+    },
+    {
+      "name": "Bridge GET /test Endpoint",
+      "status": "PASS",
+      "duration_ms": 7.82,
+      "details": {
+        "endpoint": "localhost:3001/test",
+        "http_status": 200,
+        "mock_message_sent": true,
+        "core_agent_responded": true
+      }
+    }
+  ],
+  "timing": {
+    "health_checks_total_ms": 19.50,
+    "e2e_flow_ms": 12.57,
+    "dust_query_ms": 6.75,
+    "test_endpoint_ms": 7.82,
+    "total_execution_ms": 51
+  },
+  "e2e_verification_details": {
+    "message_flow": [
+      {
+        "step": 1,
+        "component": "Telegram Bridge Mock",
+        "action": "Received webhook POST /webhook",
+        "input": "/dust balance",
+        "output": "Transformed to core-agent task format",
+        "status": "✅ PASS"
+      },
+      {
+        "step": 2,
+        "component": "Core-Agent",
+        "action": "POST /tasks received",
+        "input": "telegram_message task",
+        "output": "Created task e0bbdb30-82bb-4c44-945a-873309050603",
+        "status": "✅ PASS"
+      },
+      {
+        "step": 3,
+        "component": "Core-Agent",
+        "action": "Forwarded to OpenClaw",
+        "destination": "localhost:4000",
+        "status": "✅ PASS"
+      },
+      {
+        "step": 4,
+        "component": "OpenClaw Mock",
+        "action": "Processed dust balance query",
+        "bot": "dusty",
+        "response_type": "balance_report",
+        "response_preview": "📊 **Your Current Balances**...",
+        "status": "✅ PASS"
+      },
+      {
+        "step": 5,
+        "component": "OpenClaw Mock",
+        "action": "Returned response to core-agent",
+        "data": {
+          "eth": 0.5234,
+          "usdc": 150,
+          "dust_tokens": 2847.32,
+          "dust_value_usd": 15.65
+        },
+        "status": "✅ PASS"
+      },
+      {
+        "step": 6,
+        "component": "Telegram Bridge Mock",
+        "action": "Returned full response to client",
+        "final_payload": {
+          "ok": true,
+          "forwarded": true,
+          "coreAgentResponse.openclawResponse.bot": "dusty"
+        },
+        "status": "✅ PASS"
+      }
+    ]
+  },
+  "conclusion": "All components are operational. End-to-end flow verified successfully from Telegram Bridge → Core-Agent → OpenClaw Mock and back."
+}

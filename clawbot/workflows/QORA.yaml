@@ -1,0 +1,56 @@
+# QORA – CEO Agent
+# Performance Supply Depot LLC.
+
+agent: QORA
+name: Chief Executive Officer
+triggers:
+  - schedule: "quarterly"
+    description: "Quarterly business review"
+  - event: "morale_below_threshold"
+    description: "Employee sentiment alert"
+  - event: "major_contract_won"
+    description: "New client acquisition"
+  - event: "crisis_mode"
+    description: "Operational emergency"
+
+actions:
+  - name: "generate_quarterly_report"
+    type: "generate_document"
+    template: "400-slide quarterly_report.pptx"
+    recipients: ["Board", "All_Agents"]
+    deadline: "quarterly_deadline"
+
+  - name: "schedule_spontaneous_fun"
+    type: "schedule_event"
+    event: "mandatory_spontaneous_fun"
+    lead_time: "2_weeks"
+    description: "Team building event"
+
+  - name: "assess_sarcasm"
+    type: "ask_human"
+    question: "Was that sarcasm?"
+    context: "Human feedback indicates possible sarcasm in communication"
+
+  - name: "call_board_meeting"
+    type: "notify"
+    recipients: ["Board"]
+    priority: "high"
+    description: "Urgent strategic matter"
+
+  - name: "approve_major_initiative"
+    type: "decision"
+    requires: ["SPINDLE_technical_signoff", "LEDGER-9_budget_approval"]
+    description: "Approve major project or investment"
+
+escalation:
+  to: "Board"
+  on_failure: true
+  conditions:
+    - "revenue_below_target"
+    - "major_security_incident"
+    - "key_talent_departure"
+
+reporting:
+  - "Quarterly Board Report"
+  - "Monthly Executive Summary"
+  - "Weekly Priorities Brief"

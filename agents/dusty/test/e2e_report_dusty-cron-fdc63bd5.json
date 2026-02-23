@@ -1,0 +1,39 @@
+{
+  "testId": "dusty-cron-fdc63bd5-2026-02-20_0023",
+  "timestamp": "2026-02-20T00:23:57.454Z",
+  "trigger": "cron",
+  "cronJobId": "fdc63bd5-b2c2-481c-9a5f-d3e001eff52f",
+  "status": "SUCCESS",
+  "results": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6
+  },
+  "components": {
+    "bridge": {
+      "healthy": true,
+      "responseTimeMs": 13.08,
+      "uptimeHours": 33.67
+    },
+    "coreAgent": {
+      "healthy": true,
+      "responseTimeMs": 1.79,
+      "uptimeHours": 33.70
+    },
+    "openclaw": {
+      "healthy": true,
+      "responseTimeMs": 2.51,
+      "uptimeHours": 33.68,
+      "totalInteractions": 909
+    }
+  },
+  "e2eFlow": {
+    "status": "PASS",
+    "bridgeToCoreAgent": true,
+    "coreAgentToOpenclaw": true,
+    "openclawResponseReceived": true,
+    "responseTimeMs": 9.58
+  },
+  "totalDurationMs": 52,
+  "reportFile": "e2e_report_dusty-cron-fdc63bd5-2026-02-20_0023.md"
+}
